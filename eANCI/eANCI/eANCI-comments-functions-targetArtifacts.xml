@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>CC</id>
+    <name>eANCI Target Artifacts</name>
+    <version>1.1</version>
+    <description>Class code</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>CC140</id>
+      <content>/**
+* La classe AccessManager interagisce con le classi di gestione del database
+* La classe AccessManager non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore di default della classe AccessManager
+	 */
+/**
+	 * Metodo che permette di controllare la correttezza della login e della 
+	 * password di un accesso invocando il relativo metodo della classe db
+	 * @param login Stringa che viene usata come login
+	 * @param password Stringa che viene usata come password
+	 * @return True se l'accesso è presente, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette di controllare l'esistenza della login 
+	 * invocando il relativo metodo della classe db
+	 * @param login Stringa che viene usata come login
+	 * @return True se la login è presente, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un accesso invocando il relativo metodo della classe db
+	 * @param login Stringa che viene usata come login
+	 * @return Restituisce un oggetto di tipo Accesso
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che inserisce un accesso all'interno del db 
+	 * invocando il relativo metodo della classe db
+	 * @param ac Oggetto di tipo Accesso
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un accesso dal db invocando il relativo metodo della classe db
+	 * @param login Stringa che viene usata come login
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce tutti gli accessi memorizzati 
+	 * invocando il relativo metodo della classe db
+	 * @return Restituisce una Collection di Accessi
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC141</id>
+      <content>/**
+* La classe Accesso permette la gestione degli accessi
+* La classe Accesso non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore vuoto della classe Accesso
+	 */
+/**
+	 * Costruttore della classe Accesso
+	 * @param Login
+	 * @param Password
+	 * @param Tipo
+	 */
+/**
+	 * Metodo che restituisce una login
+	 * @return Login
+	 */
+/**
+	 * Metodo che imposta una login
+	 * @param login
+	 */
+/**
+	 * Metodo che restituisce una password
+	 * @return Password
+	 */
+/**
+	 * Metodo che imposta una password
+	 * @param password
+	 */
+/**
+	 * Metodo che restituisce il tipo di utente che accede
+	 * @return Tipo
+	 */
+/**
+	 * Metodo che imposta il tipo di utente che accede 
+	 * @param tipo
+	 */
+/**
+	 * Metodo che converete in una stringa le informazioni di un accesso
+	 * @return String
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC142</id>
+      <content>/**
+* La classe AdminManager interagisce con le classi di gestione del database
+* La classe AdminManager non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore di default della classe AdminManager
+	 */
+/**
+	 * Metodo che modifica un amministratore
+	 * invocando il relativo metodo della classe db
+	 * @param matricola la stringa che identifica l'amministratore
+	 * @param newAdmin Amministratore con i dati aggiornati
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 */
+/**
+	 * Metodo che restituisce un amministratore
+	 * invocando il relativo metodo della classe db
+	 * @param matricola stringa che viene utilizzato come matricola dell'amministratore
+	 * @return Restituisce un oggetto di tipo Amministratore
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che inserisce un amministratore all'interno del db
+	 * invocando il relativo metodo della classe db
+	 * @param newAdmin Oggetto di tipo Amministratore
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un Amministratore dal db
+	 * invocando il relativo metodo della classe db
+	 * @param matricola l'intero che viene utilizzato come matricola
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un amministratore
+	 * invocando il relativo metodo della classe db
+	 * @param login stringa che viene utilizzata come login dell'amministratore
+	 * @return Restituisce un oggetto di tipo amministratore
+	 * @throws DbException
+	 */
+/** Metodo che restituisce un insieme di amministratori
+	 * invocando il relativo metodo della classe db
+	 * @param nomeAmm stringa che viene utilizzata come nome dell'amministratore
+	 * @param cognAmm stringa che viene utilizzata come cognome dell'amministratore
+	 * @return Restituisce una Collection di Amministratori
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce tutti gli amministratori memorizzati
+	 * @return Restituisce una Collection di Amministratori
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC143</id>
+      <content>/**
+* La classe Amministratore permette la gestione degli amministratori
+* La classe Amministratore non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore vuoto della classe Amministratore
+	 */
+/**
+	 * Costruttore della classe Amministratore
+	 * @param Nome
+	 * @param Cognome
+	 * @param Matricola
+	 * @param Email
+	 * @param Login
+	 */
+/**
+	 * Metodo che restituisce il nome dell'impiegato
+	 * @return Nome
+	 */
+/**
+	 * Metodo che imposta il nome dell'impiegato
+	 * @param nome
+	 */
+/**
+	 * Metodo che restituisce il cognome dell'impiegato
+	 * @return Cognome
+	 */
+/**
+	 * Metodo che imposta il cognome dell'impiegato
+	 * @param cognome
+	 */
+/**
+	 * Metodo che restituisce la matricola dell'impiegato
+	 * @return Matricola
+	 */
+/**
+	 * Metodo che imposta la matricola dell'impiegato
+	 * @param matricola
+	 */
+/**
+	 * Metodo che restituisce l'e-mail dell'impiegato
+	 * @return Email
+	 */
+/**
+	 * Metodo che imposta l'e-mail dell'impiegato
+	 * @param email
+	 */
+/**
+	 * Metodo che restituisce la login dell'impiegato
+	 * @return Login
+	 */
+/**
+	 * Metodo che imposta la login dell'impiegato
+	 * @param login
+	 */
+/**
+	 * Metodo che converete in una stringa le informazioni di un accesso
+	 * @return String
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC144</id>
+      <content>/**
+* è un JavaBean che gestisce i metodi di settaggio
+* e restituzione degli attributi della carta
+* di identità di un cittadino
+* @author Francesco
+*
+*/
+/**
+	 * rappresenta il codice della carta di identità
+	 * che viene inserito dall'impiegato
+	 */
+/**
+	 * Costruttore di default vuoto
+	 */
+/**
+	 * oggetto che viene restituito dal database
+	 * @param cod_carta
+	 * @param citt
+	 * @param res
+	 * @param via
+	 * @param stciv
+	 * @param prof
+	 * @param stat
+	 * @param cap
+	 * @param eyes
+	 * @param sp
+	 * @param dr
+	 * @param ds
+	 * @param validEsp
+	 * @param num_civ
+	 */
+// TODO Auto-generated constructor stub
+/**
+	 * crea la carta di identità del cittadino che si è 
+	 * registrato nel sistema comunale prendendo dalla classe
+	 * cittadino le informazioni necessarie per la creazione
+	 * del documento di riconoscimento
+	 */
+/**
+		 * il codice univoco della carta di identità richiesta dal cittadino, viene 
+		 * inserito dall'impiegato all'atto della creazione cartacea del documento e nel momento
+		 * in cui le informazioni devono essere mantenute nel database.
+		 * 
+		 */
+/**
+		 * assegno la carta di identità che sto creando al cittadino
+		 * che ne ha fatto richiesta e che è presente all'interno del
+		 * database comunale
+		 */
+//mi devo recuperare il cognome, nome, e data nascita dalla classe db</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC145</id>
+      <content>/**
+* La classe CIManager interagisce con le classi di gestione del database
+* La classe CIManager non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore di default della classe CIManager
+	 */
+/**
+	 * Metodo che permette la ricerca di una carta d'identita tramite il suo numero
+	 * invocando il relativo metodo della classe db
+	 * @param cod il numero della carta d'identità del cittadino.
+	 * @return l'oggetto di tipo CartaIdentità associata al numero passato come parametro
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC146</id>
+      <content>/**
+* è un JavaBean che gestisce i metodi 
+* get e set degli attributi di un Cittadino
+* @author Francesco
+*
+*/
+/**
+	 * costruttore di default vuoto
+	 */
+// TODO Auto-generated constructor stub
+/**
+	 * costruttore parametrico che crea l'oggetto
+	 * cittadino con i dati inseriti da quest'ultimo 
+	 * all'atto della registrazione nel sistema comunale
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC147</id>
+      <content>/**
+* La classe CittadinoManager interagisce con le classi di gestione del database
+* La classe CittadinoManager non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore di default della classe CIManager
+	 */
+/**
+	 * Metodo che permette la ricerca di un cittadino tramite la sua login
+	 * invocando il relativo metodo della classe db
+	 * @param login è la login in base alla quale si vuole effettuare la ricerca
+	 * @return l'oggetto di tipo cittadino
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica della login per uno specifico cittadino
+	 * invocando il relativo metodo della classe db
+	 * @param idCitt è l'id del cittadino
+	 * @param newLogin è la nuova login del cittadino
+	 * @return true se l'operazione è andata a buon fine, flase altrimenti
+	 */
+/**
+	 * Metodo che permette la modifica dell'indirizzo e-mail di uno specifico cittadino
+	 * invocando il relativo metodo della classe db
+	 * @param idCittadino è l'identificativo del cittadino
+	 * @param email è la nuova mail da assegnare al cittadino
+	 * @return true se l'operazione è eseguita con successo, flase altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette di inserire un nuovo cittadino
+	 * invocando il relativo metodo della classe db
+	 * @param cittadino è l'istanza di cittadino
+	 * @return l'id del cittadino inserito.
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la ricerca di un insieme di cittadini in base al loro nome e cognome
+	 * invocando il relativo metodo della classe db
+	 * @param nome parametro su cui effettuare la ricerca
+	 * @param cognome parametro su cui effettuare la ricerca
+	 * @return una collection di cittadini con il nome e il cognome passato come parametro
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la cancellazione di un cittadino
+	 * invocando il relativo metodo della classe db
+	 * @param idCitt è l'identificativo del cittadino
+	 * @return true se l'operazione è eseguita con successo, flase altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la ricerca di un cittadino tramite il suo id
+	 * invocando il relativo metodo della classe db
+	 * @param idCitt è l'identificativo del cittadino
+	 * @return oggetto di tipo cittadino con id uguale a quello passato come parametro
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che modifica il nucleo familiare del cittadino dato il suo id
+	 * invocando il relativo metodo della classe db
+	 * @param idCitt è l'id del cittadino
+	 * @param newid è l'id del nuovo nucleo familiare del cittadino
+	 * @return true se l'operazione è eseguita con successo, flase altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica del nome di uno specifico cittadino
+	 * invocando il relativo metodo della classe db
+	 * @param idCitt è l'identificativo del cittadino
+	 * @param nome è il nuovo nome da assegnare al cittadino
+	 * @return true se l'operazione è eseguita con successo, flase altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica del cognome di uno specifico cittadino
+	 * invocando il relativo metodo della classe db
+	 * @param idCitt è l'identificativo del cittadino
+	 * @param cognome è il nuovo cognome da assegnare al cittadino
+	 * @return true se l'operazione è eseguita con successo, flase altrimenti
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC148</id>
+      <content>/**
+* La classe Comune permette la comunicazione con gli altri comuni
+* @author Antonio Leone
+* @version 1.0
+*
+*/
+/**
+	 * Costruttore di default
+	 */
+/**
+	 * Costruttore parametrico
+	 * @param n nome del comune
+	 * @param i indirizzo ip del comune
+	 */
+/**
+	 * Preleva il nome del comune
+	 * @return Restituisce una stringa che contiene il nome del comune
+	 */
+/**
+	 * Setta il nome del comune
+	 * @param n la stringa che contiene il nuovo nome del comune
+	 * @return Restituisce il nuovo nome del comune
+	 */
+/**
+	 * Preleva l'indirizo ip del comune
+	 * @return Restituisce una stringa che contiene l'indirizzo ip del comune
+	 */
+/**
+	 * Setta l'indirizzo ip del comune
+	 * @param n la stringa che contiene il nuovo indirizzo ip del comune
+	 * @return Restituisce il nuovo indirizzo ip del comune
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC149</id>
+      <content>/**
+* La classe ControllerFiles gestisce l'upload di un file
+* La classe non ha nessuna dipendenza
+* @author Francesco Odierna
+*/
+//instanzio le variabili
+// Il ServletContext sevirà per ricavare il MIME type del file uploadato
+// Stabiliamo la grandezza massima del file che vogliamo uploadare
+// ricaviamo i dati del file mediante un InputStream
+// stabiliamo dove andrà scritto il file
+// salviamo il file nel percorso specificato
+// chiudiamo gli stream
+// mettiamo nella request i dati così da poterli ricavare dalla jsp</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC150</id>
+      <content>/**
+* La classe DbAccesso si occupa di gestire le connessioni al db
+* per consentire gli accessi.
+* @author Antonio Leone
+* @version 1.0
+*/
+/**
+	 * Metodo che inserisce un accesso all'interno del db
+	 * @param a Oggetto di tipo Accesso
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un accesso dal db
+	 * @param log Stringa che viene usata come login
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un accesso
+	 * @param log Stringa che viene usata come login
+	 * @return Restituisce un oggetto di tipo Accesso
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce tutti gli accessi memorizzati
+	 * @return Restituisce una Collection di Accessi
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette di controllare lesistenza della login 
+	 * @param login Stringa che viene usata come login
+	 * @return True se la login è presente, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette di controllare la correttezza della login e della 
+	 * password di un accesso per garantire l'apertura di una sessione autenticata
+	 * @param login Stringa che viene usata come login
+	 * @param password Stringa che viene usata come password
+	 * @return True se l'accesso è presente, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che modifica un accesso
+	 * @param log la login che identifica un accesso
+	 * @param a Accesso con i dati aggiornati
+	 * @return True se è stato effettuata la modifica nel db, False altrimenti
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC151</id>
+      <content>/**
+* La classe DbAmministratore si occupa di gestire le connessioni al db
+* @author Antonio Leone
+* @version 1.0
+*/
+/**
+	 * Metodo che inserisce un amministratore all'interno del db
+	 * @param i Oggetto di tipo Amministratore
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un Amministratore dal db
+	 * @param matr l'intero che viene utilizzato come matricola
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/** Metodo che restituisce un insieme di amministratori
+	 * @param nomeImp stringa che viene utilizzata come nome dell'amministratore
+	 * @param cognImp stringa che viene utilizzata come cognome dell'amministratore
+	 * @return Restituisce una Collection di Amministratori
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un amministratore
+	 * @param matrImp stringa che viene utilizzato come matricola dell'amministratore
+	 * @return Restituisce un oggetto di tipo Amministratore
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce tutti gli amministratori memorizzati
+	 * @return Restituisce una Collection di Amministratori
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un amministratore
+	 * @param log stringa che viene utilizzata come login dell'amministratore
+	 * @return Restituisce un oggetto di tipo amministratore
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che modifica un amministratore
+	 * @param matr la stringa che identifica l'amministratore
+	 * @param a Amministratore con i dati aggiornati
+	 * @return True se è stato effettuata una modifica nel db, False altrimenti
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC152</id>
+      <content>/**
+* Classe che si occupa di gestire le connessioni con il database
+* e di schermare le servet con il DBMS.
+* @author Michelangelo Cianciulli
+*
+*/
+/**
+	 * Metodo che permette la cancellazione della carta d'identità  del cittadino nel 
+	 * momento in cui esso cambia residenza verso un comune esterno (aggiornamento del db)
+	 * @param cod è il numero della carta d'identitÃ  di chi ha chiesto il cambio di residenza verso un comune esterno
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette l'aggiornamento della residenza salvata nella carta d'identitÃ  del cittadino che ha effettuato un cambio
+	 * di residenza nello stesso comune in cui attualmente risiede.(aggiornamento del db)
+	 * @param cod è il numero della carta d'identitÃ 
+	 * @param v è la nuova via in cui andrÃ  a risiedere il cittadino
+	 * @param nc è il nuovo numero civico dell'abitazione del cittadino
+	 * @return l'oggetto CartaIdentità  aggiornato 
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC153</id>
+      <content>/**
+* Classe che si occupa di gestire le connessioni con 
+* il database e di schermare le servlet dal DBMS.
+* @author Michelangelo Cianciulli
+*
+*/
+/**
+	 * Metodo che permette la ricerca di una carta d'identità tramite il suo numero.
+	 * @param cod è il numero della carta d'identità  del cittadino.
+	 * @return l'oggetto di tipo CartaIdentità  associata al numero passato come parametro
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la cancellazione di una carta d'identità . (aggiornamento del db)
+	 * @param cod è¨ il codice della carta d'identità  che si intende cancellare
+	 * @return true se l'operazione è andata a buon fine
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la registrazione di una nuova carta d'identità all'interno del database
+	 * @param c è l'oggetto di tipo carta d'identità
+	 * @return true se l'operazione è andata a buon fine
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica della via in una specifica carta d'identità . (aggiornamento del db)
+	 * @param cod è il numero della carta d'identità  
+	 * @param v è la nuova via da registrare nella carta d'identità 
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica del numero civico in una specifica carta d'identità . (aggiornamento del db)
+	 * @param cod è il numero della carta d'identità
+	 * @param nc è il nuovo numero civico
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica della residenza (via e numero civio) in una specifica carta d'identità . (aggiornamento del db) 
+	 * @param via è la nuova via da registrare nella carta d'identità 
+	 * @param nc è il numero civico da registrare nella carta d'identità
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica della data di rilascio di una specifica carta d'identità . (aggiornamento del db)
+	 * @param cod è il numero della carta d'identità 
+	 * @param d è la nuova data di rilascio della carta d'identità 
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica della data di scadenza per una specifica carta d'identità . (aggiornamento del db)
+	 * @param cod è il numero della carta d'identità 
+	 * @param d è la nuova data di scadenza
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica della validità per l'espatrio di una specifica carta d'identità . (aggiornamento del db)
+	 * @param cod è il numero della carta d'identità 
+	 * @param esp è il valore booleano che indica la validità per l'espatrio per la specifica carta d'identità 
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+* Metodo che permette la ricerca di una carta d'identità a partire dall'id del proprietario
+* @param idC è l'id del cittadino
+* @return l'oggetto di tipo CartaIdentita dello specifico cittadino.
+* @throws DbException
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC154</id>
+      <content>/** 
+* Classe che si occupa di gestire le connessioni con il database
+* e di schermare le servet con il DBMS.
+* 
+* @author Michelangelo Cianciulli
+*/
+/**
+	 * Metodo che permette di registrare un nuovo cittadino. (aggiornamento del db)
+	 * @param citt è l'istanza di cittadino
+	 * @return l'id del cittadino inserito.
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica del nome di uno specifico cittadino. (aggiornamento del db)
+	 * @param idCitt è l'identificativo del cittadino
+	 * @param newname il nuovo nome da assegnare al cittadino
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica del cognome di uno specifico cittadino. (aggiornamento del db)
+	 * @param idCitt è l'identificativo del cittadino
+	 * @param newsurname è il nuovo cognome da assegnare al cittadino
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica del codice fiscale di uno specifico cittadino. (aggiornamento del db)
+	 * @param idCitt è l'identificativo del cittadino
+	 * @param newcf è il nuovo codice fiscale da assegnare al cittadino
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica dell'indirizzo e-mail di uno specifico cittadino. (aggiornamento del db)
+	 * @param idCitt è l'identificativo del cittadino
+	 * @param newmail è la nuova mail da assegnare al cittadino
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica del campo advertise di uno specifico cittadino. (aggiornamento del db)
+	 * @param idCitt è l'identificativo del cittadino
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la cancellazione di un cittadino. (aggiornamento del db)
+	 * @param idCitt è l'identificativo del cittadino
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la ricerca di un cittadino tramite il suo id.
+	 * @param idCitt è l'identificativo del cittadino
+	 * @return oggetto di tipo cittadino con id uguale a quello passato come parametro
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la ricerca di un insieme di cittadini in base al loro nome e cognome.
+	 * @param name parametro su cui effettuare la ricerca
+	 * @param surname parametro su cui effettuare la ricerca
+	 * @return una collection di cittadini con il nome e il cognome passato come parametro
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette la modifica della login per uno specifico cittadino. (aggiornamento del db)
+	 * @param idC è l'id del cittadino
+	 * @param newLogin è la nuova login del cittadino
+	 * @return true se l'operazione è andata a buon fine
+	 */
+//rs = stmt.executeQuery();
+//}
+//return false;
+/**
+	 * Metodo che permette la ricerca di un cittadino tramite la sua login.
+	 * @param log è la login in base alla quale si vuole effettuare la ricerca
+	 * @return l'oggetto di tipo cittadino
+	 * @throws DbException
+	 */
+/**
+	 * Metodo privato che ritorna l'id dell'ultimo cittadino inserito.
+	 * @return l'id più alto della tabella cittadino
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette di conoscere l'id del cittadino a partire dai suoi dati anagrafici (codice fiscale,cognome,nome)
+	 * @param cf è il codice fiscale parametro per la ricerca
+	 * @param surname è il cognome parametro per la ricerca
+	 * @param name è il nome parametro per la ricerca
+	 * @return l'id del cittadino se ok, -1 se la ricerca non ha successo
+	 */
+/**
+	 * Metodo che permette la ricerca del codice fiscale del cittadino a partire dal suo ID
+	 * @param id è l'id del cittadino
+	 * @return il codice fiscale del cittadino
+	 */
+/**
+	 * Metodo che modifica il nucleo familiare del cittadino dato il suo id
+	 * @param idCitt è l'id del cittadino
+	 * @param newnucleo è il nuovo nucleo familiare del cittadino
+	 * @return true se l'operazione è eseguita con successo
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC155</id>
+      <content>/**
+* La classe DbComune si occupa di gestire le connessioni al db
+* @author Antonio Leone
+* @version 1.0
+*/
+/**
+	 * Metodo che inserisce un comune all'interno del db
+	 * @param c oggetto di tipo Comune
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un comune dal db
+	 * @param nome che identifica il comune
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un comune
+	 * @param nome la stringa che rappresenta il nome del comune
+	 * @return Restituisce un oggetto di tipo Comune
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC156</id>
+      <content>/** 
+* Questa classe fornisce un pool di connesione
+* @author Antonio Leone
+*/
+/**
+	 * Questa porzione di codice crea un pool di connessione e definisce i db properties
+	 */
+/**
+	 * Ritorna una connessione al db, se non è già disponibile ne viene creata una nuova
+	 * @return una connessione al db
+	 * @throws SQLException 
+	 */
+/**
+	 * Carica i db properties
+	 * @throws IOException
+	 */
+/**
+	 * Metodo che chiude il pool di connessione
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC157</id>
+      <content>/**
+* La classe DbException viene lanciata quando si verifica un eccezione legata al db
+* @author Antonio Leone
+* @version 1.0
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC158</id>
+      <content>/**
+* La classe DbImpiegato si occupa di gestire le connessioni al db
+* @author Antonio Leone
+* @version 1.0
+*/
+/**
+	 * Metodo che inserisce un impiegato all'interno del db
+	 * @param i Oggetto di tipo Impiegato
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un impiegato dal db
+	 * @param matr la stringa che viene utilizzato come matricola
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/** Metodo che restituisce un insieme di impiegati
+	 * @param nomeImp stringa che viene utilizzata come nome dell'impiegato
+	 * @param cognImp stringa che viene utilizzata come cognome dell'impiegato
+	 * @return Restituisce una Collection di Impiegati
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un impiegato
+	 * @param matrImp stringa che viene utilizzato come matricola dell'impiegato
+	 * @return Restituisce un oggetto di tipo Impiegato
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce tutti gli impiegati memorizzati
+	 * @return Restituisce una Collection di impiegati
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un impiegato
+	 * @param log stringa che viene utilizzata come login dell'impiegato
+	 * @return Restituisce un oggetto di tipo impiegato
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che modifica un impiegato
+	 * @param matr la stringa che identifica l'impiegato
+	 * @param a impiegato con i dati aggiornati
+	 * @return True se è stato effettuato una modifica nel db, False altrimenti
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC159</id>
+      <content>/**
+* La classe DbNucleoFamiliare si occupa di gestire le connessioni al db
+* @author Antonio Leone
+* @version 1.0
+*/
+/**
+	 * Metodo che inserisci un oggetto nucleoFamiliare nel db
+	 * @param nf Oggetto di tipo nucleofamiliare
+	 * @return Restituisce l'id del nucleo familiare inserito
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un nucleoFamiliare dal db
+	 * @param id l'intero che viene utilizzato come id del nucleoFamiliare
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce i componeneti di uno stato di famiglia
+	 * @param id intero che viene usato come id del nucleo familiare
+	 * @return Restituisce una Collection di cittadini
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette di controllare lesistenza di un nucleo familiare
+	 * @param id l'intero che viene utilizzato come id del nucleo familiare
+	 * @return True se l'id è presente, False altrimenti
+	 * @throws DbException 
+	 */
+/**
+	 * Metodo che permette la ricerca di un nucleo familiare per conoscere le eventuali note
+	 * @param id l'intero che viene utilizzato come id del nucleo familiare
+	 * @return Restituisce le note del nucleo familiare
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che modifica un capo famiglia
+	 * @param idF l'intero che viene utilizzato come id della famiglia
+	 * @param idC l'intero che viene utilizzato come id del capo famiglia
+	 * @return True se la modifica ha avuto successo, altrimenti False
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un nucleo familiare
+	 * @param id l'intero che contiene l'id del nucleo familiare
+	 * @return Restituisce un oggetto di tipo NucleoFamiliare
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che modifica il numero di componenti del nucleo familiare
+	 * @param idF l'intero che viene utilizzato come id della famiglia
+	 * @param n l'intero che rappresenta il nuovo numero di componenti
+	 * @return True se la modifica ha avuto successo, altrimenti False
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC160</id>
+      <content>/**
+* La classe DbRichiesta si occupa di gestire le connessioni al db
+* @author Antonio Leone
+* @version 1.0
+*/
+/**
+	 * Metodo che inserisce una richiesta all'interno del db
+	 * @param ric oggetto di tipo Richiesta
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina una richiesta dal db
+	 * @param id l'intero che viene usato come id della richiesta
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce una richiesta
+	 * @param id l'intero che viene usato come id della richiesta
+	 * @return Restituisce un oggetto di tipo Richiesta
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un insieme di richieste
+	 * @param idR l'intero che viene usato come id del richiedente
+	 * @return Restituisce una Collection di Richieste
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un insieme di richieste
+	 * @param idR l'intero che viene usato come id del richiedente
+	 * @param stato la stringa che viene usata come stato della richiesta
+	 * @return Restituisce una Collection di tipo Richiesta
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un insieme di richieste
+	 * @param idR l'intero che viene usato come id del richiedente
+	 * @param tipo la stringa che viene usata come tipologia della richiesta
+	 * @return Restituisce una Collection di tipo Richiesta
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che modifica lo stato di una richiesta
+	 * @param idR l'intero che viene utilizzato come id della richiesta
+	 * @param stato la stringa che viene utilizzato come stato della richiesta
+	 * @return True se la modifica ha avuto successo, altrimenti False
+	 * @throws SQLException
+	 */
+/**
+	 * Metodo che restituisce un insieme di richieste
+	 * @return Restituisce una Collection di Richieste
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC161</id>
+      <content>/**
+* La classe Impiegato permette solo all'amministratore la gestione degli impiegati
+* La classe Impiegato non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore vuoto della classe Impiegato
+	 */
+/**
+	 * Costruttore della classe Impiegato
+	 * @param Nome
+	 * @param Cognome
+	 * @param Matricola
+	 * @param Email
+	 * @param Login
+	 */
+/**
+	 * Metodo che restituisce il nome dell'impiegato
+	 * @return Nome
+	 */
+/**
+	 * Metodo che imposta il nome dell'impiegato
+	 * @param nome
+	 */
+/**
+	 * Metodo che restituisce il cognome dell'impiegato
+	 * @return Cognome
+	 */
+/**
+	 * Metodo che imposta il cognome dell'impiegato
+	 * @param cognome
+	 */
+/**
+	 * Metodo che restituisce la matricola dell'impiegato
+	 * @return Matricola
+	 */
+/**
+	 * Metodo che imposta la matricola dell'impiegato
+	 * @param matricola
+	 */
+/**
+	 * Metodo che restituisce l'e-mail dell'impiegato
+	 * @return Email
+	 */
+/**
+	 * Metodo che imposta l'e-mail dell'impiegato
+	 * @param email
+	 */
+/**
+	 * Metodo che restituisce la login dell'impiegato
+	 * @return Login
+	 */
+/**
+	 * Metodo che imposta la login dell'impiegato
+	 * @param login
+	 */
+/**
+	 * Metodo che converete in una stringa le informazioni di un accesso
+	 * @return String
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC162</id>
+      <content>/**
+* La classe ImpiegatoManager interagisce con le classi di gestione del database
+* La classe ImpiegatoManager non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore di default della classe ImpiegatoManager
+	 */
+/**
+	 * Metodo che modifica un impiegato
+	 * invocando il relativo metodo della classe db
+	 * @param matricola la stringa che identifica l'impiegato
+	 * @param newImpiegato impiegato con i dati aggiornati
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 */
+/**
+	 * Metodo che restituisce un impiegato
+	 * invocando il relativo metodo della classe db
+	 * @param matricola stringa che viene utilizzato come matricola dell'impiegato
+	 * @return Restituisce un oggetto di tipo Impiegato
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che inserisce un impiegato all'interno del db
+	 * invocando il relativo metodo della classe db
+	 * @param newImpiegato Oggetto di tipo Impiegato
+	 * @return True se è stato effettuato un inserimento nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che elimina un impiegato dal db
+	 * invocando il relativo metodo della classe db
+	 * @param matricola la stringa che viene utilizzato come matricola
+	 * @return True se è stato effettuato una cancellazione nel db, False altrimenti
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce un impiegato
+	 * invocando il relativo metodo della classe db
+	 * @param login stringa che viene utilizzata come login dell'impiegato
+	 * @return Restituisce un oggetto di tipo impiegato
+	 * @throws DbException
+	 */
+/** Metodo che restituisce un insieme di impiegati
+	 * invocando il relativo metodo della classe db
+	 * @param nomeImp stringa che viene utilizzata come nome dell'impiegato
+	 * @param cognImp stringa che viene utilizzata come cognome dell'impiegato
+	 * @return Restituisce una Collection di Impiegati
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che restituisce tutti gli impiegati memorizzati
+	 * invocando il relativo metodo della classe db
+	 * @return Restituisce una Collection di impiegati
+	 * @throws DbException
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC163</id>
+      <content>/**
+* Questa classe si occupa di gestire lo stato di famiglia del cittadino
+* @author Christian Ronca
+*
+*/
+/**
+	 * Costruttore standard
+	 */
+/**
+	 * 
+	 * @param idNucleoFamiliare		contiene l'id del gruppo familiare
+	 * @param capofamiglia			contiene l'id del capofamiglia
+	 * @param nota					eventuale nota
+	 */
+/**
+	 * Restituisce l'id dello stato di famiglia
+	 * @return	una stringa che contiene l'id dello stato di famiglia
+	 */
+/**
+	 * Setta l'id dello stato di famiglia
+	 * @return	una stringa che contiene il nuovo id dello stato di famiglia
+	 */
+/**
+	 * Restituisce l'id del capofamiglia
+	 * @return	una stringa che contiene l'id del capofamiglia
+	 */
+/**
+	 * Setta l'id del capofamiglia
+	 * @return	una stringa che contiene il nuovo id del capofamiglia
+	 */
+/**
+	 * Restituisce le note rilasciate
+	 * @return	una stringa che contiene una nota rilasciata in precedenza
+	 */
+/**
+	 * Inserisce una nota
+	 * @return	una stringa che contiene la nota rilasciata
+	 */
+/**
+	 * Restituisce il numero di componenti della famiglia
+	 * @return	un intero che contiene il numero di componenti del nucleo familiare
+	 */
+/**
+	 * Setta il numero di componenti del nucleo familiare
+	 * @return	un intero che contiene il nuovo numero di componenti del nucleo familiare
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC164</id>
+      <content>/**
+* La classe NucleoFamiliareManager interagisce con le classi di gestione del database
+* La classe NucleoFamiliareManager non ha dipendenze
+* @author Federico Cinque
+*/
+/**
+	 * Costruttore di default della classe NucleoFamiliareManager
+	 */
+/**
+	 * Metodo che inserisci un oggetto nucleoFamiliare nel db
+	 * invocando il relativo metodo della classe db
+	 * @param nf Oggetto di tipo nucleofamiliare
+	 * @return Restituisce l'id del nucleo familiare inserito
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che permette di controllare lÕesistenza di un nucleo familiare
+	 * invocando il relativo metodo della classe db
+	 * @param id l'intero che viene utilizzato come id del nucleo familiare
+	 * @return True se l'id è presente, False altrimenti
+	 * @throws DbException 
+	 */
+/**
+	 * Metodo che restituisce il numero di componenti del nucleo familiare
+	 * invocando il relativo metodo della classe db
+	 * @param id del nucleo familiare di cui si vuole il numero di componenti
+	 * @return True se l'id è presente, False altrimenti
+	 * @throws DbException 
+	 */
+/**
+	 * Metodo che modifica un capo famiglia
+	 * invocando il relativo metodo della classe db
+	 * @param id l'intero che viene utilizzato come id della famiglia
+	 * @param IdCitt l'intero che viene utilizzato come id del capo famiglia
+	 * @return True se la modifica ha avuto successo, altrimenti False
+	 * @throws DbException
+	 */
+/**
+	 * Metodo che incrementa il numero di componenti del nucleo familiare
+	 * invocando un metodo della classe db
+	 * @param id del nucleo familiare che si vuole modificare
+	 * @return True se la modifica ha avuto successo, altrimenti False
+	 * @throws DbException 
+	 */
+/**
+	 * Metodo che decrementa il numero di componenti del nucleo familiare
+	 * invocando un metodo della classe db
+	 * @param id del nucleo familiare che si vuole modificare
+	 * @return True se la modifica ha avuto successo, altrimenti False
+	 * @throws DbException 
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC165</id>
+      <content>/**
+* Classe che gestisce i metodi dell'oggetto Richiesta
+* @author 	Christian Ronca
+* @version 1.0
+*/
+/**
+	 * Costruttore di default
+	 */
+/**
+	 * Costruttore paramentrico 
+	 * @param idRichiesta 		id della richiesta
+	 * @param tipo 				tipo della richiesta 
+	 * @param data 				data in cui è stata effettuata la richiesta
+	 * @param richiedente 		id del richiedente
+	 * @param stato 			stato di avanzamento della richiesta
+	 * @param documento 		link al documento richiesto
+	 */
+/**
+	 * Costruttore paramentrico 
+	 * @param tipo 				tipo della richiesta 
+	 * @param data 				data in cui è stata effettuata la richiesta
+	 * @param richiedente 		id del richiedente
+	 * @param stato 			stato di avanzamento della richiesta
+	 * @param documento 		link al documento richiesto
+	 */
+/**
+	 * Preleva l'id della richiesta
+	 * @return	una stringa con l'id della richiesta
+	 */
+/**
+	 * Setta un nuovo id alla richiesta
+	 * @param str	prende in input una stringa che contiene il nuovo id della richiesta
+	 * @return		una stringa che contiene il nuovo id
+	 */
+/**
+	 * Preleva il tipo di richiesta effettuata
+	 * @return	una stringa che contiene il tipo di richiesta
+	 */
+/**
+	 * Setta il tipo della richiesta
+	 * @param str	prende in input una stringa che contiene il tipo della richiesta
+	 * @return		una stringa che contiene il nuovo tipo
+	 */
+/**
+	 * Preleva la data in cui è stata fatta la richiesta
+	 * @return una stringa che contiene la data della richiesta
+	 */
+/**
+	 * Setta la data alla richiesta
+	 * @param str	prende in input una stringa che contiene la data della richiesta
+	 * @return		una stringa che contiene la nuova data
+	 */
+/**
+	 * Preleva l'id del richiedente che ha effettuato la richiesta
+	 * @return	una stringa con l'id della richiesta
+	 */
+/**
+	 * Setta il richiedente della richiesta
+	 * @param str	prende in input una stringa che contiene il richiedente della richiesta
+	 * @return		una stringa che contiene il richiedente
+	 */
+/**
+	 * Preleva lo stato della richiesta
+	 * @return	una stringa con l'id della richiesta
+	 */
+/**
+	 * Setta lo stato della richiesta
+	 * @param str	prende in input una stringa che contiene la data della richiesta
+	 * @return		una stringa che contiene la nuova data
+	 */
+/**
+	 * Preleva il link al documento richiesto
+	 * @return	una stringa con l'id della richiesta
+	 */
+/**
+	 * Setta il link al documento
+	 * @param str	prende in input una stringa che contiene il link al documento richiesto
+	 * @return		una stringa che contiene il nuovo documento
+	 */
+/**
+	 * Restituisce un valore booleano nel caso in cui la richiesta sia stata accettata
+	 * @return		true se la richiesta è stata accettata
+	 */
+/**
+	 * Restituisce un valore booleano nel caso in cui la richiesta sia stata rifiutata
+	 * @return		false se la richiesta è stata rifiutata
+	 */</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC166</id>
+      <content>/**
+* La classe ServletAnnulla annulla l'operazione che l'utente stava eseguendo
+* La classe ServletAnnulla non ha dipendenze
+* @author Federico Cinque
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC167</id>
+      <content>/**
+* La classe ServletCaricaPratica carica in una sessione gli oggetti Cittadino e CartaIdentita
+* La classe dipende da DbCittadino e DbCartaIdentita
+* @author Christian Ronca
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC168</id>
+      <content>/**
+* La classe ServletCreaPdfCambioAbitazione un file PDF in base ai dati ricevuti da una pagina JSP
+* La classe non ha nessuna dipendenza
+* @author Christian Ronca
+*/
+//String numb_document		= request.getParameter(&quot;numberdocument&quot;);
+//String interno				= request.getParameter(&quot;interno&quot;);
+//String interno_new			= request.getParameter(&quot;interno1&quot;);
+//String data_gg				= request.getParameter(&quot;data_gg&quot;);
+//String data_mm				= request.getParameter(&quot;data_mm&quot;);
+//String data_aa				= request.getParameter(&quot;data_aa&quot;);
+//String identita1			= request.getParameter(&quot;identita1&quot;).toUpperCase();
+//String identita2			= request.getParameter(&quot;identita2&quot;).toUpperCase();
+//String cod_doc				= request.getParameter(&quot;cod_document&quot;);
+//String interno1				= request.getParameter(&quot;interno1&quot;);
+//String cc_date				= request.getParameter(&quot;cc_date&quot;);
+//String cc_mese				= request.getParameter(&quot;cc_mese&quot;);
+//String cc_anno				= request.getParameter(&quot;cc_anno&quot;);
+//String nametab8				= request.getParameter(&quot;nametab8&quot;).toUpperCase();
+//String surnametab8			= request.getParameter(&quot;surnametab8&quot;).toUpperCase();
+//String qualifica_vigile 	= request.getParameter(&quot;qualifica_vigile&quot;); //maresciallo
+// indix
+//String ab_effettivamente	= request.getParameter(&quot;check&quot;);
+//String extra_possesso		= request.getParameter(&quot;specification&quot;);
+//myDoc//workers//pratiche_complete//&quot; + now +&quot;_2345_&quot; + inout +&quot;.pdf&quot;);
+//tabella stato di famiglia
+//inserire le altri info in caso di abilitazione
+// inserire il tipo di alloggio
+//elimina il cittadino e l'accesso 
+//controllando che l'esito sia positivo</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC169</id>
+      <content>/**
+* La classe ServletCreaPdfCertificati crea un file PDF con i dati ricevuti da una pagina JSP
+* La classe non ha nessuna dipendenza
+* @author Christian Ronca
+*/
+//PrintWriter out = response.getWriter();</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC170</id>
+      <content>/**
+* La classe ServletCreaPdfCittadino un file PDF in base ai dati ricevuti da una pagina JSP
+* La classe non ha nessuna dipendenza
+* @author Christian Ronca
+*/
+//myDocs//docs//&quot; + now +&quot;_2345_&quot; + inout +&quot;.pdf&quot;);
+//tabella stato di famiglia</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC171</id>
+      <content>/**
+* La classe ServletEliminaAmministratore ricerca ed elimina un amministratore
+* La classe ServletEliminaAmministratore non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione è nulla effettua il redirect alla pagina di autenticazione
+//Se gli attributi di sessione amm e acc sono nulli devo effettuare la ricerca
+//Se gli attributi sono presenti procedo con la cancellazione
+//provo ad effettuare la cancellazione
+// controllo che l'amministratore non è unico ed è stato cancellato
+//elimina l'accesso corrspondente
+//se l'amministratore è unico non è stato cancellato</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC172</id>
+      <content>/**
+* La classe ServletEliminaCittadino ricerca ed elimina un cittadino
+* La classe ServletEliminaCittadino non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione è nulla effettua il redirect alla pagina di autenticazione
+//Se gli attributi di sessione c e acc sono nulli devo effettuare la ricerca
+//Se gli attributi sono presenti procedo con la cancellazione
+//Se non c'è il codice della carta d'identit
+//il cittadino da cancellare è solo nel nucleo familiare
+//elimina il cittadino e l'accesso 
+//controllando che l'esito sia positivo
+//Se è presente un codice devo sostituire il capo famiglia
+//Controllo che il nuovo capo famiglia esiste nel db
+//modifico il capo famiglia del nucleo
+//elimina il cittadino e l'accesso 
+//controllando che l'esito sia positivo
+// Decremento il numero di componenti del nucleo</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC173</id>
+      <content>/**
+* La classe ServletEliminaImpiegato ricerca ed elimina un impiegato
+* La classe ServletEliminaImpiegato non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione è nulla effettua il redirect alla pagina di autenticazione
+//Se gli attributi di sessione amm e acc sono nulli devo effettuare la ricerca
+//Se gli attributi sono presenti procedo con la cancellazione
+//elimina l'impiegato e l'accesso 
+//controllando che l'esito sia positivo</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC174</id>
+      <content>/**
+* La classe ServletInserisciAmministratore inserisce un amministratore nel database
+* La classe ServletInserisciAmministratore non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione + nulla effettua il redirect alla pagina di autenticazione
+//inserisco idati relativi all'accesso e all'amministratore
+//controllando l'esito positivo</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC175</id>
+      <content>/**
+* La classe ServletInserisciCittadino inserisce un cittadino nel database
+* La classe ServletInserisciCittadino non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione è nulla effettua il redirect alla pagina di autenticazione
+//Se l'id del nucleo familiare è zero, devo creare un nuovo nucleo
+//inserisco il cittadino nel db
+//Salvo l'id del nuovo nucleo
+//setto l'id del nucleo del cittadino
+//Se gli id restituiti sono diversi da zero l'operazione è andata a buon fine
+// Se l'id del nucleo familiare non è zero, devo aggiungere il cittadino ad un nucleo esistente
+//controllo l'esistenza del nucleo nel db
+//incremento i componenti del nucleo
+//inserisco il cittadino nel db e controllo se l'esito è positivo</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC176</id>
+      <content>/**
+* La classe ServletInserisciImpiegato inserisce un impiegato nel database
+* La classe ServletInserisciImpiegato non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione é nulla effettua il redirect alla pagina di autenticazione
+//inserisco idati relativi all'accesso e all'impiegato
+//controllando l'esito positivo</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC177</id>
+      <content>/**
+* La classe ServletLogin effettua l'operazione di autenticazione di un utente nel sistema
+* La classe ServletLogin non ha dipendenze
+* @author Federico Cinque
+*/
+//Se tipo  diverso da null la servlet  stata invocata dal lato cittadino
+//Se tipo  null la servlet  stata invocata dal lato amministratore/impiegato</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC178</id>
+      <content>/**
+* La classe ServletLogout effettua l'operazione di logout di un utente dal sistema
+* La classe ServletLogout non ha dipendenze
+* @author Federico Cinque
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC179</id>
+      <content>/**
+* La classe ServletModificaAccesso che effettua l'operazione di modifica di un accesso
+* La classe ServletModificaAccesso non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione é nulla effettua il redirect alla pagina di autenticazione
+//modifico i dati relativi all'accesso controllando che l'esito sia positivo
+//questa servlet viene invocata sia dal lato cittadino sia da amm/imp
+//quindi effettuo un controllo da quale url proviene la richiesta
+//cosi posso effettuare il redirect alla pagina corretta</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC180</id>
+      <content>/**
+* La classe ServletModificaAmministratore che effettua l'operazione di modifica di un amministratore
+* La classe ServletModificaAmministratore non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione é nulla effettua il redirect alla pagina di autenticazione
+//Se gli attributi di sessione amm e acc sono nulli devo effettuare la ricerca
+//procedo con la modifica dei dati
+//controllando l'esito</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC181</id>
+      <content>/**
+* La classe ServletModificaCittadino che effettua l'operazione di modifica di un cittadino
+* La classe ServletModificaCittadino non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessione é nulla effettua il redirect alla pagina di autenticazione
+//Se l'attributo di sessione citté nullo devo effettuare la ricerca
+//Se l'id del nucleoé zero devo creare un nuovo nucleo familiare per il cittadino
+//Salvo l'id del nuovo nucleo
+//setto l'id del nucleo del cittadino
+//effettuo le modifiche dei dati controllando l'esito positivo
+//Controllo che il nuovo capo famiglia esiste nel db
+//modifico il capo famiglia del nucleo
+//Salvo l'id del nuovo nucleo
+//setto l'id del nucleo del cittadino
+//effettuo le modifiche dei dati controllando l'esito positivo
+// Se l'id del nucleo familiare noné zero, devo aggiungere il cittadino ad un nucleo esistente
+//controllo l'esistenza del nucleo nel db
+//incremento i componenti del nucleo
+//setto l'id del nucleo del cittadino
+//effettuo le modifiche dei dati controllando l'esito positivo
+//Controllo che il nuovo capo famiglia esiste nel db
+//modifico il capo famiglia del nucleo
+//setto l'id del nucleo del cittadino
+//effettuo le modifiche dei dati controllando l'esito positivo</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC182</id>
+      <content>/**
+* La classe ServletModificaImpiegato che effettua l'operazione di modifica di un impiegato
+* La classe ServletModificaImpiegato non ha dipendenze
+* @author Federico Cinque
+*/
+//Se la sessioneè nulla effettua il redirect alla pagina di autenticazione
+//Se gli attributi di sessione amm e acc sono nulli devo effettuare la ricerca
+//procedo con la modifica dei dati
+//controllando l'esito</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC183</id>
+      <content>/**
+	 * metodo che cerca i file contenenti
+	 * le richieste di cambio di residenza
+	 * da parte dei cittadini.Tale cartella viene
+	 * salvata sul server su cui l'impiegato
+	 * può accedervi per reperire le informazioni
+	 * utili alla compilazione del modulo
+	 * che deve essere registrato all'interno
+	 * dell'archivio comunale 
+	 */
+//contatore usato per numerare i file ottenuti
+//costruttore di default
+//nel caso dell'impiegato la path è c:\\RichiesteCambioResidenza
+//directory dove cercare i file con determinate estensioni
+//nome del file da cercare. Ad esempio cerco un file di nome pippo inserirò pippo
+//se non specificato cercherà tutti i file con qualsiasi nome
+//mi salvo come stringa l'id del cittadino per poi confrontarla con
+//l'id del cittadino che mi arriva dal database per cercare il
+//file del cambio associato a quel cittadino
+//nome del file da cercare
+//estensione del file da cercare. Ad esempio *.mp3 inseriro .mp3
+//se non specificato cercherà tutti i files con qualsiasi estensione
+//file esterno
+//file non presente
+/**
+		 * from è la cartella in cui cercare il
+		 * file di nome &quot;nome&quot; e di tipo &quot;.pdf&quot;
+		 * @param from
+		 * @param nome
+		 * @param tipo
+		 */
+//utilizziamo per la ricerca un filtro
+//ordiniamo i file nella lista secondo la data
+//estensione del file
+//accettiamo tutti i file con estensione s e le directory che non siano
+//nascoste
+//controllo sul tipo.
+//Ad esempio se cerco \&quot;pippo.txt\&quot; la indexOf(.txt) è uguale a 6 ed è uguale
+// ed è uguale a 10(\&quot;pippo.txt\&quot;.length()) - 4 (\&quot;.txt\&quot;.length)
+//controllo sul nome
+//flag2 è true se il file contiene la parola cercata
+//ritorno i file che passano il controllo del tipo e del nome le directory
+//innanzitutto mi recupero la sessione di lavoro del cittadino
+/**
+			 * se la sessione è stata creata correttamente 
+			 * all'accesso dell'impiegato, viene mandato in exe
+			 * il metodo che controlla se sono presenti file pdf
+			 * riguardanti il cambio di residenza interno o
+			 * esterno richiesti dai cittadini
+			 */
+/**
+					 * (1)	cosa deve fare la servlet:
+					 * 		deve prendere l'id del cittadino
+					 * 		di cui ha inserito il codice della carta di identità
+					 * 		dal form e lo passa al metodo main 
+					 * 		per cercare il file corrispondente
+					 */
+/**
+					 * (2)	il codice della carta di identità e la data della richiesta
+					 * 		li prende con request.getParameter
+					 * 		salvandoli nelle apposite variabili,
+					 * 		dopodichè viene chiamato il metodo che restituisce
+					 * 		l'id di un cittadino dopo avergli 
+					 * 		passato nome, cognome e codice_fiscale di
+					 * 		quest'ultimo.
+					 */
+/**
+					 * una volta salvati i parametri, li passo
+					 * al metodo che restituisce l'id di questo
+					 * particolare cittadino che ha inviato la
+					 * richiesta di cambio di residenza e di cui
+					 * se ne vuole cercare il file 
+					 */
+//localhost:8080/E_ANCI/index.jsp?error=e&quot;);//da modificare i collegamenti
+/**
+						 * una volta conosciuto l'id del cittadino
+						 * lo passo al metodo di ricerca del file
+						 * ad esso corrispondente
+						 */
+/**
+						 * ora nella variabile idtrovato c'è l'esito della ricerca
+						 * del file relativa ad un determinato cittadino 
+						 * che ha inviato la richiesta di cambio di residenza.
+						 * tale valore andrà controllato, se è true si lancia 
+						 * all'impiegato il modulo da compilare per mantenere traccia 
+						 * della richiesta dopo aver effettuato i controlli necessari
+						 */
+//da modificare i collegamenti
+//da modificare i collegamenti
+//da modificare i collegamenti
+//da modificare i collegamenti
+//da modificare i collegamenti</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC184</id>
+      <content>/**
+* La classe ServletMostraAccesso mostra i dati relativi all'accesso di un impieagto o amministratore
+* La classe ServletMostraAccesso non ha dipendenze
+* @author Federico Cinque
+*/
+//inviare i dati</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC185</id>
+      <content>/**
+* La classe ServletMostraAccessoA mostra i dati relativi all'accesso di un cittadino
+* La classe ServletMostraAccessoA non ha dipendenze
+* @author Federico Cinque
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC186</id>
+      <content>/**
+* La classe ServletRecuperoPassword gestisce l'operazione di recupero password per un cittadino
+* La classe ServletRecuperoPassword non ha dipendenze
+* @author Federico Cinque
+*/
+//nuova password auto-generata
+//inviare l'email a c.getEmail();
+// genera un intero tra 0 e 9
+// genera un char tra 'A' e 'Z</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC187</id>
+      <content>/**
+* La classe ServletRegistraCittadino gestisce l'operazione di registrazione 
+* di un cittadino nel sistema
+* La classe ServletRegistraCittadino non ha dipendenze
+* @author Federico Cinque
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC188</id>
+      <content>/**
+* La classe ServletRicercaAmministratore ricerca e restituisce i dati di un amministratore
+* La classe ServletRicercaAmministratore non ha dipendenze
+* @author Federico Cinque
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC189</id>
+      <content>/**
+* La classe ServletRicercaCittadino ricerca e restituisce i dati di un cittadino
+* La classe ServletRicercaCittadino non ha dipendenze
+* @author Federico Cinque
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC190</id>
+      <content>/**
+* La classe ServletRicercaImpiegato ricerca e restituisce i dati di un impiegato
+* La classe ServletRicercaImpiegato non ha dipendenze
+* @author Federico Cinque
+*/</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC191</id>
+      <content>/**
+* La classe ServletRicercaPratica restituisce una pratica specificata nel motore di ricerca
+* La classe dipende dalla classe DbRichieste
+* @author Christian Ronca
+*/
+//e.getMessage().toString();</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC192</id>
+      <content>/**
+	 * servlet di risposta lato server destinata al client
+	 */
+//myDoc//workers//docs_cittadino//&quot; + now + &quot;_&quot; + idCitt+ &quot;_&quot; + inout +&quot;.pdf&quot;);
+//tabella stato di famiglia</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC193</id>
+      <content>/**
+* La classe ServletStatoDiFamiglia restituisce una lista dei membri di una famiglia
+* La classe dipende dalla classe DbNucleoFamiliare
+* @author Christian Ronca
+*/
+//int id = 200101;
+//Richiesta ric = null;
+//e.getMessage().toString();</content>
+      <parent_id/>
+    </artifact>
+    <artifact>
+      <id>CC194</id>
+      <content>/**
+* La classe ServletVisualizzaPratiche restituisce una lista di richieste
+* La classe dipende dalla classe DbRichieste
+* @author Christian Ronca
+*/
+//e.getMessage().toString();</content>
+      <parent_id/>
+    </artifact>
+  </artifacts>
+</artifacts_collection>
