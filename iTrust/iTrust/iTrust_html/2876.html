@@ -1,0 +1,29 @@
+<html><head><title>ApptBeanValidator.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\iTrust\iTrust\java\iTrust\src\edu\ncsu\csc\itrust\validate\ApptBeanValidator.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\iTrust\\iTrust\\java\\iTrust\\src\\edu\\ncsu\\csc\\itrust\\validate\\ApptBeanValidator.java";
+top.document.title  = "ApptBeanValidator.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#89">validate</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#805">ApptBean</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#88">exception</a>.<a href="dictionary_E.html#166">ErrorList</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#88">exception</a>.<a href="dictionary_E.html#80">FormValidationException</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">public class <a href="dictionary_E.html#2877">ApptBeanValidator</a> extends <a href="dictionary_E.html#167">BeanValidator</a></span><span class="default">&lt;<a href="dictionary_E.html#805">ApptBean</a>&gt;{</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span>
+<a name="9"><font size=-1>9     </font></a><span class="default">	</span><span class="keyword">public void <a href="dictionary_E.html#2878">validate</a></span><span class="default">(<a href="dictionary_E.html#805">ApptBean</a> <a href="dictionary_E.html#2879">bean</a>) </span><span class="keyword">throws <a href="dictionary_E.html#80">FormValidationException</a> </span><span class="default">{</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">		<a href="dictionary_E.html#166">ErrorList</a> <a href="dictionary_E.html#2880">errorList</a> = </span><span class="keyword">new <a href="dictionary_E.html#170">ErrorList</a></span><span class="default">();</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">		</span><span class="keyword">if</span><span class="default">(<a href="dictionary_E.html#2879">bean</a>.<a href="dictionary_E.html#2824">getComment</a>() == </span><span class="keyword">null</span><span class="default">)</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">			</span><span class="keyword">return</span><span class="default">;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">		<a href="dictionary_E.html#2880">errorList</a>.<a href="dictionary_E.html#174">addIfNotNull</a>(<a href="dictionary_E.html#173">checkFormat</a>(</span><span class="string">&quot;Appointment Comment&quot;</span><span class="default">, <a href="dictionary_E.html#2879">bean</a>.<a href="dictionary_E.html#2824">getComment</a>(), <a href="dictionary_E.html#168">ValidationFormat</a>.<a href="dictionary_E.html#2881">APPT_COMMENT</a>, </span><span class="keyword">false</span><span class="default">));</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">		</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2880">errorList</a>.<a href="dictionary_E.html#178">hasErrors</a>())</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">			</span><span class="keyword">throw new <a href="dictionary_E.html#179">FormValidationException</a></span><span class="default">(<a href="dictionary_E.html#2880">errorList</a>);</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">	}</span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span>
+<a name="18"><font size=-1>18     </font></a><span class="default">}</span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span>
+</pre></body></html>

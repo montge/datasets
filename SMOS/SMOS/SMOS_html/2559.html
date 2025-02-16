@@ -1,0 +1,44 @@
+<html><head><title>MailUtility.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\SMOS\SMOS\java\MailUtility.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\SMOS\\SMOS\\java\\MailUtility.java";
+top.document.title  = "MailUtility.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">smos.<a href="dictionary_S.html#239">utility</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#42">io</a>.<a href="dictionary_J.html#2581">UnsupportedEncodingException</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#87">util</a>.<a href="dictionary_J.html#2297">Properties</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#2583">mail</a>.*;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.mail.<a href="dictionary_J.html#2582">internet</a>.*;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">public class <a href="dictionary_S.html#2561">MailUtility</a> </span><span class="default">{</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span>
+<a name="11"><font size=-1>11     </font></a><span class="default">	</span><span class="keyword">public static void <a href="dictionary_S.html#2562">sendMail</a></span><span class="default">(<a href="dictionary_S.html#38">String</a> <a href="dictionary_S.html#2572">pSender</a>, <a href="dictionary_S.html#38">String</a> <a href="dictionary_S.html#2571">pReceiver</a>, <a href="dictionary_S.html#38">String</a> <a href="dictionary_S.html#2573">pSubject</a>, <a href="dictionary_S.html#38">String</a> <a href="dictionary_S.html#2574">pText</a>) </span><span class="keyword">throws <a href="dictionary_M.html#2578">MessagingException</a></span><span class="default">, <a href="dictionary_J.html#2581">UnsupportedEncodingException</a> {</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">		</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">		</span><span class="comment">// Creazione di una mail session</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment">		<a href="dictionary_J.html#2297">Properties</a> <a href="dictionary_S.html#2575">props</a> </span><span class="default">= </span><span class="keyword">new <a href="dictionary_J.html#2297">Properties</a></span><span class="default">();</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">		<a href="dictionary_S.html#2575">props</a>.<a href="dictionary_P.html#2230">put</a>(</span><span class="string">&quot;mail.smtp.host&quot;</span><span class="default">, <a href="dictionary_S.html#237">Utility</a>.<a href="dictionary_S.html#1624">getServerSmtp</a>());</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">		<a href="dictionary_S.html#2580">Session</a> <a href="dictionary_S.html#2576">session</a> = <a href="dictionary_S.html#2580">Session</a>.<a href="dictionary_G.html#2563">getDefaultInstance</a>(<a href="dictionary_S.html#2575">props</a>);</span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span>
+<a name="18"><font size=-1>18     </font></a><span class="default">		</span><span class="comment">// Creazione del messaggio da inviare</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment">		<a href="dictionary_M.html#2579">MimeMessage</a> <a href="dictionary_S.html#2570">message</a> </span><span class="default">= </span><span class="keyword">new <a href="dictionary_M.html#2579">MimeMessage</a></span><span class="default">(<a href="dictionary_S.html#2576">session</a>);</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">		<a href="dictionary_S.html#2570">message</a>.<a href="dictionary_S.html#2567">setSubject</a>(<a href="dictionary_S.html#2573">pSubject</a>);</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">		<a href="dictionary_S.html#2570">message</a>.<a href="dictionary_S.html#2568">setText</a>(<a href="dictionary_S.html#2574">pText</a>);</span>
+<a name="22"><font size=-1>22     </font></a><span class="default"></span>
+<a name="23"><font size=-1>23     </font></a><span class="default">		</span><span class="comment">// Aggiunta degli indirizzi del mittente e del destinatario</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment">		<a href="dictionary_I.html#2560">InternetAddress</a> <a href="dictionary_S.html#2569">fromAddress</a> </span><span class="default">= </span><span class="keyword">new <a href="dictionary_I.html#2560">InternetAddress</a></span><span class="default">(<a href="dictionary_S.html#2572">pSender</a>);</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">		<a href="dictionary_I.html#2560">InternetAddress</a> <a href="dictionary_S.html#2577">toAddress</a> = </span><span class="keyword">new <a href="dictionary_I.html#2560">InternetAddress</a></span><span class="default">(<a href="dictionary_S.html#2571">pReceiver</a>);</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">		<a href="dictionary_S.html#2570">message</a>.<a href="dictionary_S.html#2565">setFrom</a>(<a href="dictionary_S.html#2569">fromAddress</a>);</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">		<a href="dictionary_S.html#2570">message</a>.<a href="dictionary_S.html#2566">setRecipient</a>(Message.RecipientType.TO, <a href="dictionary_S.html#2577">toAddress</a>);</span>
+<a name="28"><font size=-1>28     </font></a><span class="default"></span>
+<a name="29"><font size=-1>29     </font></a><span class="default">		</span><span class="comment">// Invio del messaggio</span>
+<a name="30"><font size=-1>30     </font></a><span class="comment">		</span><span class="default">Transport.<a href="dictionary_S.html#2564">send</a>(<a href="dictionary_S.html#2570">message</a>);</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">	}</span>
+<a name="32"><font size=-1>32     </font></a><span class="default"></span>
+<a name="33"><font size=-1>33     </font></a><span class="default">}</span>
+<a name="34"><font size=-1>34     </font></a><span class="default"></span>
+</pre></body></html>

@@ -1,0 +1,44 @@
+<html><head><title>HtmlEncoder.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\iTrust\iTrust\java\iTrust\src\edu\ncsu\csc\itrust\HtmlEncoder.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\iTrust\\iTrust\\java\\iTrust\\src\\edu\\ncsu\\csc\\itrust\\HtmlEncoder.java";
+top.document.title  = "HtmlEncoder.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">edu.ncsu.csc.<a href="dictionary_E.html#32">itrust</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment"> * Escapes a few key HTML characters and does some other checking</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment"> * </span>
+<a name="6"><font size=-1>6     </font></a><span class="comment"> * @author Andy</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> * </span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> */</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"></span><span class="keyword">public class <a href="dictionary_E.html#37">HtmlEncoder</a> </span><span class="default">{</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment">	 *  Escapes a few key HTML characters</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment">	 * @param input String to check and escape</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment">	 * @return</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment">	 */</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment">	</span><span class="keyword">public static <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#41">encode</a></span><span class="default">(<a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#43">input</a>) {</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">		</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#43">input</a> == </span><span class="keyword">null</span><span class="default">)</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">			</span><span class="keyword">return <a href="dictionary_E.html#43">input</a></span><span class="default">;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">		<a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#44">str</a> = <a href="dictionary_E.html#43">input</a>.<a href="dictionary_R.html#42">replaceAll</a>(</span><span class="string">&quot;&lt;&quot;</span><span class="default">, </span><span class="string">&quot;&amp;lt;&quot;</span><span class="default">);</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">		<a href="dictionary_E.html#44">str</a> = <a href="dictionary_E.html#44">str</a>.<a href="dictionary_R.html#42">replaceAll</a>(</span><span class="string">&quot;&gt;&quot;</span><span class="default">, </span><span class="string">&quot;&amp;gt;&quot;</span><span class="default">);</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">		<a href="dictionary_E.html#44">str</a> = <a href="dictionary_E.html#44">str</a>.<a href="dictionary_R.html#42">replaceAll</a>(</span><span class="string">&quot;\n&quot;</span><span class="default">, </span><span class="string">&quot;&lt;br /&gt;&quot;</span><span class="default">);</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_E.html#44">str</a></span><span class="default">;</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">	}</span>
+<a name="23"><font size=-1>23     </font></a><span class="default"></span>
+<a name="24"><font size=-1>24     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment">	 * Checks URL</span>
+<a name="26"><font size=-1>26     </font></a><span class="comment">	 * </span>
+<a name="27"><font size=-1>27     </font></a><span class="comment">	 * @param input URL to check</span>
+<a name="28"><font size=-1>28     </font></a><span class="comment">	 * @return false if the input contains http://, true otherwise</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment">	 */</span>
+<a name="30"><font size=-1>30     </font></a><span class="comment">	</span><span class="keyword">public static boolean <a href="dictionary_E.html#38">URLOnSite</a></span><span class="default">(<a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#40">input</a>) {</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">		</span><span class="keyword">return </span><span class="default">!(<a href="dictionary_E.html#40">input</a>.<a href="dictionary_C.html#39">contains</a>(</span><span class="string">&quot;http://&quot;</span><span class="default">));</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">	}</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">}</span>
+<a name="34"><font size=-1>34     </font></a><span class="default"></span>
+</pre></body></html>

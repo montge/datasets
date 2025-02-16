@@ -1,0 +1,83 @@
+<html><head><title>LoginFailureAction.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\iTrust\iTrust\java\iTrust\src\edu\ncsu\csc\itrust\action\LoginFailureAction.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\iTrust\\iTrust\\java\\iTrust\\src\\edu\\ncsu\\csc\\itrust\\action\\LoginFailureAction.java";
+top.document.title  = "LoginFailureAction.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#70">action</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#85">dao</a>.<a href="dictionary_E.html#74">DAOFactory</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#75">AuthDAO</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#77">TransactionDAO</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#87">enums</a>.<a href="dictionary_E.html#78">TransactionType</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#88">exception</a>.<a href="dictionary_E.html#79">DBException</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"> * Please note that this is not the best mitigation for Denial of Service attacks. The better way would be to</span>
+<a name="11"><font size=-1>11     </font></a><span class="comment"> * keep track of password failure attempts per user account, NOT with easily spoofable ip addresses. The</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment"> * reason this feature is implemented with ip addresses is a limitation in Tomcat authentication (actually,</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment"> * it's technically JSP's fault for not specifying a form of account lockout). &lt;br /&gt;</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment"> * &lt;br /&gt;</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment"> * All authentication in this application is done by the container (Tomcat), which doesn't support account</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment"> * lockout. So our options would be (a) to implement our own authentication (yuck!), or (2) to extend the</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment"> * JDBCRealm class in the Tomcat source code and add the logic. I've looked into this and it's actually pretty</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"> * easy. The ONLY reason it's not implemented here is that the code would be buried in a jar in your Tomcat</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment"> * installation - not very educational for those who want to learn about authentication in webapps. Feel free</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"> * to change this; extending this would be perfectly acceptable.</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment"> * </span>
+<a name="22"><font size=-1>22     </font></a><span class="comment"> * @author Andy</span>
+<a name="23"><font size=-1>23     </font></a><span class="comment"> * </span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"> */</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment"></span><span class="keyword">public class <a href="dictionary_E.html#4399">LoginFailureAction</a> </span><span class="default">{</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">	</span><span class="keyword">public static final int <a href="dictionary_E.html#4408">MAX_LOGIN_ATTEMPTS</a> </span><span class="default">= </span><span class="number">3</span><span class="default">;</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#75">AuthDAO</a> <a href="dictionary_E.html#4409">authDAO</a></span><span class="default">;</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#4410">ipAddr</a></span><span class="default">;</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#77">TransactionDAO</a> <a href="dictionary_E.html#4411">transactionDAO</a></span><span class="default">;</span>
+<a name="30"><font size=-1>30     </font></a><span class="default"></span>
+<a name="31"><font size=-1>31     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="32"><font size=-1>32     </font></a><span class="comment">	 * Set up defaults</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">	 * @param factory The DAOFactory used to create the DAOs used in this action.</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment">	 * @param ipAddr The IP address of the user making the login attempt.</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment">	 */</span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_E.html#4400">LoginFailureAction</a></span><span class="default">(<a href="dictionary_E.html#74">DAOFactory</a> <a href="dictionary_E.html#4401">factory</a>, <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#4402">ipAddr</a>) {</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#4409">authDAO</a> = <a href="dictionary_E.html#4401">factory</a>.<a href="dictionary_E.html#92">getAuthDAO</a>();</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#4410">ipAddr</a> = <a href="dictionary_E.html#4402">ipAddr</a>;</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#4411">transactionDAO</a> = <a href="dictionary_E.html#4401">factory</a>.<a href="dictionary_E.html#93">getTransactionDAO</a>();</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">	}</span>
+<a name="41"><font size=-1>41     </font></a><span class="default"></span>
+<a name="42"><font size=-1>42     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="43"><font size=-1>43     </font></a><span class="comment">	 * Calls authDAO to record the login failure in the database</span>
+<a name="44"><font size=-1>44     </font></a><span class="comment">	 * </span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">	 * @return How many login failure attempts or a DBException message</span>
+<a name="46"><font size=-1>46     </font></a><span class="comment">	 */</span>
+<a name="47"><font size=-1>47     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#4405">recordLoginFailure</a></span><span class="default">() {</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">		</span><span class="keyword">try </span><span class="default">{</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">			<a href="dictionary_E.html#4409">authDAO</a>.<a href="dictionary_E.html#1203">recordLoginFailure</a>(<a href="dictionary_E.html#4410">ipAddr</a>);</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">			</span><span class="keyword">int <a href="dictionary_E.html#4407">loginFailures</a> </span><span class="default">= <a href="dictionary_E.html#4409">authDAO</a>.<a href="dictionary_E.html#1161">getLoginFailures</a>(<a href="dictionary_E.html#4410">ipAddr</a>);</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">			<a href="dictionary_E.html#4411">transactionDAO</a>.<a href="dictionary_E.html#97">logTransaction</a>(<a href="dictionary_E.html#78">TransactionType</a>.<a href="dictionary_E.html#4412">LOGIN_FAILURE</a>, </span><span class="number">0L</span><span class="default">, </span><span class="number">0L</span><span class="default">, </span><span class="string">&quot;IP: &quot; </span><span class="default">+ <a href="dictionary_E.html#4410">ipAddr</a>);</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">			</span><span class="keyword">return </span><span class="string">&quot;Login failed, attempt &quot; </span><span class="default">+ <a href="dictionary_E.html#4407">loginFailures</a>;</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">		} </span><span class="keyword">catch </span><span class="default">(<a href="dictionary_E.html#79">DBException</a> <a href="dictionary_E.html#4406">e</a>) {</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">			<a href="dictionary_E.html#4406">e</a>.<a href="dictionary_P.html#248">printStackTrace</a>();</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">			</span><span class="keyword">return <a href="dictionary_E.html#4406">e</a></span><span class="default">.<a href="dictionary_E.html#401">getMessage</a>();</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">		}</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">	}</span>
+<a name="58"><font size=-1>58     </font></a><span class="default"></span>
+<a name="59"><font size=-1>59     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="60"><font size=-1>60     </font></a><span class="comment">	 * Checks to see if the current user can login (#failures&lt;3)</span>
+<a name="61"><font size=-1>61     </font></a><span class="comment">	 * </span>
+<a name="62"><font size=-1>62     </font></a><span class="comment">	 * @return true if the user is valid to login</span>
+<a name="63"><font size=-1>63     </font></a><span class="comment">	 */</span>
+<a name="64"><font size=-1>64     </font></a><span class="comment">	</span><span class="keyword">public boolean <a href="dictionary_E.html#4403">isValidForLogin</a></span><span class="default">() {</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">		</span><span class="keyword">try </span><span class="default">{</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">			</span><span class="keyword">return <a href="dictionary_E.html#4409">authDAO</a></span><span class="default">.<a href="dictionary_E.html#1161">getLoginFailures</a>(<a href="dictionary_E.html#4410">ipAddr</a>) &lt; </span><span class="number">3</span><span class="default">;</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">		} </span><span class="keyword">catch </span><span class="default">(<a href="dictionary_E.html#79">DBException</a> <a href="dictionary_E.html#4404">e</a>) {</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">			System.err.<a href="dictionary_P.html#578">println</a>(</span><span class="string">&quot;Denying access due to DBException&quot;</span><span class="default">);</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">			</span><span class="keyword">return false</span><span class="default">;</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">		}</span>
+<a name="71"><font size=-1>71     </font></a><span class="default">	}</span>
+<a name="72"><font size=-1>72     </font></a><span class="default">}</span>
+<a name="73"><font size=-1>73     </font></a><span class="default"></span>
+</pre></body></html>

@@ -1,0 +1,30 @@
+<html><head><title>Messages.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\iTrust\iTrust\java\iTrust\src\edu\ncsu\csc\itrust\Messages.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\iTrust\\iTrust\\java\\iTrust\\src\\edu\\ncsu\\csc\\itrust\\Messages.java";
+top.document.title  = "Messages.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">edu.ncsu.csc.<a href="dictionary_E.html#32">itrust</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#69">util</a>.<a href="dictionary_J.html#2379">MissingResourceException</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#69">util</a>.<a href="dictionary_J.html#2380">ResourceBundle</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">public class <a href="dictionary_E.html#1402">Messages</a> </span><span class="default">{</span>
+<a name="7"><font size=-1>7     </font></a><span class="default">	</span><span class="keyword">private static final <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2377">BUNDLE_NAME</a> </span><span class="default">= </span><span class="string">&quot;edu.ncsu.csc.itrust.messages&quot;</span><span class="default">; </span><span class="comment">//$NON-NLS-1$</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"></span>
+<a name="9"><font size=-1>9     </font></a><span class="comment">	</span><span class="keyword">private static final <a href="dictionary_J.html#2380">ResourceBundle</a> <a href="dictionary_E.html#2378">RESOURCE_BUNDLE</a> </span><span class="default">= <a href="dictionary_J.html#2380">ResourceBundle</a>.<a href="dictionary_G.html#2374">getBundle</a>(<a href="dictionary_E.html#2377">BUNDLE_NAME</a>,<a href="dictionary_E.html#2381">Localization</a>.<a href="dictionary_E.html#2382">instance</a>().<a href="dictionary_E.html#2383">getCurrentLocale</a>());</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span>
+<a name="11"><font size=-1>11     </font></a><span class="default">	</span><span class="keyword">public static <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#1404">getString</a></span><span class="default">(<a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2376">key</a>) {</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">		</span><span class="keyword">try </span><span class="default">{</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">			</span><span class="keyword">return <a href="dictionary_E.html#2378">RESOURCE_BUNDLE</a></span><span class="default">.<a href="dictionary_G.html#134">getString</a>(<a href="dictionary_E.html#2376">key</a>);</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">		} </span><span class="keyword">catch </span><span class="default">(<a href="dictionary_J.html#2379">MissingResourceException</a> <a href="dictionary_E.html#2375">e</a>) {</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">			</span><span class="keyword">return </span><span class="string">'!' </span><span class="default">+ <a href="dictionary_E.html#2376">key</a> + </span><span class="string">'!'</span><span class="default">;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">		}</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">	}</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">}</span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span>
+<a name="20"><font size=-1>20     </font></a><span class="default"></span>
+</pre></body></html>

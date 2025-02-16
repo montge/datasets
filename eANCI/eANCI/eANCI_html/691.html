@@ -1,0 +1,245 @@
+<html><head><title>EA183.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\eANCI\eANCI\java\EA183.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\eANCI\\eANCI\\java\\EA183.java";
+top.document.title  = "EA183.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package <a href="dictionary_S.html#79">Servlet</a></span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.servlet.<a href="dictionary_J.html#76">http</a>.*;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#78">servlet</a>.*;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#77">io</a>.*;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#347">util</a>.<a href="dictionary_J.html#481">ArrayList</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#757">swing</a>.*;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import <a href="dictionary_D.html#89">DB</a></span><span class="default">.<a href="dictionary_D.html#758">DbCartaIdentita</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import <a href="dictionary_D.html#89">DB</a></span><span class="default">.<a href="dictionary_D.html#87">DbException</a>;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span><span class="keyword">public class <a href="dictionary_S.html#695">ServletModificaResidenza</a> extends <a href="dictionary_H.html#129">HttpServlet</a></span><span class="default">{</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span>
+<a name="12"><font size=-1>12     </font></a><span class="default">	</span><span class="keyword">public void <a href="dictionary_S.html#754">init</a></span><span class="default">(<a href="dictionary_S.html#694">ServletConfig</a> <a href="dictionary_S.html#756">conf</a>)</span><span class="keyword">throws <a href="dictionary_S.html#344">ServletException</a></span><span class="default">{</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">		</span><span class="keyword">super</span><span class="default">.<a href="dictionary_I.html#755">init</a>(<a href="dictionary_S.html#756">conf</a>);</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">	}</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment">	 * metodo che cerca i file contenenti</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment">	 * le richieste di cambio di residenza</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment">	 * da parte dei cittadini.Tale cartella viene</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment">	 * salvata sul server su cui l'impiegato</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment">	 * può accedervi per reperire le informazioni</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment">	 * utili alla compilazione del modulo</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment">	 * che deve essere registrato all'interno</span>
+<a name="23"><font size=-1>23     </font></a><span class="comment">	 * dell'archivio comunale </span>
+<a name="24"><font size=-1>24     </font></a><span class="comment">	 */</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment">	</span><span class="keyword">public class <a href="dictionary_S.html#696">CercaFiles</a> </span><span class="default">{</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">		</span><span class="comment">//contatore usato per numerare i file ottenuti</span>
+<a name="27"><font size=-1>27     </font></a><span class="comment">		</span><span class="keyword">private int <a href="dictionary_S.html#750">count</a> </span><span class="default">= </span><span class="number">0</span><span class="default">;</span>
+<a name="28"><font size=-1>28     </font></a><span class="default"></span>
+<a name="29"><font size=-1>29     </font></a><span class="default">		</span><span class="keyword">private <a href="dictionary_F.html#692">File</a> <a href="dictionary_S.html#753">to</a></span><span class="default">;</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">		</span><span class="keyword">private <a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#752">interno</a></span><span class="default">;</span>
+<a name="31"><font size=-1>31     </font></a><span class="default"></span>
+<a name="32"><font size=-1>32     </font></a><span class="default">		</span><span class="keyword">private <a href="dictionary_F.html#692">File</a> <a href="dictionary_S.html#751">from</a></span><span class="default">;</span>
+<a name="33"><font size=-1>33     </font></a><span class="default"></span>
+<a name="34"><font size=-1>34     </font></a><span class="default">		</span><span class="keyword">public <a href="dictionary_S.html#712">CercaFiles</a></span><span class="default">(){</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">			</span><span class="comment">//costruttore di default</span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">		</span><span class="default">}</span>
+<a name="37"><font size=-1>37     </font></a><span class="default"></span>
+<a name="38"><font size=-1>38     </font></a><span class="default"></span>
+<a name="39"><font size=-1>39     </font></a><span class="default">		</span><span class="keyword">public <a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#736">main</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_S.html#741">id_citizen</a></span><span class="default">,<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#740">date</a>){</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">			</span><span class="comment">//nel caso dell'impiegato la path è c:\\RichiesteCambioResidenza</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">			//directory dove cercare i file con determinate estensioni</span>
+<a name="42"><font size=-1>42     </font></a><span class="comment">			<a href="dictionary_S.html#751">from</a> </span><span class="default">= </span><span class="keyword">new <a href="dictionary_F.html#692">File</a></span><span class="default">(</span><span class="string">&quot;C:\\RichiesteCambioResidenza&quot;</span><span class="default">);</span>
+<a name="43"><font size=-1>43     </font></a><span class="default"></span>
+<a name="44"><font size=-1>44     </font></a><span class="default">			</span><span class="comment">//nome del file da cercare. Ad esempio cerco un file di nome pippo inserirò pippo</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">			//se non specificato cercherà tutti i file con qualsiasi nome</span>
+<a name="46"><font size=-1>46     </font></a><span class="comment">			//mi salvo come stringa l'id del cittadino per poi confrontarla con</span>
+<a name="47"><font size=-1>47     </font></a><span class="comment">			//l'id del cittadino che mi arriva dal database per cercare il</span>
+<a name="48"><font size=-1>48     </font></a><span class="comment">			//file del cambio associato a quel cittadino</span>
+<a name="49"><font size=-1>49     </font></a><span class="comment">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#742">id_citt</a></span><span class="default">=<a href="dictionary_S.html#22">String</a>.<a href="dictionary_V.html#738">valueOf</a>(<a href="dictionary_S.html#741">id_citizen</a>);</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#739">dataric</a>=<a href="dictionary_S.html#740">date</a>;</span>
+<a name="51"><font size=-1>51     </font></a><span class="default"></span>
+<a name="52"><font size=-1>52     </font></a><span class="default">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#746">param</a>=</span><span class="string">&quot;interno&quot;</span><span class="default">;</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#747">param1</a>=</span><span class="string">&quot;esterno&quot;</span><span class="default">;</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">			</span><span class="comment">//nome del file da cercare</span>
+<a name="55"><font size=-1>55     </font></a><span class="comment">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#744">nome</a> </span><span class="default">= <a href="dictionary_S.html#739">dataric</a>+</span><span class="string">&quot;_&quot;</span><span class="default">+<a href="dictionary_S.html#742">id_citt</a>+</span><span class="string">&quot;_&quot;</span><span class="default">.<a href="dictionary_C.html#714">concat</a>(<a href="dictionary_S.html#746">param</a>);</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#745">nomefile2</a>=<a href="dictionary_S.html#739">dataric</a>+</span><span class="string">&quot;_&quot;</span><span class="default">+<a href="dictionary_S.html#742">id_citt</a>+</span><span class="string">&quot;_&quot;</span><span class="default">.<a href="dictionary_C.html#714">concat</a>(<a href="dictionary_S.html#747">param1</a>);</span>
+<a name="57"><font size=-1>57     </font></a><span class="default"></span>
+<a name="58"><font size=-1>58     </font></a><span class="default"></span>
+<a name="59"><font size=-1>59     </font></a><span class="default">			<a href="dictionary_S.html#22">String</a>[] <a href="dictionary_S.html#748">splitter</a>=<a href="dictionary_S.html#744">nome</a>.<a href="dictionary_S.html#737">split</a>(</span><span class="string">&quot;_&quot;</span><span class="default">);     </span>
+<a name="60"><font size=-1>60     </font></a><span class="default"></span>
+<a name="61"><font size=-1>61     </font></a><span class="default">			</span><span class="comment">//estensione del file da cercare. Ad esempio *.mp3 inseriro .mp3</span>
+<a name="62"><font size=-1>62     </font></a><span class="comment">			//se non specificato cercherà tutti i files con qualsiasi estensione</span>
+<a name="63"><font size=-1>63     </font></a><span class="comment">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#749">tipo</a> </span><span class="default">= </span><span class="string">&quot;.pdf&quot;</span><span class="default">;</span>
+<a name="64"><font size=-1>64     </font></a><span class="default"></span>
+<a name="65"><font size=-1>65     </font></a><span class="default">			</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">			<a href="dictionary_F.html#692">File</a> <a href="dictionary_S.html#743">newfile</a>=<a href="dictionary_S.html#730">esploraFile</a>(<a href="dictionary_S.html#751">from</a>,<a href="dictionary_S.html#744">nome</a>,<a href="dictionary_S.html#749">tipo</a>);</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">			</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#743">newfile</a>!=</span><span class="keyword">null</span><span class="default">){</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">				<a href="dictionary_S.html#752">interno</a>=</span><span class="string">&quot;interno&quot;</span><span class="default">;</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">			}</span><span class="keyword">else</span><span class="default">{</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">				<a href="dictionary_S.html#743">newfile</a>=<a href="dictionary_S.html#730">esploraFile</a>(<a href="dictionary_S.html#751">from</a>,<a href="dictionary_S.html#745">nomefile2</a>,<a href="dictionary_S.html#749">tipo</a>);</span>
+<a name="71"><font size=-1>71     </font></a><span class="default">				</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#743">newfile</a>!=</span><span class="keyword">null</span><span class="default">){</span>
+<a name="72"><font size=-1>72     </font></a><span class="default">					</span><span class="comment">//file esterno</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment">					<a href="dictionary_S.html#752">interno</a></span><span class="default">=</span><span class="string">&quot;esterno&quot;</span><span class="default">;</span>
+<a name="74"><font size=-1>74     </font></a><span class="default">				}</span>
+<a name="75"><font size=-1>75     </font></a><span class="default">				</span><span class="keyword">else</span><span class="default">{</span>
+<a name="76"><font size=-1>76     </font></a><span class="default">					<a href="dictionary_S.html#752">interno</a>=</span><span class="keyword">null</span><span class="default">;</span><span class="comment">//file non presente</span>
+<a name="77"><font size=-1>77     </font></a><span class="comment">				</span><span class="default">}</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">			}</span>
+<a name="79"><font size=-1>79     </font></a><span class="default">			</span><span class="keyword">return <a href="dictionary_S.html#752">interno</a></span><span class="default">;</span>
+<a name="80"><font size=-1>80     </font></a><span class="default">		}</span>
+<a name="81"><font size=-1>81     </font></a><span class="default">		</span><span class="comment">/**</span>
+<a name="82"><font size=-1>82     </font></a><span class="comment">		 * from è la cartella in cui cercare il</span>
+<a name="83"><font size=-1>83     </font></a><span class="comment">		 * file di nome &quot;nome&quot; e di tipo &quot;.pdf&quot;</span>
+<a name="84"><font size=-1>84     </font></a><span class="comment">		 * @param from</span>
+<a name="85"><font size=-1>85     </font></a><span class="comment">		 * @param nome</span>
+<a name="86"><font size=-1>86     </font></a><span class="comment">		 * @param tipo</span>
+<a name="87"><font size=-1>87     </font></a><span class="comment">		 */</span>
+<a name="88"><font size=-1>88     </font></a><span class="comment"></span>
+<a name="89"><font size=-1>89     </font></a><span class="comment">		</span><span class="keyword">protected <a href="dictionary_F.html#692">File</a> <a href="dictionary_S.html#730">esploraFile</a></span><span class="default">(<a href="dictionary_F.html#692">File</a> <a href="dictionary_S.html#733">from</a>, <a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#734">nome</a>, <a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#735">tipo</a>) {</span>
+<a name="90"><font size=-1>90     </font></a><span class="default">			</span><span class="comment">//utilizziamo per la ricerca un filtro</span>
+<a name="91"><font size=-1>91     </font></a><span class="comment">			<a href="dictionary_F.html#692">File</a></span><span class="default">[] <a href="dictionary_S.html#732">files</a> = <a href="dictionary_S.html#733">from</a>.<a href="dictionary_L.html#731">listFiles</a>(</span><span class="keyword">new <a href="dictionary_S.html#698">Filter</a></span><span class="default">(<a href="dictionary_S.html#734">nome</a>, <a href="dictionary_S.html#735">tipo</a>));</span>
+<a name="92"><font size=-1>92     </font></a><span class="default">			</span><span class="comment">//ordiniamo i file nella lista secondo la data</span>
+<a name="93"><font size=-1>93     </font></a><span class="comment">			</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#732">files</a>.<a href="dictionary_L.html#761">length</a>&gt;</span><span class="number">1</span><span class="default">||<a href="dictionary_S.html#732">files</a>.<a href="dictionary_L.html#761">length</a>==</span><span class="number">0</span><span class="default">){</span>
+<a name="94"><font size=-1>94     </font></a><span class="default">				</span><span class="keyword">return null</span><span class="default">;</span>
+<a name="95"><font size=-1>95     </font></a><span class="default">			}</span><span class="keyword">else</span><span class="default">{</span>
+<a name="96"><font size=-1>96     </font></a><span class="default">				</span><span class="keyword">return <a href="dictionary_S.html#732">files</a></span><span class="default">[</span><span class="number">0</span><span class="default">];</span>
+<a name="97"><font size=-1>97     </font></a><span class="default"></span>
+<a name="98"><font size=-1>98     </font></a><span class="default">			}</span>
+<a name="99"><font size=-1>99     </font></a><span class="default"></span>
+<a name="100"><font size=-1>100     </font></a><span class="default">		}</span>
+<a name="101"><font size=-1>101     </font></a><span class="default"></span>
+<a name="102"><font size=-1>102     </font></a><span class="default">		</span><span class="keyword">class <a href="dictionary_S.html#697">Filter</a> implements <a href="dictionary_F.html#693">FilenameFilter</a> </span><span class="default">{</span>
+<a name="103"><font size=-1>103     </font></a><span class="default">			</span><span class="comment">//estensione del file</span>
+<a name="104"><font size=-1>104     </font></a><span class="comment">			</span><span class="keyword">private <a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#711">tipo</a></span><span class="default">, <a href="dictionary_S.html#710">nome</a>;</span>
+<a name="105"><font size=-1>105     </font></a><span class="default"></span>
+<a name="106"><font size=-1>106     </font></a><span class="default">			</span><span class="keyword">public <a href="dictionary_S.html#698">Filter</a></span><span class="default">(<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#699">nome</a>, <a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#700">tipo</a>) {</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">				</span><span class="keyword">this</span><span class="default">.<a href="dictionary_S.html#710">nome</a> = <a href="dictionary_S.html#699">nome</a>;</span>
+<a name="108"><font size=-1>108     </font></a><span class="default">				</span><span class="keyword">this</span><span class="default">.<a href="dictionary_S.html#711">tipo</a> = <a href="dictionary_S.html#700">tipo</a>;</span>
+<a name="109"><font size=-1>109     </font></a><span class="default">			}</span>
+<a name="110"><font size=-1>110     </font></a><span class="default"></span>
+<a name="111"><font size=-1>111     </font></a><span class="default">			</span><span class="comment">//accettiamo tutti i file con estensione s e le directory che non siano</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">			//nascoste</span>
+<a name="113"><font size=-1>113     </font></a><span class="comment">			</span><span class="keyword">public boolean <a href="dictionary_S.html#701">accept</a></span><span class="default">(<a href="dictionary_F.html#692">File</a> <a href="dictionary_S.html#705">dir</a>, <a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#707">file</a>) {</span>
+<a name="114"><font size=-1>114     </font></a><span class="default">				<a href="dictionary_F.html#692">File</a> <a href="dictionary_S.html#706">f</a> = </span><span class="keyword">new <a href="dictionary_F.html#692">File</a></span><span class="default">(<a href="dictionary_S.html#705">dir</a>, <a href="dictionary_S.html#707">file</a>);</span>
+<a name="115"><font size=-1>115     </font></a><span class="default"></span>
+<a name="116"><font size=-1>116     </font></a><span class="default">				</span><span class="comment">//controllo sul tipo.</span>
+<a name="117"><font size=-1>117     </font></a><span class="comment">				//Ad esempio se cerco \&quot;pippo.txt\&quot; la indexOf(.txt) è uguale a 6 ed è uguale</span>
+<a name="118"><font size=-1>118     </font></a><span class="comment">				// ed è uguale a 10(\&quot;pippo.txt\&quot;.length()) - 4 (\&quot;.txt\&quot;.length)</span>
+<a name="119"><font size=-1>119     </font></a><span class="comment"></span>
+<a name="120"><font size=-1>120     </font></a><span class="comment">				</span><span class="keyword">boolean <a href="dictionary_S.html#708">flag1</a></span><span class="default">=</span><span class="keyword">true</span><span class="default">;</span>
+<a name="121"><font size=-1>121     </font></a><span class="default">				</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#711">tipo</a>!=</span><span class="keyword">null </span><span class="default">&amp;&amp; <a href="dictionary_S.html#711">tipo</a>!=</span><span class="string">&quot;\\&quot;</span><span class="default">)</span>
+<a name="122"><font size=-1>122     </font></a><span class="default">					<a href="dictionary_S.html#708">flag1</a>=(<a href="dictionary_S.html#707">file</a>.<a href="dictionary_I.html#702">indexOf</a>(<a href="dictionary_S.html#711">tipo</a>) == <a href="dictionary_S.html#707">file</a>.<a href="dictionary_L.html#166">length</a>()-<a href="dictionary_S.html#711">tipo</a>.<a href="dictionary_L.html#166">length</a>());</span>
+<a name="123"><font size=-1>123     </font></a><span class="default"></span>
+<a name="124"><font size=-1>124     </font></a><span class="default">				</span><span class="comment">//controllo sul nome</span>
+<a name="125"><font size=-1>125     </font></a><span class="comment">				//flag2 è true se il file contiene la parola cercata</span>
+<a name="126"><font size=-1>126     </font></a><span class="comment"></span>
+<a name="127"><font size=-1>127     </font></a><span class="comment">				</span><span class="keyword">boolean <a href="dictionary_S.html#709">flag2</a></span><span class="default">=</span><span class="keyword">true</span><span class="default">;</span>
+<a name="128"><font size=-1>128     </font></a><span class="default">				</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#710">nome</a>!=</span><span class="keyword">null </span><span class="default">&amp;&amp; <a href="dictionary_S.html#710">nome</a>!=</span><span class="string">&quot;\\&quot;</span><span class="default">)</span>
+<a name="129"><font size=-1>129     </font></a><span class="default">					<a href="dictionary_S.html#709">flag2</a>=<a href="dictionary_S.html#707">file</a>.<a href="dictionary_T.html#44">toUpperCase</a>().<a href="dictionary_I.html#702">indexOf</a>(<a href="dictionary_S.html#710">nome</a>.<a href="dictionary_T.html#44">toUpperCase</a>())!=-</span><span class="number">1</span><span class="default">;</span>
+<a name="130"><font size=-1>130     </font></a><span class="default">				</span><span class="comment">//ritorno i file che passano il controllo del tipo e del nome le directory</span>
+<a name="131"><font size=-1>131     </font></a><span class="comment"></span>
+<a name="132"><font size=-1>132     </font></a><span class="comment">				</span><span class="keyword">return </span><span class="default">( ( <a href="dictionary_S.html#708">flag1</a> &amp;&amp; <a href="dictionary_S.html#709">flag2</a> ) || <a href="dictionary_S.html#706">f</a>.<a href="dictionary_I.html#703">isDirectory</a>()) &amp;&amp; !<a href="dictionary_S.html#706">f</a>.<a href="dictionary_I.html#704">isHidden</a>();</span>
+<a name="133"><font size=-1>133     </font></a><span class="default">			}</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">		}</span>
+<a name="135"><font size=-1>135     </font></a><span class="default"></span>
+<a name="136"><font size=-1>136     </font></a><span class="default"></span>
+<a name="137"><font size=-1>137     </font></a><span class="default"></span>
+<a name="138"><font size=-1>138     </font></a><span class="default"></span>
+<a name="139"><font size=-1>139     </font></a><span class="default">		</span><span class="keyword">public void <a href="dictionary_S.html#713">doPost</a></span><span class="default">(<a href="dictionary_H.html#130">HttpServletRequest</a> <a href="dictionary_S.html#722">request</a>,<a href="dictionary_H.html#131">HttpServletResponse</a> <a href="dictionary_S.html#723">response</a>)</span>
+<a name="140"><font size=-1>140     </font></a><span class="default">		</span><span class="keyword">throws <a href="dictionary_S.html#344">ServletException</a></span><span class="default">,<a href="dictionary_I.html#133">IOException</a>{</span>
+<a name="141"><font size=-1>141     </font></a><span class="default"></span>
+<a name="142"><font size=-1>142     </font></a><span class="default">			</span><span class="comment">//innanzitutto mi recupero la sessione di lavoro del cittadino</span>
+<a name="143"><font size=-1>143     </font></a><span class="comment">			<a href="dictionary_H.html#132">HttpSession</a> <a href="dictionary_S.html#728">session</a></span><span class="default">=<a href="dictionary_S.html#722">request</a>.<a href="dictionary_G.html#40">getSession</a>();</span>
+<a name="144"><font size=-1>144     </font></a><span class="default">			</span><span class="keyword">int <a href="dictionary_S.html#719">idCittadino</a></span><span class="default">;</span>
+<a name="145"><font size=-1>145     </font></a><span class="default">			<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#720">idtrovato</a>;</span>
+<a name="146"><font size=-1>146     </font></a><span class="default">			</span><span class="comment">/**</span>
+<a name="147"><font size=-1>147     </font></a><span class="comment">			 * se la sessione è stata creata correttamente </span>
+<a name="148"><font size=-1>148     </font></a><span class="comment">			 * all'accesso dell'impiegato, viene mandato in exe</span>
+<a name="149"><font size=-1>149     </font></a><span class="comment">			 * il metodo che controlla se sono presenti file pdf</span>
+<a name="150"><font size=-1>150     </font></a><span class="comment">			 * riguardanti il cambio di residenza interno o</span>
+<a name="151"><font size=-1>151     </font></a><span class="comment">			 * esterno richiesti dai cittadini</span>
+<a name="152"><font size=-1>152     </font></a><span class="comment">			 */	 </span>
+<a name="153"><font size=-1>153     </font></a><span class="comment">			</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#728">session</a>!=</span><span class="keyword">null</span><span class="default">){</span>
+<a name="154"><font size=-1>154     </font></a><span class="default">				<a href="dictionary_S.html#140">ServletContext</a> <a href="dictionary_S.html#726">sc</a>=<a href="dictionary_G.html#39">getServletContext</a>();</span>
+<a name="155"><font size=-1>155     </font></a><span class="default">				<a href="dictionary_R.html#139">RequestDispatcher</a> <a href="dictionary_S.html#721">rd</a>=</span><span class="keyword">null</span><span class="default">;</span>
+<a name="156"><font size=-1>156     </font></a><span class="default">				<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#724">ris</a>;</span>
+<a name="157"><font size=-1>157     </font></a><span class="default">				</span><span class="keyword">try</span><span class="default">{</span>
+<a name="158"><font size=-1>158     </font></a><span class="default">					</span><span class="comment">/**</span>
+<a name="159"><font size=-1>159     </font></a><span class="comment">					 * (1)	cosa deve fare la servlet:</span>
+<a name="160"><font size=-1>160     </font></a><span class="comment">					 * 		deve prendere l'id del cittadino</span>
+<a name="161"><font size=-1>161     </font></a><span class="comment">					 * 		di cui ha inserito il codice della carta di identità</span>
+<a name="162"><font size=-1>162     </font></a><span class="comment">					 * 		dal form e lo passa al metodo main </span>
+<a name="163"><font size=-1>163     </font></a><span class="comment">					 * 		per cercare il file corrispondente</span>
+<a name="164"><font size=-1>164     </font></a><span class="comment">					 */</span>
+<a name="165"><font size=-1>165     </font></a><span class="comment">					/**</span>
+<a name="166"><font size=-1>166     </font></a><span class="comment">					 * (2)	il codice della carta di identità e la data della richiesta</span>
+<a name="167"><font size=-1>167     </font></a><span class="comment">					 * 		li prende con request.getParameter</span>
+<a name="168"><font size=-1>168     </font></a><span class="comment">					 * 		salvandoli nelle apposite variabili,</span>
+<a name="169"><font size=-1>169     </font></a><span class="comment">					 * 		dopodichè viene chiamato il metodo che restituisce</span>
+<a name="170"><font size=-1>170     </font></a><span class="comment">					 * 		l'id di un cittadino dopo avergli </span>
+<a name="171"><font size=-1>171     </font></a><span class="comment">					 * 		passato nome, cognome e codice_fiscale di</span>
+<a name="172"><font size=-1>172     </font></a><span class="comment">					 * 		quest'ultimo.</span>
+<a name="173"><font size=-1>173     </font></a><span class="comment">					 */</span>
+<a name="174"><font size=-1>174     </font></a><span class="comment">					<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#716">cod_carta</a></span><span class="default">=<a href="dictionary_S.html#722">request</a>.<a href="dictionary_G.html#37">getParameter</a>(</span><span class="string">&quot;cod_carta&quot;</span><span class="default">);</span>
+<a name="175"><font size=-1>175     </font></a><span class="default">					<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#717">data</a>=<a href="dictionary_S.html#722">request</a>.<a href="dictionary_G.html#37">getParameter</a>(</span><span class="string">&quot;year&quot;</span><span class="default">).<a href="dictionary_C.html#714">concat</a>(<a href="dictionary_S.html#722">request</a>.<a href="dictionary_G.html#37">getParameter</a>(</span><span class="string">&quot;month&quot;</span><span class="default">).<a href="dictionary_C.html#714">concat</a>(<a href="dictionary_S.html#722">request</a>.<a href="dictionary_G.html#37">getParameter</a>(</span><span class="string">&quot;day&quot;</span><span class="default">)));</span>
+<a name="176"><font size=-1>176     </font></a><span class="default">					</span><span class="comment">/**</span>
+<a name="177"><font size=-1>177     </font></a><span class="comment">					 * una volta salvati i parametri, li passo</span>
+<a name="178"><font size=-1>178     </font></a><span class="comment">					 * al metodo che restituisce l'id di questo</span>
+<a name="179"><font size=-1>179     </font></a><span class="comment">					 * particolare cittadino che ha inviato la</span>
+<a name="180"><font size=-1>180     </font></a><span class="comment">					 * richiesta di cambio di residenza e di cui</span>
+<a name="181"><font size=-1>181     </font></a><span class="comment">					 * se ne vuole cercare il file </span>
+<a name="182"><font size=-1>182     </font></a><span class="comment">					 */</span>
+<a name="183"><font size=-1>183     </font></a><span class="comment">					<a href="dictionary_D.html#758">DbCartaIdentita</a> <a href="dictionary_S.html#718">dbcarta</a></span><span class="default">=</span><span class="keyword">new <a href="dictionary_D.html#759">DbCartaIdentita</a></span><span class="default">();</span>
+<a name="184"><font size=-1>184     </font></a><span class="default">					<a href="dictionary_S.html#719">idCittadino</a>=<a href="dictionary_S.html#718">dbcarta</a>.<a href="dictionary_D.html#760">ricercaCartaIdentitaByNumero</a>(<a href="dictionary_S.html#716">cod_carta</a>).<a href="dictionary_B.html#93">id</a>();</span>
+<a name="185"><font size=-1>185     </font></a><span class="default">					<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#725">risp</a>;</span>
+<a name="186"><font size=-1>186     </font></a><span class="default">					</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#719">idCittadino</a>==-</span><span class="number">1</span><span class="default">){</span>
+<a name="187"><font size=-1>187     </font></a><span class="default">						<a href="dictionary_S.html#725">risp</a>=</span><span class="string">&quot;Non è possibile recuperare l'id del cittadino all'interno del database&quot;</span><span class="default">;</span>
+<a name="188"><font size=-1>188     </font></a><span class="default">						<a href="dictionary_S.html#723">response</a>.<a href="dictionary_S.html#42">sendRedirect</a>(</span><span class="string">&quot;http://localhost:8080/E_ANCI/index.jsp?error=e&quot;</span><span class="default">);</span><span class="comment">//da modificare i collegamenti</span>
+<a name="189"><font size=-1>189     </font></a><span class="comment">						<a href="dictionary_S.html#722">request</a></span><span class="default">.<a href="dictionary_S.html#43">setAttribute</a>(</span><span class="string">&quot;risp&quot;</span><span class="default">, <a href="dictionary_S.html#725">risp</a>);</span>
+<a name="190"><font size=-1>190     </font></a><span class="default">					}</span>
+<a name="191"><font size=-1>191     </font></a><span class="default">					</span><span class="keyword">else</span><span class="default">{</span>
+<a name="192"><font size=-1>192     </font></a><span class="default">						</span><span class="comment">/**</span>
+<a name="193"><font size=-1>193     </font></a><span class="comment">						 * una volta conosciuto l'id del cittadino</span>
+<a name="194"><font size=-1>194     </font></a><span class="comment">						 * lo passo al metodo di ricerca del file</span>
+<a name="195"><font size=-1>195     </font></a><span class="comment">						 * ad esso corrispondente</span>
+<a name="196"><font size=-1>196     </font></a><span class="comment">						 */</span>
+<a name="197"><font size=-1>197     </font></a><span class="comment">						<a href="dictionary_S.html#696">CercaFiles</a> <a href="dictionary_S.html#727">search</a></span><span class="default">=</span><span class="keyword">new <a href="dictionary_S.html#712">CercaFiles</a></span><span class="default">();</span>
+<a name="198"><font size=-1>198     </font></a><span class="default">						<a href="dictionary_S.html#720">idtrovato</a>=<a href="dictionary_S.html#727">search</a>.<a href="dictionary_S.html#736">main</a>(<a href="dictionary_S.html#719">idCittadino</a>,<a href="dictionary_S.html#717">data</a>);</span>
+<a name="199"><font size=-1>199     </font></a><span class="default">						</span><span class="comment">/**</span>
+<a name="200"><font size=-1>200     </font></a><span class="comment">						 * ora nella variabile idtrovato c'è l'esito della ricerca</span>
+<a name="201"><font size=-1>201     </font></a><span class="comment">						 * del file relativa ad un determinato cittadino </span>
+<a name="202"><font size=-1>202     </font></a><span class="comment">						 * che ha inviato la richiesta di cambio di residenza.</span>
+<a name="203"><font size=-1>203     </font></a><span class="comment">						 * tale valore andrà controllato, se è true si lancia </span>
+<a name="204"><font size=-1>204     </font></a><span class="comment">						 * all'impiegato il modulo da compilare per mantenere traccia </span>
+<a name="205"><font size=-1>205     </font></a><span class="comment">						 * della richiesta dopo aver effettuato i controlli necessari</span>
+<a name="206"><font size=-1>206     </font></a><span class="comment">						 */</span>
+<a name="207"><font size=-1>207     </font></a><span class="comment">						</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#720">idtrovato</a>==</span><span class="keyword">null</span><span class="default">){</span>
+<a name="208"><font size=-1>208     </font></a><span class="default">							<a href="dictionary_S.html#724">ris</a>=</span><span class="string">&quot;File della richiesta di cambio di residenza non trovato&quot;</span><span class="default">;</span>
+<a name="209"><font size=-1>209     </font></a><span class="default">							<a href="dictionary_S.html#722">request</a>.<a href="dictionary_S.html#43">setAttribute</a>(</span><span class="string">&quot;ris&quot;</span><span class="default">, <a href="dictionary_S.html#724">ris</a>);</span>
+<a name="210"><font size=-1>210     </font></a><span class="default">							<a href="dictionary_S.html#721">rd</a>=<a href="dictionary_S.html#726">sc</a>.<a href="dictionary_G.html#38">getRequestDispatcher</a>(</span><span class="string">&quot;/workers/index.jsp?func=operazione&amp;page=fallita&quot;</span><span class="default">);</span><span class="comment">//da modificare i collegamenti</span>
+<a name="211"><font size=-1>211     </font></a><span class="comment">						</span><span class="default">}</span>
+<a name="212"><font size=-1>212     </font></a><span class="default">						</span><span class="keyword">else</span>
+<a name="213"><font size=-1>213     </font></a><span class="keyword">							if</span><span class="default">(<a href="dictionary_S.html#720">idtrovato</a>.<a href="dictionary_E.html#34">equals</a>(</span><span class="string">&quot;interno&quot;</span><span class="default">)){</span>
+<a name="214"><font size=-1>214     </font></a><span class="default">								<a href="dictionary_S.html#721">rd</a>=<a href="dictionary_S.html#726">sc</a>.<a href="dictionary_G.html#38">getRequestDispatcher</a>(</span><span class="string">&quot;/workers/index.jsp?func=pra&amp;page=modulone&quot;</span><span class="default">);</span><span class="comment">//da modificare i collegamenti</span>
+<a name="215"><font size=-1>215     </font></a><span class="comment">							</span><span class="default">}</span>
+<a name="216"><font size=-1>216     </font></a><span class="default">							</span><span class="keyword">else if</span><span class="default">(<a href="dictionary_S.html#720">idtrovato</a>.<a href="dictionary_E.html#34">equals</a>(</span><span class="string">&quot;esterno&quot;</span><span class="default">)){</span>
+<a name="217"><font size=-1>217     </font></a><span class="default">								<a href="dictionary_S.html#721">rd</a>=<a href="dictionary_S.html#726">sc</a>.<a href="dictionary_G.html#38">getRequestDispatcher</a>(</span><span class="string">&quot;/workers/index.jsp?func=pra&amp;page=modulone&quot;</span><span class="default">);</span><span class="comment">//da modificare i collegamenti</span>
+<a name="218"><font size=-1>218     </font></a><span class="comment">							</span><span class="default">}</span>
+<a name="219"><font size=-1>219     </font></a><span class="default">						<a href="dictionary_S.html#721">rd</a>.<a href="dictionary_F.html#35">forward</a>(<a href="dictionary_S.html#722">request</a>, <a href="dictionary_S.html#723">response</a>);</span>
+<a name="220"><font size=-1>220     </font></a><span class="default">					}</span>
+<a name="221"><font size=-1>221     </font></a><span class="default">				}</span><span class="keyword">catch</span><span class="default">(<a href="dictionary_D.html#87">DbException</a> <a href="dictionary_S.html#715">e</a>){</span>
+<a name="222"><font size=-1>222     </font></a><span class="default">					<a href="dictionary_S.html#724">ris</a>=<a href="dictionary_S.html#715">e</a>.<a href="dictionary_G.html#45">getMessage</a>();</span>
+<a name="223"><font size=-1>223     </font></a><span class="default">					<a href="dictionary_S.html#722">request</a>.<a href="dictionary_S.html#43">setAttribute</a>(</span><span class="string">&quot;ris&quot;</span><span class="default">, <a href="dictionary_S.html#724">ris</a>);</span>
+<a name="224"><font size=-1>224     </font></a><span class="default">					<a href="dictionary_S.html#721">rd</a>=<a href="dictionary_S.html#726">sc</a>.<a href="dictionary_G.html#38">getRequestDispatcher</a>(</span><span class="string">&quot;/workers/index.jsp?func=operazione&amp;page=fallita&quot;</span><span class="default">);</span><span class="comment">//da modificare i collegamenti</span>
+<a name="225"><font size=-1>225     </font></a><span class="comment">					<a href="dictionary_S.html#721">rd</a></span><span class="default">.<a href="dictionary_F.html#35">forward</a>(<a href="dictionary_S.html#722">request</a>,<a href="dictionary_S.html#723">response</a>);</span>
+<a name="226"><font size=-1>226     </font></a><span class="default">				}</span>
+<a name="227"><font size=-1>227     </font></a><span class="default"></span>
+<a name="228"><font size=-1>228     </font></a><span class="default">			}</span><span class="keyword">else</span><span class="default">{</span>
+<a name="229"><font size=-1>229     </font></a><span class="default">				<a href="dictionary_S.html#22">String</a> <a href="dictionary_S.html#729">url</a>=</span><span class="string">&quot;/workers/Accesso.jsp&quot;</span><span class="default">;</span><span class="comment">//da modificare i collegamenti</span>
+<a name="230"><font size=-1>230     </font></a><span class="comment">				<a href="dictionary_S.html#723">response</a></span><span class="default">.<a href="dictionary_S.html#42">sendRedirect</a>(<a href="dictionary_S.html#729">url</a>);</span>
+<a name="231"><font size=-1>231     </font></a><span class="default">			}</span>
+<a name="232"><font size=-1>232     </font></a><span class="default">		}</span>
+<a name="233"><font size=-1>233     </font></a><span class="default">	}</span>
+<a name="234"><font size=-1>234     </font></a><span class="default">}</span>
+<a name="235"><font size=-1>235     </font></a><span class="default"></span>
+</pre></body></html>

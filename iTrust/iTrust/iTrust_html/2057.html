@@ -1,0 +1,122 @@
+<html><head><title>ViewOfficeVisitAction.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\iTrust\iTrust\java\iTrust\src\edu\ncsu\csc\itrust\action\ViewOfficeVisitAction.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\iTrust\\iTrust\\java\\iTrust\\src\\edu\\ncsu\\csc\\itrust\\action\\ViewOfficeVisitAction.java";
+top.document.title  = "ViewOfficeVisitAction.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#70">action</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#69">util</a>.<a href="dictionary_J.html#68">List</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.action.<a href="dictionary_E.html#83">base</a>.<a href="dictionary_E.html#330">OfficeVisitBaseAction</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#334">OfficeVisitBean</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#335">PrescriptionBean</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#85">dao</a>.<a href="dictionary_E.html#74">DAOFactory</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#346">OfficeVisitDAO</a>;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#347">PatientDAO</a>;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#348">PersonnelDAO</a>;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#88">exception</a>.<a href="dictionary_E.html#79">DBException</a>;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#88">exception</a>.<a href="dictionary_E.html#81">iTrustException</a>;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.<a href="dictionary_E.html#32">itrust</a>.<a href="dictionary_E.html#1402">Messages</a>;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment"> * Handles viewing the office visits, prescriptions, and HCP name for the given ovID Used by</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment"> * viewOfficeVisit.jsp</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"> * </span>
+<a name="19"><font size=-1>19     </font></a><span class="comment"> * @author laurenhayward</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"> * </span>
+<a name="21"><font size=-1>21     </font></a><span class="comment"> */</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment"></span><span class="keyword">public class <a href="dictionary_E.html#2058">ViewOfficeVisitAction</a> extends <a href="dictionary_E.html#330">OfficeVisitBaseAction</a> </span><span class="default">{</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#346">OfficeVisitDAO</a> <a href="dictionary_E.html#2079">ovDAO</a></span><span class="default">;</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#348">PersonnelDAO</a> <a href="dictionary_E.html#2081">personnelDAO</a></span><span class="default">;</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#347">PatientDAO</a> <a href="dictionary_E.html#2080">patientDAO</a></span><span class="default">;</span>
+<a name="26"><font size=-1>26     </font></a><span class="default"></span>
+<a name="27"><font size=-1>27     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="28"><font size=-1>28     </font></a><span class="comment">	 * Super class handles validating the loggedInMid and ovIDString</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment">	 * </span>
+<a name="30"><font size=-1>30     </font></a><span class="comment">	 * @param factory The DAOFactory used to create the DAOs used in this action.</span>
+<a name="31"><font size=-1>31     </font></a><span class="comment">	 * @param loggedInMID The MID of the person viewing their office visits. </span>
+<a name="32"><font size=-1>32     </font></a><span class="comment">	 * @param ovIDString</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">	 *            The unique identifier of the office visit as a String.</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment">	 * @throws iTrustException</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment">	 */</span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_E.html#2059">ViewOfficeVisitAction</a></span><span class="default">(<a href="dictionary_E.html#74">DAOFactory</a> <a href="dictionary_E.html#2060">factory</a>, </span><span class="keyword">long <a href="dictionary_E.html#2061">loggedInMID</a></span><span class="default">, <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2062">ovIDString</a>)</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">			</span><span class="keyword">throws <a href="dictionary_E.html#81">iTrustException</a> </span><span class="default">{</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">		</span><span class="keyword">super</span><span class="default">(<a href="dictionary_E.html#2060">factory</a>, <a href="dictionary_S.html#29">String</a>.<a href="dictionary_V.html#59">valueOf</a>(<a href="dictionary_E.html#2061">loggedInMID</a>), <a href="dictionary_E.html#2062">ovIDString</a>);</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2081">personnelDAO</a> = <a href="dictionary_E.html#2060">factory</a>.<a href="dictionary_E.html#354">getPersonnelDAO</a>();</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2079">ovDAO</a> = <a href="dictionary_E.html#2060">factory</a>.<a href="dictionary_E.html#353">getOfficeVisitDAO</a>();</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">	}</span>
+<a name="42"><font size=-1>42     </font></a><span class="default"></span>
+<a name="43"><font size=-1>43     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="44"><font size=-1>44     </font></a><span class="comment">	 * Super class handles validating the pidString and ovIDString. Usually used for representing a patient.</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">	 * </span>
+<a name="46"><font size=-1>46     </font></a><span class="comment">	 * @param factory The DAOFactory used to create the DAOs used in this action.</span>
+<a name="47"><font size=-1>47     </font></a><span class="comment">	 * @param repPIDString The MID of the representative viewing the records.</span>
+<a name="48"><font size=-1>48     </font></a><span class="comment">	 * @param ovIDString</span>
+<a name="49"><font size=-1>49     </font></a><span class="comment">	 *            The unique identifier of the office visit as a String.</span>
+<a name="50"><font size=-1>50     </font></a><span class="comment">	 * @throws iTrustException</span>
+<a name="51"><font size=-1>51     </font></a><span class="comment">	 */</span>
+<a name="52"><font size=-1>52     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_E.html#2063">ViewOfficeVisitAction</a></span><span class="default">(<a href="dictionary_E.html#74">DAOFactory</a> <a href="dictionary_E.html#2064">factory</a>, </span><span class="keyword">long <a href="dictionary_E.html#2065">loggedInMID</a></span><span class="default">, <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2067">repPIDString</a>, <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2066">ovIDString</a>)</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">			</span><span class="keyword">throws <a href="dictionary_E.html#81">iTrustException</a> </span><span class="default">{</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">		</span><span class="keyword">super</span><span class="default">(<a href="dictionary_E.html#2064">factory</a>, <a href="dictionary_E.html#2067">repPIDString</a>, <a href="dictionary_E.html#2066">ovIDString</a>);</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2081">personnelDAO</a> = <a href="dictionary_E.html#2064">factory</a>.<a href="dictionary_E.html#354">getPersonnelDAO</a>();</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2080">patientDAO</a> = <a href="dictionary_E.html#2064">factory</a>.<a href="dictionary_E.html#360">getPatientDAO</a>();</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2079">ovDAO</a> = <a href="dictionary_E.html#2064">factory</a>.<a href="dictionary_E.html#353">getOfficeVisitDAO</a>();</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">		<a href="dictionary_E.html#2068">checkRepresented</a>(<a href="dictionary_E.html#2065">loggedInMID</a>, <a href="dictionary_E.html#2067">repPIDString</a>);</span>
+<a name="59"><font size=-1>59     </font></a><span class="default">	}</span>
+<a name="60"><font size=-1>60     </font></a><span class="default"></span>
+<a name="61"><font size=-1>61     </font></a><span class="default">	</span><span class="keyword">private void <a href="dictionary_E.html#2068">checkRepresented</a></span><span class="default">(</span><span class="keyword">long <a href="dictionary_E.html#2070">loggedInMID</a></span><span class="default">, <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2071">repPIDString</a>) </span><span class="keyword">throws <a href="dictionary_E.html#81">iTrustException</a> </span><span class="default">{</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">		</span><span class="keyword">try </span><span class="default">{</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">			</span><span class="keyword">long <a href="dictionary_E.html#2072">repee</a> </span><span class="default">= Long.<a href="dictionary_V.html#59">valueOf</a>(<a href="dictionary_E.html#2071">repPIDString</a>);</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">			</span><span class="keyword">if </span><span class="default">(!<a href="dictionary_E.html#2080">patientDAO</a>.<a href="dictionary_E.html#1721">represents</a>(<a href="dictionary_E.html#2070">loggedInMID</a>, <a href="dictionary_E.html#2072">repee</a>))</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">				</span><span class="keyword">throw new <a href="dictionary_E.html#198">iTrustException</a></span><span class="default">(</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">						<a href="dictionary_E.html#1402">Messages</a>.<a href="dictionary_E.html#1404">getString</a>(</span><span class="string">&quot;ViewOfficeVisitAction.0&quot;</span><span class="default">)); </span><span class="comment">//$NON-NLS-1$</span>
+<a name="67"><font size=-1>67     </font></a><span class="comment">		</span><span class="default">} </span><span class="keyword">catch </span><span class="default">(<a href="dictionary_N.html#326">NumberFormatException</a> <a href="dictionary_E.html#2069">e</a>) {</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">			</span><span class="keyword">throw new <a href="dictionary_E.html#198">iTrustException</a></span><span class="default">(<a href="dictionary_E.html#1402">Messages</a>.<a href="dictionary_E.html#1404">getString</a>(</span><span class="string">&quot;ViewOfficeVisitAction.1&quot;</span><span class="default">)); </span><span class="comment">//$NON-NLS-1$</span>
+<a name="69"><font size=-1>69     </font></a><span class="comment">		</span><span class="default">}</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">	}</span>
+<a name="71"><font size=-1>71     </font></a><span class="default"></span>
+<a name="72"><font size=-1>72     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment">	 * Returns the office visit as an OfficeVisitBean for the ovID that was initially passed to the</span>
+<a name="74"><font size=-1>74     </font></a><span class="comment">	 * constructor</span>
+<a name="75"><font size=-1>75     </font></a><span class="comment">	 * </span>
+<a name="76"><font size=-1>76     </font></a><span class="comment">	 * @return the OfficeVisitBean for the ovID</span>
+<a name="77"><font size=-1>77     </font></a><span class="comment">	 * @throws iTrustException</span>
+<a name="78"><font size=-1>78     </font></a><span class="comment">	 */</span>
+<a name="79"><font size=-1>79     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_E.html#334">OfficeVisitBean</a> <a href="dictionary_E.html#2077">getOfficeVisit</a></span><span class="default">() </span><span class="keyword">throws <a href="dictionary_E.html#81">iTrustException</a> </span><span class="default">{</span>
+<a name="80"><font size=-1>80     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_E.html#2079">ovDAO</a></span><span class="default">.<a href="dictionary_E.html#390">getOfficeVisit</a>(<a href="dictionary_E.html#389">ovID</a>);</span>
+<a name="81"><font size=-1>81     </font></a><span class="default">	}</span>
+<a name="82"><font size=-1>82     </font></a><span class="default"></span>
+<a name="83"><font size=-1>83     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="84"><font size=-1>84     </font></a><span class="comment">	 * Returns the prescriptions associated with the ovID initially passed to the constructor</span>
+<a name="85"><font size=-1>85     </font></a><span class="comment">	 * </span>
+<a name="86"><font size=-1>86     </font></a><span class="comment">	 * @return list of PrescriptionBeans for the ovID</span>
+<a name="87"><font size=-1>87     </font></a><span class="comment">	 * @throws DBException</span>
+<a name="88"><font size=-1>88     </font></a><span class="comment">	 */</span>
+<a name="89"><font size=-1>89     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_J.html#68">List</a></span><span class="default">&lt;<a href="dictionary_E.html#335">PrescriptionBean</a>&gt; <a href="dictionary_E.html#2078">getPrescriptions</a>() </span><span class="keyword">throws <a href="dictionary_E.html#79">DBException</a> </span><span class="default">{</span>
+<a name="90"><font size=-1>90     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_E.html#2079">ovDAO</a></span><span class="default">.<a href="dictionary_E.html#1973">getPrescriptions</a>(<a href="dictionary_E.html#389">ovID</a>);</span>
+<a name="91"><font size=-1>91     </font></a><span class="default">	}</span>
+<a name="92"><font size=-1>92     </font></a><span class="default"></span>
+<a name="93"><font size=-1>93     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="94"><font size=-1>94     </font></a><span class="comment">	 * Returns the name of the HCP for the hcpID passed as a param</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment">	 * </span>
+<a name="96"><font size=-1>96     </font></a><span class="comment">	 * @param hcpID</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment">	 * @return the name of the HCP</span>
+<a name="98"><font size=-1>98     </font></a><span class="comment">	 * @throws iTrustException</span>
+<a name="99"><font size=-1>99     </font></a><span class="comment">	 */</span>
+<a name="100"><font size=-1>100     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2073">getHCPName</a></span><span class="default">(</span><span class="keyword">long <a href="dictionary_E.html#2075">hcpID</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_E.html#81">iTrustException</a> </span><span class="default">{</span>
+<a name="101"><font size=-1>101     </font></a><span class="default">		<a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2076">name</a> = </span><span class="keyword">null</span><span class="default">;</span>
+<a name="102"><font size=-1>102     </font></a><span class="default">		</span><span class="keyword">try </span><span class="default">{</span>
+<a name="103"><font size=-1>103     </font></a><span class="default">			<a href="dictionary_E.html#2076">name</a> = <a href="dictionary_E.html#2081">personnelDAO</a>.<a href="dictionary_E.html#406">getName</a>(<a href="dictionary_E.html#2075">hcpID</a>);</span>
+<a name="104"><font size=-1>104     </font></a><span class="default">		} </span><span class="keyword">catch </span><span class="default">(<a href="dictionary_E.html#81">iTrustException</a> <a href="dictionary_E.html#2074">e</a>) {</span>
+<a name="105"><font size=-1>105     </font></a><span class="default">			<a href="dictionary_E.html#2074">e</a>.<a href="dictionary_P.html#248">printStackTrace</a>();</span>
+<a name="106"><font size=-1>106     </font></a><span class="default">			<a href="dictionary_E.html#2076">name</a> = <a href="dictionary_E.html#2074">e</a>.<a href="dictionary_E.html#401">getMessage</a>();</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">		}</span>
+<a name="108"><font size=-1>108     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_E.html#2076">name</a></span><span class="default">;</span>
+<a name="109"><font size=-1>109     </font></a><span class="default">			</span>
+<a name="110"><font size=-1>110     </font></a><span class="default">	}</span>
+<a name="111"><font size=-1>111     </font></a><span class="default">}</span>
+<a name="112"><font size=-1>112     </font></a><span class="default"></span>
+</pre></body></html>

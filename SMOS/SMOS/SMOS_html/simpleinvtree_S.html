@@ -1,0 +1,2543 @@
+<html><head><title>Simple Invocation Tree [S]</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body bgcolor="#ffffff" TEXT="#000000"><h2>Simple Invocation Tree</h2><hr><pre>
+</pre><table BORDER CELLPADDING=4><tr><td>Non-Alpha</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td><a href="simpleinvtree_S.html">S</a></td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr></table><pre>
+
+<a href="dictionary_S.html#2337">smos.application.addressManagement.ServletAddRemoveTeachingsAsAddress.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#444">getParameterValues</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#379">smos.storage.ManagerTeaching.getTeachingById</a>
+| <a href="dictionary_S.html#204">smos.storage.ManagerAddress.hasTeaching</a>
+| <a href="dictionary_S.html#156">smos.storage.ManagerAddress.assignTeachingAsAddress</a>
+| <a href="dictionary_S.html#225">smos.storage.ManagerAddress.removeTeachingAsAddress</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2363">smos.application.addressManagement.ServletAddRemoveTeachingsAsAddress.doPost</a>
+| <a href="dictionary_S.html#2337">smos.application.addressManagement.ServletAddRemoveTeachingsAsAddress.doGet</a>
+
+<a href="dictionary_S.html#66">smos.application.addressManagement.ServletAddressTeachings.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#91">smos.storage.ManagerTeaching.getTeachings</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#83">smos.application.addressManagement.ServletAddressTeachings.doPost</a>
+| <a href="dictionary_S.html#66">smos.application.addressManagement.ServletAddressTeachings.doGet</a>
+
+<a href="dictionary_S.html#9">smos.application.addressManagement.ServletDeleteAddress.doGet</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#60">smos.storage.ManagerAddress.delete</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#34">smos.application.addressManagement.ServletDeleteAddress.doPost</a>
+| <a href="dictionary_S.html#9">smos.application.addressManagement.ServletDeleteAddress.doGet</a>
+
+<a href="dictionary_S.html#1332">smos.application.addressManagement.ServletInsertAddress.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#253">smos.bean.Address.Address</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#254">smos.bean.Address.setName</a>
+| <a href="dictionary_S.html#166">smos.storage.ManagerAddress.exists</a>
+| <a href="dictionary_S.html#211">smos.storage.ManagerAddress.insert</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#1350">smos.application.addressManagement.ServletInsertAddress.doPost</a>
+| <a href="dictionary_S.html#1332">smos.application.addressManagement.ServletInsertAddress.doGet</a>
+
+<a href="dictionary_S.html#687">smos.application.addressManagement.ServletShowAddressDetails.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#173">smos.storage.ManagerAddress.getAddressById</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#705">smos.application.addressManagement.ServletShowAddressDetails.doPost</a>
+| <a href="dictionary_S.html#687">smos.application.addressManagement.ServletShowAddressDetails.doGet</a>
+
+<a href="dictionary_S.html#711">smos.application.addressManagement.ServletShowAddressList.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#186">smos.storage.ManagerAddress.getAddressList</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#727">smos.application.addressManagement.ServletShowAddressList.doPost</a>
+| <a href="dictionary_S.html#711">smos.application.addressManagement.ServletShowAddressList.doGet</a>
+
+<a href="dictionary_S.html#813">smos.application.classroomManagement.ServletDeleteClassroom.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#836">smos.storage.ManagerClassroom.delete</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#831">smos.application.classroomManagement.ServletDeleteClassroom.doPost</a>
+| <a href="dictionary_S.html#813">smos.application.classroomManagement.ServletDeleteClassroom.doGet</a>
+
+<a href="dictionary_S.html#1772">smos.application.classroomManagement.ServletInsertClassroom.doGet</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#1797">smos.bean.Classroom.Classroom</a>
+| <a href="dictionary_S.html#1798">smos.bean.Classroom.setName</a>
+| <a href="dictionary_S.html#1799">smos.bean.Classroom.setAcademicYear</a>
+| <a href="dictionary_S.html#1800">smos.bean.Classroom.setIdAddress</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#1801">smos.storage.ManagerClassroom.exists</a>
+| <a href="dictionary_S.html#1802">smos.storage.ManagerClassroom.insert</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1793">smos.application.classroomManagement.ServletInsertClassroom.doPost</a>
+| <a href="dictionary_S.html#1772">smos.application.classroomManagement.ServletInsertClassroom.doGet</a>
+
+<a href="dictionary_S.html#2015">smos.application.classroomManagement.ServletShowClassroomDetails.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#474">smos.storage.ManagerClassroom.getClassroomByID</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2033">smos.application.classroomManagement.ServletShowClassroomDetails.doPost</a>
+| <a href="dictionary_S.html#2015">smos.application.classroomManagement.ServletShowClassroomDetails.doGet</a>
+
+<a href="dictionary_S.html#520">smos.application.classroomManagement.ServletShowClassroomList.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#541">smos.storage.ManagerClassroom.getClassroomsByAcademicYear</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#536">smos.application.classroomManagement.ServletShowClassroomList.doPost</a>
+| <a href="dictionary_S.html#520">smos.application.classroomManagement.ServletShowClassroomList.doGet</a>
+
+<a href="dictionary_S.html#1693">smos.application.registerManagement.ServletComputateStatistics.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#1583">getYear</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#898">smos.storage.ManagerClassroom.getAcademicYearList</a>
+| <a href="dictionary_G.html#1694">getHighlightsStudentAbsence</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_G.html#1695">getHighlightsStudentNote</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1721">smos.application.registerManagement.ServletComputateStatistics.doPost</a>
+| <a href="dictionary_S.html#1693">smos.application.registerManagement.ServletComputateStatistics.doGet</a>
+
+<a href="dictionary_S.html#2189">smos.application.registerManagement.ServletDeleteJustify.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_P.html#1072">parseInt</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#1102">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#1963">smos.bean.Justify.getIdJustify</a>
+| <a href="dictionary_S.html#1813">smos.storage.ManagerRegister.deleteJustify</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2208">smos.application.registerManagement.ServletDeleteJustify.doPost</a>
+| <a href="dictionary_S.html#2189">smos.application.registerManagement.ServletDeleteJustify.doGet</a>
+
+<a href="dictionary_S.html#1446">smos.application.registerManagement.ServletDeleteNote.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#1466">smos.storage.ManagerRegister.deleteNote</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#1462">smos.application.registerManagement.ServletDeleteNote.doPost</a>
+| <a href="dictionary_S.html#1446">smos.application.registerManagement.ServletDeleteNote.doGet</a>
+
+<a href="dictionary_S.html#1071">smos.application.registerManagement.ServletInsertJustify.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_P.html#1072">parseInt</a>
+| <a href="dictionary_S.html#1097">smos.bean.Justify.setAcademicYear</a>
+| <a href="dictionary_S.html#867">smos.utility.Utility.String2Date</a>
+| <a href="dictionary_S.html#1098">smos.bean.Justify.setDateJustify</a>
+| <a href="dictionary_S.html#1099">smos.bean.Justify.setIdUser</a>
+| <a href="dictionary_S.html#1100">smos.storage.ManagerRegister.getAbsenceByIdAbsence</a>
+| <a href="dictionary_S.html#1101">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#1102">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#1103">smos.storage.ManagerRegister.insertJustify</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1092">smos.application.registerManagement.ServletInsertJustify.doPost</a>
+| <a href="dictionary_S.html#1071">smos.application.registerManagement.ServletInsertJustify.doGet</a>
+
+<a href="dictionary_S.html#2961">smos.application.registerManagement.ServletInsertNewNote.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_S.html#865">smos.bean.Note.Note</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#866">smos.bean.Note.setAcademicYear</a>
+| <a href="dictionary_S.html#867">smos.utility.Utility.String2Date</a>
+| <a href="dictionary_S.html#868">smos.bean.Note.setDateNote</a>
+| <a href="dictionary_S.html#869">smos.bean.Note.setIdUser</a>
+| <a href="dictionary_S.html#870">smos.bean.Note.setTeacher</a>
+| <a href="dictionary_S.html#871">smos.bean.Note.setDescription</a>
+| <a href="dictionary_S.html#1926">smos.storage.ManagerRegister.insertNote</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2979">smos.application.registerManagement.ServletInsertNewNote.doPost</a>
+| <a href="dictionary_S.html#2961">smos.application.registerManagement.ServletInsertNewNote.doGet</a>
+
+<a href="dictionary_S.html#753">smos.application.registerManagement.ServletShowClassroomManagement.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#541">smos.storage.ManagerClassroom.getClassroomsByAcademicYear</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#769">smos.application.registerManagement.ServletShowClassroomManagement.doPost</a>
+| <a href="dictionary_S.html#753">smos.application.registerManagement.ServletShowClassroomManagement.doGet</a>
+
+<a href="dictionary_S.html#2691">smos.application.registerManagement.ServletShowJustifyDetails.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#1882">smos.storage.ManagerRegister.getJustifyByIdJustify</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2710">smos.application.registerManagement.ServletShowJustifyDetails.doPost</a>
+| <a href="dictionary_S.html#2691">smos.application.registerManagement.ServletShowJustifyDetails.doGet</a>
+
+<a href="dictionary_S.html#2716">smos.application.registerManagement.ServletShowJustifyList.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_P.html#1072">parseInt</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#1838">smos.storage.ManagerRegister.getAbsenceByIDUserAndAcademicYear</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2736">smos.application.registerManagement.ServletShowJustifyList.doPost</a>
+| <a href="dictionary_S.html#2716">smos.application.registerManagement.ServletShowJustifyList.doGet</a>
+
+<a href="dictionary_S.html#839">smos.application.registerManagement.ServletShowNoteDetails.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#864">smos.storage.ManagerRegister.getNoteById</a>
+| <a href="dictionary_S.html#865">smos.bean.Note.Note</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#866">smos.bean.Note.setAcademicYear</a>
+| <a href="dictionary_S.html#867">smos.utility.Utility.String2Date</a>
+| <a href="dictionary_S.html#868">smos.bean.Note.setDateNote</a>
+| <a href="dictionary_S.html#869">smos.bean.Note.setIdUser</a>
+| <a href="dictionary_S.html#870">smos.bean.Note.setTeacher</a>
+| <a href="dictionary_S.html#871">smos.bean.Note.setDescription</a>
+| <a href="dictionary_S.html#872">smos.bean.Note.getIdNote</a>
+| <a href="dictionary_S.html#873">smos.bean.Note.setIdNote</a>
+| <a href="dictionary_S.html#874">smos.storage.ManagerRegister.updateNote</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#857">smos.application.registerManagement.ServletShowNoteDetails.doPost</a>
+| <a href="dictionary_S.html#839">smos.application.registerManagement.ServletShowNoteDetails.doGet</a>
+
+<a href="dictionary_S.html#2627">smos.application.registerManagement.ServletShowNoteList.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#1888">smos.storage.ManagerRegister.getNoteByIDUserAndAcademicYear</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2646">smos.application.registerManagement.ServletShowNoteList.doPost</a>
+| <a href="dictionary_S.html#2627">smos.application.registerManagement.ServletShowNoteList.doGet</a>
+
+<a href="dictionary_S.html#2755">smos.application.registerManagement.ServletShowRegister.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#2756">split</a>
+| <a href="dictionary_S.html#867">smos.utility.Utility.String2Date</a>
+| <a href="dictionary_S.html#1900">smos.storage.ManagerRegister.getRegisterByClassIDAndDate</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_S.html#474">smos.storage.ManagerClassroom.getClassroomByID</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2780">smos.application.registerManagement.ServletShowRegister.doPost</a>
+| <a href="dictionary_S.html#2755">smos.application.registerManagement.ServletShowRegister.doGet</a>
+
+<a href="dictionary_S.html#1307">smos.application.registerManagement.ServletUpdateJustify.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_P.html#1072">parseInt</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#1097">smos.bean.Justify.setAcademicYear</a>
+| <a href="dictionary_S.html#867">smos.utility.Utility.String2Date</a>
+| <a href="dictionary_S.html#1098">smos.bean.Justify.setDateJustify</a>
+| <a href="dictionary_S.html#1102">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#1329">smos.storage.ManagerRegister.updateJustify</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#1325">smos.application.registerManagement.ServletUpdateJustify.doPost</a>
+| <a href="dictionary_S.html#1307">smos.application.registerManagement.ServletUpdateJustify.doGet</a>
+
+<a href="dictionary_S.html#2786">smos.application.registerManagement.ServletUpdateRegister.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#867">smos.utility.Utility.String2Date</a>
+| <a href="dictionary_G.html#444">getParameterValues</a>
+| <a href="dictionary_S.html#1068">smos.bean.Classroom.getIdClassroom</a>
+| <a href="dictionary_S.html#1900">smos.storage.ManagerRegister.getRegisterByClassIDAndDate</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#2423">smos.bean.RegisterLine.getStudent</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_S.html#1908">smos.storage.ManagerRegister.hasAbsence</a>
+| <a href="dictionary_S.html#1006">smos.bean.Absence.Absence</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#1012">smos.bean.Absence.setAcademicYear</a>
+| <a href="dictionary_S.html#1014">smos.bean.Absence.setDateAbsence</a>
+| <a href="dictionary_S.html#1018">smos.bean.Absence.setIdJustify</a>
+| <a href="dictionary_S.html#1020">smos.bean.Absence.setIdUser</a>
+| <a href="dictionary_S.html#1914">smos.storage.ManagerRegister.insertAbsence</a>
+| <a href="dictionary_S.html#1968">smos.bean.RegisterLine.getAbsence</a>
+| <a href="dictionary_S.html#1805">smos.storage.ManagerRegister.deleteAbsence</a>
+| <a href="dictionary_S.html#1910">smos.storage.ManagerRegister.hasDelay</a>
+| <a href="dictionary_S.html#1134">smos.bean.Delay.setAcademicYear</a>
+| <a href="dictionary_S.html#1136">smos.bean.Delay.setDateDelay</a>
+| <a href="dictionary_S.html#1140">smos.bean.Delay.setIdUser</a>
+| <a href="dictionary_S.html#1142">smos.bean.Delay.setTimeDelay</a>
+| <a href="dictionary_S.html#1918">smos.storage.ManagerRegister.insertDelay</a>
+| <a href="dictionary_S.html#1969">smos.bean.RegisterLine.getDelay</a>
+| <a href="dictionary_S.html#1946">smos.storage.ManagerRegister.updateDelay</a>
+| <a href="dictionary_S.html#1809">smos.storage.ManagerRegister.deleteDelay</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2815">smos.application.registerManagement.ServletUpdateRegister.doPost</a>
+| <a href="dictionary_S.html#2786">smos.application.registerManagement.ServletUpdateRegister.doGet</a>
+
+<a href="dictionary_S.html#2530">smos.application.reportManagement.ServletDeleteReport.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_S.html#284">smos.storage.ManagerVotes.getInstance</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_S.html#262">smos.storage.ManagerVotes.deleteVotesByUserIdYearTurn</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2549">smos.application.reportManagement.ServletDeleteReport.doPost</a>
+| <a href="dictionary_S.html#2530">smos.application.reportManagement.ServletDeleteReport.doGet</a>
+
+<a href="dictionary_S.html#477">smos.application.reportManagement.ServletInsertReport.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_S.html#284">smos.storage.ManagerVotes.getInstance</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#516">smos.bean.Classroom.getIdAddress</a>
+| <a href="dictionary_S.html#517">smos.storage.ManagerTeaching.getTeachingsByClassroomId</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#344">smos.bean.Votes.Votes</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#350">smos.bean.Votes.setAccademicYear</a>
+| <a href="dictionary_S.html#345">smos.bean.Votes.setId_user</a>
+| <a href="dictionary_S.html#349">smos.bean.Votes.setLaboratory</a>
+| <a href="dictionary_S.html#348">smos.bean.Votes.setOral</a>
+| <a href="dictionary_S.html#346">smos.bean.Votes.setTeaching</a>
+| <a href="dictionary_S.html#351">smos.bean.Votes.setTurn</a>
+| <a href="dictionary_S.html#347">smos.bean.Votes.setWritten</a>
+| <a href="dictionary_S.html#316">smos.storage.ManagerVotes.insert</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#511">smos.application.reportManagement.ServletInsertReport.doPost</a>
+| <a href="dictionary_S.html#477">smos.application.reportManagement.ServletInsertReport.doGet</a>
+
+<a href="dictionary_S.html#2821">smos.application.reportManagement.ServletLoadReport.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_S.html#284">smos.storage.ManagerVotes.getInstance</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#516">smos.bean.Classroom.getIdAddress</a>
+| <a href="dictionary_S.html#517">smos.storage.ManagerTeaching.getTeachingsByClassroomId</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_S.html#308">smos.storage.ManagerVotes.getVotesByUserIdYearTurn</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2843">smos.application.reportManagement.ServletLoadReport.doPost</a>
+| <a href="dictionary_S.html#2821">smos.application.reportManagement.ServletLoadReport.doGet</a>
+
+<a href="dictionary_S.html#2849">smos.application.reportManagement.ServletLoadTeachingList.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#516">smos.bean.Classroom.getIdAddress</a>
+| <a href="dictionary_S.html#517">smos.storage.ManagerTeaching.getTeachingsByClassroomId</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2869">smos.application.reportManagement.ServletLoadTeachingList.doPost</a>
+| <a href="dictionary_S.html#2849">smos.application.reportManagement.ServletLoadTeachingList.doGet</a>
+
+<a href="dictionary_S.html#2144">smos.application.reportManagement.ServletShowClassroomByAcademicYear.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#541">smos.storage.ManagerClassroom.getClassroomsByAcademicYear</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2161">smos.application.reportManagement.ServletShowClassroomByAcademicYear.doPost</a>
+| <a href="dictionary_S.html#2144">smos.application.reportManagement.ServletShowClassroomByAcademicYear.doGet</a>
+
+<a href="dictionary_S.html#2426">smos.application.reportManagement.ServletShowReports.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_S.html#284">smos.storage.ManagerVotes.getInstance</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#308">smos.storage.ManagerVotes.getVotesByUserIdYearTurn</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_S.html#2095">smos.bean.User.getName</a>
+| <a href="dictionary_S.html#2373">smos.bean.UserListItem.setName</a>
+| <a href="dictionary_S.html#2090">smos.bean.User.getEMail</a>
+| <a href="dictionary_S.html#2370">smos.bean.UserListItem.setEMail</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_S.html#1475">smos.bean.UserListItem.setId</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2447">smos.application.reportManagement.ServletShowReports.doPost</a>
+| <a href="dictionary_S.html#2426">smos.application.reportManagement.ServletShowReports.doGet</a>
+
+<a href="dictionary_S.html#971">smos.application.reportManagement.ServletShowStudentsByClass.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#474">smos.storage.ManagerClassroom.getClassroomByID</a>
+| <a href="dictionary_G.html#972">getStudentsByClassroomId</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#990">smos.application.reportManagement.ServletShowStudentsByClass.doPost</a>
+| <a href="dictionary_S.html#971">smos.application.reportManagement.ServletShowStudentsByClass.doGet</a>
+
+<a href="dictionary_S.html#1976">smos.application.reportManagement.ServletUpdateReport.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_S.html#284">smos.storage.ManagerVotes.getInstance</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#516">smos.bean.Classroom.getIdAddress</a>
+| <a href="dictionary_S.html#517">smos.storage.ManagerTeaching.getTeachingsByClassroomId</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#344">smos.bean.Votes.Votes</a>
+| <a href="dictionary_S.html#274">smos.storage.ManagerVotes.getIdVotes</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#350">smos.bean.Votes.setAccademicYear</a>
+| <a href="dictionary_S.html#345">smos.bean.Votes.setId_user</a>
+| <a href="dictionary_S.html#349">smos.bean.Votes.setLaboratory</a>
+| <a href="dictionary_S.html#348">smos.bean.Votes.setOral</a>
+| <a href="dictionary_S.html#346">smos.bean.Votes.setTeaching</a>
+| <a href="dictionary_S.html#351">smos.bean.Votes.setTurn</a>
+| <a href="dictionary_S.html#347">smos.bean.Votes.setWritten</a>
+| <a href="dictionary_S.html#316">smos.storage.ManagerVotes.insert</a>
+| <a href="dictionary_S.html#296">smos.storage.ManagerVotes.getVotesById</a>
+| <a href="dictionary_S.html#326">smos.storage.ManagerVotes.update</a>
+| <a href="dictionary_S.html#258">smos.storage.ManagerVotes.delete</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2009">smos.application.reportManagement.ServletUpdateReport.doPost</a>
+| <a href="dictionary_S.html#1976">smos.application.reportManagement.ServletUpdateReport.doGet</a>
+
+<a href="dictionary_S.html#735">smos.application.ServletInitialize.init</a>
+| <a href="dictionary_G.html#736">getInitParameter</a>
+| <a href="dictionary_S.html#741">smos.utility.Utility.setServerSmtp</a>
+| <a href="dictionary_S.html#742">smos.utility.Utility.setDriverMySql</a>
+| <a href="dictionary_S.html#743">smos.utility.Utility.setFullPathDatabase</a>
+| <a href="dictionary_S.html#744">smos.utility.Utility.setUserName</a>
+| <a href="dictionary_S.html#745">smos.utility.Utility.setPassword</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#746">smos.utility.Utility.setMaxPoolSize</a>
+| <a href="dictionary_S.html#747">smos.utility.Utility.setWaitTimeout</a>
+| <a href="dictionary_S.html#748">smos.utility.Utility.setActiveTimeout</a>
+| <a href="dictionary_S.html#749">smos.utility.Utility.setPoolTimeout</a>
+| <a href="dictionary_S.html#750">smos.utility.Utility.setTextFooter</a>
+
+<a href="dictionary_S.html#2382">smos.application.teachingManagement.ServletDeleteTeaching.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#1220">smos.storage.ManagerTeaching.delete</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2399">smos.application.teachingManagement.ServletDeleteTeaching.doPost</a>
+| <a href="dictionary_S.html#2382">smos.application.teachingManagement.ServletDeleteTeaching.doGet</a>
+
+<a href="dictionary_S.html#415">smos.application.teachingManagement.ServletInsertTeaching.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#437">smos.bean.Teaching.Teaching</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#438">smos.bean.Teaching.setName</a>
+| <a href="dictionary_S.html#439">smos.storage.ManagerTeaching.exists</a>
+| <a href="dictionary_S.html#440">smos.storage.ManagerTeaching.insert</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#433">smos.application.teachingManagement.ServletInsertTeaching.doPost</a>
+| <a href="dictionary_S.html#415">smos.application.teachingManagement.ServletInsertTeaching.doGet</a>
+
+<a href="dictionary_S.html#356">smos.application.teachingManagement.ServletShowTeachingDetails.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#379">smos.storage.ManagerTeaching.getTeachingById</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#374">smos.application.teachingManagement.ServletShowTeachingDetails.doPost</a>
+| <a href="dictionary_S.html#356">smos.application.teachingManagement.ServletShowTeachingDetails.doGet</a>
+
+<a href="dictionary_S.html#1106">smos.application.teachingManagement.ServletShowTeachingList.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#91">smos.storage.ManagerTeaching.getTeachings</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1122">smos.application.teachingManagement.ServletShowTeachingList.doPost</a>
+| <a href="dictionary_S.html#1106">smos.application.teachingManagement.ServletShowTeachingList.doGet</a>
+
+<a href="dictionary_S.html#2062">smos.application.teachingManagement.ServletUpdateTeaching.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#438">smos.bean.Teaching.setName</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_S.html#901">smos.bean.Teaching.setId</a>
+| <a href="dictionary_S.html#439">smos.storage.ManagerTeaching.exists</a>
+| <a href="dictionary_S.html#1297">smos.storage.ManagerTeaching.update</a>
+| <a href="dictionary_S.html#1234">smos.storage.ManagerTeaching.getTeachingId</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2080">smos.application.teachingManagement.ServletUpdateTeaching.doPost</a>
+| <a href="dictionary_S.html#2062">smos.application.teachingManagement.ServletUpdateTeaching.doGet</a>
+
+<a href="dictionary_S.html#443">smos.application.userManagement.ServletAddTeachingAsTeacher.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_G.html#444">getParameterValues</a>
+| <a href="dictionary_S.html#379">smos.storage.ManagerTeaching.getTeachingById</a>
+| <a href="dictionary_S.html#474">smos.storage.ManagerClassroom.getClassroomByID</a>
+| <a href="dictionary_H.html#452">hasTeaching</a>
+| <a href="dictionary_A.html#451">assignTeacherAtClassroomTeaching</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#469">smos.application.userManagement.ServletAddTeachingAsTeacher.doPost</a>
+| <a href="dictionary_S.html#443">smos.application.userManagement.ServletAddTeachingAsTeacher.doGet</a>
+
+<a href="dictionary_S.html#121">smos.application.userManagement.ServletAlterPersonalDate.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_E.html#123">existsLogin</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#148">smos.bean.User.setPassword</a>
+| <a href="dictionary_E.html#122">exists</a>
+| <a href="dictionary_U.html#125">update</a>
+| <a href="dictionary_G.html#124">getUserId</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#143">smos.application.userManagement.ServletAlterPersonalDate.doPost</a>
+| <a href="dictionary_S.html#121">smos.application.userManagement.ServletAlterPersonalDate.doGet</a>
+
+<a href="dictionary_S.html#2875">smos.application.userManagement.ServletAssignParentStudent.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_G.html#2876">getStudents</a>
+| <a href="dictionary_G.html#444">getParameterValues</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_P.html#1072">parseInt</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_A.html#2884">assignParent</a>
+| <a href="dictionary_R.html#2887">removeParent</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2911">smos.application.userManagement.ServletAssignParentStudent.doPost</a>
+| <a href="dictionary_S.html#2875">smos.application.userManagement.ServletAssignParentStudent.doGet</a>
+
+<a href="dictionary_S.html#1152">smos.application.userManagement.ServletAssignRole.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#938">getAdministrators</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#444">getParameterValues</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_A.html#1161">assignRole</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_S.html#911">smos.exception.DeleteManagerException.DeleteManagerException</a>
+| <a href="dictionary_R.html#1164">removeRole</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1181">smos.application.userManagement.ServletAssignRole.doPost</a>
+| <a href="dictionary_S.html#1152">smos.application.userManagement.ServletAssignRole.doGet</a>
+
+<a href="dictionary_S.html#2590">smos.application.userManagement.ServletAssignStudentClassroom.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#2471">smos.storage.ManagerClassroom.getClassroomByUserAcademicYear</a>
+| <a href="dictionary_S.html#1068">smos.bean.Classroom.getIdClassroom</a>
+| <a href="dictionary_R.html#1043">removeStudentClassroom</a>
+| <a href="dictionary_A.html#2591">assignStudentClassroom</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2612">smos.application.userManagement.ServletAssignStudentClassroom.doPost</a>
+| <a href="dictionary_S.html#2590">smos.application.userManagement.ServletAssignStudentClassroom.doGet</a>
+
+<a href="dictionary_S.html#936">smos.application.userManagement.ServletDeleteUser.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_D.html#937">delete</a>
+| <a href="dictionary_G.html#938">getAdministrators</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_S.html#962">smos.exception.DeleteAdministratorException.DeleteAdministratorException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#957">smos.application.userManagement.ServletDeleteUser.doPost</a>
+| <a href="dictionary_S.html#936">smos.application.userManagement.ServletDeleteUser.doGet</a>
+
+<a href="dictionary_S.html#1187">smos.application.userManagement.ServletInsertUser.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#1212">smos.bean.User.User</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#1213">smos.bean.User.setFirstName</a>
+| <a href="dictionary_S.html#1214">smos.bean.User.setLastName</a>
+| <a href="dictionary_S.html#1215">smos.bean.User.setCell</a>
+| <a href="dictionary_S.html#1216">smos.bean.User.setEMail</a>
+| <a href="dictionary_S.html#1217">smos.bean.User.setLogin</a>
+| <a href="dictionary_E.html#123">existsLogin</a>
+| <a href="dictionary_E.html#1188">equals</a>
+| <a href="dictionary_S.html#148">smos.bean.User.setPassword</a>
+| <a href="dictionary_S.html#778">smos.exception.LoginException.LoginException</a>
+| <a href="dictionary_E.html#122">exists</a>
+| <a href="dictionary_I.html#1189">insert</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1208">smos.application.userManagement.ServletInsertUser.doPost</a>
+| <a href="dictionary_S.html#1187">smos.application.userManagement.ServletInsertUser.doGet</a>
+
+<a href="dictionary_S.html#1423">smos.application.userManagement.ServletLoadClassByAccademicYear.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#541">smos.storage.ManagerClassroom.getClassroomsByAcademicYear</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1440">smos.application.userManagement.ServletLoadClassByAccademicYear.doPost</a>
+| <a href="dictionary_S.html#1423">smos.application.userManagement.ServletLoadClassByAccademicYear.doGet</a>
+
+<a href="dictionary_S.html#877">smos.application.userManagement.ServletLoadYear.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#898">smos.storage.ManagerClassroom.getAcademicYearList</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#894">smos.application.userManagement.ServletLoadYear.doPost</a>
+| <a href="dictionary_S.html#877">smos.application.userManagement.ServletLoadYear.doGet</a>
+
+<a href="dictionary_S.html#1362">smos.application.userManagement.ServletLogin.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#1363">getUserByLogin</a>
+| <a href="dictionary_L.html#1367">login</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#778">smos.exception.LoginException.LoginException</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#387">isTeacher</a>
+| <a href="dictionary_I.html#1366">isStudent</a>
+| <a href="dictionary_I.html#1365">isParent</a>
+| <a href="dictionary_I.html#1364">isAtaPeople</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+
+<a href="dictionary_S.html#1383">smos.application.userManagement.ServletLogin.doPost</a>
+| <a href="dictionary_S.html#1362">smos.application.userManagement.ServletLogin.doGet</a>
+
+<a href="dictionary_S.html#996">smos.application.userManagement.ServletLogout.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_I.html#997">invalidate</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+
+<a href="dictionary_S.html#1000">smos.application.userManagement.ServletLogout.doPost</a>
+| <a href="dictionary_S.html#996">smos.application.userManagement.ServletLogout.doGet</a>
+
+<a href="dictionary_S.html#1042">smos.application.userManagement.ServletRemoveStudentClassroom.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#1068">smos.bean.Classroom.getIdClassroom</a>
+| <a href="dictionary_G.html#972">getStudentsByClassroomId</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_R.html#1043">removeStudentClassroom</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#1065">smos.application.userManagement.ServletRemoveStudentClassroom.doPost</a>
+| <a href="dictionary_S.html#1042">smos.application.userManagement.ServletRemoveStudentClassroom.doGet</a>
+
+<a href="dictionary_S.html#2917">smos.application.userManagement.ServletRemoveTeachingAsTeacher.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_G.html#444">getParameterValues</a>
+| <a href="dictionary_S.html#379">smos.storage.ManagerTeaching.getTeachingById</a>
+| <a href="dictionary_S.html#474">smos.storage.ManagerClassroom.getClassroomByID</a>
+| <a href="dictionary_H.html#452">hasTeaching</a>
+| <a href="dictionary_R.html#2924">removeTeacherAtClassroomTeaching</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2941">smos.application.userManagement.ServletRemoveTeachingAsTeacher.doPost</a>
+| <a href="dictionary_S.html#2917">smos.application.userManagement.ServletRemoveTeachingAsTeacher.doGet</a>
+
+<a href="dictionary_S.html#2304">smos.application.userManagement.ServletReportTeachings.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#2329">smos.storage.ManagerClassroom.getClassroomsByTeacherAcademicYear</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2325">smos.application.userManagement.ServletReportTeachings.doPost</a>
+| <a href="dictionary_S.html#2304">smos.application.userManagement.ServletReportTeachings.doGet</a>
+
+<a href="dictionary_S.html#2660">smos.application.userManagement.ServletShowTeacherTeachingFormByClass.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#517">smos.storage.ManagerTeaching.getTeachingsByClassroomId</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#474">smos.storage.ManagerClassroom.getClassroomByID</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2678">smos.application.userManagement.ServletShowTeacherTeachingFormByClass.doPost</a>
+| <a href="dictionary_S.html#2660">smos.application.userManagement.ServletShowTeacherTeachingFormByClass.doGet</a>
+
+<a href="dictionary_S.html#94">smos.application.userManagement.ServletShowUserDetails.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_V.html#97">valueOf</a>
+| <a href="dictionary_G.html#96">getUserById</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#114">smos.application.userManagement.ServletShowUserDetails.doPost</a>
+| <a href="dictionary_S.html#94">smos.application.userManagement.ServletShowUserDetails.doGet</a>
+
+<a href="dictionary_S.html#2167">smos.application.userManagement.ServletShowUserList.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#2168">getUserList</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#2183">smos.application.userManagement.ServletShowUserList.doPost</a>
+| <a href="dictionary_S.html#2167">smos.application.userManagement.ServletShowUserList.doGet</a>
+
+<a href="dictionary_S.html#1389">smos.application.userManagement.ServletShowUserRoleForm.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#387">isTeacher</a>
+| <a href="dictionary_I.html#1364">isAtaPeople</a>
+| <a href="dictionary_I.html#878">isDirector</a>
+| <a href="dictionary_I.html#1366">isStudent</a>
+| <a href="dictionary_I.html#1365">isParent</a>
+| <a href="dictionary_S.html#1420">smos.utility.Utility.BooleanToInt</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#1416">smos.application.userManagement.ServletShowUserRoleForm.doPost</a>
+| <a href="dictionary_S.html#1389">smos.application.userManagement.ServletShowUserRoleForm.doGet</a>
+
+<a href="dictionary_S.html#386">smos.application.userManagement.ServletShowUserTeachingForm.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_I.html#387">isTeacher</a>
+| <a href="dictionary_S.html#412">smos.storage.ManagerClassroom.getClassroomsByTeacher</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#405">smos.application.userManagement.ServletShowUserTeachingForm.doPost</a>
+| <a href="dictionary_S.html#386">smos.application.userManagement.ServletShowUserTeachingForm.doGet</a>
+
+<a href="dictionary_S.html#2119">smos.application.userManagement.ServletUpdateUser.doGet</a>
+| <a href="dictionary_G.html#12">getSession</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#10">getAttribute</a>
+| <a href="dictionary_S.html#14">sendRedirect</a>
+| <a href="dictionary_I.html#13">isAdministrator</a>
+| <a href="dictionary_G.html#95">getParameter</a>
+| <a href="dictionary_S.html#1213">smos.bean.User.setFirstName</a>
+| <a href="dictionary_S.html#1214">smos.bean.User.setLastName</a>
+| <a href="dictionary_S.html#1215">smos.bean.User.setCell</a>
+| <a href="dictionary_S.html#1217">smos.bean.User.setLogin</a>
+| <a href="dictionary_E.html#123">existsLogin</a>
+| <a href="dictionary_S.html#148">smos.bean.User.setPassword</a>
+| <a href="dictionary_S.html#1216">smos.bean.User.setEMail</a>
+| <a href="dictionary_E.html#122">exists</a>
+| <a href="dictionary_U.html#125">update</a>
+| <a href="dictionary_G.html#124">getUserId</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+| <a href="dictionary_S.html#15">setAttribute</a>
+
+<a href="dictionary_S.html#2138">smos.application.userManagement.ServletUpdateUser.doPost</a>
+| <a href="dictionary_S.html#2119">smos.application.userManagement.ServletUpdateUser.doGet</a>
+
+<a href="dictionary_S.html#1132">smos.bean.Delay.getTimeDelay</a>
+| <a href="dictionary_L.html#903">length</a>
+| <a href="dictionary_S.html#1133">substring</a>
+
+<a href="dictionary_S.html#2746">smos.bean.Report.addVotes</a>
+| <a href="dictionary_A.html#216">add</a>
+
+<a href="dictionary_S.html#2748">smos.bean.Report.getVotes</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_G.html#562">get</a>
+
+<a href="dictionary_S.html#2750">smos.bean.Report.remove</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_R.html#2245">remove</a>
+
+<a href="dictionary_S.html#2743">smos.bean.Report.ToString</a>
+| <a href="dictionary_S.html#2046">smos.bean.Votes.toString</a>
+
+<a href="dictionary_S.html#438">smos.bean.Teaching.setName</a>
+| <a href="dictionary_L.html#903">length</a>
+
+<a href="dictionary_S.html#1217">smos.bean.User.setLogin</a>
+| <a href="dictionary_L.html#903">length</a>
+
+<a href="dictionary_S.html#148">smos.bean.User.setPassword</a>
+| <a href="dictionary_L.html#903">length</a>
+
+<a href="dictionary_S.html#2107">smos.bean.User.toString</a>
+| <a href="dictionary_S.html#2091">smos.bean.User.getFirstName</a>
+| <a href="dictionary_S.html#2093">smos.bean.User.getLastName</a>
+
+<a href="dictionary_S.html#807">smos.storage.connectionManagement.ConnectionPoolDataSource.activeSize</a>
+| <a href="dictionary_S.html#560">size</a>
+
+<a href="dictionary_S.html#808">smos.storage.connectionManagement.ConnectionPoolDataSource.clearActive</a>
+| <a href="dictionary_C.html#2220">currentTimeMillis</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_G.html#562">get</a>
+| <a href="dictionary_G.html#2238">getLastTime</a>
+| <a href="dictionary_G.html#2237">getConnection</a>
+| <a href="dictionary_S.html#683">smos.storage.connectionManagement.ConnectionPoolDataSource.release</a>
+
+<a href="dictionary_S.html#2243">smos.storage.connectionManagement.ConnectionPoolDataSource.closeAllConnections</a>
+| <a href="dictionary_S.html#2244">smos.storage.connectionManagement.ConnectionPoolDataSource.closeAllConnections</a>
+
+<a href="dictionary_S.html#2244">smos.storage.connectionManagement.ConnectionPoolDataSource.closeAllConnections</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_R.html#2245">remove</a>
+| <a href="dictionary_S.html#565">smos.storage.connectionManagement.ConnectionWrapper.closeWrappedConnection</a>
+
+<a href="dictionary_S.html#809">smos.storage.connectionManagement.ConnectionPoolDataSource.closeAllPooledConnections</a>
+| <a href="dictionary_S.html#2244">smos.storage.connectionManagement.ConnectionPoolDataSource.closeAllConnections</a>
+
+<a href="dictionary_S.html#2215">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionCloser.ConnectionCloser</a>
+| <a href="dictionary_S.html#2216">setDaemon</a>
+| <a href="dictionary_S.html#2217">setName</a>
+
+<a href="dictionary_S.html#2219">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionCloser.connectionEvent</a>
+| <a href="dictionary_C.html#2220">currentTimeMillis</a>
+
+<a href="dictionary_S.html#2221">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionCloser.run</a>
+| <a href="dictionary_C.html#2220">currentTimeMillis</a>
+| <a href="dictionary_S.html#793">sleep</a>
+| <a href="dictionary_S.html#2244">smos.storage.connectionManagement.ConnectionPoolDataSource.closeAllConnections</a>
+| <a href="dictionary_P.html#17">printStackTrace</a>
+
+<a href="dictionary_S.html#1754">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionPoolDataSource</a>
+| <a href="dictionary_P.html#2230">put</a>
+| <a href="dictionary_F.html#2228">forName</a>
+| <a href="dictionary_G.html#2229">getDriver</a>
+| <a href="dictionary_S.html#2215">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionCloser.ConnectionCloser</a>
+| <a href="dictionary_S.html#1730">start</a>
+
+<a href="dictionary_S.html#2248">smos.storage.connectionManagement.ConnectionPoolDataSource.createNewConnection</a>
+| <a href="dictionary_C.html#2249">connect</a>
+| <a href="dictionary_S.html#547">smos.storage.connectionManagement.ConnectionWrapper.ConnectionWrapper</a>
+| <a href="dictionary_S.html#2250">setConnection</a>
+| <a href="dictionary_C.html#2220">currentTimeMillis</a>
+| <a href="dictionary_S.html#2251">setLastTime</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_P.html#794">println</a>
+
+<a href="dictionary_S.html#810">smos.storage.connectionManagement.ConnectionPoolDataSource.getConnection</a>
+| <a href="dictionary_S.html#2263">smos.storage.connectionManagement.ConnectionPoolDataSource.getPooledConnection</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_S.html#2248">smos.storage.connectionManagement.ConnectionPoolDataSource.createNewConnection</a>
+| <a href="dictionary_S.html#2219">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionCloser.connectionEvent</a>
+
+<a href="dictionary_S.html#2257">smos.storage.connectionManagement.ConnectionPoolDataSource.getConnection</a>
+| <a href="dictionary_S.html#2301">smos.storage.connectionManagement.exception.NotImplementedYetException.NotImplementedYetException</a>
+
+<a href="dictionary_S.html#2261">smos.storage.connectionManagement.ConnectionPoolDataSource.getLoginTimeout</a>
+| <a href="dictionary_S.html#2301">smos.storage.connectionManagement.exception.NotImplementedYetException.NotImplementedYetException</a>
+
+<a href="dictionary_S.html#2260">smos.storage.connectionManagement.ConnectionPoolDataSource.getLogWriter</a>
+| <a href="dictionary_S.html#2301">smos.storage.connectionManagement.exception.NotImplementedYetException.NotImplementedYetException</a>
+
+<a href="dictionary_S.html#2263">smos.storage.connectionManagement.ConnectionPoolDataSource.getPooledConnection</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_R.html#2245">remove</a>
+| <a href="dictionary_S.html#2250">setConnection</a>
+| <a href="dictionary_C.html#2220">currentTimeMillis</a>
+| <a href="dictionary_S.html#2251">setLastTime</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_G.html#2237">getConnection</a>
+
+<a href="dictionary_S.html#2267">smos.storage.connectionManagement.ConnectionPoolDataSource.poolSize</a>
+| <a href="dictionary_S.html#560">size</a>
+
+<a href="dictionary_S.html#683">smos.storage.connectionManagement.ConnectionPoolDataSource.release</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_G.html#562">get</a>
+| <a href="dictionary_E.html#1188">equals</a>
+| <a href="dictionary_R.html#2245">remove</a>
+| <a href="dictionary_G.html#2237">getConnection</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_S.html#2219">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionCloser.connectionEvent</a>
+
+<a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_G.html#562">get</a>
+| <a href="dictionary_E.html#1188">equals</a>
+| <a href="dictionary_C.html#2220">currentTimeMillis</a>
+| <a href="dictionary_S.html#2251">setLastTime</a>
+
+<a href="dictionary_S.html#2279">smos.storage.connectionManagement.ConnectionPoolDataSource.setLoginTimeout</a>
+| <a href="dictionary_S.html#2301">smos.storage.connectionManagement.exception.NotImplementedYetException.NotImplementedYetException</a>
+
+<a href="dictionary_S.html#2277">smos.storage.connectionManagement.ConnectionPoolDataSource.setLogWriter</a>
+| <a href="dictionary_S.html#2301">smos.storage.connectionManagement.exception.NotImplementedYetException.NotImplementedYetException</a>
+
+<a href="dictionary_S.html#2281">smos.storage.connectionManagement.ConnectionPoolDataSource.toString</a>
+| <a href="dictionary_A.html#1524">append</a>
+| <a href="dictionary_S.html#807">smos.storage.connectionManagement.ConnectionPoolDataSource.activeSize</a>
+| <a href="dictionary_S.html#2267">smos.storage.connectionManagement.ConnectionPoolDataSource.poolSize</a>
+| <a href="dictionary_T.html#664">toString</a>
+
+<a href="dictionary_S.html#546">smos.storage.connectionManagement.ConnectionWrapper</a>
+| <a href="dictionary_G.html#567">getName</a>
+| <a href="dictionary_G.html#587">getLogger</a>
+
+<a href="dictionary_S.html#551">smos.storage.connectionManagement.ConnectionWrapper.cachePreparedStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_A.html#216">add</a>
+
+<a href="dictionary_S.html#553">smos.storage.connectionManagement.ConnectionWrapper.cacheStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_A.html#216">add</a>
+
+<a href="dictionary_S.html#555">smos.storage.connectionManagement.ConnectionWrapper.clearWarnings</a>
+| <a href="dictionary_C.html#556">clearWarnings</a>
+
+<a href="dictionary_S.html#557">smos.storage.connectionManagement.ConnectionWrapper.close</a>
+| <a href="dictionary_S.html#558">smos.storage.connectionManagement.ConnectionWrapper.closeAndReleaseStatements</a>
+| <a href="dictionary_S.html#683">smos.storage.connectionManagement.ConnectionPoolDataSource.release</a>
+
+<a href="dictionary_S.html#558">smos.storage.connectionManagement.ConnectionWrapper.closeAndReleaseStatements</a>
+| <a href="dictionary_S.html#560">size</a>
+| <a href="dictionary_G.html#562">get</a>
+| <a href="dictionary_C.html#561">close</a>
+| <a href="dictionary_C.html#559">clear</a>
+
+<a href="dictionary_S.html#565">smos.storage.connectionManagement.ConnectionWrapper.closeWrappedConnection</a>
+| <a href="dictionary_S.html#558">smos.storage.connectionManagement.ConnectionWrapper.closeAndReleaseStatements</a>
+| <a href="dictionary_I.html#568">isClosed</a>
+| <a href="dictionary_G.html#566">getClass</a>
+| <a href="dictionary_G.html#567">getName</a>
+| <a href="dictionary_F.html#548">fine</a>
+| <a href="dictionary_C.html#561">close</a>
+
+<a href="dictionary_S.html#569">smos.storage.connectionManagement.ConnectionWrapper.commit</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_C.html#570">commit</a>
+
+<a href="dictionary_S.html#547">smos.storage.connectionManagement.ConnectionWrapper.ConnectionWrapper</a>
+| <a href="dictionary_F.html#548">fine</a>
+
+<a href="dictionary_S.html#571">smos.storage.connectionManagement.ConnectionWrapper.createStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_C.html#572">createStatement</a>
+| <a href="dictionary_S.html#553">smos.storage.connectionManagement.ConnectionWrapper.cacheStatement</a>
+
+<a href="dictionary_S.html#573">smos.storage.connectionManagement.ConnectionWrapper.createStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_C.html#572">createStatement</a>
+| <a href="dictionary_S.html#553">smos.storage.connectionManagement.ConnectionWrapper.cacheStatement</a>
+
+<a href="dictionary_S.html#576">smos.storage.connectionManagement.ConnectionWrapper.createStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_C.html#572">createStatement</a>
+| <a href="dictionary_S.html#553">smos.storage.connectionManagement.ConnectionWrapper.cacheStatement</a>
+
+<a href="dictionary_S.html#580">smos.storage.connectionManagement.ConnectionWrapper.finalize</a>
+| <a href="dictionary_S.html#565">smos.storage.connectionManagement.ConnectionWrapper.closeWrappedConnection</a>
+
+<a href="dictionary_S.html#581">smos.storage.connectionManagement.ConnectionWrapper.getAutoCommit</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#582">getAutoCommit</a>
+
+<a href="dictionary_S.html#583">smos.storage.connectionManagement.ConnectionWrapper.getCatalog</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#584">getCatalog</a>
+
+<a href="dictionary_S.html#585">smos.storage.connectionManagement.ConnectionWrapper.getHoldability</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#586">getHoldability</a>
+
+<a href="dictionary_S.html#588">smos.storage.connectionManagement.ConnectionWrapper.getMetaData</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#589">getMetaData</a>
+
+<a href="dictionary_S.html#590">smos.storage.connectionManagement.ConnectionWrapper.getTransactionIsolation</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#591">getTransactionIsolation</a>
+
+<a href="dictionary_S.html#592">smos.storage.connectionManagement.ConnectionWrapper.getTypeMap</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#593">getTypeMap</a>
+
+<a href="dictionary_S.html#594">smos.storage.connectionManagement.ConnectionWrapper.getWarnings</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#595">getWarnings</a>
+
+<a href="dictionary_S.html#596">smos.storage.connectionManagement.ConnectionWrapper.isClosed</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_I.html#568">isClosed</a>
+
+<a href="dictionary_S.html#597">smos.storage.connectionManagement.ConnectionWrapper.isReadOnly</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_I.html#598">isReadOnly</a>
+
+<a href="dictionary_S.html#599">smos.storage.connectionManagement.ConnectionWrapper.nativeSQL</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_N.html#600">nativeSQL</a>
+
+<a href="dictionary_S.html#602">smos.storage.connectionManagement.ConnectionWrapper.prepareCall</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#603">prepareCall</a>
+
+<a href="dictionary_S.html#605">smos.storage.connectionManagement.ConnectionWrapper.prepareCall</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#603">prepareCall</a>
+
+<a href="dictionary_S.html#609">smos.storage.connectionManagement.ConnectionWrapper.prepareCall</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#603">prepareCall</a>
+
+<a href="dictionary_S.html#614">smos.storage.connectionManagement.ConnectionWrapper.prepareStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#615">prepareStatement</a>
+| <a href="dictionary_S.html#551">smos.storage.connectionManagement.ConnectionWrapper.cachePreparedStatement</a>
+
+<a href="dictionary_S.html#617">smos.storage.connectionManagement.ConnectionWrapper.prepareStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#615">prepareStatement</a>
+| <a href="dictionary_S.html#551">smos.storage.connectionManagement.ConnectionWrapper.cachePreparedStatement</a>
+
+<a href="dictionary_S.html#620">smos.storage.connectionManagement.ConnectionWrapper.prepareStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#615">prepareStatement</a>
+| <a href="dictionary_S.html#551">smos.storage.connectionManagement.ConnectionWrapper.cachePreparedStatement</a>
+
+<a href="dictionary_S.html#624">smos.storage.connectionManagement.ConnectionWrapper.prepareStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#615">prepareStatement</a>
+| <a href="dictionary_S.html#551">smos.storage.connectionManagement.ConnectionWrapper.cachePreparedStatement</a>
+
+<a href="dictionary_S.html#629">smos.storage.connectionManagement.ConnectionWrapper.prepareStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#615">prepareStatement</a>
+| <a href="dictionary_S.html#551">smos.storage.connectionManagement.ConnectionWrapper.cachePreparedStatement</a>
+
+<a href="dictionary_S.html#632">smos.storage.connectionManagement.ConnectionWrapper.prepareStatement</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_P.html#615">prepareStatement</a>
+| <a href="dictionary_S.html#551">smos.storage.connectionManagement.ConnectionWrapper.cachePreparedStatement</a>
+
+<a href="dictionary_S.html#635">smos.storage.connectionManagement.ConnectionWrapper.releaseSavepoint</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_R.html#636">releaseSavepoint</a>
+
+<a href="dictionary_S.html#638">smos.storage.connectionManagement.ConnectionWrapper.rollback</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_R.html#639">rollback</a>
+
+<a href="dictionary_S.html#640">smos.storage.connectionManagement.ConnectionWrapper.rollback</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_R.html#639">rollback</a>
+
+<a href="dictionary_S.html#642">smos.storage.connectionManagement.ConnectionWrapper.setAutoCommit</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_G.html#582">getAutoCommit</a>
+| <a href="dictionary_S.html#643">setAutoCommit</a>
+
+<a href="dictionary_S.html#645">smos.storage.connectionManagement.ConnectionWrapper.setCatalog</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_S.html#646">setCatalog</a>
+
+<a href="dictionary_S.html#648">smos.storage.connectionManagement.ConnectionWrapper.setHoldability</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_S.html#649">setHoldability</a>
+
+<a href="dictionary_S.html#651">smos.storage.connectionManagement.ConnectionWrapper.setReadOnly</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_S.html#652">setReadOnly</a>
+
+<a href="dictionary_S.html#654">smos.storage.connectionManagement.ConnectionWrapper.setSavepoint</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_S.html#655">setSavepoint</a>
+
+<a href="dictionary_S.html#656">smos.storage.connectionManagement.ConnectionWrapper.setSavepoint</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_S.html#655">setSavepoint</a>
+
+<a href="dictionary_S.html#658">smos.storage.connectionManagement.ConnectionWrapper.setTransactionIsolation</a>
+| <a href="dictionary_S.html#682">smos.storage.connectionManagement.ConnectionPoolDataSource.setLastTime</a>
+| <a href="dictionary_S.html#659">setTransactionIsolation</a>
+
+<a href="dictionary_S.html#663">smos.storage.connectionManagement.ConnectionWrapper.toString</a>
+| <a href="dictionary_T.html#664">toString</a>
+
+<a href="dictionary_S.html#790">smos.storage.connectionManagement.ControlConnection.run</a>
+| <a href="dictionary_S.html#807">smos.storage.connectionManagement.ConnectionPoolDataSource.activeSize</a>
+| <a href="dictionary_S.html#792">setPriority</a>
+| <a href="dictionary_S.html#808">smos.storage.connectionManagement.ConnectionPoolDataSource.clearActive</a>
+| <a href="dictionary_S.html#809">smos.storage.connectionManagement.ConnectionPoolDataSource.closeAllPooledConnections</a>
+| <a href="dictionary_S.html#810">smos.storage.connectionManagement.ConnectionPoolDataSource.getConnection</a>
+| <a href="dictionary_C.html#572">createStatement</a>
+| <a href="dictionary_E.html#791">executeQuery</a>
+| <a href="dictionary_S.html#683">smos.storage.connectionManagement.ConnectionPoolDataSource.release</a>
+| <a href="dictionary_P.html#794">println</a>
+| <a href="dictionary_S.html#793">sleep</a>
+
+<a href="dictionary_S.html#236">smos.storage.connectionManagement.DBConnection</a>
+| <a href="dictionary_S.html#1753">smos.Environment.getPoolPropertiesPath</a>
+| <a href="dictionary_E.html#122">exists</a>
+| <a href="dictionary_L.html#1728">load</a>
+| <a href="dictionary_G.html#1727">getProperty</a>
+| <a href="dictionary_E.html#1188">equals</a>
+| <a href="dictionary_S.html#1607">smos.utility.Utility.getDriverMySql</a>
+| <a href="dictionary_S.html#1608">smos.utility.Utility.getFullPathDatabase</a>
+| <a href="dictionary_S.html#1627">smos.utility.Utility.getUserName</a>
+| <a href="dictionary_S.html#1621">smos.utility.Utility.getPassword</a>
+| <a href="dictionary_P.html#1072">parseInt</a>
+| <a href="dictionary_S.html#1613">smos.utility.Utility.getMaxPoolSize</a>
+| <a href="dictionary_S.html#1628">smos.utility.Utility.getWaitTimeout</a>
+| <a href="dictionary_S.html#1597">smos.utility.Utility.getActiveTimeout</a>
+| <a href="dictionary_S.html#1623">smos.utility.Utility.getPoolTimeout</a>
+| <a href="dictionary_S.html#1729">smos.storage.connectionManagement.DBConnection.loadPool</a>
+
+<a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#810">smos.storage.connectionManagement.ConnectionPoolDataSource.getConnection</a>
+| <a href="dictionary_P.html#794">println</a>
+
+<a href="dictionary_S.html#1729">smos.storage.connectionManagement.DBConnection.loadPool</a>
+| <a href="dictionary_S.html#1754">smos.storage.connectionManagement.ConnectionPoolDataSource.ConnectionPoolDataSource</a>
+| <a href="dictionary_S.html#1755">smos.storage.connectionManagement.ConnectionPoolDataSource.setActivedTimeout</a>
+| <a href="dictionary_S.html#787">smos.storage.connectionManagement.ControlConnection.ControlConnection</a>
+| <a href="dictionary_S.html#1730">start</a>
+| <a href="dictionary_P.html#794">println</a>
+
+<a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+| <a href="dictionary_S.html#683">smos.storage.connectionManagement.ConnectionPoolDataSource.release</a>
+
+<a href="dictionary_S.html#1759">smos.storage.connectionManagement.exception.AdaptorException.AdaptorException</a>
+| <a href="dictionary_S.html#1766">smos.storage.connectionManagement.exception.AdaptorException.buildLabel</a>
+
+<a href="dictionary_S.html#1761">smos.storage.connectionManagement.exception.AdaptorException.AdaptorException</a>
+| <a href="dictionary_S.html#1766">smos.storage.connectionManagement.exception.AdaptorException.buildLabel</a>
+
+<a href="dictionary_S.html#1764">smos.storage.connectionManagement.exception.AdaptorException.AdaptorException</a>
+| <a href="dictionary_S.html#1766">smos.storage.connectionManagement.exception.AdaptorException.buildLabel</a>
+
+<a href="dictionary_S.html#156">smos.storage.ManagerAddress.assignTeachingAsAddress</a>
+| <a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_S.html#204">smos.storage.ManagerAddress.hasTeaching</a>
+| <a href="dictionary_S.html#150">smos.exception.DuplicatedEntityException.DuplicatedEntityException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#241">smos.bean.Address.getIdAddress</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#60">smos.storage.ManagerAddress.delete</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#241">smos.bean.Address.getIdAddress</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#166">smos.storage.ManagerAddress.exists</a>
+| <a href="dictionary_S.html#245">smos.bean.Address.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#173">smos.storage.ManagerAddress.getAddressById</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#219">smos.storage.ManagerAddress.loadRecordFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#179">smos.storage.ManagerAddress.getAddressId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#245">smos.bean.Address.getName</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#186">smos.storage.ManagerAddress.getAddressList</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#222">smos.storage.ManagerAddress.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#191">smos.storage.ManagerAddress.getAddressNameById</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#198">smos.storage.ManagerAddress.getAddressTechings</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_S.html#215">smos.storage.ManagerAddress.loadIntegersFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_S.html#155">smos.storage.ManagerAddress.ManagerAddress</a>
+
+<a href="dictionary_S.html#204">smos.storage.ManagerAddress.hasTeaching</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#241">smos.bean.Address.getIdAddress</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#211">smos.storage.ManagerAddress.insert</a>
+| <a href="dictionary_S.html#245">smos.bean.Address.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#252">smos.bean.Address.setIdAddress</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#215">smos.storage.ManagerAddress.loadIntegersFromRs</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_A.html#216">add</a>
+
+<a href="dictionary_S.html#219">smos.storage.ManagerAddress.loadRecordFromRs</a>
+| <a href="dictionary_S.html#253">smos.bean.Address.Address</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#254">smos.bean.Address.setName</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#252">smos.bean.Address.setIdAddress</a>
+
+<a href="dictionary_S.html#222">smos.storage.ManagerAddress.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#219">smos.storage.ManagerAddress.loadRecordFromRs</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_N.html#167">next</a>
+
+<a href="dictionary_S.html#225">smos.storage.ManagerAddress.removeTeachingAsAddress</a>
+| <a href="dictionary_S.html#59">smos.storage.ManagerAddress.getInstance</a>
+| <a href="dictionary_S.html#204">smos.storage.ManagerAddress.hasTeaching</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#241">smos.bean.Address.getIdAddress</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#836">smos.storage.ManagerClassroom.delete</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1068">smos.bean.Classroom.getIdClassroom</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1801">smos.storage.ManagerClassroom.exists</a>
+| <a href="dictionary_S.html#2526">smos.bean.Classroom.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#516">smos.bean.Classroom.getIdAddress</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#898">smos.storage.ManagerClassroom.getAcademicYearList</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_S.html#2509">smos.storage.ManagerClassroom.loadIntegersFromRs</a>
+| <a href="dictionary_I.html#2461">isEmpty</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#474">smos.storage.ManagerClassroom.getClassroomByID</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#2512">smos.storage.ManagerClassroom.loadRecordFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#2471">smos.storage.ManagerClassroom.getClassroomByUserAcademicYear</a>
+| <a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#2484">smos.storage.ManagerClassroom.getClassroomsByStudent</a>
+| <a href="dictionary_I.html#479">iterator</a>
+| <a href="dictionary_H.html#478">hasNext</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+
+<a href="dictionary_S.html#541">smos.storage.ManagerClassroom.getClassroomsByAcademicYear</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_S.html#2515">smos.storage.ManagerClassroom.loadRecordsFromRs</a>
+| <a href="dictionary_I.html#2461">isEmpty</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#2484">smos.storage.ManagerClassroom.getClassroomsByStudent</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_E.html#122">exists</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#1366">isStudent</a>
+| <a href="dictionary_G.html#124">getUserId</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_S.html#2515">smos.storage.ManagerClassroom.loadRecordsFromRs</a>
+| <a href="dictionary_I.html#2461">isEmpty</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#412">smos.storage.ManagerClassroom.getClassroomsByTeacher</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_E.html#122">exists</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#387">isTeacher</a>
+| <a href="dictionary_G.html#124">getUserId</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_S.html#2515">smos.storage.ManagerClassroom.loadRecordsFromRs</a>
+| <a href="dictionary_I.html#2461">isEmpty</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#2329">smos.storage.ManagerClassroom.getClassroomsByTeacherAcademicYear</a>
+| <a href="dictionary_S.html#149">smos.bean.User.getId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_S.html#2515">smos.storage.ManagerClassroom.loadRecordsFromRs</a>
+| <a href="dictionary_I.html#2461">isEmpty</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#411">smos.storage.ManagerClassroom.getInstance</a>
+| <a href="dictionary_S.html#2452">smos.storage.ManagerClassroom.ManagerClassroom</a>
+
+<a href="dictionary_S.html#1802">smos.storage.ManagerClassroom.insert</a>
+| <a href="dictionary_S.html#2526">smos.bean.Classroom.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#516">smos.bean.Classroom.getIdAddress</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#2527">smos.bean.Classroom.setIdClassroom</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#2509">smos.storage.ManagerClassroom.loadIntegersFromRs</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_A.html#216">add</a>
+
+<a href="dictionary_S.html#2512">smos.storage.ManagerClassroom.loadRecordFromRs</a>
+| <a href="dictionary_S.html#1797">smos.bean.Classroom.Classroom</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#1798">smos.bean.Classroom.setName</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#1799">smos.bean.Classroom.setAcademicYear</a>
+| <a href="dictionary_S.html#2527">smos.bean.Classroom.setIdClassroom</a>
+| <a href="dictionary_S.html#1800">smos.bean.Classroom.setIdAddress</a>
+
+<a href="dictionary_S.html#2515">smos.storage.ManagerClassroom.loadRecordsFromRs</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#2512">smos.storage.ManagerClassroom.loadRecordFromRs</a>
+| <a href="dictionary_A.html#216">add</a>
+
+<a href="dictionary_S.html#2518">smos.storage.ManagerClassroom.update</a>
+| <a href="dictionary_S.html#1068">smos.bean.Classroom.getIdClassroom</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#2526">smos.bean.Classroom.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#835">smos.bean.Classroom.getAcademicYear</a>
+| <a href="dictionary_S.html#516">smos.bean.Classroom.getIdAddress</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1805">smos.storage.ManagerRegister.deleteAbsence</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1009">smos.bean.Absence.getIdAbsence</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#1010">smos.bean.Absence.getIdJustify</a>
+| <a href="dictionary_S.html#1813">smos.storage.ManagerRegister.deleteJustify</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1809">smos.storage.ManagerRegister.deleteDelay</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1130">smos.bean.Delay.getIdDelay</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1813">smos.storage.ManagerRegister.deleteJustify</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#1857">smos.storage.ManagerRegister.getAbsenceByIdJustify</a>
+| <a href="dictionary_S.html#1018">smos.bean.Absence.setIdJustify</a>
+| <a href="dictionary_S.html#1942">smos.storage.ManagerRegister.updateAbsence</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1466">smos.storage.ManagerRegister.deleteNote</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#872">smos.bean.Note.getIdNote</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1101">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1009">smos.bean.Absence.getIdAbsence</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1102">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1963">smos.bean.Justify.getIdJustify</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1827">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1130">smos.bean.Delay.getIdDelay</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1100">smos.storage.ManagerRegister.getAbsenceByIdAbsence</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1930">smos.storage.ManagerRegister.loadAbsenceFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1857">smos.storage.ManagerRegister.getAbsenceByIdJustify</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1930">smos.storage.ManagerRegister.loadAbsenceFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1838">smos.storage.ManagerRegister.getAbsenceByIDUserAndAcademicYear</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1930">smos.storage.ManagerRegister.loadAbsenceFromRs</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1845">smos.storage.ManagerRegister.getAbsenceByIDUserAndDate</a>
+| <a href="dictionary_S.html#1006">smos.bean.Absence.Absence</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1930">smos.storage.ManagerRegister.loadAbsenceFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1870">smos.storage.ManagerRegister.getDelayById</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1933">smos.storage.ManagerRegister.loadDelayFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1863">smos.storage.ManagerRegister.getDelayByIDUserAndDate</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1933">smos.storage.ManagerRegister.loadDelayFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_S.html#1804">smos.storage.ManagerRegister.ManagerRegister</a>
+
+<a href="dictionary_S.html#1876">smos.storage.ManagerRegister.getJustifyByAbsence</a>
+| <a href="dictionary_S.html#1101">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#1010">smos.bean.Absence.getIdJustify</a>
+| <a href="dictionary_S.html#1631">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1936">smos.storage.ManagerRegister.loadJustifyFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1882">smos.storage.ManagerRegister.getJustifyByIdJustify</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1936">smos.storage.ManagerRegister.loadJustifyFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#864">smos.storage.ManagerRegister.getNoteById</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1939">smos.storage.ManagerRegister.loadNoteFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1888">smos.storage.ManagerRegister.getNoteByIDUserAndAcademicYear</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1939">smos.storage.ManagerRegister.loadNoteFromRs</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1900">smos.storage.ManagerRegister.getRegisterByClassIDAndDate</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#972">getStudentsByClassroomId</a>
+| <a href="dictionary_S.html#1964">smos.bean.RegisterLine.RegisterLine</a>
+| <a href="dictionary_S.html#1965">smos.bean.RegisterLine.setStudent</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_S.html#1845">smos.storage.ManagerRegister.getAbsenceByIDUserAndDate</a>
+| <a href="dictionary_S.html#1966">smos.bean.RegisterLine.setAbsence</a>
+| <a href="dictionary_S.html#1863">smos.storage.ManagerRegister.getDelayByIDUserAndDate</a>
+| <a href="dictionary_S.html#1967">smos.bean.RegisterLine.setDelay</a>
+| <a href="dictionary_A.html#216">add</a>
+
+<a href="dictionary_S.html#1908">smos.storage.ManagerRegister.hasAbsence</a>
+| <a href="dictionary_S.html#1968">smos.bean.RegisterLine.getAbsence</a>
+
+<a href="dictionary_S.html#1910">smos.storage.ManagerRegister.hasDelay</a>
+| <a href="dictionary_S.html#1969">smos.bean.RegisterLine.getDelay</a>
+
+<a href="dictionary_S.html#1912">smos.storage.ManagerRegister.hasJustify</a>
+| <a href="dictionary_S.html#1101">smos.storage.ManagerRegister.exists</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#1010">smos.bean.Absence.getIdJustify</a>
+
+<a href="dictionary_S.html#1914">smos.storage.ManagerRegister.insertAbsence</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1011">smos.bean.Absence.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#1008">smos.bean.Absence.getDateAbsence</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1010">smos.bean.Absence.getIdJustify</a>
+| <a href="dictionary_S.html#1631">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1007">smos.bean.Absence.getAcademicYear</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#1016">smos.bean.Absence.setIdAbsence</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1918">smos.storage.ManagerRegister.insertDelay</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1131">smos.bean.Delay.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#1129">smos.bean.Delay.getDateDelay</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1132">smos.bean.Delay.getTimeDelay</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1128">smos.bean.Delay.getAcademicYear</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#1138">smos.bean.Delay.setIdDelay</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1103">smos.storage.ManagerRegister.insertJustify</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#1970">smos.bean.Justify.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#1971">smos.bean.Justify.getDateJustify</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1972">smos.bean.Justify.getAcademicYear</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#1973">smos.bean.Justify.setIdJustify</a>
+| <a href="dictionary_S.html#1963">smos.bean.Justify.getIdJustify</a>
+| <a href="dictionary_S.html#1018">smos.bean.Absence.setIdJustify</a>
+| <a href="dictionary_S.html#1942">smos.storage.ManagerRegister.updateAbsence</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1926">smos.storage.ManagerRegister.insertNote</a>
+| <a href="dictionary_S.html#918">smos.bean.Note.getDescription</a>
+| <a href="dictionary_E.html#1188">equals</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#920">smos.bean.Note.getTeacher</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#919">smos.bean.Note.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#917">smos.bean.Note.getDateNote</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#916">smos.bean.Note.getAcademicYear</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#873">smos.bean.Note.setIdNote</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1930">smos.storage.ManagerRegister.loadAbsenceFromRs</a>
+| <a href="dictionary_S.html#1006">smos.bean.Absence.Absence</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#1016">smos.bean.Absence.setIdAbsence</a>
+| <a href="dictionary_S.html#1020">smos.bean.Absence.setIdUser</a>
+| <a href="dictionary_G.html#1580">getDate</a>
+| <a href="dictionary_S.html#1014">smos.bean.Absence.setDateAbsence</a>
+| <a href="dictionary_S.html#1018">smos.bean.Absence.setIdJustify</a>
+| <a href="dictionary_S.html#1012">smos.bean.Absence.setAcademicYear</a>
+
+<a href="dictionary_S.html#1933">smos.storage.ManagerRegister.loadDelayFromRs</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#1138">smos.bean.Delay.setIdDelay</a>
+| <a href="dictionary_S.html#1140">smos.bean.Delay.setIdUser</a>
+| <a href="dictionary_G.html#1580">getDate</a>
+| <a href="dictionary_S.html#1136">smos.bean.Delay.setDateDelay</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#1142">smos.bean.Delay.setTimeDelay</a>
+| <a href="dictionary_S.html#1134">smos.bean.Delay.setAcademicYear</a>
+
+<a href="dictionary_S.html#1936">smos.storage.ManagerRegister.loadJustifyFromRs</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#1973">smos.bean.Justify.setIdJustify</a>
+| <a href="dictionary_S.html#1099">smos.bean.Justify.setIdUser</a>
+| <a href="dictionary_G.html#1580">getDate</a>
+| <a href="dictionary_S.html#1098">smos.bean.Justify.setDateJustify</a>
+| <a href="dictionary_S.html#1097">smos.bean.Justify.setAcademicYear</a>
+
+<a href="dictionary_S.html#1939">smos.storage.ManagerRegister.loadNoteFromRs</a>
+| <a href="dictionary_S.html#865">smos.bean.Note.Note</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#873">smos.bean.Note.setIdNote</a>
+| <a href="dictionary_S.html#869">smos.bean.Note.setIdUser</a>
+| <a href="dictionary_G.html#1580">getDate</a>
+| <a href="dictionary_S.html#868">smos.bean.Note.setDateNote</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#871">smos.bean.Note.setDescription</a>
+| <a href="dictionary_S.html#870">smos.bean.Note.setTeacher</a>
+| <a href="dictionary_S.html#866">smos.bean.Note.setAcademicYear</a>
+
+<a href="dictionary_S.html#1942">smos.storage.ManagerRegister.updateAbsence</a>
+| <a href="dictionary_S.html#1011">smos.bean.Absence.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#1008">smos.bean.Absence.getDateAbsence</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1010">smos.bean.Absence.getIdJustify</a>
+| <a href="dictionary_S.html#1631">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1007">smos.bean.Absence.getAcademicYear</a>
+| <a href="dictionary_S.html#1009">smos.bean.Absence.getIdAbsence</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1946">smos.storage.ManagerRegister.updateDelay</a>
+| <a href="dictionary_S.html#1131">smos.bean.Delay.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#1129">smos.bean.Delay.getDateDelay</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1132">smos.bean.Delay.getTimeDelay</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1128">smos.bean.Delay.getAcademicYear</a>
+| <a href="dictionary_S.html#1130">smos.bean.Delay.getIdDelay</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1329">smos.storage.ManagerRegister.updateJustify</a>
+| <a href="dictionary_S.html#1970">smos.bean.Justify.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#1971">smos.bean.Justify.getDateJustify</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1972">smos.bean.Justify.getAcademicYear</a>
+| <a href="dictionary_S.html#1963">smos.bean.Justify.getIdJustify</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#874">smos.storage.ManagerRegister.updateNote</a>
+| <a href="dictionary_S.html#918">smos.bean.Note.getDescription</a>
+| <a href="dictionary_E.html#1188">equals</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#920">smos.bean.Note.getTeacher</a>
+| <a href="dictionary_S.html#919">smos.bean.Note.getIdUser</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#917">smos.bean.Note.getDateNote</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#916">smos.bean.Note.getAcademicYear</a>
+| <a href="dictionary_S.html#872">smos.bean.Note.getIdNote</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1220">smos.storage.ManagerTeaching.delete</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#439">smos.storage.ManagerTeaching.exists</a>
+| <a href="dictionary_S.html#900">smos.bean.Teaching.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#90">smos.storage.ManagerTeaching.getInstance</a>
+| <a href="dictionary_S.html#1219">smos.storage.ManagerTeaching.ManagerTeaching</a>
+
+<a href="dictionary_S.html#379">smos.storage.ManagerTeaching.getTeachingById</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1291">smos.storage.ManagerTeaching.loadRecordFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1234">smos.storage.ManagerTeaching.getTeachingId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#900">smos.bean.Teaching.getName</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1240">smos.storage.ManagerTeaching.getTeachingNameById</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#91">smos.storage.ManagerTeaching.getTeachings</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1294">smos.storage.ManagerTeaching.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#517">smos.storage.ManagerTeaching.getTeachingsByClassroomId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1294">smos.storage.ManagerTeaching.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1255">smos.storage.ManagerTeaching.getTeachingsByClassroomName</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1294">smos.storage.ManagerTeaching.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1261">smos.storage.ManagerTeaching.getTeachingsByIdUserIdClassroom</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1294">smos.storage.ManagerTeaching.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1269">smos.storage.ManagerTeaching.getTeachingsByUserId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1294">smos.storage.ManagerTeaching.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1275">smos.storage.ManagerTeaching.getTeachingsByUserIdClassID</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#1294">smos.storage.ManagerTeaching.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1282">smos.storage.ManagerTeaching.hasTeacher</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#440">smos.storage.ManagerTeaching.insert</a>
+| <a href="dictionary_S.html#900">smos.bean.Teaching.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#901">smos.bean.Teaching.setId</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#1291">smos.storage.ManagerTeaching.loadRecordFromRs</a>
+| <a href="dictionary_S.html#437">smos.bean.Teaching.Teaching</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#438">smos.bean.Teaching.setName</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#901">smos.bean.Teaching.setId</a>
+
+<a href="dictionary_S.html#1294">smos.storage.ManagerTeaching.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#1291">smos.storage.ManagerTeaching.loadRecordFromRs</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_N.html#167">next</a>
+
+<a href="dictionary_S.html#1297">smos.storage.ManagerTeaching.update</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#900">smos.bean.Teaching.getName</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#258">smos.storage.ManagerVotes.delete</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#334">smos.bean.Votes.getId_votes</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#262">smos.storage.ManagerVotes.deleteVotesByUserIdYearTurn</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#268">smos.storage.ManagerVotes.exists</a>
+| <a href="dictionary_S.html#334">smos.bean.Votes.getId_votes</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#274">smos.storage.ManagerVotes.getIdVotes</a>
+| <a href="dictionary_S.html#242">smos.bean.Teaching.getId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#335">smos.bean.UserListItem.getId</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#320">smos.storage.ManagerVotes.loadRecordFromRs</a>
+| <a href="dictionary_S.html#334">smos.bean.Votes.getId_votes</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#284">smos.storage.ManagerVotes.getInstance</a>
+| <a href="dictionary_S.html#257">smos.storage.ManagerVotes.ManagerVotes</a>
+
+<a href="dictionary_S.html#285">smos.storage.ManagerVotes.getTeachingIdByVotesId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#192">getString</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#291">smos.storage.ManagerVotes.getVotes</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#323">smos.storage.ManagerVotes.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#296">smos.storage.ManagerVotes.getVotesById</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#320">smos.storage.ManagerVotes.loadRecordFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#302">smos.storage.ManagerVotes.getVotesByUserId</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#323">smos.storage.ManagerVotes.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#308">smos.storage.ManagerVotes.getVotesByUserIdYearTurn</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_S.html#323">smos.storage.ManagerVotes.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#316">smos.storage.ManagerVotes.insert</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#336">smos.bean.Votes.getId_user</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#337">smos.bean.Votes.getTeaching</a>
+| <a href="dictionary_S.html#338">smos.bean.Votes.getWritten</a>
+| <a href="dictionary_S.html#339">smos.bean.Votes.getOral</a>
+| <a href="dictionary_S.html#340">smos.bean.Votes.getLaboratory</a>
+| <a href="dictionary_S.html#341">smos.bean.Votes.getAccademicYear</a>
+| <a href="dictionary_S.html#342">smos.bean.Votes.getTurn</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_S.html#343">smos.bean.Votes.setId_votes</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#320">smos.storage.ManagerVotes.loadRecordFromRs</a>
+| <a href="dictionary_S.html#344">smos.bean.Votes.Votes</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#343">smos.bean.Votes.setId_votes</a>
+| <a href="dictionary_S.html#345">smos.bean.Votes.setId_user</a>
+| <a href="dictionary_S.html#346">smos.bean.Votes.setTeaching</a>
+| <a href="dictionary_S.html#347">smos.bean.Votes.setWritten</a>
+| <a href="dictionary_S.html#348">smos.bean.Votes.setOral</a>
+| <a href="dictionary_S.html#349">smos.bean.Votes.setLaboratory</a>
+| <a href="dictionary_S.html#350">smos.bean.Votes.setAccademicYear</a>
+| <a href="dictionary_S.html#351">smos.bean.Votes.setTurn</a>
+
+<a href="dictionary_S.html#323">smos.storage.ManagerVotes.loadRecordsFromRs</a>
+| <a href="dictionary_S.html#320">smos.storage.ManagerVotes.loadRecordFromRs</a>
+| <a href="dictionary_A.html#216">add</a>
+| <a href="dictionary_N.html#167">next</a>
+
+<a href="dictionary_S.html#326">smos.storage.ManagerVotes.update</a>
+| <a href="dictionary_S.html#334">smos.bean.Votes.getId_votes</a>
+| <a href="dictionary_S.html#249">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#336">smos.bean.Votes.getId_user</a>
+| <a href="dictionary_S.html#246">smos.exception.MandatoryFieldException.MandatoryFieldException</a>
+| <a href="dictionary_S.html#337">smos.bean.Votes.getTeaching</a>
+| <a href="dictionary_S.html#341">smos.bean.Votes.getAccademicYear</a>
+| <a href="dictionary_S.html#342">smos.bean.Votes.getTurn</a>
+| <a href="dictionary_I.html#157">isNull</a>
+| <a href="dictionary_S.html#338">smos.bean.Votes.getWritten</a>
+| <a href="dictionary_S.html#339">smos.bean.Votes.getOral</a>
+| <a href="dictionary_S.html#340">smos.bean.Votes.getLaboratory</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#2405">smos.storage.TestRegister.main</a>
+| <a href="dictionary_S.html#863">smos.storage.ManagerRegister.getInstance</a>
+| <a href="dictionary_S.html#1006">smos.bean.Absence.Absence</a>
+| <a href="dictionary_S.html#1020">smos.bean.Absence.setIdUser</a>
+| <a href="dictionary_S.html#1014">smos.bean.Absence.setDateAbsence</a>
+| <a href="dictionary_S.html#1018">smos.bean.Absence.setIdJustify</a>
+| <a href="dictionary_S.html#1012">smos.bean.Absence.setAcademicYear</a>
+| <a href="dictionary_S.html#1099">smos.bean.Justify.setIdUser</a>
+| <a href="dictionary_S.html#1098">smos.bean.Justify.setDateJustify</a>
+| <a href="dictionary_S.html#1097">smos.bean.Justify.setAcademicYear</a>
+| <a href="dictionary_S.html#1973">smos.bean.Justify.setIdJustify</a>
+| <a href="dictionary_S.html#1140">smos.bean.Delay.setIdUser</a>
+| <a href="dictionary_S.html#1136">smos.bean.Delay.setDateDelay</a>
+| <a href="dictionary_S.html#1142">smos.bean.Delay.setTimeDelay</a>
+| <a href="dictionary_S.html#1134">smos.bean.Delay.setAcademicYear</a>
+| <a href="dictionary_S.html#865">smos.bean.Note.Note</a>
+| <a href="dictionary_S.html#869">smos.bean.Note.setIdUser</a>
+| <a href="dictionary_S.html#870">smos.bean.Note.setTeacher</a>
+| <a href="dictionary_S.html#866">smos.bean.Note.setAcademicYear</a>
+| <a href="dictionary_S.html#868">smos.bean.Note.setDateNote</a>
+| <a href="dictionary_S.html#871">smos.bean.Note.setDescription</a>
+| <a href="dictionary_S.html#873">smos.bean.Note.setIdNote</a>
+| <a href="dictionary_S.html#1918">smos.storage.ManagerRegister.insertDelay</a>
+| <a href="dictionary_S.html#1900">smos.storage.ManagerRegister.getRegisterByClassIDAndDate</a>
+| <a href="dictionary_S.html#2423">smos.bean.RegisterLine.getStudent</a>
+| <a href="dictionary_S.html#2369">smos.bean.UserListItem.getName</a>
+| <a href="dictionary_P.html#794">println</a>
+| <a href="dictionary_S.html#1908">smos.storage.ManagerRegister.hasAbsence</a>
+| <a href="dictionary_S.html#1910">smos.storage.ManagerRegister.hasDelay</a>
+| <a href="dictionary_G.html#562">get</a>
+| <a href="dictionary_G.html#16">getMessage</a>
+| <a href="dictionary_T.html#664">toString</a>
+| <a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+
+<a href="dictionary_S.html#1469">smos.storage.UserTest.main</a>
+| <a href="dictionary_S.html#1475">smos.bean.UserListItem.setId</a>
+| <a href="dictionary_S.html#437">smos.bean.Teaching.Teaching</a>
+| <a href="dictionary_S.html#901">smos.bean.Teaching.setId</a>
+| <a href="dictionary_S.html#284">smos.storage.ManagerVotes.getInstance</a>
+| <a href="dictionary_S.html#344">smos.bean.Votes.Votes</a>
+| <a href="dictionary_S.html#350">smos.bean.Votes.setAccademicYear</a>
+| <a href="dictionary_S.html#345">smos.bean.Votes.setId_user</a>
+| <a href="dictionary_S.html#349">smos.bean.Votes.setLaboratory</a>
+| <a href="dictionary_S.html#348">smos.bean.Votes.setOral</a>
+| <a href="dictionary_S.html#346">smos.bean.Votes.setTeaching</a>
+| <a href="dictionary_S.html#351">smos.bean.Votes.setTurn</a>
+| <a href="dictionary_S.html#347">smos.bean.Votes.setWritten</a>
+| <a href="dictionary_S.html#316">smos.storage.ManagerVotes.insert</a>
+
+<a href="dictionary_S.html#2562">smos.utility.MailUtility.sendMail</a>
+| <a href="dictionary_S.html#1624">smos.utility.Utility.getServerSmtp</a>
+| <a href="dictionary_P.html#2230">put</a>
+| <a href="dictionary_G.html#2563">getDefaultInstance</a>
+| <a href="dictionary_S.html#2567">setSubject</a>
+| <a href="dictionary_S.html#2568">setText</a>
+| <a href="dictionary_S.html#2565">setFrom</a>
+| <a href="dictionary_S.html#2566">setRecipient</a>
+| <a href="dictionary_S.html#2564">send</a>
+
+<a href="dictionary_S.html#1551">smos.utility.Utility.clear</a>
+| <a href="dictionary_I.html#1506">indexOf</a>
+| <a href="dictionary_S.html#1133">substring</a>
+
+<a href="dictionary_S.html#1559">smos.utility.Utility.date2SQLString</a>
+| <a href="dictionary_G.html#1560">getDefault</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_S.html#1561">setTime</a>
+| <a href="dictionary_G.html#562">get</a>
+
+<a href="dictionary_S.html#1493">smos.utility.Utility.Date2String</a>
+| <a href="dictionary_G.html#1495">getDateInstance</a>
+| <a href="dictionary_G.html#1496">getTimeInstance</a>
+| <a href="dictionary_F.html#1494">format</a>
+
+<a href="dictionary_S.html#1579">smos.utility.Utility.daysBetween</a>
+| <a href="dictionary_G.html#1583">getYear</a>
+| <a href="dictionary_G.html#1581">getMonth</a>
+| <a href="dictionary_G.html#1580">getDate</a>
+| <a href="dictionary_S.html#1584">set</a>
+| <a href="dictionary_G.html#1582">getTimeInMillis</a>
+
+<a href="dictionary_S.html#243">smos.utility.Utility.executeOperation</a>
+| <a href="dictionary_C.html#572">createStatement</a>
+| <a href="dictionary_E.html#1592">executeUpdate</a>
+| <a href="dictionary_C.html#561">close</a>
+
+<a href="dictionary_S.html#1598">smos.utility.Utility.getActualDate</a>
+| <a href="dictionary_G.html#562">get</a>
+
+<a href="dictionary_S.html#251">smos.utility.Utility.getMaxValue</a>
+| <a href="dictionary_E.html#1188">equals</a>
+| <a href="dictionary_S.html#1690">smos.exception.EntityNotFoundException.EntityNotFoundException</a>
+| <a href="dictionary_S.html#240">smos.storage.connectionManagement.DBConnection.getConnection</a>
+| <a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_N.html#167">next</a>
+| <a href="dictionary_G.html#180">getInt</a>
+| <a href="dictionary_S.html#244">smos.storage.connectionManagement.DBConnection.releaseConnection</a>
+
+<a href="dictionary_S.html#247">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1523">smos.utility.Utility.ReplaceAllStrings</a>
+
+<a href="dictionary_S.html#1631">smos.utility.Utility.isNull</a>
+| <a href="dictionary_T.html#664">toString</a>
+
+<a href="dictionary_S.html#1634">smos.utility.Utility.isNull</a>
+| <a href="dictionary_S.html#1559">smos.utility.Utility.date2SQLString</a>
+
+<a href="dictionary_S.html#248">smos.utility.Utility.queryOperation</a>
+| <a href="dictionary_C.html#572">createStatement</a>
+| <a href="dictionary_E.html#791">executeQuery</a>
+
+<a href="dictionary_S.html#1505">smos.utility.Utility.RemoveAll</a>
+| <a href="dictionary_T.html#664">toString</a>
+| <a href="dictionary_T.html#1507">toUpperCase</a>
+| <a href="dictionary_I.html#1506">indexOf</a>
+| <a href="dictionary_S.html#1133">substring</a>
+| <a href="dictionary_L.html#903">length</a>
+
+<a href="dictionary_S.html#1511">smos.utility.Utility.Replace</a>
+| <a href="dictionary_R.html#1512">replaceAll</a>
+
+<a href="dictionary_S.html#1515">smos.utility.Utility.ReplaceAll</a>
+| <a href="dictionary_T.html#664">toString</a>
+| <a href="dictionary_T.html#1507">toUpperCase</a>
+| <a href="dictionary_I.html#1506">indexOf</a>
+| <a href="dictionary_L.html#903">length</a>
+| <a href="dictionary_R.html#1516">replace</a>
+
+<a href="dictionary_S.html#1523">smos.utility.Utility.ReplaceAllStrings</a>
+| <a href="dictionary_T.html#664">toString</a>
+| <a href="dictionary_T.html#1507">toUpperCase</a>
+| <a href="dictionary_I.html#1506">indexOf</a>
+| <a href="dictionary_S.html#1133">substring</a>
+| <a href="dictionary_A.html#1524">append</a>
+| <a href="dictionary_L.html#903">length</a>
+
+<a href="dictionary_S.html#1531">smos.utility.Utility.ReplaceQuote</a>
+| <a href="dictionary_R.html#1512">replaceAll</a>
+
+<a href="dictionary_S.html#867">smos.utility.Utility.String2Date</a>
+| <a href="dictionary_G.html#1495">getDateInstance</a>
+| <a href="dictionary_P.html#1535">parse</a>
+| <a href="dictionary_G.html#1534">getTime</a>
+
+<a href="dictionary_S.html#1545">smos.utility.Utility.String2Integer</a>
+| <a href="dictionary_C.html#1546">compareTo</a>
+| <a href="dictionary_D.html#1547">decode</a>
+
+<a href="dictionary_S.html#1663">smos.utility.Utility.today</a>
+| <a href="dictionary_G.html#11">getInstance</a>
+| <a href="dictionary_G.html#1534">getTime</a>
+</pre><hr>
+<table BORDER CELLPADDING=4><tr><td>Non-Alpha</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td><a href="simpleinvtree_S.html">S</a></td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr></table></body></html>

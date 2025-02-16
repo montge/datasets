@@ -1,0 +1,224 @@
+<html><head><title>MyDiagnosisAction.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\iTrust\iTrust\java\iTrust\src\edu\ncsu\csc\itrust\action\MyDiagnosisAction.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\iTrust\\iTrust\\java\\iTrust\\src\\edu\\ncsu\\csc\\itrust\\action\\MyDiagnosisAction.java";
+top.document.title  = "MyDiagnosisAction.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#70">action</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#753">io</a>.<a href="dictionary_J.html#752">Serializable</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#69">util</a>.*;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#561">DiagnosisBean</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#2640">HCPDiagnosisBean</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#334">OfficeVisitBean</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#335">PrescriptionBean</a>;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#2">MedicationBean</a>;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#776">SurveyBean</a>;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#34">beans</a>.<a href="dictionary_E.html#333">LabProcedureBean</a>;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#85">dao</a>.<a href="dictionary_E.html#74">DAOFactory</a>;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#347">PatientDAO</a>;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#77">TransactionDAO</a>;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#346">OfficeVisitDAO</a>;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#2418">SurveyDAO</a>;</span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#348">PersonnelDAO</a>;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.dao.<a href="dictionary_E.html#86">mysql</a>.<a href="dictionary_E.html#344">LabProcedureDAO</a>;</span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#87">enums</a>.<a href="dictionary_E.html#78">TransactionType</a>;</span>
+<a name="20"><font size=-1>20     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#88">exception</a>.<a href="dictionary_E.html#79">DBException</a>;</span>
+<a name="21"><font size=-1>21     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">edu.ncsu.csc.itrust.<a href="dictionary_E.html#88">exception</a>.<a href="dictionary_E.html#81">iTrustException</a>;</span>
+<a name="22"><font size=-1>22     </font></a><span class="default"></span>
+<a name="23"><font size=-1>23     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"> * Edits the privacy levels of diagnoses, used by myDiagnoses.jsp</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment"> * </span>
+<a name="26"><font size=-1>26     </font></a><span class="comment"> * @author laurenhayward</span>
+<a name="27"><font size=-1>27     </font></a><span class="comment"> * </span>
+<a name="28"><font size=-1>28     </font></a><span class="comment"> */</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment"></span><span class="keyword">public class <a href="dictionary_E.html#2675">MyDiagnosisAction</a> </span><span class="default">{</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">	</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#346">OfficeVisitDAO</a> <a href="dictionary_E.html#2719">officeVisitDAO</a></span><span class="default">;</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#347">PatientDAO</a> <a href="dictionary_E.html#2720">patientDAO</a></span><span class="default">;</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#348">PersonnelDAO</a> <a href="dictionary_E.html#2721">personnelDAO</a></span><span class="default">;</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#2418">SurveyDAO</a> <a href="dictionary_E.html#2722">surveyDAO</a></span><span class="default">;</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#77">TransactionDAO</a> <a href="dictionary_E.html#2723">transactionDAO</a></span><span class="default">;</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_E.html#344">LabProcedureDAO</a> <a href="dictionary_E.html#2717">labprocDAO</a></span><span class="default">;</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">	</span><span class="keyword">private long <a href="dictionary_E.html#2718">loggedInMID</a></span><span class="default">;</span>
+<a name="38"><font size=-1>38     </font></a><span class="default"></span>
+<a name="39"><font size=-1>39     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="40"><font size=-1>40     </font></a><span class="comment">	 * Set up for defaults</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">	 * </span>
+<a name="42"><font size=-1>42     </font></a><span class="comment">	 * @param factory The DAOFactory used to create the DAOs used in this action.</span>
+<a name="43"><font size=-1>43     </font></a><span class="comment">	 * @param loggedInMID The MID of the user who is looking at their diagnoses.</span>
+<a name="44"><font size=-1>44     </font></a><span class="comment">	 * @throws iTrustException</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">	 */</span>
+<a name="46"><font size=-1>46     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_E.html#2682">MyDiagnosisAction</a></span><span class="default">(<a href="dictionary_E.html#74">DAOFactory</a> <a href="dictionary_E.html#2683">factory</a>, </span><span class="keyword">long <a href="dictionary_E.html#2684">loggedInMID</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_E.html#81">iTrustException</a> </span><span class="default">{</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2718">loggedInMID</a> = <a href="dictionary_E.html#2684">loggedInMID</a>;</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2720">patientDAO</a> = <a href="dictionary_E.html#2683">factory</a>.<a href="dictionary_E.html#360">getPatientDAO</a>();</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2719">officeVisitDAO</a> = <a href="dictionary_E.html#2683">factory</a>.<a href="dictionary_E.html#353">getOfficeVisitDAO</a>();</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2721">personnelDAO</a> = <a href="dictionary_E.html#2683">factory</a>.<a href="dictionary_E.html#354">getPersonnelDAO</a>();</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2722">surveyDAO</a> = <a href="dictionary_E.html#2683">factory</a>.<a href="dictionary_E.html#2419">getSurveyDAO</a>();</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2723">transactionDAO</a> = <a href="dictionary_E.html#2683">factory</a>.<a href="dictionary_E.html#93">getTransactionDAO</a>();</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">		</span><span class="keyword">this</span><span class="default">.<a href="dictionary_E.html#2717">labprocDAO</a> = <a href="dictionary_E.html#2683">factory</a>.<a href="dictionary_E.html#356">getLabProcedureDAO</a>();</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">	}</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">	</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="57"><font size=-1>57     </font></a><span class="comment">	 * Returns a list of DiagnosisBeans for the patient</span>
+<a name="58"><font size=-1>58     </font></a><span class="comment">	 * </span>
+<a name="59"><font size=-1>59     </font></a><span class="comment">	 * @return the list of DiagnosisBeans</span>
+<a name="60"><font size=-1>60     </font></a><span class="comment">	 * @throws DBException</span>
+<a name="61"><font size=-1>61     </font></a><span class="comment">	 */</span>
+<a name="62"><font size=-1>62     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_L.html#2674">List</a></span><span class="default">&lt;<a href="dictionary_E.html#561">DiagnosisBean</a>&gt; <a href="dictionary_E.html#2685">getDiagnoses</a>() </span><span class="keyword">throws <a href="dictionary_E.html#79">DBException</a> </span><span class="default">{</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_E.html#2720">patientDAO</a></span><span class="default">.<a href="dictionary_E.html#1651">getDiagnoses</a>(<a href="dictionary_E.html#2718">loggedInMID</a>);</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">	}</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">	</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="67"><font size=-1>67     </font></a><span class="comment">	 * Returns a list of all the HCPs who have a particular diagnosis</span>
+<a name="68"><font size=-1>68     </font></a><span class="comment">	 * </span>
+<a name="69"><font size=-1>69     </font></a><span class="comment">	 * @param icdcode the diagnosis of interest</span>
+<a name="70"><font size=-1>70     </font></a><span class="comment">	 * @return the list of HCPs</span>
+<a name="71"><font size=-1>71     </font></a><span class="comment">	 * @throws DBException</span>
+<a name="72"><font size=-1>72     </font></a><span class="comment">	 */</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_L.html#2674">List</a></span><span class="default">&lt;<a href="dictionary_E.html#2640">HCPDiagnosisBean</a>&gt; <a href="dictionary_E.html#2686">getHCPByDiagnosis</a>(<a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2704">icdcode</a>) </span><span class="keyword">throws <a href="dictionary_E.html#79">DBException</a> </span><span class="default">{</span>
+<a name="74"><font size=-1>74     </font></a><span class="default">		</span>
+<a name="75"><font size=-1>75     </font></a><span class="default">		</span><span class="keyword">int <a href="dictionary_E.html#2706">medMatch</a> </span><span class="default">= </span><span class="number">0</span><span class="default">;</span>
+<a name="76"><font size=-1>76     </font></a><span class="default">		<a href="dictionary_H.html#2673">HashMap</a>&lt;<a href="dictionary_L.html#1242">Long</a>, <a href="dictionary_E.html#2640">HCPDiagnosisBean</a>&gt; <a href="dictionary_E.html#2703">hcpHash</a> = </span><span class="keyword">new <a href="dictionary_H.html#2673">HashMap</a></span><span class="default">&lt;<a href="dictionary_L.html#1242">Long</a>, <a href="dictionary_E.html#2640">HCPDiagnosisBean</a>&gt;();</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">		<a href="dictionary_H.html#2673">HashMap</a>&lt;<a href="dictionary_L.html#1242">Long</a>, <a href="dictionary_L.html#1242">Long</a>&gt; <a href="dictionary_E.html#2707">patientHash</a> = </span><span class="keyword">new <a href="dictionary_H.html#2673">HashMap</a></span><span class="default">&lt;<a href="dictionary_L.html#1242">Long</a>, <a href="dictionary_L.html#1242">Long</a>&gt;();</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">	</span>
+<a name="79"><font size=-1>79     </font></a><span class="default">		<a href="dictionary_E.html#2723">transactionDAO</a>.<a href="dictionary_E.html#611">logTransaction</a>(<a href="dictionary_E.html#78">TransactionType</a>.<a href="dictionary_E.html#2724">FIND_HCPS_WITH_EXP</a>, <a href="dictionary_E.html#2718">loggedInMID</a>);</span>
+<a name="80"><font size=-1>80     </font></a><span class="default">		</span>
+<a name="81"><font size=-1>81     </font></a><span class="default">		<a href="dictionary_E.html#2640">HCPDiagnosisBean</a> <a href="dictionary_E.html#2702">diag</a> = </span><span class="keyword">null</span><span class="default">;</span>
+<a name="82"><font size=-1>82     </font></a><span class="default">		<a href="dictionary_L.html#2674">List</a>&lt;<a href="dictionary_E.html#334">OfficeVisitBean</a>&gt; <a href="dictionary_E.html#2701">beans</a> = <a href="dictionary_E.html#2719">officeVisitDAO</a>.<a href="dictionary_E.html#1920">getAllOfficeVisitsForDiagnosis</a>(<a href="dictionary_E.html#2704">icdcode</a>);</span>
+<a name="83"><font size=-1>83     </font></a><span class="default">		</span>
+<a name="84"><font size=-1>84     </font></a><span class="default">		</span><span class="keyword">for </span><span class="default">(<a href="dictionary_E.html#334">OfficeVisitBean</a> <a href="dictionary_E.html#2695">bean</a>: <a href="dictionary_E.html#2701">beans</a>) {</span>
+<a name="85"><font size=-1>85     </font></a><span class="default">			</span>
+<a name="86"><font size=-1>86     </font></a><span class="default">			</span><span class="comment">// check for HCP-Patient locality based on first 3 digits in ZIP</span>
+<a name="87"><font size=-1>87     </font></a><span class="comment">			</span><span class="keyword">if </span><span class="default">(!<a href="dictionary_E.html#2720">patientDAO</a>.<a href="dictionary_E.html#405">getPatient</a>(<a href="dictionary_E.html#2718">loggedInMID</a>).<a href="dictionary_E.html#2725">getZip1</a>().<a href="dictionary_S.html#19">substring</a>(</span><span class="number">0</span><span class="default">, </span><span class="number">2</span><span class="default">).</span>
+<a name="88"><font size=-1>88     </font></a><span class="default">					<a href="dictionary_E.html#10">equals</a>(<a href="dictionary_E.html#2721">personnelDAO</a>.<a href="dictionary_E.html#909">getPersonnel</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>()).<a href="dictionary_E.html#686">getZip1</a>().<a href="dictionary_S.html#19">substring</a>(</span><span class="number">0</span><span class="default">, </span><span class="number">2</span><span class="default">)))</span>
+<a name="89"><font size=-1>89     </font></a><span class="default">				</span><span class="keyword">continue</span><span class="default">;</span>
+<a name="90"><font size=-1>90     </font></a><span class="default">			</span>
+<a name="91"><font size=-1>91     </font></a><span class="default">			</span><span class="comment">// Check to see if we already have a bean for the HCP associated with this visit</span>
+<a name="92"><font size=-1>92     </font></a><span class="comment">			</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2703">hcpHash</a>.<a href="dictionary_C.html#2688">containsKey</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>())) {</span>
+<a name="93"><font size=-1>93     </font></a><span class="default">				<a href="dictionary_E.html#2702">diag</a> = (HCPDiagnosisBean)<a href="dictionary_E.html#2703">hcpHash</a>.<a href="dictionary_G.html#667">get</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>());</span>
+<a name="94"><font size=-1>94     </font></a><span class="default">				</span>
+<a name="95"><font size=-1>95     </font></a><span class="default">				</span><span class="keyword">for </span><span class="default">(<a href="dictionary_E.html#335">PrescriptionBean</a> <a href="dictionary_E.html#2692">p</a>: <a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#842">getPrescriptions</a>()) {</span>
+<a name="96"><font size=-1>96     </font></a><span class="default">					<a href="dictionary_L.html#2674">List</a>&lt;<a href="dictionary_E.html#2">MedicationBean</a>&gt; <a href="dictionary_E.html#2691">mlist</a> = <a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2645">getMedList</a>();</span>
+<a name="97"><font size=-1>97     </font></a><span class="default">					</span>
+<a name="98"><font size=-1>98     </font></a><span class="default">					</span><span class="keyword">for </span><span class="default">(<a href="dictionary_E.html#2">MedicationBean</a> <a href="dictionary_E.html#2690">b</a>: <a href="dictionary_E.html#2691">mlist</a>) {</span>
+<a name="99"><font size=-1>99     </font></a><span class="default">						</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2692">p</a>.<a href="dictionary_E.html#376">getMedication</a>().<a href="dictionary_E.html#15">getDescription</a>().<a href="dictionary_E.html#10">equals</a>(<a href="dictionary_E.html#2690">b</a>.<a href="dictionary_E.html#15">getDescription</a>()))</span>
+<a name="100"><font size=-1>100     </font></a><span class="default">							medMatch++;</span>
+<a name="101"><font size=-1>101     </font></a><span class="default">					}</span>
+<a name="102"><font size=-1>102     </font></a><span class="default">					</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2706">medMatch</a> == </span><span class="number">0</span><span class="default">) {</span>
+<a name="103"><font size=-1>103     </font></a><span class="default">						<a href="dictionary_E.html#2691">mlist</a>.<a href="dictionary_A.html#125">add</a>(<a href="dictionary_E.html#2692">p</a>.<a href="dictionary_E.html#376">getMedication</a>());</span>
+<a name="104"><font size=-1>104     </font></a><span class="default">						<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2656">setMedList</a>(<a href="dictionary_E.html#2691">mlist</a>);</span>
+<a name="105"><font size=-1>105     </font></a><span class="default">					}</span>
+<a name="106"><font size=-1>106     </font></a><span class="default">					</span><span class="keyword">else </span><span class="default">{</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">						<a href="dictionary_E.html#2706">medMatch</a> = </span><span class="number">0</span><span class="default">;</span>
+<a name="108"><font size=-1>108     </font></a><span class="default">					}</span>
+<a name="109"><font size=-1>109     </font></a><span class="default">				}</span>
+<a name="110"><font size=-1>110     </font></a><span class="default">				</span>
+<a name="111"><font size=-1>111     </font></a><span class="default">				</span><span class="comment">// Get Lab Procedures</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">				<a href="dictionary_L.html#2674">List</a></span><span class="default">&lt;<a href="dictionary_E.html#333">LabProcedureBean</a>&gt; <a href="dictionary_E.html#2696">labprocs</a> = <a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2644">getLabList</a>(); </span>
+<a name="113"><font size=-1>113     </font></a><span class="default">				<a href="dictionary_L.html#2674">List</a>&lt;<a href="dictionary_E.html#333">LabProcedureBean</a>&gt; <a href="dictionary_E.html#2697">lpbeans</a> = <a href="dictionary_E.html#2717">labprocDAO</a>.<a href="dictionary_E.html#2726">getAllLabProceduresForDocOV</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#848">getVisitID</a>());</span>
+<a name="114"><font size=-1>114     </font></a><span class="default">				</span><span class="keyword">for </span><span class="default">(<a href="dictionary_E.html#333">LabProcedureBean</a> <a href="dictionary_E.html#2693">p</a>: <a href="dictionary_E.html#2697">lpbeans</a>) {</span>
+<a name="115"><font size=-1>115     </font></a><span class="default">					<a href="dictionary_E.html#2696">labprocs</a>.<a href="dictionary_A.html#125">add</a>(<a href="dictionary_E.html#2693">p</a>);</span>
+<a name="116"><font size=-1>116     </font></a><span class="default">				}</span>
+<a name="117"><font size=-1>117     </font></a><span class="default">				<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2654">setLabList</a>(<a href="dictionary_E.html#2696">labprocs</a>);</span>
+<a name="118"><font size=-1>118     </font></a><span class="default">				</span>
+<a name="119"><font size=-1>119     </font></a><span class="default">				</span>
+<a name="120"><font size=-1>120     </font></a><span class="default">				</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2722">surveyDAO</a>.<a href="dictionary_E.html#2727">isSurveyCompleted</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#848">getVisitID</a>())) {</span>
+<a name="121"><font size=-1>121     </font></a><span class="default">					<a href="dictionary_E.html#776">SurveyBean</a> <a href="dictionary_E.html#2699">survey</a> = <a href="dictionary_E.html#2722">surveyDAO</a>.<a href="dictionary_E.html#2728">getSurveyData</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#848">getVisitID</a>());</span>
+<a name="122"><font size=-1>122     </font></a><span class="default">					<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2660">setVisitSat</a>(<a href="dictionary_E.html#2699">survey</a>.<a href="dictionary_E.html#2507">getVisitSatisfaction</a>());</span>
+<a name="123"><font size=-1>123     </font></a><span class="default">					<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2658">setTreatmentSat</a>(<a href="dictionary_E.html#2699">survey</a>.<a href="dictionary_E.html#2505">getTreatmentSatisfaction</a>());</span>
+<a name="124"><font size=-1>124     </font></a><span class="default">				}</span>
+<a name="125"><font size=-1>125     </font></a><span class="default">				</span>
+<a name="126"><font size=-1>126     </font></a><span class="default">				</span><span class="comment">// Check if this patient has been seen multiple times for this diagnosis</span>
+<a name="127"><font size=-1>127     </font></a><span class="comment">				</span><span class="keyword">if </span><span class="default">(!<a href="dictionary_E.html#2707">patientHash</a>.<a href="dictionary_C.html#2688">containsKey</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#423">getPatientID</a>())) {</span>
+<a name="128"><font size=-1>128     </font></a><span class="default">					<a href="dictionary_E.html#2707">patientHash</a>.<a href="dictionary_P.html#2112">put</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#423">getPatientID</a>(), <a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>());</span>
+<a name="129"><font size=-1>129     </font></a><span class="default">					<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2649">incNumPatients</a>();</span>
+<a name="130"><font size=-1>130     </font></a><span class="default">				}</span>
+<a name="131"><font size=-1>131     </font></a><span class="default">			}</span>
+<a name="132"><font size=-1>132     </font></a><span class="default">			</span><span class="keyword">else </span><span class="default">{</span>
+<a name="133"><font size=-1>133     </font></a><span class="default">				<a href="dictionary_E.html#2702">diag</a> = </span><span class="keyword">new <a href="dictionary_E.html#2641">HCPDiagnosisBean</a></span><span class="default">();</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">				<a href="dictionary_L.html#2674">List</a>&lt;<a href="dictionary_E.html#2">MedicationBean</a>&gt; <a href="dictionary_E.html#2698">mlist</a> = </span><span class="keyword">new <a href="dictionary_A.html#2671">ArrayList</a></span><span class="default">&lt;<a href="dictionary_E.html#2">MedicationBean</a>&gt;();</span>
+<a name="135"><font size=-1>135     </font></a><span class="default">				<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2650">setHCP</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>());</span>
+<a name="136"><font size=-1>136     </font></a><span class="default">				</span><span class="keyword">try </span><span class="default">{</span>
+<a name="137"><font size=-1>137     </font></a><span class="default">					<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2652">setHCPName</a>(<a href="dictionary_E.html#2721">personnelDAO</a>.<a href="dictionary_E.html#406">getName</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>()));</span>
+<a name="138"><font size=-1>138     </font></a><span class="default">				} </span><span class="keyword">catch </span><span class="default">(<a href="dictionary_E.html#81">iTrustException</a> <a href="dictionary_E.html#2689">e</a>) {</span>
+<a name="139"><font size=-1>139     </font></a><span class="default">					<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2652">setHCPName</a>(</span><span class="string">&quot;null&quot;</span><span class="default">);</span>
+<a name="140"><font size=-1>140     </font></a><span class="default">				}</span>
+<a name="141"><font size=-1>141     </font></a><span class="default">				<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2649">incNumPatients</a>();</span>
+<a name="142"><font size=-1>142     </font></a><span class="default">				</span><span class="keyword">for </span><span class="default">(<a href="dictionary_E.html#335">PrescriptionBean</a> <a href="dictionary_E.html#2694">p</a>: <a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#842">getPrescriptions</a>()) {</span>
+<a name="143"><font size=-1>143     </font></a><span class="default">					<a href="dictionary_E.html#2698">mlist</a>.<a href="dictionary_A.html#125">add</a>(<a href="dictionary_E.html#2694">p</a>.<a href="dictionary_E.html#376">getMedication</a>());</span>
+<a name="144"><font size=-1>144     </font></a><span class="default">				}</span>
+<a name="145"><font size=-1>145     </font></a><span class="default">				<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2656">setMedList</a>(<a href="dictionary_E.html#2698">mlist</a>);</span>
+<a name="146"><font size=-1>146     </font></a><span class="default">				<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2654">setLabList</a>(<a href="dictionary_E.html#2717">labprocDAO</a>.<a href="dictionary_E.html#2726">getAllLabProceduresForDocOV</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#848">getVisitID</a>()));</span>
+<a name="147"><font size=-1>147     </font></a><span class="default">				</span>
+<a name="148"><font size=-1>148     </font></a><span class="default">				</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2722">surveyDAO</a>.<a href="dictionary_E.html#2727">isSurveyCompleted</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#848">getVisitID</a>())) {</span>
+<a name="149"><font size=-1>149     </font></a><span class="default">					<a href="dictionary_E.html#776">SurveyBean</a> <a href="dictionary_E.html#2700">survey</a> = <a href="dictionary_E.html#2722">surveyDAO</a>.<a href="dictionary_E.html#2728">getSurveyData</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#848">getVisitID</a>());</span>
+<a name="150"><font size=-1>150     </font></a><span class="default">					<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2660">setVisitSat</a>(<a href="dictionary_E.html#2700">survey</a>.<a href="dictionary_E.html#2507">getVisitSatisfaction</a>());</span>
+<a name="151"><font size=-1>151     </font></a><span class="default">					<a href="dictionary_E.html#2702">diag</a>.<a href="dictionary_E.html#2658">setTreatmentSat</a>(<a href="dictionary_E.html#2700">survey</a>.<a href="dictionary_E.html#2505">getTreatmentSatisfaction</a>());</span>
+<a name="152"><font size=-1>152     </font></a><span class="default">				}</span>
+<a name="153"><font size=-1>153     </font></a><span class="default">				</span>
+<a name="154"><font size=-1>154     </font></a><span class="default">				<a href="dictionary_E.html#2707">patientHash</a>.<a href="dictionary_P.html#2112">put</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#423">getPatientID</a>(), <a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>());</span>
+<a name="155"><font size=-1>155     </font></a><span class="default">				<a href="dictionary_E.html#2703">hcpHash</a>.<a href="dictionary_P.html#2112">put</a>(<a href="dictionary_E.html#2695">bean</a>.<a href="dictionary_E.html#838">getHcpID</a>(), <a href="dictionary_E.html#2702">diag</a>);</span>
+<a name="156"><font size=-1>156     </font></a><span class="default">			}</span>
+<a name="157"><font size=-1>157     </font></a><span class="default">		}</span>
+<a name="158"><font size=-1>158     </font></a><span class="default">		<a href="dictionary_L.html#2674">List</a>&lt;<a href="dictionary_E.html#2640">HCPDiagnosisBean</a>&gt; <a href="dictionary_E.html#2705">list</a> = </span><span class="keyword">new <a href="dictionary_A.html#2671">ArrayList</a></span><span class="default">&lt;<a href="dictionary_E.html#2640">HCPDiagnosisBean</a>&gt;(<a href="dictionary_E.html#2703">hcpHash</a>.<a href="dictionary_V.html#2111">values</a>());</span>
+<a name="159"><font size=-1>159     </font></a><span class="default">		Collections.<a href="dictionary_S.html#2687">sort</a>(<a href="dictionary_E.html#2705">list</a>, </span><span class="keyword">new <a href="dictionary_E.html#2676">HCPDiagnosisBeanComparator</a></span><span class="default">() );</span>
+<a name="160"><font size=-1>160     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_E.html#2705">list</a></span><span class="default">;</span>
+<a name="161"><font size=-1>161     </font></a><span class="default">	}</span>
+<a name="162"><font size=-1>162     </font></a><span class="default">	</span>
+<a name="163"><font size=-1>163     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="164"><font size=-1>164     </font></a><span class="comment">	 * Looks up all the prescriptions given by a certain HCP with the same ICD code.</span>
+<a name="165"><font size=-1>165     </font></a><span class="comment">	 * @param hcpid The MID of the HCP</span>
+<a name="166"><font size=-1>166     </font></a><span class="comment">	 * @param icdcode The ICD code of the prescription we are looking up.</span>
+<a name="167"><font size=-1>167     </font></a><span class="comment">	 * @return A java.util.List of PrescriptionBeans made by this HCP of this ICD code.</span>
+<a name="168"><font size=-1>168     </font></a><span class="comment">	 * @throws DBException</span>
+<a name="169"><font size=-1>169     </font></a><span class="comment">	 */</span>
+<a name="170"><font size=-1>170     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_L.html#2674">List</a></span><span class="default">&lt;<a href="dictionary_E.html#335">PrescriptionBean</a>&gt; <a href="dictionary_E.html#2708">getPrescriptionsByHCPAndICD</a>(</span><span class="keyword">long <a href="dictionary_E.html#2713">hcpid</a></span><span class="default">, <a href="dictionary_S.html#29">String</a> <a href="dictionary_E.html#2714">icdcode</a>) </span><span class="keyword">throws <a href="dictionary_E.html#79">DBException</a> </span><span class="default">{</span>
+<a name="171"><font size=-1>171     </font></a><span class="default">		<a href="dictionary_L.html#2674">List</a>&lt;<a href="dictionary_E.html#335">PrescriptionBean</a>&gt; <a href="dictionary_E.html#2715">list</a> = </span><span class="keyword">new <a href="dictionary_A.html#2671">ArrayList</a></span><span class="default">&lt;<a href="dictionary_E.html#335">PrescriptionBean</a>&gt;();</span>
+<a name="172"><font size=-1>172     </font></a><span class="default">		</span>
+<a name="173"><font size=-1>173     </font></a><span class="default">		<a href="dictionary_L.html#2674">List</a>&lt;<a href="dictionary_E.html#334">OfficeVisitBean</a>&gt; <a href="dictionary_E.html#2716">ovs</a> = <a href="dictionary_E.html#2719">officeVisitDAO</a>.<a href="dictionary_E.html#1920">getAllOfficeVisitsForDiagnosis</a>(<a href="dictionary_E.html#2714">icdcode</a>);</span>
+<a name="174"><font size=-1>174     </font></a><span class="default">		</span><span class="keyword">for </span><span class="default">(</span><span class="keyword">int <a href="dictionary_E.html#2712">i</a> </span><span class="default">= </span><span class="number">0</span><span class="default">; <a href="dictionary_E.html#2712">i</a> &lt; <a href="dictionary_E.html#2716">ovs</a>.<a href="dictionary_S.html#668">size</a>(); i++) {</span>
+<a name="175"><font size=-1>175     </font></a><span class="default">			</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2716">ovs</a>.<a href="dictionary_G.html#667">get</a>(<a href="dictionary_E.html#2712">i</a>).<a href="dictionary_G.html#2710">getHcpID</a>() == <a href="dictionary_E.html#2713">hcpid</a>) {</span>
+<a name="176"><font size=-1>176     </font></a><span class="default">				<a href="dictionary_E.html#2715">list</a>.<a href="dictionary_A.html#2709">addAll</a>(<a href="dictionary_E.html#2716">ovs</a>.<a href="dictionary_G.html#667">get</a>(<a href="dictionary_E.html#2712">i</a>).<a href="dictionary_G.html#2711">getPrescriptions</a>());</span>
+<a name="177"><font size=-1>177     </font></a><span class="default">			}</span>
+<a name="178"><font size=-1>178     </font></a><span class="default">		}</span>
+<a name="179"><font size=-1>179     </font></a><span class="default">		</span>
+<a name="180"><font size=-1>180     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_E.html#2715">list</a></span><span class="default">;</span>
+<a name="181"><font size=-1>181     </font></a><span class="default">		</span>
+<a name="182"><font size=-1>182     </font></a><span class="default">		</span>
+<a name="183"><font size=-1>183     </font></a><span class="default">	}</span>
+<a name="184"><font size=-1>184     </font></a><span class="default">	</span>
+<a name="185"><font size=-1>185     </font></a><span class="default">	</span>
+<a name="186"><font size=-1>186     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="187"><font size=-1>187     </font></a><span class="comment">	 * Checks to see what HCP has had the most experience with a diagnosis</span>
+<a name="188"><font size=-1>188     </font></a><span class="comment">	 *</span>
+<a name="189"><font size=-1>189     </font></a><span class="comment">	 */</span>
+<a name="190"><font size=-1>190     </font></a><span class="comment">	</span><span class="keyword">static class <a href="dictionary_E.html#2676">HCPDiagnosisBeanComparator</a> implements <a href="dictionary_C.html#2672">Comparator</a></span><span class="default">&lt;<a href="dictionary_E.html#2640">HCPDiagnosisBean</a>&gt;, <a href="dictionary_J.html#752">Serializable</a> {</span>
+<a name="191"><font size=-1>191     </font></a><span class="default">		</span>
+<a name="192"><font size=-1>192     </font></a><span class="default">		</span><span class="keyword">private static final long <a href="dictionary_E.html#2681">serialVersionUID</a> </span><span class="default">= -</span><span class="number">6328390386684022934L</span><span class="default">;</span>
+<a name="193"><font size=-1>193     </font></a><span class="default"></span>
+<a name="194"><font size=-1>194     </font></a><span class="default">		</span><span class="comment">/**</span>
+<a name="195"><font size=-1>195     </font></a><span class="comment">		 * Compares one HCP with another</span>
+<a name="196"><font size=-1>196     </font></a><span class="comment">		 * </span>
+<a name="197"><font size=-1>197     </font></a><span class="comment">		 * @param a the first HCP</span>
+<a name="198"><font size=-1>198     </font></a><span class="comment">		 * @param b the second HCP</span>
+<a name="199"><font size=-1>199     </font></a><span class="comment">		 * @return -1 if a has had more patients, 1 if b has had more patients; otherwise 0</span>
+<a name="200"><font size=-1>200     </font></a><span class="comment">		 */</span>
+<a name="201"><font size=-1>201     </font></a><span class="comment">		</span><span class="keyword">public int <a href="dictionary_E.html#2677">compare</a></span><span class="default">(<a href="dictionary_E.html#2640">HCPDiagnosisBean</a> <a href="dictionary_E.html#2678">a</a>, <a href="dictionary_E.html#2640">HCPDiagnosisBean</a> <a href="dictionary_E.html#2679">b</a>) {</span>
+<a name="202"><font size=-1>202     </font></a><span class="default">			</span><span class="keyword">int <a href="dictionary_E.html#2680">ret</a> </span><span class="default">= </span><span class="number">0</span><span class="default">;</span>
+<a name="203"><font size=-1>203     </font></a><span class="default">			</span>
+<a name="204"><font size=-1>204     </font></a><span class="default">			</span><span class="keyword">if </span><span class="default">(<a href="dictionary_E.html#2678">a</a>.<a href="dictionary_E.html#2646">getNumPatients</a>() &gt; <a href="dictionary_E.html#2679">b</a>.<a href="dictionary_E.html#2646">getNumPatients</a>())</span>
+<a name="205"><font size=-1>205     </font></a><span class="default">				<a href="dictionary_E.html#2680">ret</a> = -</span><span class="number">1</span><span class="default">;</span>
+<a name="206"><font size=-1>206     </font></a><span class="default">			</span><span class="keyword">else if </span><span class="default">(<a href="dictionary_E.html#2678">a</a>.<a href="dictionary_E.html#2646">getNumPatients</a>() &lt; <a href="dictionary_E.html#2679">b</a>.<a href="dictionary_E.html#2646">getNumPatients</a>())</span>
+<a name="207"><font size=-1>207     </font></a><span class="default">				<a href="dictionary_E.html#2680">ret</a> = </span><span class="number">1</span><span class="default">;</span>
+<a name="208"><font size=-1>208     </font></a><span class="default">			</span>
+<a name="209"><font size=-1>209     </font></a><span class="default">			</span><span class="keyword">return <a href="dictionary_E.html#2680">ret</a></span><span class="default">;</span>
+<a name="210"><font size=-1>210     </font></a><span class="default">		}</span>
+<a name="211"><font size=-1>211     </font></a><span class="default">	}</span>
+<a name="212"><font size=-1>212     </font></a><span class="default">	</span>
+<a name="213"><font size=-1>213     </font></a><span class="default">}</span>
+<a name="214"><font size=-1>214     </font></a><span class="default"></span>
+</pre></body></html>

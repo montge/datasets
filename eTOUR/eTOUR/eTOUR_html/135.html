@@ -1,0 +1,78 @@
+<html><head><title>Punto3DRenderer.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\eTOUR\eTOUR\java\Punto3DRenderer.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\eTOUR\\eTOUR\\java\\Punto3DRenderer.java";
+top.document.title  = "Punto3DRenderer.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">unisa.gps.etour.gui.operatoreagenzia.<a href="dictionary_U.html#65">tables</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#52">awt</a>.<a href="dictionary_J.html#136">Component</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#32">swing</a>.<a href="dictionary_J.html#101">JLabel</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#32">swing</a>.<a href="dictionary_J.html#85">JTable</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#32">swing</a>.<a href="dictionary_J.html#87">SwingConstants</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.swing.<a href="dictionary_J.html#131">table</a>.<a href="dictionary_J.html#137">TableCellRenderer</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">unisa.gps.etour.<a href="dictionary_U.html#30">util</a>.Punto3D;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span>
+<a name="10"><font size=-1>10     </font></a><span class="default">/ **</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">  * &lt;b&gt; Punto3DRenderer &lt;/ b&gt;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">  &lt;p&gt; * This </span><span class="keyword">class </span><span class="default">creates a custom renderer </span><span class="keyword">for</span>
+<a name="13"><font size=-1>13     </font></a><span class="keyword">  </span><span class="default">* Objects of type Punto3D. &lt;/ P&gt;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">  *</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">  * @ See javax.swing.table.TableCellRenderer</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">  * @ See unisa.gps.etour.util.Punto3D</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">  * @ Version </span><span class="number">1.0</span>
+<a name="18"><font size=-1>18     </font></a><span class="number">  </span><span class="default">* @ Author Mario Gallo</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">  *</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">  *</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">  * /</span>
+<a name="22"><font size=-1>22     </font></a><span class="default"></span><span class="keyword">public class </span><span class="default">Punto3DRenderer </span><span class="keyword">implements </span><span class="default">TableCellRenderer</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">(</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">/ **</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">* Method that returns the custom component </span><span class="keyword">for </span><span class="default">the</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">* Display of the data contained in the cell of a table.</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">*</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">* @ Param pTable JTable - the table.</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">* @ Param Object pValue - the data.</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">* @ Param </span><span class="keyword">boolean </span><span class="default">pSelected --</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">* &lt;ul&gt;</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">* &lt;li&gt; &lt;i&gt; True &lt;/ i&gt; </span><span class="keyword">if </span><span class="default">the cell is selected.</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">* &lt;li&gt; &lt;i&gt; False &lt;/ i&gt; otherwise.</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">* &lt;/ Ul&gt;</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">* @ Param </span><span class="keyword">boolean </span><span class="default">pHasFocus --</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">* &lt;ul&gt;</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">* &lt;li&gt; &lt;i&gt; True &lt;/ i&gt; </span><span class="keyword">if </span><span class="default">the cell has the focus.</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">* &lt;li&gt; &lt;i&gt; False &lt;/ i&gt; otherwise.</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">* &lt;/ Ul&gt;</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">* @ Param </span><span class="keyword">int </span><span class="default">pRow - the line number.</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">* @ Param </span><span class="keyword">int </span><span class="default">pColumn - the column number.</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">* @ Return Component - the component that customizes render the cell.</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">* @ Throws IllegalArgumentException - </span><span class="keyword">if </span><span class="default">the value of the cell can not</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">* Be rendered by </span><span class="keyword">this </span><span class="default">renderer.</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">* /</span>
+<a name="46"><font size=-1>46     </font></a><span class="default"></span><span class="keyword">public </span><span class="default">Component getTableCellRendererComponent (JTable pTable,</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">Object pValue, </span><span class="keyword">boolean </span><span class="default">pSelected, </span><span class="keyword">boolean </span><span class="default">pHasFocus, </span><span class="keyword">int </span><span class="default">prow,</span>
+<a name="48"><font size=-1>48     </font></a><span class="default"></span><span class="keyword">int </span><span class="default">pColumn)</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">(</span>
+<a name="50"><font size=-1>50     </font></a><span class="default"></span><span class="keyword">if </span><span class="default">((pValue </span><span class="keyword">instanceof </span><span class="default">Punto3D))</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">(</span>
+<a name="52"><font size=-1>52     </font></a><span class="default"></span><span class="keyword">throw new </span><span class="default">IllegalArgumentException ( </span><span class="string">&quot;Value Cella unexpected.&quot;</span><span class="default">);</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">)</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">Pointe Punto3D = (Punto3D) pValue;</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">APoint.getLatitudine String point = () + </span><span class="string">&quot;;&quot;</span>
+<a name="56"><font size=-1>56     </font></a><span class="string"></span><span class="default">APoint.getLongitudine + () + </span><span class="string">&quot;&quot; </span><span class="default">+ aPoint.getAltitudine ();</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">JLabel aLabel = </span><span class="keyword">new </span><span class="default">JLabel (point, SwingConstants.CENTER);</span>
+<a name="58"><font size=-1>58     </font></a><span class="default"></span><span class="keyword">if </span><span class="default">(pSelected)</span>
+<a name="59"><font size=-1>59     </font></a><span class="default">(</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">aLabel.setForeground (pTable.getSelectionForeground ());</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">aLabel.setBackground (pTable.getSelectionBackground ());</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">)</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">aLabel </span><span class="keyword">return</span><span class="default">;</span>
+<a name="64"><font size=-1>64     </font></a><span class="default"></span>
+<a name="65"><font size=-1>65     </font></a><span class="default">)</span>
+<a name="66"><font size=-1>66     </font></a><span class="default"></span>
+<a name="67"><font size=-1>67     </font></a><span class="default">)</span>
+<a name="68"><font size=-1>68     </font></a><span class="default"></span>
+</pre></body></html>

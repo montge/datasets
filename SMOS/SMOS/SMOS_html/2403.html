@@ -1,0 +1,173 @@
+<html><head><title>TestRegister.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\SMOS\SMOS\java\TestRegister.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\SMOS\\SMOS\\java\\TestRegister.java";
+top.document.title  = "TestRegister.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package </span><span class="default">smos.<a href="dictionary_S.html#56">storage</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#43">sql</a>.<a href="dictionary_J.html#7">SQLException</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#87">util</a>.<a href="dictionary_J.html#152">Collection</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#87">util</a>.<a href="dictionary_J.html#915">Date</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#87">util</a>.<a href="dictionary_J.html#1485">GregorianCalendar</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#54">bean</a>.<a href="dictionary_S.html#1005">Absence</a>;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#54">bean</a>.<a href="dictionary_S.html#1127">Delay</a>;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#54">bean</a>.<a href="dictionary_S.html#1096">Justify</a>;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#54">bean</a>.<a href="dictionary_S.html#861">Note</a>;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#54">bean</a>.<a href="dictionary_S.html#1962">RegisterLine</a>;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#55">exception</a>.<a href="dictionary_S.html#48">EntityNotFoundException</a>;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#55">exception</a>.InvalidValueException;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#56">storage</a>.<a href="dictionary_S.html#862">ManagerRegister</a>;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.storage.connectionManagement.<a href="dictionary_S.html#57">exception</a>.ConnectionException;</span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">smos.<a href="dictionary_S.html#239">utility</a>.<a href="dictionary_S.html#237">Utility</a>;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default"></span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span>
+<a name="20"><font size=-1>20     </font></a><span class="default"></span><span class="keyword">public class <a href="dictionary_S.html#2404">TestRegister</a> </span><span class="default">{</span>
+<a name="21"><font size=-1>21     </font></a><span class="default"></span>
+<a name="22"><font size=-1>22     </font></a><span class="default">	</span><span class="comment">// database errato, impossibile inserire null nel campo id_justify di absence</span>
+<a name="23"><font size=-1>23     </font></a><span class="comment">	</span><span class="keyword">public static void <a href="dictionary_S.html#2405">main</a></span><span class="default">(<a href="dictionary_S.html#38">String</a>[] <a href="dictionary_S.html#2409">args</a>) {</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">		</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">		<a href="dictionary_S.html#862">ManagerRegister</a> <a href="dictionary_S.html#2420">mr</a>=  <a href="dictionary_S.html#862">ManagerRegister</a>.<a href="dictionary_S.html#863">getInstance</a>();</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">		</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">		<a href="dictionary_J.html#915">Date</a> <a href="dictionary_S.html#2412">datenow</a>= </span><span class="keyword">new <a href="dictionary_J.html#915">Date</a></span><span class="default">();</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">		</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">		<a href="dictionary_S.html#1005">Absence</a> <a href="dictionary_S.html#2408">absence</a> = </span><span class="keyword">new <a href="dictionary_S.html#1006">Absence</a></span><span class="default">();		</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">		<a href="dictionary_S.html#2408">absence</a>.<a href="dictionary_S.html#1020">setIdUser</a>(</span><span class="number">61</span><span class="default">);</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">		<a href="dictionary_S.html#2408">absence</a>.<a href="dictionary_S.html#1014">setDateAbsence</a>(<a href="dictionary_S.html#2412">datenow</a>);</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">		<a href="dictionary_S.html#2408">absence</a>.<a href="dictionary_S.html#1018">setIdJustify</a>(</span><span class="number">0</span><span class="default">);</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">		<a href="dictionary_S.html#2408">absence</a>.<a href="dictionary_S.html#1012">setAcademicYear</a>(</span><span class="number">2009</span><span class="default">);</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">		</span><span class="comment">//absence.setIdAbsence(13);</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment">		</span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">		/*</span>
+<a name="37"><font size=-1>37     </font></a><span class="comment">		try {</span>
+<a name="38"><font size=-1>38     </font></a><span class="comment">			absence= mr.getAbsenceByIdAbsence(12);</span>
+<a name="39"><font size=-1>39     </font></a><span class="comment">			</span>
+<a name="40"><font size=-1>40     </font></a><span class="comment">		} catch (InvalidValueException e1) {</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">			// TODO Auto-generated catch block</span>
+<a name="42"><font size=-1>42     </font></a><span class="comment">			e1.printStackTrace();</span>
+<a name="43"><font size=-1>43     </font></a><span class="comment">		} catch (EntityNotFoundException e1) {</span>
+<a name="44"><font size=-1>44     </font></a><span class="comment">			// TODO Auto-generated catch block</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">			e1.printStackTrace();</span>
+<a name="46"><font size=-1>46     </font></a><span class="comment">		} catch (ConnectionException e1) {</span>
+<a name="47"><font size=-1>47     </font></a><span class="comment">			// TODO Auto-generated catch block</span>
+<a name="48"><font size=-1>48     </font></a><span class="comment">			e1.printStackTrace();</span>
+<a name="49"><font size=-1>49     </font></a><span class="comment">		} catch (SQLException e1) {</span>
+<a name="50"><font size=-1>50     </font></a><span class="comment">			// TODO Auto-generated catch block</span>
+<a name="51"><font size=-1>51     </font></a><span class="comment">			e1.printStackTrace();</span>
+<a name="52"><font size=-1>52     </font></a><span class="comment">		}</span>
+<a name="53"><font size=-1>53     </font></a><span class="comment">		*/</span>
+<a name="54"><font size=-1>54     </font></a><span class="comment">		</span>
+<a name="55"><font size=-1>55     </font></a><span class="comment">		<a href="dictionary_S.html#1096">Justify</a> <a href="dictionary_S.html#2417">justifynew</a></span><span class="default">= </span><span class="keyword">new <a href="dictionary_S.html#1096">Justify</a></span><span class="default">();</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">		<a href="dictionary_S.html#2417">justifynew</a>.<a href="dictionary_S.html#1099">setIdUser</a>(</span><span class="number">1</span><span class="default">);</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">		<a href="dictionary_S.html#2417">justifynew</a>.<a href="dictionary_S.html#1098">setDateJustify</a>(<a href="dictionary_S.html#2412">datenow</a>);</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">		<a href="dictionary_S.html#2417">justifynew</a>.<a href="dictionary_S.html#1097">setAcademicYear</a>(</span><span class="number">2008</span><span class="default">);</span>
+<a name="59"><font size=-1>59     </font></a><span class="default"></span>
+<a name="60"><font size=-1>60     </font></a><span class="default">		<a href="dictionary_S.html#2417">justifynew</a>.<a href="dictionary_S.html#1973">setIdJustify</a>(</span><span class="number">6</span><span class="default">);</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">		</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">		</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">		<a href="dictionary_S.html#1127">Delay</a> <a href="dictionary_S.html#2415">delay</a> = </span><span class="keyword">new <a href="dictionary_S.html#1127">Delay</a></span><span class="default">();</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">		</span><span class="comment">//delay.setIdDelay(3);</span>
+<a name="65"><font size=-1>65     </font></a><span class="comment">		<a href="dictionary_S.html#2415">delay</a></span><span class="default">.<a href="dictionary_S.html#1140">setIdUser</a>(</span><span class="number">62</span><span class="default">);</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">		<a href="dictionary_S.html#2415">delay</a>.<a href="dictionary_S.html#1136">setDateDelay</a>(<a href="dictionary_S.html#2412">datenow</a>);</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">		<a href="dictionary_S.html#2415">delay</a>.<a href="dictionary_S.html#1142">setTimeDelay</a>(</span><span class="string">&quot;10:00:00&quot;</span><span class="default">);</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">		<a href="dictionary_S.html#2415">delay</a>.<a href="dictionary_S.html#1134">setAcademicYear</a>(</span><span class="number">2009</span><span class="default">);</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">		</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">		<a href="dictionary_S.html#861">Note</a> <a href="dictionary_S.html#2421">notenew</a>= </span><span class="keyword">new <a href="dictionary_S.html#865">Note</a></span><span class="default">();</span>
+<a name="71"><font size=-1>71     </font></a><span class="default">		<a href="dictionary_S.html#2421">notenew</a>.<a href="dictionary_S.html#869">setIdUser</a>(</span><span class="number">2</span><span class="default">);</span>
+<a name="72"><font size=-1>72     </font></a><span class="default">		<a href="dictionary_S.html#2421">notenew</a>.<a href="dictionary_S.html#870">setTeacher</a>(</span><span class="string">&quot;boh&quot;</span><span class="default">);</span>
+<a name="73"><font size=-1>73     </font></a><span class="default">		<a href="dictionary_S.html#2421">notenew</a>.<a href="dictionary_S.html#866">setAcademicYear</a>(</span><span class="number">2009</span><span class="default">);</span>
+<a name="74"><font size=-1>74     </font></a><span class="default">		<a href="dictionary_S.html#2421">notenew</a>.<a href="dictionary_S.html#868">setDateNote</a>(<a href="dictionary_S.html#2412">datenow</a>);</span>
+<a name="75"><font size=-1>75     </font></a><span class="default">		<a href="dictionary_S.html#2421">notenew</a>.<a href="dictionary_S.html#871">setDescription</a>(</span><span class="string">&quot;lo studente dorme in classe&quot;</span><span class="default">);</span>
+<a name="76"><font size=-1>76     </font></a><span class="default">		<a href="dictionary_S.html#2421">notenew</a>.<a href="dictionary_S.html#873">setIdNote</a>(</span><span class="number">1</span><span class="default">);</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">		</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">		</span><span class="keyword">try</span><span class="default">{</span>
+<a name="79"><font size=-1>79     </font></a><span class="default">			</span><span class="comment">//mr.insertAbsence(absence);</span>
+<a name="80"><font size=-1>80     </font></a><span class="comment">			//if(mr.exists(absence)) System.out.println(&quot;esiste&quot;);;</span>
+<a name="81"><font size=-1>81     </font></a><span class="comment">			//mr.deleteAbsence(absence);</span>
+<a name="82"><font size=-1>82     </font></a><span class="comment">			//mr.updateAbsence(absence);</span>
+<a name="83"><font size=-1>83     </font></a><span class="comment">			</span>
+<a name="84"><font size=-1>84     </font></a><span class="comment">			<a href="dictionary_S.html#2420">mr</a></span><span class="default">.<a href="dictionary_S.html#1918">insertDelay</a>(<a href="dictionary_S.html#2415">delay</a>);</span>
+<a name="85"><font size=-1>85     </font></a><span class="default">			</span><span class="comment">//if(mr.exists(delay)) System.out.println(&quot;esiste&quot;);;</span>
+<a name="86"><font size=-1>86     </font></a><span class="comment">			//mr.updateDelay(delay);</span>
+<a name="87"><font size=-1>87     </font></a><span class="comment">			//mr.deleteDelay(delay);</span>
+<a name="88"><font size=-1>88     </font></a><span class="comment">			</span>
+<a name="89"><font size=-1>89     </font></a><span class="comment">			//mr.insertNote(notenew);</span>
+<a name="90"><font size=-1>90     </font></a><span class="comment">			//mr.deleteNote(notenew);</span>
+<a name="91"><font size=-1>91     </font></a><span class="comment">			</span>
+<a name="92"><font size=-1>92     </font></a><span class="comment">			//mr.insertJustify(justifynew, absence);</span>
+<a name="93"><font size=-1>93     </font></a><span class="comment">			//mr.deleteJustify(justifynew.getIdJustify());</span>
+<a name="94"><font size=-1>94     </font></a><span class="comment">			//if(mr.hasJustify(absence))System.out.println(&quot;giustificata&quot;);</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment">			</span>
+<a name="96"><font size=-1>96     </font></a><span class="comment">			//absence= mr.getAbsenceByIDUserAndDate(2, &quot;2009-05-18&quot;);</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment">			//absence= mr.getAbsenceByIdJustify(1);</span>
+<a name="98"><font size=-1>98     </font></a><span class="comment">			//System.out.println(absence.getDateAbsence());</span>
+<a name="99"><font size=-1>99     </font></a><span class="comment">			</span>
+<a name="100"><font size=-1>100     </font></a><span class="comment">			//Collection&lt;Absence&gt; ac= mr.getAbsenceByIDUserAndAcademicYear(2, 2009);</span>
+<a name="101"><font size=-1>101     </font></a><span class="comment">			//for(Absence x : ac) System.out.println(x.getDateAbsence());</span>
+<a name="102"><font size=-1>102     </font></a><span class="comment">			</span>
+<a name="103"><font size=-1>103     </font></a><span class="comment">			//justifynew=mr.getJustifyByAbsence(absence);</span>
+<a name="104"><font size=-1>104     </font></a><span class="comment">			//System.out.println(justifynew.getDateJustify());</span>
+<a name="105"><font size=-1>105     </font></a><span class="comment">			</span>
+<a name="106"><font size=-1>106     </font></a><span class="comment">			//Collection&lt;Note&gt; nc = mr.getNoteByIDUserAndAcademicYear(2, 2009);</span>
+<a name="107"><font size=-1>107     </font></a><span class="comment">			//for(Note x : nc) System.out.println(x.getDescription());</span>
+<a name="108"><font size=-1>108     </font></a><span class="comment">			</span>
+<a name="109"><font size=-1>109     </font></a><span class="comment">			//delay= mr.getDelayByIDUserAndDate(1, datenow);</span>
+<a name="110"><font size=-1>110     </font></a><span class="comment">			//System.out.println(delay.getDateDelay());</span>
+<a name="111"><font size=-1>111     </font></a><span class="comment">			//System.out.println(delay.getTimeDelay());</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">			</span>
+<a name="113"><font size=-1>113     </font></a><span class="comment">			</span>
+<a name="114"><font size=-1>114     </font></a><span class="comment">			///*</span>
+<a name="115"><font size=-1>115     </font></a><span class="comment">			<a href="dictionary_J.html#152">Collection</a></span><span class="default">&lt;<a href="dictionary_S.html#1962">RegisterLine</a>&gt; <a href="dictionary_S.html#2410">crl</a> = <a href="dictionary_S.html#2420">mr</a>.<a href="dictionary_S.html#1900">getRegisterByClassIDAndDate</a>(</span><span class="number">64</span><span class="default">, <a href="dictionary_S.html#2412">datenow</a> );</span>
+<a name="116"><font size=-1>116     </font></a><span class="default">			</span><span class="keyword">for</span><span class="default">(<a href="dictionary_S.html#1962">RegisterLine</a> <a href="dictionary_S.html#2407">x</a> : <a href="dictionary_S.html#2410">crl</a>){</span>
+<a name="117"><font size=-1>117     </font></a><span class="default">				System.out.<a href="dictionary_P.html#794">println</a>(<a href="dictionary_S.html#2407">x</a>.<a href="dictionary_S.html#2423">getStudent</a>().<a href="dictionary_S.html#2369">getName</a>());</span>
+<a name="118"><font size=-1>118     </font></a><span class="default">				</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#2420">mr</a>.<a href="dictionary_S.html#1908">hasAbsence</a>(<a href="dictionary_S.html#2407">x</a>)){</span>
+<a name="119"><font size=-1>119     </font></a><span class="default">					System.out.<a href="dictionary_P.html#794">println</a>(</span><span class="string">&quot;assente&quot;</span><span class="default">);</span>
+<a name="120"><font size=-1>120     </font></a><span class="default">				}</span>
+<a name="121"><font size=-1>121     </font></a><span class="default">				System.out.<a href="dictionary_P.html#794">println</a>(<a href="dictionary_S.html#2420">mr</a>.<a href="dictionary_S.html#1908">hasAbsence</a>(<a href="dictionary_S.html#2407">x</a>));</span>
+<a name="122"><font size=-1>122     </font></a><span class="default">				</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#2420">mr</a>.<a href="dictionary_S.html#1910">hasDelay</a>(<a href="dictionary_S.html#2407">x</a>)){</span>
+<a name="123"><font size=-1>123     </font></a><span class="default">					System.out.<a href="dictionary_P.html#794">println</a>(</span><span class="string">&quot;ritardo&quot;</span><span class="default">);</span>
+<a name="124"><font size=-1>124     </font></a><span class="default">				}</span>
+<a name="125"><font size=-1>125     </font></a><span class="default">			}</span>
+<a name="126"><font size=-1>126     </font></a><span class="default">			</span><span class="comment">//*/</span>
+<a name="127"><font size=-1>127     </font></a><span class="comment">			</span>
+<a name="128"><font size=-1>128     </font></a><span class="comment">			<a href="dictionary_J.html#1485">GregorianCalendar</a> <a href="dictionary_S.html#2416">gc</a> </span><span class="default">= </span><span class="keyword">new <a href="dictionary_J.html#1485">GregorianCalendar</a></span><span class="default">();</span>
+<a name="129"><font size=-1>129     </font></a><span class="default">	</span>
+<a name="130"><font size=-1>130     </font></a><span class="default">			<a href="dictionary_S.html#38">String</a> <a href="dictionary_S.html#2411">date</a>=</span><span class="string">&quot;&quot;</span><span class="default">;</span>
+<a name="131"><font size=-1>131     </font></a><span class="default">			</span><span class="keyword">int <a href="dictionary_S.html#2422">year</a></span><span class="default">=<a href="dictionary_S.html#2416">gc</a>.<a href="dictionary_G.html#562">get</a>(<a href="dictionary_J.html#1485">GregorianCalendar</a>.<a href="dictionary_Y.html#1567">YEAR</a>);</span>
+<a name="132"><font size=-1>132     </font></a><span class="default">			</span>
+<a name="133"><font size=-1>133     </font></a><span class="default">			</span><span class="keyword">int <a href="dictionary_S.html#2418">month</a></span><span class="default">=<a href="dictionary_S.html#2416">gc</a>.<a href="dictionary_G.html#562">get</a>(<a href="dictionary_J.html#1485">GregorianCalendar</a>.<a href="dictionary_M.html#1565">MONTH</a>)+</span><span class="number">1</span><span class="default">;</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">			<a href="dictionary_S.html#38">String</a> <a href="dictionary_S.html#2419">months</a>=</span><span class="string">&quot;&quot;</span><span class="default">;</span>
+<a name="135"><font size=-1>135     </font></a><span class="default">			</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#2418">month</a>&lt;</span><span class="number">10</span><span class="default">){</span>
+<a name="136"><font size=-1>136     </font></a><span class="default">				<a href="dictionary_S.html#2419">months</a>=</span><span class="string">&quot;0&quot;</span><span class="default">+<a href="dictionary_S.html#2418">month</a>;</span>
+<a name="137"><font size=-1>137     </font></a><span class="default">			}</span><span class="keyword">else</span><span class="default">{</span>
+<a name="138"><font size=-1>138     </font></a><span class="default">				<a href="dictionary_S.html#2419">months</a>= <a href="dictionary_S.html#2419">months</a>+<a href="dictionary_S.html#2418">month</a>;</span>
+<a name="139"><font size=-1>139     </font></a><span class="default">			}</span>
+<a name="140"><font size=-1>140     </font></a><span class="default">			</span>
+<a name="141"><font size=-1>141     </font></a><span class="default">			</span><span class="keyword">int <a href="dictionary_S.html#2413">day</a></span><span class="default">=<a href="dictionary_S.html#2416">gc</a>.<a href="dictionary_G.html#562">get</a>(<a href="dictionary_J.html#1485">GregorianCalendar</a>.<a href="dictionary_D.html#1599">DAY_OF_MONTH</a>);</span>
+<a name="142"><font size=-1>142     </font></a><span class="default">			<a href="dictionary_S.html#38">String</a> <a href="dictionary_S.html#2414">days</a>=</span><span class="string">&quot;&quot;</span><span class="default">;</span>
+<a name="143"><font size=-1>143     </font></a><span class="default">			</span><span class="keyword">if</span><span class="default">(<a href="dictionary_S.html#2413">day</a>&lt;</span><span class="number">10</span><span class="default">){</span>
+<a name="144"><font size=-1>144     </font></a><span class="default">				<a href="dictionary_S.html#2414">days</a>=</span><span class="string">&quot;0&quot;</span><span class="default">+<a href="dictionary_S.html#2413">day</a>;</span>
+<a name="145"><font size=-1>145     </font></a><span class="default">			}</span><span class="keyword">else</span><span class="default">{</span>
+<a name="146"><font size=-1>146     </font></a><span class="default">				<a href="dictionary_S.html#2414">days</a>= <a href="dictionary_S.html#2414">days</a>+<a href="dictionary_S.html#2413">day</a>;</span>
+<a name="147"><font size=-1>147     </font></a><span class="default">			}</span>
+<a name="148"><font size=-1>148     </font></a><span class="default">			</span>
+<a name="149"><font size=-1>149     </font></a><span class="default">			<a href="dictionary_S.html#2411">date</a>= <a href="dictionary_S.html#2411">date</a> + <a href="dictionary_S.html#2422">year</a>+</span><span class="string">&quot;-&quot;</span><span class="default">+<a href="dictionary_S.html#2419">months</a>+</span><span class="string">&quot;-&quot;</span><span class="default">+<a href="dictionary_S.html#2414">days</a>;</span>
+<a name="150"><font size=-1>150     </font></a><span class="default">			System.out.<a href="dictionary_P.html#794">println</a>(<a href="dictionary_S.html#2411">date</a>);</span>
+<a name="151"><font size=-1>151     </font></a><span class="default">			</span>
+<a name="152"><font size=-1>152     </font></a><span class="default">		}</span><span class="keyword">catch </span><span class="default">(<a href="dictionary_E.html#803">Exception</a> <a href="dictionary_S.html#2406">e</a>) {</span>
+<a name="153"><font size=-1>153     </font></a><span class="default">			System.out.<a href="dictionary_P.html#794">println</a>(</span><span class="string">&quot;errore&quot;</span><span class="default">);</span>
+<a name="154"><font size=-1>154     </font></a><span class="default">			System.out.<a href="dictionary_P.html#794">println</a>(<a href="dictionary_S.html#2406">e</a>.<a href="dictionary_G.html#16">getMessage</a>());</span>
+<a name="155"><font size=-1>155     </font></a><span class="default">		}</span>
+<a name="156"><font size=-1>156     </font></a><span class="default">		</span>
+<a name="157"><font size=-1>157     </font></a><span class="default">		System.out.<a href="dictionary_P.html#794">println</a>(<a href="dictionary_S.html#2412">datenow</a>.<a href="dictionary_T.html#664">toString</a>());</span>
+<a name="158"><font size=-1>158     </font></a><span class="default">		System.out.<a href="dictionary_P.html#794">println</a>(<a href="dictionary_S.html#237">Utility</a>.<a href="dictionary_S.html#1634">isNull</a>(<a href="dictionary_S.html#2412">datenow</a>));</span>
+<a name="159"><font size=-1>159     </font></a><span class="default">		System.out.<a href="dictionary_P.html#794">println</a>(</span><span class="string">&quot;TEST COMPLETATO&quot;</span><span class="default">);</span>
+<a name="160"><font size=-1>160     </font></a><span class="default">	}</span>
+<a name="161"><font size=-1>161     </font></a><span class="default">	</span>
+<a name="162"><font size=-1>162     </font></a><span class="default">}</span>
+<a name="163"><font size=-1>163     </font></a><span class="default"></span>
+</pre></body></html>

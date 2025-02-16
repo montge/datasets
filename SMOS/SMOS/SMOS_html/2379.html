@@ -1,0 +1,98 @@
+<html><head><title>managerUser.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\SMOS\SMOS\java\managerUser.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\SMOS\\SMOS\\java\\managerUser.java";
+top.document.title  = "managerUser.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default">&lt;!DOCTYPE HTML PUBLIC </span><span class="string">&quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;</span><span class="default">&gt;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default">&lt;%@ page </span><span class="keyword">import</span><span class="default">=</span><span class="string">&quot;smos.bean.*&quot; </span><span class="default">%&gt;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default">&lt;%@ page </span><span class="keyword">import</span><span class="default">=</span><span class="string">&quot;smos.storage.ManagerUser&quot;</span><span class="default">%&gt;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default">&lt;%@ taglib prefix=</span><span class="string">&quot;c&quot; </span><span class="default">uri=</span><span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot; </span><span class="default">%&gt;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default">&lt;%@ taglib prefix=</span><span class="string">&quot;display&quot; </span><span class="default">uri=</span><span class="string">&quot;http://displaytag.sf.net&quot; </span><span class="default">%&gt;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default">&lt;%@ page </span><span class="keyword">import</span><span class="default">=</span><span class="string">&quot;smos.utility.Utility&quot;</span><span class="default">%&gt;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span>
+<a name="9"><font size=-1>9     </font></a><span class="default">&lt;%</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">	User loggedUser = (User) session.getAttribute(</span><span class="string">&quot;loggedUser&quot;</span><span class="default">);</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">	</span><span class="keyword">if </span><span class="default">((loggedUser == </span><span class="keyword">null</span><span class="default">) || ((!ManagerUser.getInstance().isAdministrator(loggedUser)))) {</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">		response.sendRedirect(</span><span class="string">&quot;../index.htm&quot;</span><span class="default">);</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">		</span><span class="keyword">return</span><span class="default">;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">	}</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">%&gt;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default"></span>
+<a name="17"><font size=-1>17     </font></a><span class="default">&lt;html&gt;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">&lt;head&gt;</span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span>
+<a name="20"><font size=-1>20     </font></a><span class="default">	&lt;title&gt;School MOnitoring System&lt;/title&gt;</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">	&lt;meta http-equiv=</span><span class="string">&quot;Content-Type&quot; </span><span class="default">content=</span><span class="string">&quot;text/html; charset=iso-8859-1&quot; </span><span class="default">&gt;</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">	&lt;link rel=</span><span class="string">&quot;stylesheet&quot; </span><span class="default">href=</span><span class="string">&quot;../../stylesheets/generic.css&quot; </span><span class="default">type=</span><span class="string">&quot;text/css&quot;</span><span class="default">&gt;</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">	&lt;link rel=</span><span class="string">&quot;stylesheet&quot; </span><span class="default">href=</span><span class="string">&quot;../../stylesheets/display.css&quot; </span><span class="default">type=</span><span class="string">&quot;text/css&quot;</span><span class="default">&gt;</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">&lt;/head&gt;</span>
+<a name="25"><font size=-1>25     </font></a><span class="default"></span>
+<a name="26"><font size=-1>26     </font></a><span class="default">&lt;body&gt;</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">		</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">	  &lt;div id=</span><span class="string">&quot;container&quot;</span><span class="default">&gt;</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">	  </span>
+<a name="30"><font size=-1>30     </font></a><span class="default">	  	   &lt;div id=</span><span class="string">&quot;header&quot;</span><span class="default">&gt;</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">		   	    </span>
+<a name="32"><font size=-1>32     </font></a><span class="default">			&lt;/div&gt;</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">		   	      </span>
+<a name="34"><font size=-1>34     </font></a><span class="default">			&lt;div id=</span><span class="string">&quot;content_center&quot; </span><span class="default">style=</span><span class="string">&quot;overflow-y:scroll;&quot;</span><span class="default">&gt;</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">		    </span>
+<a name="36"><font size=-1>36     </font></a><span class="default">            &lt;div id=</span><span class="string">&quot;navigation&quot;</span><span class="default">&gt;</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">           &lt;a </span><span class="keyword">class</span><span class="default">=</span><span class="string">&quot;genericLink&quot; </span><span class="default">href=</span><span class="string">&quot;&lt;% if (ManagerUser.getInstance().isAdministrator(loggedUser)){%&gt;../../homePage/homeAdmin.jsp&lt;%}%&gt;&quot;</span><span class="default">&gt;Home&lt;/a&gt; -&gt; &lt;font style=</span><span class="string">&quot;color:#0066FF; font-size:9pt&quot;</span><span class="default">&gt;Gestione Utenti&lt;/font&gt;</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">           &lt;/div&gt;</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">            </span>
+<a name="40"><font size=-1>40     </font></a><span class="default">            &lt;div id=</span><span class="string">&quot;userspace&quot;</span><span class="default">&gt;</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">				 User: &lt;b&gt;&lt;%=loggedUser.getFirstName() + </span><span class="string">&quot; &quot; </span><span class="default">+ loggedUser.getLastName()%&gt;&lt;/b&gt;&lt;br&gt;</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">                 [&lt;a style=</span><span class="string">&quot;font-size:11px&quot; </span><span class="keyword">class</span><span class="default">=</span><span class="string">&quot;genericLink&quot; </span><span class="default">href=</span><span class="string">&quot;../../logout&quot;</span><span class="default">&gt;Esci&lt;/a&gt;, &lt;a style=</span><span class="string">&quot;font-size:11px&quot; </span><span class="keyword">class</span><span class="default">=</span><span class="string">&quot;genericLink&quot; </span><span class="default">href=</span><span class="string">&quot;../userManagement/alterPersonalDate.jsp&quot;</span><span class="default">&gt;Modifica Password&lt;/a&gt;]</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">			&lt;/div&gt;</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">           </span>
+<a name="45"><font size=-1>45     </font></a><span class="default">		  </span>
+<a name="46"><font size=-1>46     </font></a><span class="default"></span>
+<a name="47"><font size=-1>47     </font></a><span class="default">		   &lt;h1 align=</span><span class="string">&quot;left&quot;</span><span class="default">&gt; GESTIONE UTENTI &lt;/h1&gt;</span>
+<a name="48"><font size=-1>48     </font></a><span class="default"></span>
+<a name="49"><font size=-1>49     </font></a><span class="default">           &lt;table id=</span><span class="string">&quot;transparent&quot; </span><span class="default">align=</span><span class="string">&quot;center&quot;</span><span class="default">&gt;</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">           &lt;tr id=</span><span class="string">&quot;transparent&quot;</span><span class="default">&gt;</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">           &lt;td id=</span><span class="string">&quot;transparent&quot;</span><span class="default">&gt;</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">		&lt;% </span><span class="keyword">if </span><span class="default">(ManagerUser.getInstance().isAdministrator(loggedUser)) {%&gt;</span>
+<a name="53"><font size=-1>53     </font></a><span class="default">           &lt;p </span><span class="keyword">class</span><span class="default">=</span><span class="string">&quot;button&quot;</span><span class="default">&gt;&lt;a </span><span class="keyword">class</span><span class="default">=</span><span class="string">&quot;menuLink&quot; </span><span class="default">href=</span><span class="string">&quot;../userManagement/insertUser.jsp&quot;</span><span class="default">&gt;Nuovo Utente&lt;/a&gt;&lt;/p&gt;</span>
+<a name="54"><font size=-1>54     </font></a><span class="default">		&lt;%}%&gt;</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">           &lt;/td&gt;</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">           &lt;/tr&gt;</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">           &lt;/table&gt;</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">		   </span>
+<a name="59"><font size=-1>59     </font></a><span class="default">		   &lt;br&gt;</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">		   &lt;display:table name=</span><span class="string">&quot;sessionScope.userList&quot; </span><span class="default">pagesize=</span><span class="string">&quot;15&quot; </span><span class="default">sort=</span><span class="string">&quot;list&quot; </span><span class="default">id=</span><span class="string">&quot;user&quot; </span><span class="default">defaultsort=</span><span class="string">&quot;1&quot; </span><span class="keyword">class</span><span class="default">=</span><span class="string">&quot;datatable&quot; </span><span class="default">export=</span><span class="string">&quot;true&quot;</span><span class="default">&gt;</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">				&lt;display:setProperty name=</span><span class="string">&quot;basic.msg.empty_list&quot;</span><span class="default">&gt;</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">					&lt;caption&gt;</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">						&lt;p&gt;Non ci sono utenti da visualizzare&lt;/p&gt;</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">					&lt;/caption&gt;</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">				&lt;/display:setProperty&gt;</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">				</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">    			&lt;display:setProperty name=</span><span class="string">&quot;export.pdf&quot; </span><span class="default">value=</span><span class="string">&quot;true&quot;</span><span class="default">/&gt;				</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">				&lt;display:column property=</span><span class="string">&quot;name&quot; </span><span class="default">title=</span><span class="string">&quot;Nome&quot; </span><span class="default">style=</span><span class="string">&quot;width:200px&quot; </span><span class="default">sortable=</span><span class="string">&quot;true&quot; </span><span class="default">headerClass=</span><span class="string">&quot;tdHeaderColumn&quot;</span><span class="default">/&gt;</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">				&lt;display:column property=</span><span class="string">&quot;EMail&quot; </span><span class="default">style=</span><span class="string">&quot;width:200px&quot; </span><span class="default">title=</span><span class="string">&quot;e-mail&quot; </span><span class="default">sortable=</span><span class="string">&quot;true&quot; </span><span class="default">headerClass=</span><span class="string">&quot;tdHeaderColumn&quot;</span><span class="default">/&gt;	</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">				</span>
+<a name="71"><font size=-1>71     </font></a><span class="default">				&lt;display:column style=</span><span class="string">&quot;width:25px&quot; </span><span class="default">title=</span><span class="string">&quot;Visualizza&quot; </span><span class="default">sortable=</span><span class="string">&quot;false&quot; </span><span class="default">headerClass=</span><span class="string">&quot;tdHeaderColumn&quot;</span><span class="default">&gt; </span>
+<a name="72"><font size=-1>72     </font></a><span class="default">				&lt;%  </span><span class="keyword">if </span><span class="default">(((UserListItem)user).getId()!=</span><span class="number">0</span><span class="default">) { %&gt;</span>
+<a name="73"><font size=-1>73     </font></a><span class="default">					&lt;a href=</span><span class="string">&quot;../../showUserDetails?userId=&lt;%=((UserListItem)user).getId()%&gt;&quot;</span><span class="default">&gt;&lt;img src=</span><span class="string">&quot;../../images/details.jpg&quot; </span><span class="default">border=</span><span class="string">&quot;none&quot;</span><span class="default">&gt;&lt;/a&gt;</span>
+<a name="74"><font size=-1>74     </font></a><span class="default">				&lt;% } %&gt;</span>
+<a name="75"><font size=-1>75     </font></a><span class="default">				&lt;/display:column&gt;</span>
+<a name="76"><font size=-1>76     </font></a><span class="default">	       	&lt;/display:table&gt;</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">				</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">		   &lt;/div&gt;</span>
+<a name="79"><font size=-1>79     </font></a><span class="default">		   </span>
+<a name="80"><font size=-1>80     </font></a><span class="default">		   &lt;div id=</span><span class="string">&quot;footer&quot;</span><span class="default">&gt;</span>
+<a name="81"><font size=-1>81     </font></a><span class="default">		   		&lt;p&gt;&lt;%= Utility.getTextFooter() %&gt;&lt;/p&gt;</span>
+<a name="82"><font size=-1>82     </font></a><span class="default">		   &lt;/div&gt;</span>
+<a name="83"><font size=-1>83     </font></a><span class="default">	  </span>
+<a name="84"><font size=-1>84     </font></a><span class="default">	  &lt;/div&gt;</span>
+<a name="85"><font size=-1>85     </font></a><span class="default"></span>
+<a name="86"><font size=-1>86     </font></a><span class="default">&lt;/body&gt;</span>
+<a name="87"><font size=-1>87     </font></a><span class="default">&lt;/html&gt;</span>
+<a name="88"><font size=-1>88     </font></a><span class="default"></span>
+</pre></body></html>

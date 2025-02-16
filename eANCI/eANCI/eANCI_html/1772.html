@@ -1,0 +1,44 @@
+<html><head><title>EA145.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\UBUNTU-24.04\home\e\Development\datasets\eANCI\eANCI\java\EA145.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\UBUNTU-24.04\\home\\e\\Development\\datasets\\eANCI\\eANCI\\java\\EA145.java";
+top.document.title  = "EA145.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package <a href="dictionary_M.html#88">Manager</a></span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import <a href="dictionary_B.html#21">Bean</a></span><span class="default">.<a href="dictionary_B.html#84">CartaIdentita</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import <a href="dictionary_D.html#89">DB</a></span><span class="default">.*;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment"> * La classe CIManager interagisce con le classi di gestione del database</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> * La classe CIManager non ha dipendenze</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> * @author Federico Cinque</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"> */</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"></span><span class="keyword">public class <a href="dictionary_M.html#81">CIManager</a> </span><span class="default">{</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">	</span><span class="keyword">private <a href="dictionary_D.html#758">DbCartaIdentita</a> <a href="dictionary_M.html#1775">dbCartaIdentita</a></span><span class="default">;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment">	 * Costruttore di default della classe CIManager</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment">	 */</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_M.html#90">CIManager</a></span><span class="default">(){</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">		<a href="dictionary_M.html#1775">dbCartaIdentita</a> = </span><span class="keyword">new <a href="dictionary_D.html#759">DbCartaIdentita</a></span><span class="default">();</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">	}</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">	</span><span class="comment">/**</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment">	 * Metodo che permette la ricerca di una carta d'identita tramite il suo numero</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment">	 * invocando il relativo metodo della classe db</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment">	 * @param cod il numero della carta d'identità del cittadino.</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment">	 * @return l'oggetto di tipo CartaIdentità associata al numero passato come parametro</span>
+<a name="23"><font size=-1>23     </font></a><span class="comment">	 * @throws DbException</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment">	 */</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment">	</span><span class="keyword">public <a href="dictionary_B.html#84">CartaIdentita</a> <a href="dictionary_M.html#92">getCartaByNumero</a></span><span class="default">(<a href="dictionary_S.html#22">String</a> <a href="dictionary_M.html#1774">cod</a>)</span><span class="keyword">throws <a href="dictionary_D.html#87">DbException</a></span><span class="default">{</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_M.html#1775">dbCartaIdentita</a></span><span class="default">.<a href="dictionary_D.html#760">ricercaCartaIdentitaByNumero</a>(<a href="dictionary_M.html#1774">cod</a>);</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">	}</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">	</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">	</span><span class="keyword">public <a href="dictionary_B.html#84">CartaIdentita</a> <a href="dictionary_M.html#411">getCartaByIdCStri</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_M.html#1773">id</a></span><span class="default">)</span><span class="keyword">throws <a href="dictionary_D.html#87">DbException</a></span><span class="default">{</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">		</span><span class="keyword">return <a href="dictionary_M.html#1775">dbCartaIdentita</a></span><span class="default">.<a href="dictionary_D.html#1536">ricercaCartaIdentitaByProprietario</a>(<a href="dictionary_M.html#1773">id</a>);</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">	}</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">	</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">}</span>
+<a name="34"><font size=-1>34     </font></a><span class="default"></span>
+</pre></body></html>
