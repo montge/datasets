@@ -1,0 +1,752 @@
+<!DOCTYPE html><html><head><title>Simple Invocation Tree [D]</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script src="jquery-3.3.1.min.js" type="text/javascript"></script><script src="d3.js" type="text/javascript"></script><script src="d3pie.min.js" type="text/javascript"></script><script src="plotly.min.js" type="text/javascript"></script><link href="reportCSS.css" type="text/css" rel="stylesheet" /><script src="reportJS.js" type="text/javascript"></script><script src="table_of_contents.js" type="text/javascript"></script></head><body bgcolor="#ffffff" TEXT="#000000"><nav id="main-nav" class="nav"><div id="upper-nav"><img id=und-icon src="understand-logo.png" alt="Understand"></div><div class="navbar" style="position:relative;z-index:1003"><button onclick="pageToTop()" id="pagedesc" title="Return to top of page"><span id="descText">java - Simple Invocation Tree</span></button></div><div id="lower-nav" class=navbar><div id="main-dropdown-html" class="dropdown" tabindex="0"><button id="dropdown-button" class="dropbtn">Contents <img id="dropdown-icon" src="ToCdropdown.png" style="height:12px"></button><div id="dropdown-buffer" class="dropdown-border" style="height:120px;width:300px;"></div><div id="nav-dropdown-content" class="dropdown-content"><a href="table_of_contents.html">Table of Contents</a><txt style="font-size: 12px; text-align: center">Enable javascript to use dropdown contents and other features.</txt></div></div><div class="rightspacer" id="rightspacer"><button id="buttonRight" onclick="scrollTableRight()"><img id="imgRight" src="ToCdropdown.png" /></button><button id="buttonLeft"  onclick="scrollTableLeft()" ><img id="imgLeft" src="ToCdropdown.png"  /></button></div><div class="navCenter">
+<a2>&</a2><a2>A</a2><a href="simpleinvtree_B.html">B</a><a2>C</a2><a href="simpleinvtree_D.html">D</a><a2>E</a2><a2>F</a2><a2>G</a2><a2>H</a2><a2>I</a2><a2>J</a2><a2>K</a2><a2>L</a2><a href="simpleinvtree_M.html">M</a><a2>N</a2><a2>O</a2><a2>P</a2><a2>Q</a2><a2>R</a2><a href="simpleinvtree_S.html">S</a><a2>T</a2><a2>U</a2><a2>V</a2><a2>W</a2><a2>X</a2><a2>Y</a2><a2>Z</a2></div></div></nav>
+<script type="text/javascript">navbar();</script><script type="text/javascript">if (typeof ToC === 'undefined') {document.getElementById("dropdown-button").remove();document.getElementById("dropdown-buffer").remove();document.getElementById("nav-dropdown-content").remove();}</script>
+<div id="main-content"><pre>
+<a href="dictionary_D.html#31">DB.DbAccesso.controllaAccesso</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#32">DB.DbAccesso.controllaLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#30">DB.DbAccesso.DbAccesso</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#33">DB.DbAccesso.eliminaAccesso</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#34">DB.DbAccesso.getAccessi</a>
+| <a href="dictionary_C.html#427">createStatement</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#40">Bean.Accesso.Accesso</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#35">DB.DbAccesso.getAccesso</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#40">Bean.Accesso.Accesso</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#36">DB.DbAccesso.inserisciAccesso</a>
+| <a href="dictionary_B.html#44">Bean.Accesso.getLogin</a>
+| <a href="dictionary_B.html#45">Bean.Accesso.getPassword</a>
+| <a href="dictionary_B.html#46">Bean.Accesso.getTipo</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#37">DB.DbAccesso.modificaAccesso</a>
+| <a href="dictionary_B.html#44">Bean.Accesso.getLogin</a>
+| <a href="dictionary_B.html#45">Bean.Accesso.getPassword</a>
+| <a href="dictionary_B.html#46">Bean.Accesso.getTipo</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#80">DB.DbAmministratore.DbAmministratore</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#82">DB.DbAmministratore.eliminaAmministratore</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#83">DB.DbAmministratore.getAmministratoreByLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#90">Bean.Amministratore.Amministratore</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#87">DB.DbAmministratore.getAmministratoreByMatricola</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#90">Bean.Amministratore.Amministratore</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#84">DB.DbAmministratore.getAmministratoreByName</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#90">Bean.Amministratore.Amministratore</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#81">DB.DbAmministratore.getAmministratori</a>
+| <a href="dictionary_C.html#427">createStatement</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#90">Bean.Amministratore.Amministratore</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#85">DB.DbAmministratore.inserisciAmministratore</a>
+| <a href="dictionary_B.html#99">Bean.Amministratore.getMatricola</a>
+| <a href="dictionary_B.html#100">Bean.Amministratore.getNome</a>
+| <a href="dictionary_B.html#96">Bean.Amministratore.getCognome</a>
+| <a href="dictionary_B.html#97">Bean.Amministratore.getEmail</a>
+| <a href="dictionary_B.html#98">Bean.Amministratore.getLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#86">DB.DbAmministratore.modificaAmministratore</a>
+| <a href="dictionary_B.html#99">Bean.Amministratore.getMatricola</a>
+| <a href="dictionary_B.html#100">Bean.Amministratore.getNome</a>
+| <a href="dictionary_B.html#96">Bean.Amministratore.getCognome</a>
+| <a href="dictionary_B.html#97">Bean.Amministratore.getEmail</a>
+| <a href="dictionary_B.html#98">Bean.Amministratore.getLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#565">DB.DbCambioResidenza.changeResidence</a>
+| <a href="dictionary_D.html#230">DB.DbCartaIdentita.DbCartaIdentita</a>
+| <a href="dictionary_D.html#572">DB.DbCartaIdentita.cancellaCartaIdentita</a>
+
+<a href="dictionary_D.html#567">DB.DbCambioResidenza.changeResidenceIn</a>
+| <a href="dictionary_D.html#230">DB.DbCartaIdentita.DbCartaIdentita</a>
+| <a href="dictionary_D.html#573">DB.DbCartaIdentita.modificaResidenzaCartaIdentita</a>
+| <a href="dictionary_D.html#232">DB.DbCartaIdentita.ricercaCartaIdentitaByNumero</a>
+
+<a href="dictionary_D.html#563">DB.DbCambioResidenza.DbCambioResidenza</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#572">DB.DbCartaIdentita.cancellaCartaIdentita</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#230">DB.DbCartaIdentita.DbCartaIdentita</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#584">DB.DbCartaIdentita.modificaDataRilascioCartaIdentita</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_G.html#169">getYear</a>
+| <a href="dictionary_G.html#159">getMonth</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_S.html#691">setDate</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#591">DB.DbCartaIdentita.modificaDataScadenzaCartaIdentita</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_G.html#169">getYear</a>
+| <a href="dictionary_G.html#159">getMonth</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_S.html#691">setDate</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#598">DB.DbCartaIdentita.modificaNumeroCivicoCartaIdentita</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#573">DB.DbCartaIdentita.modificaResidenzaCartaIdentita</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#612">DB.DbCartaIdentita.modificaValidaEspatrio</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#620">DB.DbCartaIdentita.modificaViaCartaIdentita</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#627">DB.DbCartaIdentita.registraCartaIdentita</a>
+| <a href="dictionary_B.html#161">Bean.CartaIdentita.getNumero</a>
+| <a href="dictionary_B.html#170">Bean.CartaIdentita.id</a>
+| <a href="dictionary_B.html#155">Bean.CartaIdentita.getCittadinanza</a>
+| <a href="dictionary_B.html#164">Bean.CartaIdentita.getResidenza</a>
+| <a href="dictionary_B.html#168">Bean.CartaIdentita.getVia</a>
+| <a href="dictionary_B.html#160">Bean.CartaIdentita.getNumCivico</a>
+| <a href="dictionary_B.html#166">Bean.CartaIdentita.getStatoCivile</a>
+| <a href="dictionary_B.html#163">Bean.CartaIdentita.getProfessione</a>
+| <a href="dictionary_B.html#167">Bean.CartaIdentita.getStatura</a>
+| <a href="dictionary_B.html#154">Bean.CartaIdentita.getCapelli</a>
+| <a href="dictionary_B.html#162">Bean.CartaIdentita.getOcchi</a>
+| <a href="dictionary_B.html#165">Bean.CartaIdentita.getSegniParticolari</a>
+| <a href="dictionary_B.html#156">Bean.CartaIdentita.getDataRilascio</a>
+| <a href="dictionary_B.html#157">Bean.CartaIdentita.getDataScadenza</a>
+| <a href="dictionary_B.html#171">Bean.CartaIdentita.isValidaEspatrio</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#692">setDouble</a>
+| <a href="dictionary_G.html#169">getYear</a>
+| <a href="dictionary_G.html#159">getMonth</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_S.html#691">setDate</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#232">DB.DbCartaIdentita.ricercaCartaIdentitaByNumero</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#582">getDouble</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_B.html#120">Bean.CartaIdentita.CartaIdentita</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#231">DB.DbCartaIdentita.ricercaCartaIdentitaByProprietario</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#582">getDouble</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_B.html#120">Bean.CartaIdentita.CartaIdentita</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#334">DB.DbCittadino.cancellaCittadino</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#333">DB.DbCittadino.DbCittadino</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#703">DB.DbCittadino.findCodiceFiscale</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#710">DB.DbCittadino.findIdCittadino</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#335">DB.DbCittadino.getCittadinoByCodice</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_B.html#249">Bean.Cittadino.Cittadino</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#336">DB.DbCittadino.getCittadinoByLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_B.html#249">Bean.Cittadino.Cittadino</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#343">DB.DbCittadino.getCittadinoByName</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_B.html#249">Bean.Cittadino.Cittadino</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#770">DB.DbCittadino.maxID</a>
+| <a href="dictionary_C.html#427">createStatement</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#775">DB.DbCittadino.modificaAdvertise</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_C.html#427">createStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#784">DB.DbCittadino.modificaCodiceFiscaleCittadino</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#338">DB.DbCittadino.modificaCognomeCittadino</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#339">DB.DbCittadino.modificaEmailCittadino</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#340">DB.DbCittadino.modificaLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#341">DB.DbCittadino.modificaNomeCittadino</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#342">DB.DbCittadino.modificaNucleoFamiliareCittadino</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#337">DB.DbCittadino.registraCittadino</a>
+| <a href="dictionary_B.html#265">Bean.Cittadino.getLogin</a>
+| <a href="dictionary_B.html#261">Bean.Cittadino.getCognome</a>
+| <a href="dictionary_B.html#267">Bean.Cittadino.getNome</a>
+| <a href="dictionary_B.html#262">Bean.Cittadino.getDataNascita</a>
+| <a href="dictionary_B.html#266">Bean.Cittadino.getLuogoNascita</a>
+| <a href="dictionary_B.html#260">Bean.Cittadino.getCodiceFiscale</a>
+| <a href="dictionary_B.html#263">Bean.Cittadino.getEmail</a>
+| <a href="dictionary_B.html#269">Bean.Cittadino.isAdvertise</a>
+| <a href="dictionary_B.html#268">Bean.Cittadino.getNucleoFamiliare</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_G.html#169">getYear</a>
+| <a href="dictionary_G.html#159">getMonth</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_S.html#691">setDate</a>
+| <a href="dictionary_S.html#831">setNull</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#770">DB.DbCittadino.maxID</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#837">DB.DbComune.DbComune</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#839">DB.DbComune.eliminaComune</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#845">DB.DbComune.getComuneByName</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#347">Bean.Comune.Comune</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#854">DB.DbComune.inserisciComune</a>
+| <a href="dictionary_B.html#351">Bean.Comune.getNome</a>
+| <a href="dictionary_B.html#350">Bean.Comune.getIndirizzoId</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#480">DB.DbConnection</a>
+| <a href="dictionary_D.html#870">DB.DbConnection.loadDbProperties</a>
+| <a href="dictionary_D.html#866">DB.DbConnection.createPool</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#865">DB.DbConnection.closePool</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#866">DB.DbConnection.createPool</a>
+| <a href="dictionary_G.html#868">getProperty</a>
+| <a href="dictionary_S.html#873">setJdbcUrl</a>
+| <a href="dictionary_S.html#872">setDriverClass</a>
+| <a href="dictionary_S.html#875">setUser</a>
+| <a href="dictionary_S.html#874">setPassword</a>
+
+<a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_G.html#867">getConnection</a>
+
+<a href="dictionary_D.html#870">DB.DbConnection.loadDbProperties</a>
+| <a href="dictionary_L.html#869">load</a>
+
+<a href="dictionary_D.html#895">DB.DbImpiegato.DbImpiegato</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#897">DB.DbImpiegato.eliminaImpiegato</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#903">DB.DbImpiegato.getImpiegati</a>
+| <a href="dictionary_C.html#427">createStatement</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#976">Bean.Impiegato.Impiegato</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#914">DB.DbImpiegato.getImpiegatoByLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#976">Bean.Impiegato.Impiegato</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#926">DB.DbImpiegato.getImpiegatoByMatricola</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#976">Bean.Impiegato.Impiegato</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#938">DB.DbImpiegato.getImpiegatoByName</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#976">Bean.Impiegato.Impiegato</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#951">DB.DbImpiegato.inserisciImpiegato</a>
+| <a href="dictionary_B.html#977">Bean.Impiegato.getMatricola</a>
+| <a href="dictionary_B.html#978">Bean.Impiegato.getNome</a>
+| <a href="dictionary_B.html#979">Bean.Impiegato.getCognome</a>
+| <a href="dictionary_B.html#980">Bean.Impiegato.getEmail</a>
+| <a href="dictionary_B.html#981">Bean.Impiegato.getLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#962">DB.DbImpiegato.modificaImpiegato</a>
+| <a href="dictionary_B.html#977">Bean.Impiegato.getMatricola</a>
+| <a href="dictionary_B.html#978">Bean.Impiegato.getNome</a>
+| <a href="dictionary_B.html#979">Bean.Impiegato.getCognome</a>
+| <a href="dictionary_B.html#980">Bean.Impiegato.getEmail</a>
+| <a href="dictionary_B.html#981">Bean.Impiegato.getLogin</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#986">DB.DbNucleoFamiliare.controllaIdFamiglia</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#984">DB.DbNucleoFamiliare.DbNucleoFamiliare</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#993">DB.DbNucleoFamiliare.eliminaNucleoFamiliare</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#999">DB.DbNucleoFamiliare.getNucleoFamiliareById</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#1063">Bean.NucleoFamiliare.NucleoFamiliare</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1010">DB.DbNucleoFamiliare.getStatoFamiglia</a>
+| <a href="dictionary_D.html#999">DB.DbNucleoFamiliare.getNucleoFamiliareById</a>
+| <a href="dictionary_B.html#1064">Bean.NucleoFamiliare.getNComponenti</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_G.html#158">getDate</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_B.html#242">Bean.Cittadino.Cittadino</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1026">DB.DbNucleoFamiliare.inserisciNucleoFamiliare</a>
+| <a href="dictionary_B.html#1065">Bean.NucleoFamiliare.getCapoFamiglia</a>
+| <a href="dictionary_B.html#1066">Bean.NucleoFamiliare.getNote</a>
+| <a href="dictionary_B.html#1064">Bean.NucleoFamiliare.getNComponenti</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#1034">DB.DbNucleoFamiliare.lastId</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1034">DB.DbNucleoFamiliare.lastId</a>
+| <a href="dictionary_C.html#427">createStatement</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1040">DB.DbNucleoFamiliare.noteFamiglia</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1047">DB.DbNucleoFamiliare.setCapoFamiglia</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1054">DB.DbNucleoFamiliare.setnComponenti</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1069">DB.DbRichiesta.DbRichiesta</a>
+| <a href="dictionary_D.html#481">DB.DbConnection.getConnection</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+
+<a href="dictionary_D.html#1071">DB.DbRichiesta.eliminaRichiesta</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1077">DB.DbRichiesta.getRichiestaById</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#1163">Bean.Richiesta.Richiesta</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1090">DB.DbRichiesta.getRichiestaByRichiedente</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#1163">Bean.Richiesta.Richiesta</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1103">DB.DbRichiesta.getRichiestaByStato</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#1163">Bean.Richiesta.Richiesta</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1117">DB.DbRichiesta.getRichiestaByTipo</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#1163">Bean.Richiesta.Richiesta</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1131">DB.DbRichiesta.getRichieste</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_E.html#433">executeQuery</a>
+| <a href="dictionary_N.html#471">next</a>
+| <a href="dictionary_G.html#583">getInt</a>
+| <a href="dictionary_G.html#452">getString</a>
+| <a href="dictionary_B.html#1163">Bean.Richiesta.Richiesta</a>
+| <a href="dictionary_A.html#413">add</a>
+| <a href="dictionary_I.html#461">isEmpty</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1143">DB.DbRichiesta.inserisciRichiesta</a>
+| <a href="dictionary_B.html#1164">Bean.Richiesta.getTipo</a>
+| <a href="dictionary_B.html#1165">Bean.Richiesta.getData</a>
+| <a href="dictionary_B.html#1166">Bean.Richiesta.getRichiedente</a>
+| <a href="dictionary_B.html#1167">Bean.Richiesta.getStato</a>
+| <a href="dictionary_B.html#1168">Bean.Richiesta.getDocumento</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+
+<a href="dictionary_D.html#1154">DB.DbRichiesta.setStatoRichiesta</a>
+| <a href="dictionary_P.html#472">prepareStatement</a>
+| <a href="dictionary_S.html#473">setString</a>
+| <a href="dictionary_S.html#693">setInt</a>
+| <a href="dictionary_E.html#434">executeUpdate</a>
+| <a href="dictionary_D.html#482">DB.DbException.DbException</a>
+| <a href="dictionary_C.html#361">close</a>
+</pre>
+<p>
+<div class="footer"><b>Generated:</b> Monday, February 17, 2025 10:56:06 AM</div><center><p><div class="scitools-tag">Scientific Toolworks, Inc.<br></div><div class="scitools-link"><A target="_blank" href="mailto:support@scitools.com">support@scitools.com</A><br><A href="http://www.scitools.com">www.scitools.com</A></div></center></div></body></html>
