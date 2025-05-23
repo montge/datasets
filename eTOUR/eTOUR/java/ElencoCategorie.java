@@ -1,4 +1,4 @@
-﻿package unisa.gps.etour.control.fuzzy;
+package unisa.gps.etour.control.fuzzy;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,231 +6,210 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
-public class ElencoCategorie implements Serializable
-(
+public class ElencoCategorie implements Serializable {
 
-/ **
-* Keeps track of data in each category
-* /
-private static final long serialVersionUID = 1L;
-private Hashtable <string, Categoria> categories, / / hash table that keeps
-/ / For each category a
-/ / Class category
-private Hashtable <string, float[]> totTermini / / hash table that keeps
-/ / The terms of all
-/ / Categories
-maxDist float, / / contains the maximum distances
+    /**
+     * Keeps track of data in each category
+     */
+    private static final long serialVersionUID = 1L;
+    private Hashtable<String, Categoria> categorie; // hash table that keeps
+                                                    // For each category a
+                                                    // Class category
+    private Hashtable<String, float[]> totTermini; // hash table that keeps
+                                                   // The terms of all
+                                                   // Categories
+    float maxDist; // contains the maximum distances
 
-/ **
-* The constructor initializes the two hash tables that contain
-* Categories and terms of all categories
-* /
-public ElencoCategorie ()
-(
-categories <string, Categoria> = new Hashtable ();
-totTermini <string, float[]> = new Hashtable ();
-)
+    /**
+     * The constructor initializes the two hash tables that contain
+     * Categories and terms of all categories
+     */
+    public ElencoCategorie() {
+        categorie = new Hashtable<String, Categoria>();
+        totTermini = new Hashtable<String, float[]>();
+    }
 
-/ **
-* Access method attribute maxDist
-*
-* @ Return the maximum distance of all the terms in all categories
-* /
-public float getMaxDist ()
-(
-maxDist return;
-)
+    /**
+     * Access method attribute maxDist
+     *
+     * @return the maximum distance of all the terms in all categories
+     */
+    public float getMaxDist() {
+        return maxDist;
+    }
 
-/ **
-* Access method to the table of categories
-*
-* @ Return categories
-* /
-<string, Categoria> getAllCategorie public Hashtable ()
-(
-return categories;
-)
+    /**
+     * Access method to the table of categories
+     *
+     * @return categories
+     */
+    public Hashtable<String, Categoria> getAllCategorie() {
+        return categorie;
+    }
 
-/ **
-* Method of accessing the table of total time
-*
-* @ Return totTermini
-* /
-<string, float[]> getTotTermini public Hashtable ()
-(
-totTermini return;
-)
+    /**
+     * Method of accessing the table of total time
+     *
+     * @return totTermini
+     */
+    public Hashtable<String, float[]> getTotTermini() {
+        return totTermini;
+    }
 
-/ **
-* Method to access a category in the table of
-* Categories
-*
-* @ Param pNomeCategoria
-* @ Return object categories representing the category name
-* PNomeCategoria
-* /
-getCategoria public Category (String pNomeCategoria)
-(
+    /**
+     * Method to access a category in the table of
+     * Categories
+     *
+     * @param pNomeCategoria
+     * @return object categories representing the category name
+     * pNomeCategoria
+     */
+    public Categoria getCategoria(String pNomeCategoria) {
+        if (esisteCategoria(pNomeCategoria)) // if there is the appropriate category
+            return categorie.get(pNomeCategoria); // returns the
+                                                  // Assciato to pNomeCategoria
 
-if (esisteCategoria (pNomeCategoria)) / / if there is the appropriate category
-return categorie.get (pNomeCategoria) / / returns the
-/ / Assciato to pNomeCategoria
+        return null; // otherwise null
+    }
 
-return null, / / otherwise null
-)
+    /**
+     * Method of accessing the values of a particular term in this
+     * Category table
+     *
+     * @param pTermine
+     * @return Returns the values associated with the term pTermine
+     */
+    public float[] getTermine(String pTermine) {
+        if (esisteTermine(pTermine)) // if the term is present in tebella
+                                     // Terms of total
+            return (float[]) totTermini.get(pTermine); // return the vaolre
+                                                       // Associate
 
-/ **
-* Method of accessing the values of a particular term in this
-* Category table
-*
-* @ Param pTermine
-* @ Return Returns the values associated with the term pTermine
-* /
-public float [] getTermine (String pTermine)
-(
-if (esisteTermine (pTermine)) / / if the term is present in tebella
-/ / Terms of total
-return (float []) totTermini.get (pTermine) / / return the vaolre
-/ / Associate
+        return null; // null otherwise
+    }
 
-return null, / / null otherwise
-)
+    /**
+     * Method which allows you to add a category to the table of
+     * Categories
+     *
+     * @param pNomeCategoria category name to add
+     * @param pCategoria object associated category
+     * @return true if the operation was successfully carried out false
+     * Otherwise
+     */
+    public boolean addCategoria(String pNomeCategoria, Categoria pCategoria) {
+        if (!esisteCategoria(pNomeCategoria)) // if the category exists
+            return false; // returns false
 
-/ **
-* Method which allows you to add a category to the table of
-* Categories
-*
-* @ Param pNomeCategoria category name to add
-* @ Param object associated pCategoria category
-* @ Return true if the operation was successfully carried out false
-* Otherwise
-* /
-public boolean addCategoria (String pNomeCategoria, star pCategoria)
-(
-if (! esisteCategoria (pNomeCategoria)) / / if the category exists
-return false; / / returns false
+        categorie.put(pNomeCategoria, pCategoria); // otherwise load the
+                                                  // Category in the table
 
-categorie.put (pNomeCategoria, pCategoria), / / otherwise load the
-/ / Category in the table
+        return true; // returns true
+    }
 
-return true; / / returns true
-)
+    /**
+     * Edit a category of the category table
+     *
+     * @param pNomeCategoria category name to edit
+     * @param pCategoria object to be associated with this category
+     * @return true if the operation was successfully carried out false
+     * Otherwise
+     */
+    public boolean setCategoria(String pNomeCategoria, Categoria pCategoria) {
+        if (esisteCategoria(pNomeCategoria)) // if the category does not exist
+            return false; // returns false
 
-/ **
-* Edit a category of the category table
-*
-* @ Param pNomeCategoria category name to edit
-* @ Param object pCategoria be associated with this category
-* @ Return true if the operation was successfully carried out false
-* Otherwise
-* /
-public boolean setCategoria (String pNomeCategoria, star pCategoria)
-(
-if (esisteCategoria (pNomeCategoria)) / / if the category does not exist
-return false; / / returns false
+        categorie.put(pNomeCategoria, pCategoria); // update the table of
+                                                  // Catogorie
 
-categorie.put (pNomeCategoria, pCategoria) / / update the table of
-/ / Catogorie
+        return true; // returns true
+    }
 
-return true; / / returns true
-)
+    /**
+     * Method which allows you to set the value of a term in the tables
+     * Total time
+     *
+     * @param pTermine name term
+     * @param pVal value to associate with the term
+     */
+    public void setTermine(String pTermine, float[] pVal) {
+        totTermini.put(pTermine, pVal);
+    }
 
-/ **
-* Method which allows you to set the value of a term in the tables
-* Total time
-*
-* @ Param name pTermine term
-* @ Param pVal value to associate with the term
-* /
-public void setTermine (String pTermine, float [] pVal)
-(
+    /**
+     * Method which allows the value of the seven kings of the maximum distance of
+     * Terms from one category
+     *
+     * @param pMaxDist
+     */
+    public void setMaxDist(float pMaxDist) {
+        maxDist = pMaxDist;
+    }
 
-totTermini.put (pTermine, pVal);
-)
+    /**
+     * Method which allows to derive a collection of names of iterable
+     * All categories in the categories tabela
+     *
+     * @return string iterable Collection
+     */
+    public Iterable<String> Categories() {
+        List<String> toReturn = new ArrayList<String>();// create a new list
+        for (Enumeration<String> val = categorie.keys(); val.hasMoreElements();)// iterates
+                                                                              // N
+                                                                              // Times
+                                                                              // Where
+                                                                              // N is
+                                                                              // The
+                                                                              // Number
+                                                                              // By
+                                                                              // Categories
+                                                                              // Current
+                                                                              // In
+                                                                              // Table
+        {
+            toReturn.add(val.nextElement());// adds to the list the name of
+                                           // A category
+        }
 
-/ **
-* Method which allows the value of the seven kings of the maximum distance of
-* Terms from one category
-*
-* @ Param pMaxDist
-* /
-public void setMaxDist (float pMaxDist)
-(
-maxDist = pMaxDist;
-)
+        return toReturn;
+    }
 
-/ **
-* Method which allows to derive a collection of names of iterable
-* All categories in the categories tabela
-*
-* @ Return string iterable Collection
-* /
-public Iterable <String> Categories ()
-(
-List <String> toReturn <String> = new ArrayList ();// create a new list
-for (Enumeration <String> categorie.keys val = (); val.hasMoreElements ();)// iterates
-/ / N
-/ / Times
-/ / Where
-/ / N is
-/ / The
-/ / Number
-/ / By
-/ / Categories
-/ / Current
-/ / In
-/ / Table
-(
-toReturn.add (val.nextElement ());// adds to the list the name of
-/ / A category
-)
+    /**
+     * Method aids to verify the existence of a category
+     * In the table of categories
+     *
+     * @param pKey name of the category
+     * @return true if the category exists false otherwise
+     */
+    public boolean esisteCategoria(String pKey) {
+        try {
+            categorie.get(pKey); // try to extract the category name pKey
+                                // The table of categories
+            return true; // if the transaction does not raise exceptions category
+                         // Exists and returns true
+        }
+        catch (NullPointerException e) {
+            return false; // false otherwise
+        }
+    }
 
-toReturn return;
-)
+    /**
+     * Method aids to verify the existence of a term
+     * In the table of total time
+     *
+     * @param pKey term
+     * @return true if the term exists false otherwise
+     */
+    public boolean esisteTermine(String pKey) {
+        // see esisteCategoria
+        try {
+            if (totTermini.get(pKey) != null)
+                return true;
+        }
+        catch (NullPointerException e) {
+            return false;
+        }
 
-/ **
-* Method aids to verify the existence of a category
-* In the table of categories
-*
-* @ Param name of the category PKEY
-* @ Return true if the category exists false otherwise
-* /
-public boolean esisteCategoria (String PKEY)
-(
-TRY
-(
-categorie.get (PKEY), / / try to extract the category name PKEY
-/ / The table of categories
-return true; / / if the transaction does not raise exceptions category
-/ / Exists and returns true
-)
-catch (NullPointerException e)
-(
-return false; / / false otherwise
-)
-)
-
-/ **
-* Method aids to verify the existence of a term
-* In the table of total time
-*
-* @ Param PKEY term
-* @ Return true if the term exists false otherwise
-* /
-public boolean esisteTermine (String PKEY)
-(
-/ / see esisteCategoria
-TRY
-(
-if (totTermini.get (PKEY)! = null)
-return true;
-)
-catch (NullPointerException e)
-(
-return false;
-)
-
-return false;
-)
-
-) 
+        return false;
+    }
+}

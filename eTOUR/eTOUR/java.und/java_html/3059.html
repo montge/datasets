@@ -1,0 +1,175 @@
+<html><head><title>IDBPuntoDiRistoro.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\ubuntu-24.04\home\e\Development\datasets\eTOUR\eTOUR\java\IDBPuntoDiRistoro.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\ubuntu-24.04\\home\\e\\Development\\datasets\\eTOUR\\eTOUR\\java\\IDBPuntoDiRistoro.java";
+top.document.title  = "IDBPuntoDiRistoro.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package <a href="dictionary_U.html#25">unisa</a></span><span class="default">.<a href="dictionary_U.html#24">gps</a>.<a href="dictionary_U.html#23">etour</a>.<a href="dictionary_U.html#44">repository</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#28">sql</a>.<a href="dictionary_J.html#19">SQLException</a>;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#326">util</a>.<a href="dictionary_J.html#48">ArrayList</a>;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">unisa.gps.etour.<a href="dictionary_U.html#32">bean</a>.<a href="dictionary_U.html#331">BeanPuntoDiRistoro</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">unisa.gps.etour.<a href="dictionary_U.html#32">bean</a>.<a href="dictionary_U.html#332">BeanTag</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">unisa.gps.etour.<a href="dictionary_U.html#33">util</a>.<a href="dictionary_U.html#545">Punto3D</a>;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="12"><font size=-1>12     </font></a><span class="comment">  * Interface for management of eateries in the database</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment">  *</span>
+<a name="14"><font size=-1>14     </font></a><span class="comment">  * @Author Joseph Martone</span>
+<a name="15"><font size=-1>15     </font></a><span class="comment">  * @Version 0.1 2007 eTour Project - Copyright by SE @SA Lab DMI University</span>
+<a name="16"><font size=-1>16     </font></a><span class="comment">  * Of Salerno</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment">  */</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"></span><span class="keyword">public interface <a href="dictionary_U.html#1871">IDBPuntoDiRistoro</a></span>
+<a name="19"><font size=-1>19     </font></a><span class="keyword"></span><span class="default">{</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment">    * Add a refreshment</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment">    *</span>
+<a name="23"><font size=-1>23     </font></a><span class="comment">    * @param pPuntoDiRistoro Refreshment to add</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment">    */</span>
+<a name="26"><font size=-1>26     </font></a><span class="comment">    </span><span class="keyword">public boolean <a href="dictionary_U.html#1873">inserisciPuntoDiRistoro</a></span><span class="default">(<a href="dictionary_U.html#331">BeanPuntoDiRistoro</a> <a href="dictionary_U.html#3061">pPuntoDiRistoro</a>)</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">        </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="28"><font size=-1>28     </font></a><span class="default"></span>
+<a name="29"><font size=-1>29     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="30"><font size=-1>30     </font></a><span class="comment">    * Modify a refreshment</span>
+<a name="31"><font size=-1>31     </font></a><span class="comment">    *</span>
+<a name="32"><font size=-1>32     </font></a><span class="comment">    * @param pPuntoDiRistoro Refreshment to edit</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment">    * @return True if and 'been changed otherwise false</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment">    */</span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">    </span><span class="keyword">public boolean <a href="dictionary_U.html#1877">modificaPuntoDiRistoro</a></span><span class="default">(<a href="dictionary_U.html#331">BeanPuntoDiRistoro</a> <a href="dictionary_U.html#3062">pPuntoDiRistoro</a>)</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">        </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="38"><font size=-1>38     </font></a><span class="default"></span>
+<a name="39"><font size=-1>39     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="40"><font size=-1>40     </font></a><span class="comment">    * Delete a refreshment</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">    *</span>
+<a name="42"><font size=-1>42     </font></a><span class="comment">    * @param pIdPuntoDiRistoro ID Refreshment to eliminate</span>
+<a name="43"><font size=-1>43     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="44"><font size=-1>44     </font></a><span class="comment">    * @return True if and 'have been deleted false otherwise</span>
+<a name="45"><font size=-1>45     </font></a><span class="comment">    */</span>
+<a name="46"><font size=-1>46     </font></a><span class="comment">    </span><span class="keyword">public boolean <a href="dictionary_U.html#1872">cancellaPuntoDiRistoro</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_U.html#3060">pIdPuntoDiRistoro</a></span><span class="default">)</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">        </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="48"><font size=-1>48     </font></a><span class="default"></span>
+<a name="49"><font size=-1>49     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="50"><font size=-1>50     </font></a><span class="comment">    * Returns data from a point of comfort with the ID given as argument</span>
+<a name="51"><font size=-1>51     </font></a><span class="comment">    *</span>
+<a name="52"><font size=-1>52     </font></a><span class="comment">    * @param pid point identification Refreshments</span>
+<a name="53"><font size=-1>53     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="54"><font size=-1>54     </font></a><span class="comment">    * @return Refreshment</span>
+<a name="55"><font size=-1>55     </font></a><span class="comment">    */</span>
+<a name="56"><font size=-1>56     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_U.html#331">BeanPuntoDiRistoro</a> <a href="dictionary_U.html#1882">ottieniPuntoDiRistoro</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_U.html#3072">pid</a></span><span class="default">)</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">        </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="58"><font size=-1>58     </font></a><span class="default"></span>
+<a name="59"><font size=-1>59     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="60"><font size=-1>60     </font></a><span class="comment">    * Advanced Search. Returns the list of eateries that have in</span>
+<a name="61"><font size=-1>61     </font></a><span class="comment">    * Name or description given string as input, sorted according to</span>
+<a name="62"><font size=-1>62     </font></a><span class="comment">    * Preferences of tourists, the tags and filtered according to the distance</span>
+<a name="63"><font size=-1>63     </font></a><span class="comment">    * Max. The list returned contains only the number of catering outlets input data.</span>
+<a name="64"><font size=-1>64     </font></a><span class="comment">    * To scroll the real list, which may contain multiple 'items, you</span>
+<a name="65"><font size=-1>65     </font></a><span class="comment">    * Use paramtro numPagina.</span>
+<a name="66"><font size=-1>66     </font></a><span class="comment">    *</span>
+<a name="67"><font size=-1>67     </font></a><span class="comment">    * @param pIdTurista Id tourists who carried out the research</span>
+<a name="68"><font size=-1>68     </font></a><span class="comment">    * @param pKeyword string that contains the keyword to search the</span>
+<a name="69"><font size=-1>69     </font></a><span class="comment">    * Name or description of refreshment</span>
+<a name="70"><font size=-1>70     </font></a><span class="comment">    * @param pTags list of tags used to filter the search. the</span>
+<a name="71"><font size=-1>71     </font></a><span class="comment">    * Maximum number of tags to be included should not exceed five</span>
+<a name="72"><font size=-1>72     </font></a><span class="comment">    * Units'. If you exceed this number the other tags</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment">    * Excess will be ignored.</span>
+<a name="74"><font size=-1>74     </font></a><span class="comment">    * @param pNumeroPagina The page number you want to view. O</span>
+<a name="75"><font size=-1>75     </font></a><span class="comment">    * The 1 page (the first 10 results), 1 for 2 page (s</span>
+<a name="76"><font size=-1>76     </font></a><span class="comment">    * Results from 11 to 20) etc ... *</span>
+<a name="77"><font size=-1>77     </font></a><span class="comment">    * @param pPosizione position of the person who carried out the research</span>
+<a name="78"><font size=-1>78     </font></a><span class="comment">    * @param pNumeroElementiPerPagina int Number of elements to return</span>
+<a name="79"><font size=-1>79     </font></a><span class="comment">    * @param pDistanzaMassima Maximum distance from the user to refreshment</span>
+<a name="80"><font size=-1>80     </font></a><span class="comment">    * To seek</span>
+<a name="81"><font size=-1>81     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="82"><font size=-1>82     </font></a><span class="comment">    * @return list containing ten points Refreshments</span>
+<a name="83"><font size=-1>83     </font></a><span class="comment">    */</span>
+<a name="84"><font size=-1>84     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_J.html#48">ArrayList</a></span><span class="default">&lt;<a href="dictionary_U.html#331">BeanPuntoDiRistoro</a>&gt; <a href="dictionary_U.html#1883">ricercaAvanzata</a>(</span><span class="keyword">int <a href="dictionary_U.html#3074">pIdTurista</a></span><span class="default">,</span>
+<a name="85"><font size=-1>85     </font></a><span class="default">        <a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#3075">pKeyword</a>, <a href="dictionary_J.html#48">ArrayList</a>&lt;<a href="dictionary_U.html#332">BeanTag</a>&gt; <a href="dictionary_U.html#3079">pTags</a>, </span><span class="keyword">int <a href="dictionary_U.html#3077">pNumeroPagina</a></span><span class="default">, </span><span class="keyword">int <a href="dictionary_U.html#3076">pNumeroElementiPerPagina</a></span><span class="default">,</span>
+<a name="86"><font size=-1>86     </font></a><span class="default">        <a href="dictionary_U.html#545">Punto3D</a> <a href="dictionary_U.html#3078">pPosizione</a>, </span><span class="keyword">double <a href="dictionary_U.html#3073">pDistanzaMassima</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="87"><font size=-1>87     </font></a><span class="default"></span>
+<a name="88"><font size=-1>88     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="89"><font size=-1>89     </font></a><span class="comment">    * Method to get the number of elements to search.</span>
+<a name="90"><font size=-1>90     </font></a><span class="comment">    *</span>
+<a name="91"><font size=-1>91     </font></a><span class="comment">    * @see ricercaAvanzata()</span>
+<a name="92"><font size=-1>92     </font></a><span class="comment">    * @param pIdTurista Id tourists who carried out the research</span>
+<a name="93"><font size=-1>93     </font></a><span class="comment">    * @param pKeyword string that contains the keyword to search the</span>
+<a name="94"><font size=-1>94     </font></a><span class="comment">    * Name or description of refreshment</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment">    * @param pTags list of tags used to filter the search. the</span>
+<a name="96"><font size=-1>96     </font></a><span class="comment">    * Maximum number of tags to be included should not exceed five</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment">    * Units'. If you exceed this number the other tags</span>
+<a name="98"><font size=-1>98     </font></a><span class="comment">    * Excess will be ignored. *</span>
+<a name="99"><font size=-1>99     </font></a><span class="comment">    * @param pPosizione position of the person who carried out the research</span>
+<a name="100"><font size=-1>100     </font></a><span class="comment">    * @param pDistanzaMassima Maximum distance from the user to refreshment</span>
+<a name="101"><font size=-1>101     </font></a><span class="comment">    * To seek</span>
+<a name="102"><font size=-1>102     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="103"><font size=-1>103     </font></a><span class="comment">    * @return number of pages.</span>
+<a name="104"><font size=-1>104     </font></a><span class="comment">    */</span>
+<a name="105"><font size=-1>105     </font></a><span class="comment">    </span><span class="keyword">public int <a href="dictionary_U.html#1881">ottieniNumeroElementiRicercaAvanzata</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_U.html#3068">pIdTurista</a></span><span class="default">,</span>
+<a name="106"><font size=-1>106     </font></a><span class="default">        <a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#3069">pKeyword</a>, <a href="dictionary_J.html#48">ArrayList</a>&lt;<a href="dictionary_U.html#332">BeanTag</a>&gt; <a href="dictionary_U.html#3071">pTags</a>, <a href="dictionary_U.html#545">Punto3D</a> <a href="dictionary_U.html#3070">pPosizione</a>,</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">        </span><span class="keyword">double <a href="dictionary_U.html#3067">pDistanzaMassima</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="108"><font size=-1>108     </font></a><span class="default"></span>
+<a name="109"><font size=-1>109     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="110"><font size=-1>110     </font></a><span class="comment">    * Research. Returns the list of eateries that have the name or</span>
+<a name="111"><font size=-1>111     </font></a><span class="comment">    * Description given string as input, filtered and tags</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">    * According to the maximum distance. The returned list contains the number of</span>
+<a name="113"><font size=-1>113     </font></a><span class="comment">    * Points Refreshments input data. To scroll the real list, which</span>
+<a name="114"><font size=-1>114     </font></a><span class="comment">    * May contain more 'items, you use the paramtro</span>
+<a name="115"><font size=-1>115     </font></a><span class="comment">    * NumPagina.</span>
+<a name="116"><font size=-1>116     </font></a><span class="comment">    *</span>
+<a name="117"><font size=-1>117     </font></a><span class="comment">    * @param pKeyword string that contains the keyword to search the</span>
+<a name="118"><font size=-1>118     </font></a><span class="comment">    * Name or description of refreshment</span>
+<a name="119"><font size=-1>119     </font></a><span class="comment">    * @param pTags list of tags used to filter the search. the</span>
+<a name="120"><font size=-1>120     </font></a><span class="comment">    * Maximum number of tags to be included should not exceed five</span>
+<a name="121"><font size=-1>121     </font></a><span class="comment">    * Units'. If you exceed this number the other tags</span>
+<a name="122"><font size=-1>122     </font></a><span class="comment">    * Excess will be ignored.</span>
+<a name="123"><font size=-1>123     </font></a><span class="comment">    * @param pNumeroPagina The page number you want to view. O</span>
+<a name="124"><font size=-1>124     </font></a><span class="comment">    * The 1 page (the first 10 results), 1 for 2 page (s</span>
+<a name="125"><font size=-1>125     </font></a><span class="comment">    * Results from 11 to 20) etc ... *</span>
+<a name="126"><font size=-1>126     </font></a><span class="comment">    * @param pPosizione position of the person who carried out the research</span>
+<a name="127"><font size=-1>127     </font></a><span class="comment">    * @param pDistanzaMassima Maximum distance from the user to refreshment</span>
+<a name="128"><font size=-1>128     </font></a><span class="comment">    * @param pNumeroElementiPerPagina int Number of elements to return</span>
+<a name="129"><font size=-1>129     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="130"><font size=-1>130     </font></a><span class="comment">    * @return list containing ten points Refreshments</span>
+<a name="131"><font size=-1>131     </font></a><span class="comment">    */</span>
+<a name="132"><font size=-1>132     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_J.html#48">ArrayList</a></span><span class="default">&lt;<a href="dictionary_U.html#331">BeanPuntoDiRistoro</a>&gt; <a href="dictionary_U.html#1884">search</a>(<a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#3081">pKeyword</a>,</span>
+<a name="133"><font size=-1>133     </font></a><span class="default">        <a href="dictionary_J.html#48">ArrayList</a>&lt;<a href="dictionary_U.html#332">BeanTag</a>&gt; <a href="dictionary_U.html#3085">pTags</a>, </span><span class="keyword">int <a href="dictionary_U.html#3083">pNumeroPagina</a></span><span class="default">, </span><span class="keyword">int <a href="dictionary_U.html#3082">pNumeroElementiPerPagina</a></span><span class="default">, <a href="dictionary_U.html#545">Punto3D</a> <a href="dictionary_U.html#3084">pPosizione</a>,</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">        </span><span class="keyword">double <a href="dictionary_U.html#3080">pDistanzaMassima</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="135"><font size=-1>135     </font></a><span class="default"></span>
+<a name="136"><font size=-1>136     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="137"><font size=-1>137     </font></a><span class="comment">    * Method to get you the elements for an advanced search.</span>
+<a name="138"><font size=-1>138     </font></a><span class="comment">    *</span>
+<a name="139"><font size=-1>139     </font></a><span class="comment">    * @see search()</span>
+<a name="140"><font size=-1>140     </font></a><span class="comment">    * @param pUsernameTurista username tourists who carried out the research</span>
+<a name="141"><font size=-1>141     </font></a><span class="comment">    * @param pKeyword string that contains the keyword to search the</span>
+<a name="142"><font size=-1>142     </font></a><span class="comment">    * Name or description of refreshment</span>
+<a name="143"><font size=-1>143     </font></a><span class="comment">    * @param pTags list of tags used to filter the search. The</span>
+<a name="144"><font size=-1>144     </font></a><span class="comment">    * Maximum number of tags to be included should not exceed five</span>
+<a name="145"><font size=-1>145     </font></a><span class="comment">    * Units'. If you exceed this number the other tags</span>
+<a name="146"><font size=-1>146     </font></a><span class="comment">    * Excess will be ignored.</span>
+<a name="147"><font size=-1>147     </font></a><span class="comment">    * @param pPosizione position of the person who carried out the research</span>
+<a name="148"><font size=-1>148     </font></a><span class="comment">    * @param pDistanzaMassima Maximum distance from the user to refreshment</span>
+<a name="149"><font size=-1>149     </font></a><span class="comment">    * To seek</span>
+<a name="150"><font size=-1>150     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="151"><font size=-1>151     </font></a><span class="comment">    * @return number of pages.</span>
+<a name="152"><font size=-1>152     </font></a><span class="comment">    */</span>
+<a name="153"><font size=-1>153     </font></a><span class="comment">    </span><span class="keyword">public int <a href="dictionary_U.html#1880">ottieniNumeroElementiRicerca</a></span><span class="default">(<a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#3064">pKeyword</a>,</span>
+<a name="154"><font size=-1>154     </font></a><span class="default">        <a href="dictionary_J.html#48">ArrayList</a>&lt;<a href="dictionary_U.html#332">BeanTag</a>&gt; <a href="dictionary_U.html#3066">pTags</a>, <a href="dictionary_U.html#545">Punto3D</a> <a href="dictionary_U.html#3065">pPosizione</a>,</span>
+<a name="155"><font size=-1>155     </font></a><span class="default">        </span><span class="keyword">double <a href="dictionary_U.html#3063">pDistanzaMassima</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="156"><font size=-1>156     </font></a><span class="default"></span>
+<a name="157"><font size=-1>157     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="158"><font size=-1>158     </font></a><span class="comment">    * Returns a list of all the refreshment</span>
+<a name="159"><font size=-1>159     </font></a><span class="comment">    *</span>
+<a name="160"><font size=-1>160     </font></a><span class="comment">    * @throws SQLException</span>
+<a name="161"><font size=-1>161     </font></a><span class="comment">    * @return list of all the refreshment</span>
+<a name="162"><font size=-1>162     </font></a><span class="comment">    */</span>
+<a name="163"><font size=-1>163     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_J.html#48">ArrayList</a></span><span class="default">&lt;<a href="dictionary_U.html#331">BeanPuntoDiRistoro</a>&gt; <a href="dictionary_U.html#1878">ottieniListaPR</a>() </span><span class="keyword">throws <a href="dictionary_J.html#19">SQLException</a></span><span class="default">;</span>
+<a name="164"><font size=-1>164     </font></a><span class="default">}</span>
+<a name="165"><font size=-1>165     </font></a><span class="default"></span>
+</pre></body></html>

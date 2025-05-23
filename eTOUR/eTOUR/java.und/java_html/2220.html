@@ -1,0 +1,268 @@
+<html><head><title>FeedBackTableModel.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\ubuntu-24.04\home\e\Development\datasets\eTOUR\eTOUR\java\FeedBackTableModel.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\ubuntu-24.04\\home\\e\\Development\\datasets\\eTOUR\\eTOUR\\java\\FeedBackTableModel.java";
+top.document.title  = "FeedBackTableModel.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">/*</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment"> * FeedbackTableModel.java</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment"> *</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment"> * 1.0</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment"> *</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment"> * 21/05/2007</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> *</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> * 2007 eTour Project - Copyright by SE @ SA Lab - DMI University of Salerno</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"> */</span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"></span><span class="keyword">package <a href="dictionary_U.html#25">unisa</a></span><span class="default">.<a href="dictionary_U.html#24">gps</a>.<a href="dictionary_U.html#23">etour</a>.<a href="dictionary_U.html#317">gui</a>.<a href="dictionary_U.html#318">operatoreagenzia</a>.<a href="dictionary_U.html#338">tables</a>;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#326">util</a>.<a href="dictionary_J.html#48">ArrayList</a>;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#326">util</a>.<a href="dictionary_J.html#544">Date</a>;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#326">util</a>.<a href="dictionary_J.html#60">HashMap</a>;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#326">util</a>.<a href="dictionary_J.html#67">Iterator</a>;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default"></span>
+<a name="17"><font size=-1>17     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.swing.<a href="dictionary_J.html#2267">table</a>.*;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default"></span>
+<a name="19"><font size=-1>19     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">unisa.gps.etour.<a href="dictionary_U.html#32">bean</a>.<a href="dictionary_U.html#939">BeanVisitaBC</a>;</span>
+<a name="20"><font size=-1>20     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">unisa.gps.etour.<a href="dictionary_U.html#32">bean</a>.<a href="dictionary_U.html#969">BeanVisitaPR</a>;</span>
+<a name="21"><font size=-1>21     </font></a><span class="default"></span>
+<a name="22"><font size=-1>22     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="23"><font size=-1>23     </font></a><span class="comment"> * &lt;b&gt;FeedbackTableModel&lt;/b&gt;</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"> * &lt;p&gt;Container model of data for feedback received</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment"> * To be a cultural or a refreshment.&lt;/p&gt;</span>
+<a name="26"><font size=-1>26     </font></a><span class="comment"> *</span>
+<a name="27"><font size=-1>27     </font></a><span class="comment"> * @see javax.swing.table.AbstractTableModel</span>
+<a name="28"><font size=-1>28     </font></a><span class="comment"> * @see unisa.gps.etour.bean.BeanVisitaBC</span>
+<a name="29"><font size=-1>29     </font></a><span class="comment"> * @see unisa.gps.etour.bean.BeanVisitaPR</span>
+<a name="30"><font size=-1>30     </font></a><span class="comment"> * @version 1.0</span>
+<a name="31"><font size=-1>31     </font></a><span class="comment"> * @author Mario Gallo</span>
+<a name="32"><font size=-1>32     </font></a><span class="comment"> */</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment"></span><span class="keyword">public class <a href="dictionary_U.html#2222">FeedBackTableModel</a> extends <a href="dictionary_A.html#2221">AbstractTableModel</a> </span><span class="default">{</span>
+<a name="34"><font size=-1>34     </font></a><span class="default"></span>
+<a name="35"><font size=-1>35     </font></a><span class="default">    </span><span class="keyword">private static final long <a href="dictionary_U.html#2265">serialVersionUID</a> </span><span class="default">= </span><span class="number">1L</span><span class="default">;</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">    </span><span class="keyword">private static final <a href="dictionary_S.html#20">String</a></span><span class="default">[] <a href="dictionary_U.html#2264">headers</a> = {</span><span class="string">&quot;rating&quot;</span><span class="default">, </span><span class="string">&quot;Comment&quot;</span><span class="default">, </span><span class="string">&quot;Release Date&quot;</span><span class="default">, </span><span class="string">&quot;Issued by&quot;</span><span class="default">};</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">    </span><span class="keyword">private static final <a href="dictionary_C.html#2055">Class</a></span><span class="default">[] <a href="dictionary_U.html#2262">columnClasses</a> = {<a href="dictionary_I.html#2155">Integer</a>.</span><span class="keyword">class</span><span class="default">, <a href="dictionary_S.html#20">String</a>.</span><span class="keyword">class</span><span class="default">, <a href="dictionary_J.html#544">Date</a>.</span><span class="keyword">class</span><span class="default">, <a href="dictionary_S.html#20">String</a>.</span><span class="keyword">class</span><span class="default">};</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">    </span><span class="keyword">private <a href="dictionary_J.html#48">ArrayList</a></span><span class="default">&lt;Object[]&gt; <a href="dictionary_U.html#2263">data</a>;</span>
+<a name="39"><font size=-1>39     </font></a><span class="default"></span>
+<a name="40"><font size=-1>40     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="41"><font size=-1>41     </font></a><span class="comment">     * Default Constructor. We only provide the model but not</span>
+<a name="42"><font size=-1>42     </font></a><span class="comment">     * Loads no data in it.</span>
+<a name="43"><font size=-1>43     </font></a><span class="comment">     */</span>
+<a name="44"><font size=-1>44     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_U.html#2223">FeedBackTableModel</a></span><span class="default">() {</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">        <a href="dictionary_U.html#2263">data</a> = </span><span class="keyword">new <a href="dictionary_J.html#48">ArrayList</a></span><span class="default">&lt;Object[]&gt;();</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">    }</span>
+<a name="47"><font size=-1>47     </font></a><span class="default"></span>
+<a name="48"><font size=-1>48     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="49"><font size=-1>49     </font></a><span class="comment">     * Constructor that takes as input an ArrayList of BeanVisitaBC or</span>
+<a name="50"><font size=-1>50     </font></a><span class="comment">     * BeanVisitaPR and copies of the data within the model</span>
+<a name="51"><font size=-1>51     </font></a><span class="comment">     * Preparing for display.</span>
+<a name="52"><font size=-1>52     </font></a><span class="comment">     *</span>
+<a name="53"><font size=-1>53     </font></a><span class="comment">     * @param pDatiFeedback java.util.ArrayList - the ArrayList of bean.</span>
+<a name="54"><font size=-1>54     </font></a><span class="comment">     */</span>
+<a name="55"><font size=-1>55     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_U.html#2224">FeedBackTableModel</a></span><span class="default">(<a href="dictionary_J.html#60">HashMap</a>&lt;?, <a href="dictionary_S.html#20">String</a>&gt; <a href="dictionary_U.html#2227">pDatiFeedback</a>) {</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">        </span><span class="keyword">this</span><span class="default">();</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2227">pDatiFeedback</a> == </span><span class="keyword">null </span><span class="default">|| <a href="dictionary_U.html#2227">pDatiFeedback</a>.<a href="dictionary_S.html#253">size</a>() == </span><span class="number">0</span><span class="default">) {</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">            </span><span class="keyword">return</span><span class="default">;</span>
+<a name="59"><font size=-1>59     </font></a><span class="default">        }</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">        <a href="dictionary_J.html#67">Iterator</a>&lt;?&gt; <a href="dictionary_U.html#2226">itera</a> = <a href="dictionary_U.html#2227">pDatiFeedback</a>.<a href="dictionary_K.html#223">keySet</a>().<a href="dictionary_I.html#222">iterator</a>();</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">        </span><span class="keyword">while </span><span class="default">(<a href="dictionary_U.html#2226">itera</a>.<a href="dictionary_H.html#220">hasNext</a>()) {</span>
+<a name="62"><font size=-1>62     </font></a><span class="default">            Object <a href="dictionary_U.html#2225">current</a> = <a href="dictionary_U.html#2226">itera</a>.<a href="dictionary_N.html#224">next</a>();</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">            </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2225">current</a> </span><span class="keyword">instanceof <a href="dictionary_U.html#939">BeanVisitaBC</a></span><span class="default">) {</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">                <a href="dictionary_U.html#2241">insertVisitaBC</a>((<a href="dictionary_U.html#939">BeanVisitaBC</a>) <a href="dictionary_U.html#2225">current</a>, <a href="dictionary_U.html#2227">pDatiFeedback</a>.<a href="dictionary_G.html#155">get</a>(<a href="dictionary_U.html#2225">current</a>));</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">            }</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">            </span><span class="keyword">else if </span><span class="default">(<a href="dictionary_U.html#2225">current</a> </span><span class="keyword">instanceof <a href="dictionary_U.html#969">BeanVisitaPR</a></span><span class="default">) {</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">                <a href="dictionary_U.html#2245">insertVisitaPR</a>((<a href="dictionary_U.html#969">BeanVisitaPR</a>) <a href="dictionary_U.html#2225">current</a>, <a href="dictionary_U.html#2227">pDatiFeedback</a>.<a href="dictionary_G.html#155">get</a>(<a href="dictionary_U.html#2225">current</a>));</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">            }</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">        }</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">    }</span>
+<a name="71"><font size=-1>71     </font></a><span class="default"></span>
+<a name="72"><font size=-1>72     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="73"><font size=-1>73     </font></a><span class="comment">     * Returns the number of columns provided by the model.</span>
+<a name="74"><font size=-1>74     </font></a><span class="comment">     *</span>
+<a name="75"><font size=-1>75     </font></a><span class="comment">     * @return int - the number of columns.</span>
+<a name="76"><font size=-1>76     </font></a><span class="comment">     */</span>
+<a name="77"><font size=-1>77     </font></a><span class="comment">    </span><span class="keyword">public int <a href="dictionary_U.html#2231">getColumnCount</a></span><span class="default">() {</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_U.html#2264">headers</a></span><span class="default">.<a href="dictionary_L.html#2179">length</a>;</span>
+<a name="79"><font size=-1>79     </font></a><span class="default">    }</span>
+<a name="80"><font size=-1>80     </font></a><span class="default"></span>
+<a name="81"><font size=-1>81     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="82"><font size=-1>82     </font></a><span class="comment">     * Returns the number of rows currently in the model.</span>
+<a name="83"><font size=-1>83     </font></a><span class="comment">     *</span>
+<a name="84"><font size=-1>84     </font></a><span class="comment">     * @return int - the number of rows.</span>
+<a name="85"><font size=-1>85     </font></a><span class="comment">     */</span>
+<a name="86"><font size=-1>86     </font></a><span class="comment">    </span><span class="keyword">public int <a href="dictionary_U.html#2237">getRowCount</a></span><span class="default">() {</span>
+<a name="87"><font size=-1>87     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_U.html#2263">data</a></span><span class="default">.<a href="dictionary_S.html#253">size</a>();</span>
+<a name="88"><font size=-1>88     </font></a><span class="default">    }</span>
+<a name="89"><font size=-1>89     </font></a><span class="default"></span>
+<a name="90"><font size=-1>90     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="91"><font size=-1>91     </font></a><span class="comment">     * Returns the column name from the index provided.</span>
+<a name="92"><font size=-1>92     </font></a><span class="comment">     *</span>
+<a name="93"><font size=-1>93     </font></a><span class="comment">     * @return String - the name of the column.</span>
+<a name="94"><font size=-1>94     </font></a><span class="comment">     * @exception IllegalArgumentException - if the column index is not provided</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment">     * In the model.</span>
+<a name="96"><font size=-1>96     </font></a><span class="comment">     */</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#2232">getColumnName</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_U.html#2233">pColumn</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="98"><font size=-1>98     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2233">pColumn</a> &gt;= <a href="dictionary_U.html#2231">getColumnCount</a>() || <a href="dictionary_U.html#2233">pColumn</a> &lt; </span><span class="number">0</span><span class="default">) {</span>
+<a name="99"><font size=-1>99     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span>
+<a name="100"><font size=-1>100     </font></a><span class="default">                </span><span class="string">&quot;The column index is not provided in the model.&quot;</span><span class="default">);</span>
+<a name="101"><font size=-1>101     </font></a><span class="default">        }</span>
+<a name="102"><font size=-1>102     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_U.html#2264">headers</a></span><span class="default">[<a href="dictionary_U.html#2233">pColumn</a>];</span>
+<a name="103"><font size=-1>103     </font></a><span class="default">    }</span>
+<a name="104"><font size=-1>104     </font></a><span class="default"></span>
+<a name="105"><font size=-1>105     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="106"><font size=-1>106     </font></a><span class="comment">     * Returns the object in the model to the row and column provided.</span>
+<a name="107"><font size=-1>107     </font></a><span class="comment">     *</span>
+<a name="108"><font size=-1>108     </font></a><span class="comment">     * @param pRow - the line number.</span>
+<a name="109"><font size=-1>109     </font></a><span class="comment">     * @param pColumn - the column number.</span>
+<a name="110"><font size=-1>110     </font></a><span class="comment">     * @return Object - the object contained in the selected cell.</span>
+<a name="111"><font size=-1>111     </font></a><span class="comment">     * @exception IllegalArgumentException - if the index or the row or column not provided</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">     * Are present in the model.</span>
+<a name="113"><font size=-1>113     </font></a><span class="comment">     */</span>
+<a name="114"><font size=-1>114     </font></a><span class="comment">    </span><span class="keyword">public </span><span class="default">Object <a href="dictionary_U.html#2238">getValueAt</a>(</span><span class="keyword">int <a href="dictionary_U.html#2240">pRow</a></span><span class="default">, </span><span class="keyword">int <a href="dictionary_U.html#2239">pColumn</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="115"><font size=-1>115     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2240">pRow</a> &gt;= <a href="dictionary_U.html#2237">getRowCount</a>() || <a href="dictionary_U.html#2240">pRow</a> &lt; </span><span class="number">0</span><span class="default">) {</span>
+<a name="116"><font size=-1>116     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;The row index is not provided in the model.&quot;</span><span class="default">);</span>
+<a name="117"><font size=-1>117     </font></a><span class="default">        }</span>
+<a name="118"><font size=-1>118     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2239">pColumn</a> &gt;= <a href="dictionary_U.html#2231">getColumnCount</a>() || <a href="dictionary_U.html#2239">pColumn</a> &lt; </span><span class="number">0</span><span class="default">) {</span>
+<a name="119"><font size=-1>119     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;The column index is not provided in the model.&quot;</span><span class="default">);</span>
+<a name="120"><font size=-1>120     </font></a><span class="default">        }</span>
+<a name="121"><font size=-1>121     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_U.html#2263">data</a></span><span class="default">.<a href="dictionary_G.html#155">get</a>(<a href="dictionary_U.html#2240">pRow</a>)[<a href="dictionary_U.html#2239">pColumn</a>];</span>
+<a name="122"><font size=-1>122     </font></a><span class="default">    }</span>
+<a name="123"><font size=-1>123     </font></a><span class="default"></span>
+<a name="124"><font size=-1>124     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="125"><font size=-1>125     </font></a><span class="comment">     * Returns the class of objects in the column of which is provided in the index.</span>
+<a name="126"><font size=-1>126     </font></a><span class="comment">     *</span>
+<a name="127"><font size=-1>127     </font></a><span class="comment">     * @param pColumn - the column number.</span>
+<a name="128"><font size=-1>128     </font></a><span class="comment">     * @return Class - the class of objects of the selected column.</span>
+<a name="129"><font size=-1>129     </font></a><span class="comment">     * @exception IllegalArgumentException - if the index column does not pro</span>
+<a name="130"><font size=-1>130     </font></a><span class="comment">     * In the model.</span>
+<a name="131"><font size=-1>131     </font></a><span class="comment">     */</span>
+<a name="132"><font size=-1>132     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_C.html#2055">Class</a> <a href="dictionary_U.html#2229">getColumnClass</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_U.html#2230">pColumn</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="133"><font size=-1>133     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2230">pColumn</a> &gt;= <a href="dictionary_U.html#2231">getColumnCount</a>() || <a href="dictionary_U.html#2230">pColumn</a> &lt; </span><span class="number">0</span><span class="default">) {</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;The column index is not provided in the model.&quot;</span><span class="default">);</span>
+<a name="135"><font size=-1>135     </font></a><span class="default">        }</span>
+<a name="136"><font size=-1>136     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_U.html#2262">columnClasses</a></span><span class="default">[<a href="dictionary_U.html#2230">pColumn</a>];</span>
+<a name="137"><font size=-1>137     </font></a><span class="default">    }</span>
+<a name="138"><font size=-1>138     </font></a><span class="default"></span>
+<a name="139"><font size=-1>139     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="140"><font size=-1>140     </font></a><span class="comment">     * Returns whether the selected cell editable.</span>
+<a name="141"><font size=-1>141     </font></a><span class="comment">     *</span>
+<a name="142"><font size=-1>142     </font></a><span class="comment">     * @return boolean - true if the cell editable</span>
+<a name="143"><font size=-1>143     </font></a><span class="comment">     * False otherwise</span>
+<a name="144"><font size=-1>144     </font></a><span class="comment">     * @param pRow - the line number.</span>
+<a name="145"><font size=-1>145     </font></a><span class="comment">     * @param pColumn - the column number.</span>
+<a name="146"><font size=-1>146     </font></a><span class="comment">     * @exception IllegalArgumentException - if the index or the row or column are not provided</span>
+<a name="147"><font size=-1>147     </font></a><span class="comment">     * In the model.</span>
+<a name="148"><font size=-1>148     </font></a><span class="comment">     */</span>
+<a name="149"><font size=-1>149     </font></a><span class="comment">    </span><span class="keyword">public boolean <a href="dictionary_U.html#2249">isCellEditable</a></span><span class="default">(</span><span class="keyword">int <a href="dictionary_U.html#2251">pRow</a></span><span class="default">, </span><span class="keyword">int <a href="dictionary_U.html#2250">pColumn</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="150"><font size=-1>150     </font></a><span class="default">        </span><span class="keyword">return false</span><span class="default">;</span>
+<a name="151"><font size=-1>151     </font></a><span class="default">    }</span>
+<a name="152"><font size=-1>152     </font></a><span class="default"></span>
+<a name="153"><font size=-1>153     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="154"><font size=-1>154     </font></a><span class="comment">     * The method is inherited by setValueAt TableModel does not need to SitoTableModel</span>
+<a name="155"><font size=-1>155     </font></a><span class="comment">     * Because it provided the possibility to change a single cell.</span>
+<a name="156"><font size=-1>156     </font></a><span class="comment">     * @deprecated</span>
+<a name="157"><font size=-1>157     </font></a><span class="comment">     */</span>
+<a name="158"><font size=-1>158     </font></a><span class="comment">    </span><span class="keyword">public void <a href="dictionary_U.html#2258">setValueAt</a></span><span class="default">(Object <a href="dictionary_U.html#2261">value</a>, </span><span class="keyword">int <a href="dictionary_U.html#2260">row</a></span><span class="default">, </span><span class="keyword">int <a href="dictionary_U.html#2259">col</a></span><span class="default">) {</span>
+<a name="159"><font size=-1>159     </font></a><span class="default">    }</span>
+<a name="160"><font size=-1>160     </font></a><span class="default"></span>
+<a name="161"><font size=-1>161     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="162"><font size=-1>162     </font></a><span class="comment">     * Enter data on the feedback received from a cultural</span>
+<a name="163"><font size=-1>163     </font></a><span class="comment">     * In the model from Bean.</span>
+<a name="164"><font size=-1>164     </font></a><span class="comment">     *</span>
+<a name="165"><font size=-1>165     </font></a><span class="comment">     * @param pVisitaBC BeanVisitaBC - the bean that contains the feedback from</span>
+<a name="166"><font size=-1>166     </font></a><span class="comment">     * Cultural.</span>
+<a name="167"><font size=-1>167     </font></a><span class="comment">     * @throws IllegalArgumentException - if the parameters supplied input not</span>
+<a name="168"><font size=-1>168     </font></a><span class="comment">     * Are valid.</span>
+<a name="169"><font size=-1>169     </font></a><span class="comment">     */</span>
+<a name="170"><font size=-1>170     </font></a><span class="comment">    </span><span class="keyword">public void <a href="dictionary_U.html#2241">insertVisitaBC</a></span><span class="default">(<a href="dictionary_U.html#939">BeanVisitaBC</a> <a href="dictionary_U.html#2244">pVisitaBC</a>, <a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#2243">pUsername</a>) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="171"><font size=-1>171     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2244">pVisitaBC</a> == </span><span class="keyword">null </span><span class="default">|| <a href="dictionary_U.html#2243">pUsername</a> == </span><span class="keyword">null </span><span class="default">|| <a href="dictionary_U.html#2243">pUsername</a>.<a href="dictionary_E.html#4">equals</a>(</span><span class="string">&quot;&quot;</span><span class="default">)) {</span>
+<a name="172"><font size=-1>172     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;invalid parameters supplied input.&quot;</span><span class="default">);</span>
+<a name="173"><font size=-1>173     </font></a><span class="default">        }</span>
+<a name="174"><font size=-1>174     </font></a><span class="default">        Object[] <a href="dictionary_U.html#2242">aRow</a> = </span><span class="keyword">new </span><span class="default">Object[</span><span class="number">6</span><span class="default">];</span>
+<a name="175"><font size=-1>175     </font></a><span class="default">        <a href="dictionary_U.html#2242">aRow</a>[</span><span class="number">0</span><span class="default">] = <a href="dictionary_U.html#2244">pVisitaBC</a>.<a href="dictionary_U.html#951">getVoto</a>();</span>
+<a name="176"><font size=-1>176     </font></a><span class="default">        <a href="dictionary_U.html#2242">aRow</a>[</span><span class="number">1</span><span class="default">] = <a href="dictionary_U.html#2244">pVisitaBC</a>.<a href="dictionary_U.html#947">getCommento</a>();</span>
+<a name="177"><font size=-1>177     </font></a><span class="default">        <a href="dictionary_U.html#2242">aRow</a>[</span><span class="number">2</span><span class="default">] = <a href="dictionary_U.html#2244">pVisitaBC</a>.<a href="dictionary_U.html#948">getDataVisita</a>();</span>
+<a name="178"><font size=-1>178     </font></a><span class="default">        <a href="dictionary_U.html#2242">aRow</a>[</span><span class="number">3</span><span class="default">] = <a href="dictionary_U.html#2243">pUsername</a>;</span>
+<a name="179"><font size=-1>179     </font></a><span class="default">        <a href="dictionary_U.html#2242">aRow</a>[</span><span class="number">4</span><span class="default">] = <a href="dictionary_U.html#2244">pVisitaBC</a>.<a href="dictionary_U.html#949">getIdBeneCulturale</a>();</span>
+<a name="180"><font size=-1>180     </font></a><span class="default">        <a href="dictionary_U.html#2242">aRow</a>[</span><span class="number">5</span><span class="default">] = <a href="dictionary_U.html#2244">pVisitaBC</a>.<a href="dictionary_U.html#950">getIdTurista</a>();</span>
+<a name="181"><font size=-1>181     </font></a><span class="default">        <a href="dictionary_U.html#2263">data</a>.<a href="dictionary_A.html#130">add</a>(<a href="dictionary_U.html#2242">aRow</a>);</span>
+<a name="182"><font size=-1>182     </font></a><span class="default">    }</span>
+<a name="183"><font size=-1>183     </font></a><span class="default"></span>
+<a name="184"><font size=-1>184     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="185"><font size=-1>185     </font></a><span class="comment">     * Enter data on the feedback received from a refreshment</span>
+<a name="186"><font size=-1>186     </font></a><span class="comment">     * In the model from Bean.</span>
+<a name="187"><font size=-1>187     </font></a><span class="comment">     *</span>
+<a name="188"><font size=-1>188     </font></a><span class="comment">     * @param pVisitaPR BeanVisitaPR - the bean that contains the feedback from</span>
+<a name="189"><font size=-1>189     </font></a><span class="comment">     * Refreshment.</span>
+<a name="190"><font size=-1>190     </font></a><span class="comment">     * @throws IllegalArgumentException - if the parameters supplied input not</span>
+<a name="191"><font size=-1>191     </font></a><span class="comment">     * Are valid.</span>
+<a name="192"><font size=-1>192     </font></a><span class="comment">     */</span>
+<a name="193"><font size=-1>193     </font></a><span class="comment">    </span><span class="keyword">public void <a href="dictionary_U.html#2245">insertVisitaPR</a></span><span class="default">(<a href="dictionary_U.html#969">BeanVisitaPR</a> <a href="dictionary_U.html#2248">pVisitaPR</a>, <a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#2247">pUsername</a>) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="194"><font size=-1>194     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2248">pVisitaPR</a> == </span><span class="keyword">null </span><span class="default">|| <a href="dictionary_U.html#2247">pUsername</a> == </span><span class="keyword">null </span><span class="default">|| <a href="dictionary_U.html#2247">pUsername</a>.<a href="dictionary_E.html#4">equals</a>(</span><span class="string">&quot;&quot;</span><span class="default">)) {</span>
+<a name="195"><font size=-1>195     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;invalid parameters supplied input.&quot;</span><span class="default">);</span>
+<a name="196"><font size=-1>196     </font></a><span class="default">        }</span>
+<a name="197"><font size=-1>197     </font></a><span class="default">        Object[] <a href="dictionary_U.html#2246">aRow</a> = </span><span class="keyword">new </span><span class="default">Object[</span><span class="number">6</span><span class="default">];</span>
+<a name="198"><font size=-1>198     </font></a><span class="default">        <a href="dictionary_U.html#2246">aRow</a>[</span><span class="number">0</span><span class="default">] = <a href="dictionary_U.html#2248">pVisitaPR</a>.<a href="dictionary_U.html#981">getVoto</a>();</span>
+<a name="199"><font size=-1>199     </font></a><span class="default">        <a href="dictionary_U.html#2246">aRow</a>[</span><span class="number">1</span><span class="default">] = <a href="dictionary_U.html#2248">pVisitaPR</a>.<a href="dictionary_U.html#977">getCommento</a>();</span>
+<a name="200"><font size=-1>200     </font></a><span class="default">        <a href="dictionary_U.html#2246">aRow</a>[</span><span class="number">2</span><span class="default">] = <a href="dictionary_U.html#2248">pVisitaPR</a>.<a href="dictionary_U.html#978">getDataVisita</a>();</span>
+<a name="201"><font size=-1>201     </font></a><span class="default">        <a href="dictionary_U.html#2246">aRow</a>[</span><span class="number">3</span><span class="default">] = <a href="dictionary_U.html#2247">pUsername</a>;</span>
+<a name="202"><font size=-1>202     </font></a><span class="default">        <a href="dictionary_U.html#2246">aRow</a>[</span><span class="number">4</span><span class="default">] = <a href="dictionary_U.html#2248">pVisitaPR</a>.<a href="dictionary_U.html#979">getIdPuntoDiRistoro</a>();</span>
+<a name="203"><font size=-1>203     </font></a><span class="default">        <a href="dictionary_U.html#2246">aRow</a>[</span><span class="number">5</span><span class="default">] = <a href="dictionary_U.html#2248">pVisitaPR</a>.<a href="dictionary_U.html#980">getIdTurista</a>();</span>
+<a name="204"><font size=-1>204     </font></a><span class="default">        <a href="dictionary_U.html#2263">data</a>.<a href="dictionary_A.html#130">add</a>(<a href="dictionary_U.html#2246">aRow</a>);</span>
+<a name="205"><font size=-1>205     </font></a><span class="default">    }</span>
+<a name="206"><font size=-1>206     </font></a><span class="default">    </span>
+<a name="207"><font size=-1>207     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="208"><font size=-1>208     </font></a><span class="comment">     * Updates the comment feedback contained in the table row selected.</span>
+<a name="209"><font size=-1>209     </font></a><span class="comment">     *</span>
+<a name="210"><font size=-1>210     </font></a><span class="comment">     * @param pNuovoCommento String - the new comment.</span>
+<a name="211"><font size=-1>211     </font></a><span class="comment">     * @param pRow - the row to update.</span>
+<a name="212"><font size=-1>212     </font></a><span class="comment">     * @throws IllegalArgumentException - if &lt;ul&gt; &lt;li&gt; the row index is not present in the model.</span>
+<a name="213"><font size=-1>213     </font></a><span class="comment">     * &lt;li&gt; New comment supplied input is zero. &lt;/ul&gt;</span>
+<a name="214"><font size=-1>214     </font></a><span class="comment">     */</span>
+<a name="215"><font size=-1>215     </font></a><span class="comment">    </span><span class="keyword">public void <a href="dictionary_U.html#2252">modificaCommento</a></span><span class="default">(<a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#2253">pNuovoCommento</a>, </span><span class="keyword">int <a href="dictionary_U.html#2254">pRow</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="216"><font size=-1>216     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2254">pRow</a> &gt;= <a href="dictionary_U.html#2237">getRowCount</a>() || <a href="dictionary_U.html#2254">pRow</a> &lt; </span><span class="number">0</span><span class="default">) {</span>
+<a name="217"><font size=-1>217     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;The row index is not provided in the model.&quot;</span><span class="default">);</span>
+<a name="218"><font size=-1>218     </font></a><span class="default">        }</span>
+<a name="219"><font size=-1>219     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(</span><span class="keyword">null </span><span class="default">== <a href="dictionary_U.html#2253">pNuovoCommento</a>) {</span>
+<a name="220"><font size=-1>220     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;The new comment can not be null.&quot;</span><span class="default">);</span>
+<a name="221"><font size=-1>221     </font></a><span class="default">        }</span>
+<a name="222"><font size=-1>222     </font></a><span class="default">        <a href="dictionary_U.html#2263">data</a>.<a href="dictionary_G.html#155">get</a>(<a href="dictionary_U.html#2254">pRow</a>)[</span><span class="number">1</span><span class="default">] = <a href="dictionary_U.html#2253">pNuovoCommento</a>;</span>
+<a name="223"><font size=-1>223     </font></a><span class="default">        <a href="dictionary_F.html#2228">fireTableDataChanged</a>();</span>
+<a name="224"><font size=-1>224     </font></a><span class="default">    }</span>
+<a name="225"><font size=-1>225     </font></a><span class="default"></span>
+<a name="226"><font size=-1>226     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="227"><font size=-1>227     </font></a><span class="comment">     * Returns the id of the row receive feedback provided on input.</span>
+<a name="228"><font size=-1>228     </font></a><span class="comment">     *</span>
+<a name="229"><font size=-1>229     </font></a><span class="comment">     * @param pRow int - the row number.</span>
+<a name="230"><font size=-1>230     </font></a><span class="comment">     * @return int[] - the id of the feedback.</span>
+<a name="231"><font size=-1>231     </font></a><span class="comment">     * @throws IllegalArgumentException - if the row index does not pro</span>
+<a name="232"><font size=-1>232     </font></a><span class="comment">     * In the model.</span>
+<a name="233"><font size=-1>233     </font></a><span class="comment">     */</span>
+<a name="234"><font size=-1>234     </font></a><span class="comment">    </span><span class="keyword">public int</span><span class="default">[] <a href="dictionary_U.html#2234">getIDFeedback</a>(</span><span class="keyword">int <a href="dictionary_U.html#2236">pRow</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="235"><font size=-1>235     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#2236">pRow</a> &gt;= <a href="dictionary_U.html#2237">getRowCount</a>() || <a href="dictionary_U.html#2236">pRow</a> &lt; </span><span class="number">0</span><span class="default">) {</span>
+<a name="236"><font size=-1>236     </font></a><span class="default">            </span><span class="keyword">throw new <a href="dictionary_I.html#416">IllegalArgumentException</a></span><span class="default">(</span><span class="string">&quot;The row index is not provided in the model.&quot;</span><span class="default">);</span>
+<a name="237"><font size=-1>237     </font></a><span class="default">        }</span>
+<a name="238"><font size=-1>238     </font></a><span class="default">        </span><span class="keyword">int</span><span class="default">[] <a href="dictionary_U.html#2235">ids</a> = </span><span class="keyword">new int</span><span class="default">[</span><span class="number">2</span><span class="default">];</span>
+<a name="239"><font size=-1>239     </font></a><span class="default">        <a href="dictionary_U.html#2235">ids</a>[</span><span class="number">0</span><span class="default">] = (<a href="dictionary_I.html#2266">Integer</a>) <a href="dictionary_U.html#2263">data</a>.<a href="dictionary_G.html#155">get</a>(<a href="dictionary_U.html#2236">pRow</a>)[</span><span class="number">4</span><span class="default">];</span>
+<a name="240"><font size=-1>240     </font></a><span class="default">        <a href="dictionary_U.html#2235">ids</a>[</span><span class="number">1</span><span class="default">] = (<a href="dictionary_I.html#2266">Integer</a>) <a href="dictionary_U.html#2263">data</a>.<a href="dictionary_G.html#155">get</a>(<a href="dictionary_U.html#2236">pRow</a>)[</span><span class="number">5</span><span class="default">];</span>
+<a name="241"><font size=-1>241     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_U.html#2235">ids</a></span><span class="default">;</span>
+<a name="242"><font size=-1>242     </font></a><span class="default">    }</span>
+<a name="243"><font size=-1>243     </font></a><span class="default"></span>
+<a name="244"><font size=-1>244     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="245"><font size=-1>245     </font></a><span class="comment">     * Returns the id of feedback to line number provided as input and removes it from the model.</span>
+<a name="246"><font size=-1>246     </font></a><span class="comment">     *</span>
+<a name="247"><font size=-1>247     </font></a><span class="comment">     * @param pRow int - the row number.</span>
+<a name="248"><font size=-1>248     </font></a><span class="comment">     * @return int[] - the id of the feedback.</span>
+<a name="249"><font size=-1>249     </font></a><span class="comment">     * @exception IllegalArgumentException - if the row index does not pro</span>
+<a name="250"><font size=-1>250     </font></a><span class="comment">     * In the model.</span>
+<a name="251"><font size=-1>251     </font></a><span class="comment">     */</span>
+<a name="252"><font size=-1>252     </font></a><span class="comment">    </span><span class="keyword">public int</span><span class="default">[] <a href="dictionary_U.html#2255">removeFeedback</a>(</span><span class="keyword">int <a href="dictionary_U.html#2257">pRow</a></span><span class="default">) </span><span class="keyword">throws <a href="dictionary_I.html#416">IllegalArgumentException</a> </span><span class="default">{</span>
+<a name="253"><font size=-1>253     </font></a><span class="default">        </span><span class="keyword">int</span><span class="default">[] <a href="dictionary_U.html#2256">ids</a> = <a href="dictionary_U.html#2234">getIDFeedback</a>(<a href="dictionary_U.html#2257">pRow</a>);</span>
+<a name="254"><font size=-1>254     </font></a><span class="default">        <a href="dictionary_U.html#2263">data</a>.<a href="dictionary_R.html#1096">remove</a>(<a href="dictionary_U.html#2257">pRow</a>);</span>
+<a name="255"><font size=-1>255     </font></a><span class="default">        </span><span class="keyword">return <a href="dictionary_U.html#2256">ids</a></span><span class="default">;</span>
+<a name="256"><font size=-1>256     </font></a><span class="default">    }</span>
+<a name="257"><font size=-1>257     </font></a><span class="default">}</span>
+<a name="258"><font size=-1>258     </font></a><span class="default"></span>
+</pre></body></html>

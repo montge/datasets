@@ -1,95 +1,81 @@
-﻿package unisa.gps.etour.gui.operatoreagenzia.tables;
+package unisa.gps.etour.gui.operatoreagenzia.tables;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
-/ **
-  * <b> PRNode </ b>
-  <p> * This class creates a node in a JTree to store
-  * Information for a refreshment. </ P>
-  *
-  * @ See javax.swing.JTree;
-  * @ See javax.swing.tree.DefaultMutableTreeNode;
-  * @ Version 1.0
-  * @ Author Mario Gallo
-  *
-  * /
-public class DefaultMutableTreeNode extends PRNode
-(
-private int id;
+/**
+ * <b>PRNode</b>
+ * <p>This class creates a node in a JTree to store
+ * Information for a refreshment.</p>
+ *
+ * @see javax.swing.JTree;
+ * @see javax.swing.tree.DefaultMutableTreeNode;
+ * @version 1.0
+ * @author Mario Gallo
+ */
+public class PRNode extends DefaultMutableTreeNode {
+    private int id;
 
-public PRNode ()
-(
-super ();
-)
+    public PRNode() {
+        super();
+    }
 
-/ **
-* Create a node with the name of refreshment and
-* Your id supplied as parameters.
-*
-PNomePR * @ param String - the name of refreshment.
-PID * @ param int - the id of refreshment.
-* @ Throws IllegalArgumentException - if the name provided as input is invalid.
-* /
-public PRNode (Phnom String, int pid) throws IllegalArgumentException
-(
-super ();
-if (Phnom == null | | pNome.equals (""))
-(
-throw new IllegalArgumentException (
-"Name of refreshment supplied invalid input.");
-)
-setUserObject (Phnom);
-id = pid;
-)
+    /**
+     * Create a node with the name of refreshment and
+     * Your id supplied as parameters.
+     *
+     * @param pNome String - the name of refreshment.
+     * @param pid int - the id of refreshment.
+     * @throws IllegalArgumentException - if the name provided as input is invalid.
+     */
+    public PRNode(String pNome, int pid) throws IllegalArgumentException {
+        super();
+        if (pNome == null || pNome.equals("")) {
+            throw new IllegalArgumentException(
+                "Name of refreshment supplied invalid input.");
+        }
+        setUserObject(pNome);
+        id = pid;
+    }
 
-/ **
-*
-* Returns the id of the point of comfort for which information
-* Are stored in this node.
-*
-* @ Return int - the id of refreshment.
-* /
-public int getID ()
-(
-return id;
-)
+    /**
+     * Returns the id of the point of comfort for which information
+     * Are stored in this node.
+     *
+     * @return int - the id of refreshment.
+     */
+    public int getID() {
+        return id;
+    }
 
-/ **
-*
-* Stores the id of the refreshment provided input.
-*
-* @ Param int PID - an ID of an eating place.
-* /
-public void setID (int pid)
-(
-id = pid;
-)
+    /**
+     * Stores the id of the refreshment provided input.
+     *
+     * @param pid int - an ID of an eating place.
+     */
+    public void setID(int pid) {
+        id = pid;
+    }
 
-/ **
-*
-* Return the name of refreshment.
-*
-* @ Return String - the name of refreshment.
-* /
-public String getName ()
-(
-return (String) super.getUserObject ();
-)
+    /**
+     * Return the name of refreshment.
+     *
+     * @return String - the name of refreshment.
+     */
+    public String getName() {
+        return (String) super.getUserObject();
+    }
 
-/ **
-*
-* Stores the name of the refreshment provided input.
-*
-Pnom * @ param String - the name of a refreshment.
-* @ Throws IllegalArgumentException - if the name provided as input is invalid.
-* /
-public void setNome (String Pnom) throws IllegalArgumentException
-(
-if (Phnom == null | | pNome.equals (""))
-(
-throw new IllegalArgumentException (
-"Name of refreshment supplied invalid input.");
-)
-setUserObject (Phnom);
-)
-) 
+    /**
+     * Stores the name of the refreshment provided input.
+     *
+     * @param pNome String - the name of a refreshment.
+     * @throws IllegalArgumentException - if the name provided as input is invalid.
+     */
+    public void setNome(String pNome) throws IllegalArgumentException {
+        if (pNome == null || pNome.equals("")) {
+            throw new IllegalArgumentException(
+                "Name of refreshment supplied invalid input.");
+        }
+        setUserObject(pNome);
+    }
+}

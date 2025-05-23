@@ -1,0 +1,160 @@
+<html><head><title>BannerDialog.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: \\WSL.LOCALHOST\ubuntu-24.04\home\e\Development\datasets\eTOUR\eTOUR\java\BannerDialog.java</h3>
+<SCRIPT>
+defaultStatus = "File: \\\\WSL.LOCALHOST\\ubuntu-24.04\\home\\e\\Development\\datasets\\eTOUR\\eTOUR\\java\\BannerDialog.java";
+top.document.title  = "BannerDialog.java";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">package <a href="dictionary_U.html#25">unisa</a></span><span class="default">.<a href="dictionary_U.html#24">gps</a>.<a href="dictionary_U.html#23">etour</a>.<a href="dictionary_U.html#317">gui</a>.<a href="dictionary_U.html#318">operatoreagenzia</a>;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#319">awt</a>.*;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.awt.<a href="dictionary_J.html#321">event</a>.*;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.awt.<a href="dictionary_J.html#401">image</a>.<a href="dictionary_J.html#393">BufferedImage</a>;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#322">io</a>.<a href="dictionary_J.html#394">File</a>;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">java.<a href="dictionary_J.html#322">io</a>.<a href="dictionary_J.html#396">IOException</a>;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#402">imageio</a>.<a href="dictionary_J.html#397">ImageIO</a>;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.<a href="dictionary_J.html#324">swing</a>.*;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.swing.<a href="dictionary_J.html#400">filechooser</a>.<a href="dictionary_J.html#395">FileFilter</a>;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">javax.swing.<a href="dictionary_J.html#320">border</a>.*;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span><span class="keyword">import </span><span class="default">unisa.gps.etour.gui.<a href="dictionary_U.html#318">operatoreagenzia</a>.<a href="dictionary_U.html#61">Home</a>;</span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span>
+<a name="16"><font size=-1>16     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="17"><font size=-1>17     </font></a><span class="comment"> * This class realizes the panel for the dialog for entering a</span>
+<a name="18"><font size=-1>18     </font></a><span class="comment"> * New banner or a banner for replacing selected.</span>
+<a name="19"><font size=-1>19     </font></a><span class="comment"> *</span>
+<a name="20"><font size=-1>20     </font></a><span class="comment"> * @Version 1.0</span>
+<a name="21"><font size=-1>21     </font></a><span class="comment"> * @Author Mario Gallo</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment"> *</span>
+<a name="23"><font size=-1>23     </font></a><span class="comment"> * Â© 2007 eTour Project - Copyright by DMI SE @ SA Lab --</span>
+<a name="24"><font size=-1>24     </font></a><span class="comment"> * University of Salerno</span>
+<a name="25"><font size=-1>25     </font></a><span class="comment"> */</span>
+<a name="26"><font size=-1>26     </font></a><span class="comment"></span><span class="keyword">public class <a href="dictionary_U.html#327">BannerDialog</a> extends <a href="dictionary_J.html#305">JPanel</a> </span><span class="default">{</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">    </span><span class="keyword">private final static <a href="dictionary_D.html#55">Dimension</a> <a href="dictionary_U.html#390">bannerSize</a> </span><span class="default">= </span><span class="keyword">new <a href="dictionary_D.html#55">Dimension</a></span><span class="default">(</span><span class="number">140</span><span class="default">, </span><span class="number">40</span><span class="default">);</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">    </span><span class="keyword">private <a href="dictionary_J.html#303">JLabel</a> <a href="dictionary_U.html#389">anteprima</a> </span><span class="default">= </span><span class="keyword">null</span><span class="default">;</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">    </span><span class="keyword">private <a href="dictionary_J.html#68">JButton</a> <a href="dictionary_U.html#391">btnCarica</a> </span><span class="default">= </span><span class="keyword">null</span><span class="default">;</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">    </span><span class="keyword">private <a href="dictionary_J.html#305">JPanel</a> <a href="dictionary_U.html#392">that</a></span><span class="default">;</span>
+<a name="31"><font size=-1>31     </font></a><span class="default"></span>
+<a name="32"><font size=-1>32     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="33"><font size=-1>33     </font></a><span class="comment">     * This is the default constructor.</span>
+<a name="34"><font size=-1>34     </font></a><span class="comment">     */</span>
+<a name="35"><font size=-1>35     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_U.html#343">BannerDialog</a></span><span class="default">() {</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">        </span><span class="keyword">super</span><span class="default">(</span><span class="keyword">null</span><span class="default">);</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">        </span><span class="keyword">this</span><span class="default">.<a href="dictionary_U.html#392">that</a> = </span><span class="keyword">this</span><span class="default">;</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">        <a href="dictionary_S.html#247">setPreferredSize</a>(</span><span class="keyword">new <a href="dictionary_D.html#55">Dimension</a></span><span class="default">(</span><span class="number">420</span><span class="default">, </span><span class="number">160</span><span class="default">));</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">        <a href="dictionary_U.html#389">anteprima</a> = </span><span class="keyword">new <a href="dictionary_J.html#303">JLabel</a></span><span class="default">();</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">        <a href="dictionary_U.html#389">anteprima</a>.<a href="dictionary_S.html#230">setBounds</a>(</span><span class="keyword">new <a href="dictionary_R.html#399">Rectangle</a></span><span class="default">(</span><span class="number">40</span><span class="default">, </span><span class="number">20</span><span class="default">, </span><span class="number">250</span><span class="default">, </span><span class="number">60</span><span class="default">));</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">        <a href="dictionary_U.html#389">anteprima</a>.<a href="dictionary_S.html#229">setBorder</a>(<a href="dictionary_B.html#256">BorderFactory</a>.<a href="dictionary_C.html#140">createTitledBorder</a>(<a href="dictionary_B.html#256">BorderFactory</a></span>
+<a name="42"><font size=-1>42     </font></a><span class="default">                .<a href="dictionary_C.html#139">createLineBorder</a>(</span><span class="keyword">new <a href="dictionary_C.html#51">Color</a></span><span class="default">(</span><span class="number">51</span><span class="default">, </span><span class="number">102</span><span class="default">, </span><span class="number">255</span><span class="default">), </span><span class="number">3</span><span class="default">),</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">                </span><span class="string">&quot;Preview Banner&quot;</span><span class="default">, <a href="dictionary_T.html#267">TitledBorder</a>.<a href="dictionary_D.html#258">DEFAULT_JUSTIFICATION</a>,</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">                <a href="dictionary_T.html#267">TitledBorder</a>.<a href="dictionary_D.html#259">DEFAULT_POSITION</a>,</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">                </span><span class="keyword">new <a href="dictionary_F.html#57">Font</a></span><span class="default">(</span><span class="string">&quot;Dialog&quot;</span><span class="default">, <a href="dictionary_F.html#183">Font</a>.<a href="dictionary_B.html#181">BOLD</a>, </span><span class="number">12</span><span class="default">), </span><span class="keyword">new <a href="dictionary_C.html#51">Color</a></span><span class="default">(</span><span class="number">0</span><span class="default">, </span><span class="number">102</span><span class="default">, </span><span class="number">204</span><span class="default">)));</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">        <a href="dictionary_U.html#391">btnCarica</a> = </span><span class="keyword">new <a href="dictionary_J.html#68">JButton</a></span><span class="default">();</span>
+<a name="47"><font size=-1>47     </font></a><span class="default">        <a href="dictionary_U.html#391">btnCarica</a>.<a href="dictionary_S.html#230">setBounds</a>(</span><span class="keyword">new <a href="dictionary_R.html#399">Rectangle</a></span><span class="default">(</span><span class="number">320</span><span class="default">, </span><span class="number">30</span><span class="default">, </span><span class="number">50</span><span class="default">, </span><span class="number">40</span><span class="default">));</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">        <a href="dictionary_U.html#391">btnCarica</a>.<a href="dictionary_S.html#178">setIcon</a>(</span><span class="keyword">new <a href="dictionary_I.html#63">ImageIcon</a></span><span class="default">(<a href="dictionary_G.html#74">getClass</a>().<a href="dictionary_G.html#79">getResource</a>(</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">                <a href="dictionary_U.html#61">Home</a>.<a href="dictionary_U.html#91">URL_IMAGES</a> + </span><span class="string">&quot;ApriFile.png&quot;</span><span class="default">)));</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">        <a href="dictionary_U.html#391">btnCarica</a>.<a href="dictionary_A.html#131">addActionListener</a>(</span><span class="keyword">new <a href="dictionary_A.html#47">ActionListener</a></span><span class="default">() {</span>
+<a name="51"><font size=-1>51     </font></a><span class="default">            </span><span class="keyword">public void <a href="dictionary_U.html#354">actionPerformed</a></span><span class="default">(<a href="dictionary_A.html#46">ActionEvent</a> <a href="dictionary_U.html#356">arg0</a>) {</span>
+<a name="52"><font size=-1>52     </font></a><span class="default">                <a href="dictionary_J.html#394">File</a> <a href="dictionary_U.html#357">f</a> = <a href="dictionary_U.html#367">apriFileDialog</a>();</span>
+<a name="53"><font size=-1>53     </font></a><span class="default"></span>
+<a name="54"><font size=-1>54     </font></a><span class="default">                </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#357">f</a> == </span><span class="keyword">null</span><span class="default">) {</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">                    </span><span class="keyword">return</span><span class="default">;</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">                }</span>
+<a name="57"><font size=-1>57     </font></a><span class="default"></span>
+<a name="58"><font size=-1>58     </font></a><span class="default">                <a href="dictionary_J.html#393">BufferedImage</a> <a href="dictionary_U.html#358">img</a> = </span><span class="keyword">null</span><span class="default">;</span>
+<a name="59"><font size=-1>59     </font></a><span class="default">                </span><span class="keyword">try </span><span class="default">{</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">                    <a href="dictionary_U.html#358">img</a> = <a href="dictionary_J.html#397">ImageIO</a>.<a href="dictionary_R.html#362">read</a>(<a href="dictionary_U.html#357">f</a>);</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">                    </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#358">img</a>.<a href="dictionary_G.html#219">getWidth</a>() &gt; <a href="dictionary_U.html#390">bannerSize</a>.<a href="dictionary_W.html#364">width</a></span>
+<a name="62"><font size=-1>62     </font></a><span class="default">                            || <a href="dictionary_U.html#358">img</a>.<a href="dictionary_G.html#201">getHeight</a>() &gt; <a href="dictionary_U.html#390">bannerSize</a>.<a href="dictionary_H.html#363">height</a>) {</span>
+<a name="63"><font size=-1>63     </font></a><span class="default">                        <a href="dictionary_U.html#358">img</a> = <a href="dictionary_U.html#358">img</a>.<a href="dictionary_G.html#360">getSubimage</a>(</span><span class="number">0</span><span class="default">, </span><span class="number">0</span><span class="default">, <a href="dictionary_U.html#390">bannerSize</a>.<a href="dictionary_W.html#364">width</a>,</span>
+<a name="64"><font size=-1>64     </font></a><span class="default">                                <a href="dictionary_U.html#390">bannerSize</a>.<a href="dictionary_H.html#363">height</a>);</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">                    }</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">                } </span><span class="keyword">catch </span><span class="default">(<a href="dictionary_E.html#16">Exception</a> <a href="dictionary_U.html#355">e</a>) {</span>
+<a name="67"><font size=-1>67     </font></a><span class="default">                    <a href="dictionary_U.html#355">e</a>.<a href="dictionary_P.html#361">printStackTrace</a>();</span>
+<a name="68"><font size=-1>68     </font></a><span class="default">                }</span>
+<a name="69"><font size=-1>69     </font></a><span class="default">                <a href="dictionary_I.html#63">ImageIcon</a> <a href="dictionary_U.html#359">n</a> = </span><span class="keyword">new <a href="dictionary_I.html#63">ImageIcon</a></span><span class="default">(<a href="dictionary_U.html#358">img</a>);</span>
+<a name="70"><font size=-1>70     </font></a><span class="default">                <a href="dictionary_U.html#389">anteprima</a>.<a href="dictionary_S.html#178">setIcon</a>(<a href="dictionary_U.html#359">n</a>);</span>
+<a name="71"><font size=-1>71     </font></a><span class="default">                <a href="dictionary_U.html#389">anteprima</a>.<a href="dictionary_R.html#227">repaint</a>();</span>
+<a name="72"><font size=-1>72     </font></a><span class="default">            }</span>
+<a name="73"><font size=-1>73     </font></a><span class="default">        });</span>
+<a name="74"><font size=-1>74     </font></a><span class="default"></span>
+<a name="75"><font size=-1>75     </font></a><span class="default">        <a href="dictionary_J.html#303">JLabel</a> <a href="dictionary_U.html#365">txtAttenzione</a> = </span><span class="keyword">new <a href="dictionary_J.html#303">JLabel</a></span><span class="default">(</span><span class="string">&quot;Warning!&quot;</span><span class="default">);</span>
+<a name="76"><font size=-1>76     </font></a><span class="default">        <a href="dictionary_U.html#365">txtAttenzione</a>.<a href="dictionary_S.html#178">setIcon</a>(</span><span class="keyword">new <a href="dictionary_I.html#63">ImageIcon</a></span><span class="default">(<a href="dictionary_G.html#74">getClass</a>().<a href="dictionary_G.html#79">getResource</a>(</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">                <a href="dictionary_U.html#61">Home</a>.<a href="dictionary_U.html#91">URL_IMAGES</a> + </span><span class="string">&quot;warning16.png&quot;</span><span class="default">)));</span>
+<a name="78"><font size=-1>78     </font></a><span class="default">        <a href="dictionary_U.html#365">txtAttenzione</a>.<a href="dictionary_S.html#230">setBounds</a>(</span><span class="number">10</span><span class="default">, </span><span class="number">85</span><span class="default">, </span><span class="number">100</span><span class="default">, </span><span class="number">30</span><span class="default">);</span>
+<a name="79"><font size=-1>79     </font></a><span class="default">        <a href="dictionary_J.html#303">JLabel</a> <a href="dictionary_U.html#366">txtTesto</a> = </span><span class="keyword">new <a href="dictionary_J.html#303">JLabel</a></span><span class="default">(</span>
+<a name="80"><font size=-1>80     </font></a><span class="default">                </span><span class="string">&quot;&lt;html&gt; &lt;ul&gt; &lt;li&gt; image for the banner can not exceed &lt;b&gt; &lt;font color=\&quot;red\&quot;&gt;&quot;</span>
+<a name="81"><font size=-1>81     </font></a><span class="string">                        </span><span class="default">+ <a href="dictionary_U.html#390">bannerSize</a>.<a href="dictionary_W.html#364">width</a></span>
+<a name="82"><font size=-1>82     </font></a><span class="default">                        + </span><span class="string">&quot;X&quot;</span>
+<a name="83"><font size=-1>83     </font></a><span class="string">                        </span><span class="default">+ <a href="dictionary_U.html#390">bannerSize</a>.<a href="dictionary_H.html#363">height</a></span>
+<a name="84"><font size=-1>84     </font></a><span class="default">                        + </span><span class="string">&quot;&lt;/font&gt;&lt;/b&gt; pixels.&quot;</span>
+<a name="85"><font size=-1>85     </font></a><span class="string">                        </span><span class="default">+ </span><span class="string">&quot;&lt;li&gt; Images of magnitude larger will be resized.&lt;/ul&gt;&lt;/html&gt;&quot;</span><span class="default">);</span>
+<a name="86"><font size=-1>86     </font></a><span class="default">        <a href="dictionary_U.html#366">txtTesto</a>.<a href="dictionary_S.html#230">setBounds</a>(</span><span class="number">0</span><span class="default">, </span><span class="number">90</span><span class="default">, </span><span class="number">420</span><span class="default">, </span><span class="number">80</span><span class="default">);</span>
+<a name="87"><font size=-1>87     </font></a><span class="default">        <a href="dictionary_A.html#130">add</a>(<a href="dictionary_U.html#366">txtTesto</a>, </span><span class="keyword">null</span><span class="default">);</span>
+<a name="88"><font size=-1>88     </font></a><span class="default">        <a href="dictionary_A.html#130">add</a>(<a href="dictionary_U.html#365">txtAttenzione</a>, </span><span class="keyword">null</span><span class="default">);</span>
+<a name="89"><font size=-1>89     </font></a><span class="default">        <a href="dictionary_A.html#130">add</a>(<a href="dictionary_U.html#389">anteprima</a>, </span><span class="keyword">null</span><span class="default">);</span>
+<a name="90"><font size=-1>90     </font></a><span class="default">        <a href="dictionary_A.html#130">add</a>(<a href="dictionary_U.html#391">btnCarica</a>, </span><span class="keyword">null</span><span class="default">);</span>
+<a name="91"><font size=-1>91     </font></a><span class="default">    }</span>
+<a name="92"><font size=-1>92     </font></a><span class="default"></span>
+<a name="93"><font size=-1>93     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="94"><font size=-1>94     </font></a><span class="comment">     * This method initializes the image contained in the preview.</span>
+<a name="95"><font size=-1>95     </font></a><span class="comment">     *</span>
+<a name="96"><font size=-1>96     </font></a><span class="comment">     * @param pBanner ImageIcon - an image of a banner.</span>
+<a name="97"><font size=-1>97     </font></a><span class="comment">     */</span>
+<a name="98"><font size=-1>98     </font></a><span class="comment">    </span><span class="keyword">public void <a href="dictionary_U.html#385">setSelectedBanner</a></span><span class="default">(<a href="dictionary_I.html#63">ImageIcon</a> <a href="dictionary_U.html#386">pBanner</a>) {</span>
+<a name="99"><font size=-1>99     </font></a><span class="default">        <a href="dictionary_U.html#389">anteprima</a>.<a href="dictionary_S.html#178">setIcon</a>(<a href="dictionary_U.html#386">pBanner</a>);</span>
+<a name="100"><font size=-1>100     </font></a><span class="default">    }</span>
+<a name="101"><font size=-1>101     </font></a><span class="default"></span>
+<a name="102"><font size=-1>102     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="103"><font size=-1>103     </font></a><span class="comment">     * This method returns the image contained in the preview.</span>
+<a name="104"><font size=-1>104     </font></a><span class="comment">     *</span>
+<a name="105"><font size=-1>105     </font></a><span class="comment">     * @return ImageIcon - the image of the banner.</span>
+<a name="106"><font size=-1>106     </font></a><span class="comment">     */</span>
+<a name="107"><font size=-1>107     </font></a><span class="comment">    </span><span class="keyword">public <a href="dictionary_I.html#63">ImageIcon</a> <a href="dictionary_U.html#344">getSelectedBanner</a></span><span class="default">() {</span>
+<a name="108"><font size=-1>108     </font></a><span class="default">        </span><span class="keyword">return </span><span class="default">(<a href="dictionary_I.html#63">ImageIcon</a>) <a href="dictionary_U.html#389">anteprima</a>.<a href="dictionary_G.html#379">getIcon</a>();</span>
+<a name="109"><font size=-1>109     </font></a><span class="default">    }</span>
+<a name="110"><font size=-1>110     </font></a><span class="default"></span>
+<a name="111"><font size=-1>111     </font></a><span class="default">    </span><span class="comment">/**</span>
+<a name="112"><font size=-1>112     </font></a><span class="comment">     * This method opens the dialog for selecting a file from disk.</span>
+<a name="113"><font size=-1>113     </font></a><span class="comment">     *</span>
+<a name="114"><font size=-1>114     </font></a><span class="comment">     * @return</span>
+<a name="115"><font size=-1>115     </font></a><span class="comment">     * &lt;ul&gt;</span>
+<a name="116"><font size=-1>116     </font></a><span class="comment">     * &lt;li&gt; Files - the selected file.</span>
+<a name="117"><font size=-1>117     </font></a><span class="comment">     * &lt;li&gt; Null - if you have not selected any files.</span>
+<a name="118"><font size=-1>118     </font></a><span class="comment">     * &lt;/ul&gt;</span>
+<a name="119"><font size=-1>119     </font></a><span class="comment">     */</span>
+<a name="120"><font size=-1>120     </font></a><span class="comment">    </span><span class="keyword">private <a href="dictionary_J.html#394">File</a> <a href="dictionary_U.html#367">apriFileDialog</a></span><span class="default">() {</span>
+<a name="121"><font size=-1>121     </font></a><span class="default">        <a href="dictionary_J.html#398">JFileChooser</a> <a href="dictionary_U.html#377">apriFile</a> = </span><span class="keyword">new <a href="dictionary_J.html#398">JFileChooser</a></span><span class="default">();</span>
+<a name="122"><font size=-1>122     </font></a><span class="default">        <a href="dictionary_U.html#377">apriFile</a>.<a href="dictionary_S.html#382">setDialogTitle</a>(</span><span class="string">&quot;Select a new image&quot;</span><span class="default">);</span>
+<a name="123"><font size=-1>123     </font></a><span class="default">        <a href="dictionary_U.html#377">apriFile</a>.<a href="dictionary_S.html#381">setAcceptAllFileFilterUsed</a>(</span><span class="keyword">false</span><span class="default">);</span>
+<a name="124"><font size=-1>124     </font></a><span class="default">        <a href="dictionary_U.html#377">apriFile</a>.<a href="dictionary_S.html#384">setMultiSelectionEnabled</a>(</span><span class="keyword">false</span><span class="default">);</span>
+<a name="125"><font size=-1>125     </font></a><span class="default"></span>
+<a name="126"><font size=-1>126     </font></a><span class="default">        </span><span class="comment">// File Filter for the window to open the file.</span>
+<a name="127"><font size=-1>127     </font></a><span class="comment">        <a href="dictionary_U.html#377">apriFile</a></span><span class="default">.<a href="dictionary_S.html#383">setFileFilter</a>(</span><span class="keyword">new <a href="dictionary_J.html#395">FileFilter</a></span><span class="default">() {</span>
+<a name="128"><font size=-1>128     </font></a><span class="default">            </span><span class="keyword">public boolean <a href="dictionary_U.html#369">accept</a></span><span class="default">(<a href="dictionary_J.html#394">File</a> <a href="dictionary_U.html#370">arg0</a>) {</span>
+<a name="129"><font size=-1>129     </font></a><span class="default">                </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#370">arg0</a>.<a href="dictionary_I.html#375">isDirectory</a>())</span>
+<a name="130"><font size=-1>130     </font></a><span class="default">                    </span><span class="keyword">return true</span><span class="default">;</span>
+<a name="131"><font size=-1>131     </font></a><span class="default">                <a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#371">nome</a> = <a href="dictionary_U.html#370">arg0</a>.<a href="dictionary_G.html#374">getName</a>().<a href="dictionary_T.html#376">toLowerCase</a>();</span>
+<a name="132"><font size=-1>132     </font></a><span class="default">                </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#371">nome</a>.<a href="dictionary_E.html#372">endsWith</a>(</span><span class="string">&quot;jpg&quot;</span><span class="default">) || <a href="dictionary_U.html#371">nome</a>.<a href="dictionary_E.html#372">endsWith</a>(</span><span class="string">&quot;gif&quot;</span><span class="default">)</span>
+<a name="133"><font size=-1>133     </font></a><span class="default">                        || <a href="dictionary_U.html#371">nome</a>.<a href="dictionary_E.html#372">endsWith</a>(</span><span class="string">&quot;png&quot;</span><span class="default">))</span>
+<a name="134"><font size=-1>134     </font></a><span class="default">                    </span><span class="keyword">return true</span><span class="default">;</span>
+<a name="135"><font size=-1>135     </font></a><span class="default">                </span><span class="keyword">else</span>
+<a name="136"><font size=-1>136     </font></a><span class="keyword">                    return false</span><span class="default">;</span>
+<a name="137"><font size=-1>137     </font></a><span class="default">            }</span>
+<a name="138"><font size=-1>138     </font></a><span class="default"></span>
+<a name="139"><font size=-1>139     </font></a><span class="default">            </span><span class="keyword">public <a href="dictionary_S.html#20">String</a> <a href="dictionary_U.html#373">getDescription</a></span><span class="default">() {</span>
+<a name="140"><font size=-1>140     </font></a><span class="default">                </span><span class="keyword">return </span><span class="string">&quot;Images (*.PNG, *.GIF, *.JPG)&quot;</span><span class="default">;</span>
+<a name="141"><font size=-1>141     </font></a><span class="default">            }</span>
+<a name="142"><font size=-1>142     </font></a><span class="default">        });</span>
+<a name="143"><font size=-1>143     </font></a><span class="default">        </span><span class="keyword">int <a href="dictionary_U.html#378">returnVal</a> </span><span class="default">= <a href="dictionary_U.html#377">apriFile</a>.<a href="dictionary_S.html#387">showOpenDialog</a>(</span><span class="keyword">this</span><span class="default">);</span>
+<a name="144"><font size=-1>144     </font></a><span class="default">        </span><span class="keyword">if </span><span class="default">(<a href="dictionary_U.html#378">returnVal</a> == <a href="dictionary_J.html#398">JFileChooser</a>.<a href="dictionary_A.html#388">APPROVE_OPTION</a>) {</span>
+<a name="145"><font size=-1>145     </font></a><span class="default">            </span><span class="keyword">return <a href="dictionary_U.html#377">apriFile</a></span><span class="default">.<a href="dictionary_G.html#380">getSelectedFile</a>();</span>
+<a name="146"><font size=-1>146     </font></a><span class="default">        } </span><span class="keyword">else</span>
+<a name="147"><font size=-1>147     </font></a><span class="keyword">            return null</span><span class="default">;</span>
+<a name="148"><font size=-1>148     </font></a><span class="default">    }</span>
+<a name="149"><font size=-1>149     </font></a><span class="default">}</span>
+<a name="150"><font size=-1>150     </font></a><span class="default"></span>
+</pre></body></html>

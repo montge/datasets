@@ -1,129 +1,121 @@
-	
-/ *
+/*
 * TAGTableModel.java
 *
 * 1.0
 *
 * 28/05/2007
 *
-* © 2007 eTour Project - Copyright by SE @ SA Lab - DMI - University of Salerno
-* /
+* Â© 2007 eTour Project - Copyright by SE @ SA Lab - DMI - University of Salerno
+*/
 package unisa.gps.etour.gui.operatoreagenzia;
 
 import java.util.Vector;
 import javax.swing.table.AbstractTableModel;
 import unisa.gps.etour.bean.BeanTag;
-/ **
+/**
 * <p>
-* <B> Title: </ B> TagTableModel
-* </ P>
+* <B> Title: </B> TagTableModel
+* </p>
 * <p>
-* <B> Description: </ B> TableModel for dynamic management of Table
+* <B> Description: </B> TableModel for dynamic management of Table
 * Within the section GestioneTag
-* </ P>
+* </p>
 *
-* @ Author _Lello_
-* @ Version 1.0
-* /
+* @Author _Lello_
+* @Version 1.0
+*/
 
-public class extends TAGTableModel AbstractTableModel (
+public class TAGTableModel extends AbstractTableModel {
 
+    private static final long serialVersionUID = 1L;
+    private static final String[] headers = {"Name", "Description"};
+    private static final Class[] columnClasses = {String.class, String.class};
+    private Vector<Object[]> data;
 
-private static final long serialVersionUID = 1L;
-private static final String [] headers =
-( "Name", "Description");
-private static final Class [] = columnClasses
-(String.class, String.class);
-<Object[]> private Vector data;
+    /**
+     * Constructor for class TagTableModel
+     *
+     * @param tags BeanTag[]
+     *
+     */
+    public TAGTableModel(BeanTag[] tags) {
+        data = new Vector<Object[]>();
+        for (int i = 0; i < tags.length; i++) {
+            Object[] newRow = new Object[10];
+            newRow[0] = tags[i].getId();
+            newRow[1] = tags[i].getName();
+            newRow[2] = tags[i].getDescrizione();
+        }
+    }
 
-/ **
-* Constructor for class TagTableModel
-*
-* @ Param BeanTag []
-*
-* /
-public TAGTableModel (BeanTag [] tags)
-(
-<Object[]> data = new Vector ();
-for (int i = 0; i <tag.length i + +)
-(
-Object [] new = new Object [10];
-new [0] = tag [i]. getId ();
-New [1] = tag [i]. getName ();
-new [2] = tag [i]. getDescrizione ();
+    /**
+     * Returns the number of columns
+     *
+     */
+    public int getColumnCount() {
+        return headers.length;
+    }
 
-)
-)
+    /**
+     * Returns the number of rows
+     *
+     */
+    public int GetRowCount() {
+        return data.size();
+    }
 
-/ **
-* Returns the number of columns
-*
-* /
-public int getColumnCount () (
-headers.length return;
-)
+    /**
+     * Returns the column heading i_esima
+     *
+     * @param pCol
+     *
+     */
+    public String getColumnName(int pCol) {
+        return headers[pCol];
+    }
 
-/ **
-* Returns the number of rows
-*
-* /
-public int GetRowCount () (
-data.size return ();
-)
+    /**
+     * Returns the coordinates given by the pair of row, column
+     *
+     * @param pRow
+     * @param pCol
+     *
+     */
+    public Object getValueAt(int pRow, int pCol) {
+        return data.get(pRow)[pCol];
+    }
 
-/ **
-* Returns the column heading i_esima
-*
-* @ Param pCol
-*
-* /
-public String getColumnName (int pCol) (
-return headers [pCol];
-)
+    /**
+     * Returns the column pCol
+     *
+     * @param pCol
+     *
+     */
+    public Class getColumnClass(int pCol) {
+        return columnClasses[pCol];
+    }
 
-/ **
-* Returns the coordinates given by the pair of row, column
-*
-* @ Param pCol
-* @ Param pRow
-*
-* /
-public Object getValueAt (int prow, int pCol) (
-return data.get (pRow) [pCol];
-)
+    /**
+     * Always returns false because the cells in the table are not editable
+     *
+     * @param row
+     * @param col
+     *
+     * @return false
+     *
+     */
+    public boolean isCellEditable(int row, int col) {
+        return false;
+    }
 
-/ **
-* Returns the column pCol
-*
-* @ Param pCol
-*
-* /
-public class getColumnClass (int pCol) (
-return columnClasses [pCol];
-)
+    /**
+     * This method is empty.
+     * Can not be included an element within a cell
+     *
+     * @deprecated
+     *
+     */
+    public void setValueAt(Object value, int row, int col) {
 
-/ **
-* Always returns false because the cells in the table are not editable
-*
-* @ Param pCol
-* @ Param pRow
-*
-* @ Return false
-*
-* /
-public boolean isCellEditable (int row, int col) (
-return false;
-)
-
-/ **
-* This method is empty.
-* Can not be included an element within a cell
-*
-* @ Deprecated
-*
-* /
-public void setValueAt (Object value, int row, int col) (
-
-)
-
-) 
+    }
+}
