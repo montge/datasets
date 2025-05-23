@@ -44,11 +44,107 @@
   <metrics
     declared_in_file_display_mode="no_path"
     file_display_mode="no_path"
+    output_file="./java.csv"
     show_declared_in_file="false"
     show_function_parameter_types="false"
     write_column_titles="true"
     add_uniquename_column="false"
-    metric_filter="28532"/>
+    metric_filter="28532">
+    <metric
+      name="AvgCountLine"/>
+    <metric
+      name="AvgCountLineBlank"/>
+    <metric
+      name="AvgCountLineCode"/>
+    <metric
+      name="AvgCountLineComment"/>
+    <metric
+      name="AvgCyclomatic"/>
+    <metric
+      name="CCViolDensityCode"/>
+    <metric
+      name="CCViolDensityLine"/>
+    <metric
+      name="CountCCViol"/>
+    <metric
+      name="CountCCViolType"/>
+    <metric
+      name="CountClassBase"/>
+    <metric
+      name="CountClassCoupled"/>
+    <metric
+      name="CountClassCoupledModified"/>
+    <metric
+      name="CountClassDerived"/>
+    <metric
+      name="CountDeclClass"/>
+    <metric
+      name="CountDeclClassMethod"/>
+    <metric
+      name="CountDeclClassVariable"/>
+    <metric
+      name="CountDeclExecutableUnit"/>
+    <metric
+      name="CountDeclFile"/>
+    <metric
+      name="CountDeclFunction"/>
+    <metric
+      name="CountDeclInstanceMethod"/>
+    <metric
+      name="CountDeclInstanceVariable"/>
+    <metric
+      name="CountDeclMethod"/>
+    <metric
+      name="CountDeclMethodAll"/>
+    <metric
+      name="CountDeclMethodDefault"/>
+    <metric
+      name="CountDeclMethodPrivate"/>
+    <metric
+      name="CountDeclMethodProtected"/>
+    <metric
+      name="CountDeclMethodPublic"/>
+    <metric
+      name="CountInput"/>
+    <metric
+      name="CountLine"/>
+    <metric
+      name="CountLineBlank"/>
+    <metric
+      name="CountLineCode"/>
+    <metric
+      name="CountLineCodeDecl"/>
+    <metric
+      name="CountLineCodeExe"/>
+    <metric
+      name="CountLineComment"/>
+    <metric
+      name="CountOutput"/>
+    <metric
+      name="CountSemicolon"/>
+    <metric
+      name="CountStmt"/>
+    <metric
+      name="CountStmtDecl"/>
+    <metric
+      name="CountStmtExe"/>
+    <metric
+      name="Cyclomatic"/>
+    <metric
+      name="MaxCyclomatic"/>
+    <metric
+      name="MaxInheritanceTree"/>
+    <metric
+      name="MaxNesting"/>
+    <metric
+      name="PercentLackOfCohesion"/>
+    <metric
+      name="PercentLackOfCohesionModified"/>
+    <metric
+      name="RatioCommentToCode"/>
+    <metric
+      name="SumCyclomatic"/>
+  </metrics>
   <reports
     date_stamping="false"
     display_parameters="false"
